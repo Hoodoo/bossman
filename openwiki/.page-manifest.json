@@ -37,11 +37,11 @@
       "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
     },
     "/openwiki/operations/configuration.md": {
-      "pageVersion": "sha256:fe8c2ba2dff68f99f9d22c0da97a6c1a0c38c484ea7b0f3ebe2b98c8e46c6e10",
+      "pageVersion": "sha256:3c7aafb5e4862f195b6ace6d4f92398d07801242fee6f2cd55913afbbf6c0050",
       "completedBy": "owcli/ff31f70",
-      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
-      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
-      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+      "completedRunId": "da479c3f-67b9-44ee-9ecc-5f223e13bda9",
+      "gitHead": "bf12fdfb4d16a331a86d28bf0703878b93a95e88",
+      "sourceFingerprint": "sha256:0f10bcf906e628a7980cd1ddd7ee9389d1dc8045cac408f08bed863091bff978"
     },
     "/openwiki/quickstart.md": {
       "pageVersion": "sha256:65e452b13f7ba5f471b8903f7fbc0c563b85fb3d88150d96abf96108d7d4033f",

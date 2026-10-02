@@ -5,7 +5,7 @@ description: Where bossman keeps its data, how configuration, environment variab
 tags: [configuration, operations, paths, cron]
 verified:
   - by: owcli/ff31f70
-    at: "2026-10-02T15:02:25.003Z"
+    at: "2026-10-02T15:04:24.881Z"
 sources:
   - id: openwiki-source-7bd911fdd3026b7b031a01e3
     resource: repo://go.mod
