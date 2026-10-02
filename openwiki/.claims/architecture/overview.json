@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:95e30e97f76ece05ec264e9dabb8618e8f1fd9f237cfaa8d2041575f350d1b18",
+  "claims": [
+    {
+      "id": "claim_babf0b7583510fdd87317fec73793d81",
+      "statement": "main exits with the code returned by cli.Execute.",
+      "evidence": [
+        {
+          "resource": "repo://cmd/bossman/main.go#L9-L11",
+          "version": "repo-lines-v1:sha256:52aa725b65fbe83ead3422c52b8f088054b28a1604e005cd95bbc8d1daf0c532:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzE1ZDY0Zjk3MWIyNGY3MDFkMzRjNzdmMTI1YWQ5M2Q3MGI3YjQwYTAyYzAyMzZiMDQ1MzkzZTI0YmY2YjVmZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2Y2MWVjMTkwZmMyODgyM2IzNzg4MWYyNTE0NDgxZTY2YTQyOGMzZGY4NGZjMTdmYzAzNDEwMGVhZjA1YTc3MiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_225a45607a5dabcd23aa0d9a9d75f9fa",
+      "statement": "The root command registers sync, archive, index, scan, ls, show, stats, name, note, tag, link, meta, serve, prices, and paths, plus global --home and --json flags.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/cli.go#L50-L58",
+          "version": "repo-lines-v1:sha256:e1f16c5dca4416c601dd584bb13b8317e37a83eea6dde225c9e3fb3761c227b0:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJjYzUyOTliYzlkZmYxNGQyMzcxOWFiMTQxM2Y1ODdkYTA0NmZlNmE1NjJlYjQ1YThmNjhkNjM5ZTAzYjBmYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzg2ZmNkYzQzMzE3YzAwNjcxZjY0Mjc1NTkyNDcyYWM3YjllNmRmZjJkYWJhZDVjNzc3NDkyNWZkNDM2MTA4YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODdjZmEyNWYzMzdmNGIwZjRkMmI2MjBlY2Q1NDcxNDBhYjJhYTBkZjFkYzY3YTRjNjUxNTIxOGNjZTlkOWI2YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjQ5YTA0NjRiMDU1YjE3NjhjZjAzNjRmYzhlNGI4NDVlMTA1NGEyY2Q5MDgzYTgzMGM0MzIyOWE4MjIwMWY4NCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a50dd25988410f3a06374dfc6ed52375",
+      "statement": "catalog.Open loads the configuration and opens the SQLite store at the configured database path.",
+      "evidence": [
+        {
+          "resource": "repo://internal/catalog/catalog.go#L25-L36",
+          "version": "repo-lines-v1:sha256:d379e17bd319f6717b7ca4cc89cf92d73bc66dcc176c0d82628198d8358707cc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjNzNiNzA5NWI4MGQ4ZjUxZWM1Y2JmMWQ1ZDMyOTlmMzhkNWQ5N2ZjNTk0OWI3MWVhNmY3M2Y4ZDhmNTJhNTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFjMDYzOWMwOTYxMTc0Y2FhMmMwYWQwYjJhZmRkNTJkMmJkNzhhNDg5ZDU0MWVhZGU5OWVkYzc5MTUxNjQzN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2MDQ5MmRhZWYzZTI3OWFlMzU2MGIwYTQ5M2U5Y2NjN2ZjNTBkMjFjN2IxNWUwMTkxOTU1MDg5MGUxMmI0YmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_48250fa3d0fff404c684ce81601a7e5c",
+      "statement": "Sync archives first and then indexes.",
+      "evidence": [
+        {
+          "resource": "repo://internal/catalog/catalog.go#L279-L288",
+          "version": "repo-lines-v1:sha256:6354d42baff3daa3683d8f220aff4c63623d55bf60e1afdbf5c94622050626d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkODZiNzBhMDRjZjBlYjdhMTRmYWQwMDFkMWJhMmQ3N2FkZTgxNjY3MzFkNTExMWExZjU4NmYzMmE5NzZjOTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM4ZGYzZWRlYWJlMjJmM2FiMmJmZjVlZmZlNGQ3OWY3MWE4NDg2NGU2ODU2N2RjZjU2ZjNlNmY5ZGRkM2ViYjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8420f9851aef53e993fda1689cb95c75",
+      "statement": "A session's key is agent:id.",
+      "evidence": [
+        {
+          "resource": "repo://internal/model/model.go#L100-L100",
+          "version": "repo-lines-v1:sha256:a35e230cc2e36df2f09bb2d6edb6a08bb8fb97f6a6ff10a920e524cc94941fb3:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTM1ZTIzMGNjMmUzNmRmMmYwOWJiMmQ2ZWRiNmEwOGJiOGZiOTdmNmE2ZmYxMGE5MjBlNTI0Y2M5NDk0MWZiMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTM1ZTIzMGNjMmUzNmRmMmYwOWJiMmQ2ZWRiNmEwOGJiOGZiOTdmNmE2ZmYxMGE5MjBlNTI0Y2M5NDk0MWZiMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTc2MGUzNTFiY2EwZGU4OTFkNWY4MDVjYmNlOGRjZDE0ZTkwMDM0N2RiMmVmZWVhMDc1ODRhYWI4MmEzYWZkYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzU4YjQzOWYwZDRhZTcxMGVjMjhkNzIyYzBmZjlkYmZmMjk5NWJlN2QzMTVhMDZhMWMxYTIxYjdjZDZmYmIyNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e333c587e0993e4ac7ef20366de853cb",
+      "statement": "Transcripts are reparsed from the archived files listed in the index when requested rather than stored.",
+      "evidence": [
+        {
+          "resource": "repo://internal/catalog/catalog.go#L251-L274",
+          "version": "repo-lines-v1:sha256:d73f6de2a82bbb29d7d3a03acd4835988d26dc3d7d87fd479e7e42ae56bb14ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjMDliZThlNDM0YjFhOTUzM2EzY2JiNTcwNjgxMTU3MjZlODEzNDcxNGM5ODU3YTg5MDAyZDA0MzA5ZTE2ZTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5YTFiZGJlYWU1MDUyNjI4MjYxYjQ2YWIxMDIxNjZjYjdmNTg2MzAyNjRkOGVkZWI5N2ExNDg0M2Y0NGM5YjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmNmNlMmFmYjkyYzZmYTBjNzk1Mzg2YTAzOTdlNzkwZDBiZTg0ZmY2MjZkNmI4YmYyY2I1MDdiYjE2NTFjNjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE3MTVhMGJiZjVlYTliOGFkOTJkNWVhYjJmY2ZhZTIyZGNjMjJlOTlkZDRkOTAxZDk2NTg3OWFlZTViMjEwMDUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_803a5ef08509b2306f7603b549e460da",
+      "statement": "The web UI's static files and the default pricing table are embedded in the binary with go:embed.",
+      "evidence": [
+        {
+          "resource": "repo://internal/pricing/pricing.go#L17-L18",
+          "version": "repo-lines-v1:sha256:fdb12410b026cae72463b36184f065b793551c5eb2cd4b600f9fe70039308cb0:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjhiYTg2YWU2NWM3MTgwNjg5ZTkzZjBiN2Y5Zjg1ZTkzNDUxMzBmYzFhYzQyYjY3NGY4YzdiNzE4NjdlNTM3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmMyNmVkZDE2YTcxYTYzZDQzODkxMTJmNzlhMGMyNTEwOTUyNDYyYmQyZDM0Yjk4MTBjMWRkNzdlMTk4MjE4NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2M4NjM0ZDJmNzM4NTRlN2NlM2QzMDRhNzNiNGNjNWM5YWMyNzdhYzg2YzU1MGRjYjkzZjhiZDAyZTJhNmMxMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2M0NTU1MWFhOTJhNGUwNTlkZDc5YjA5YzIxZjVhMTllOGFiNzcwN2FkOTI5OGFjNzQ1NjI0YmQ2ZDQyMzJlNSJ9"
+        },
+        {
+          "resource": "repo://internal/web/web.go#L22-L23",
+          "version": "repo-lines-v1:sha256:00a3998a9b482ef3c7ea8a955b06022c74d96edbf1a35de0f6a98fb8ef1b6ff4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGIyODAxMjg3Y2FhMGVjOTIyY2VjMTIxZTEwNDFhYjA0NDY1YWU5YzJmYjM4OGI3MDZiYjNjNjBkMDdjMzllMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWIzMWNiZDNmNWQzODBhNWZjODUwNWRjZmMwMTRiYTBkZmM0YTI3ZTFhZmM2MGRmMDJjOTMyNjQyZGU0YTMwYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGRjOWFhMmQ0MmI2ZTgwMzdmMjgzODNiMjQwMDk5NTIzNmE0OTRlMGE2MTc1NWUzZmE3ZDViZDUzNjQzOThhNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTc1YmZmNDU0NDQ5NzBjNGIzOWI3YTZiYzY2ZTFlNzNkZDI3MDQwMDE0YjBiNGU2ODQ1YWY4ZWMzNjg5Yzg0NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ce01cddb80292182a83fc53f101f5ae8",
+      "statement": "The build version is injected into internal/version via -ldflags by make build.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L1-L9",
+          "version": "repo-lines-v1:sha256:3de3eca1eb12069a8a2161e837340bc653ad715b4fbe59bc1111a3854a35a2c8:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg4N2Q0NWY5OWY3ZDk3MjhiNTRkYWRjOTg3OTc3ZjdiYWNhNzcwNWZhZmI5N2JlNzgxYmQxOWQzOTI4YTkwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODcxMGI0ZmRiZjhlOGI1MDU2OTllZGE1MDkxNWQ4MGE3ZDY4Y2NhZmM1YWEyZDlkMzE1NjQ4OTc2NjJkZjQyOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWNhYmQyN2FjMTJhMDllMzI0YjdkN2RlMmQ4OTk1MjMxYTViZTQzNjExMjU1MzI0NGRkNTJiODgyNDJiODdlNiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "owcli/ff31f70",
+    "at": "2026-10-02T14:59:42.905Z"
+  }
+}

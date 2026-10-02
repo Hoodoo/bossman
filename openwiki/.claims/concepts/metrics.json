@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:106867c69b30698bbfe61a6a3deacc89c8d1554d11c2455faff8ea479f0bd6fc",
+  "claims": [
+    {
+      "id": "claim_23a12da055ee46bb6bb0db50799016fe",
+      "statement": "Usage input excludes cached and cache-write tokens, and output includes reasoning.",
+      "evidence": [
+        {
+          "resource": "repo://internal/model/model.go#L13-L22",
+          "version": "repo-lines-v1:sha256:af7451240e1f4ce3507b7fceee183d75f6e4815678485bb79ff0a5275f59a468:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNzVlMDI3MTIyMzZlZjczNmY0OWFiMDY4MTE2MzBjZWU1NjgwYzVmNTA2ZjhhYzJlZjlkYjhhYjY3MjljMTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3ZDUxMmNmMzU1Y2ZkMzExNTZkODY1OTlkYzMxZTRlNzg5NWU4M2Q0YTkyZjhkZjBkYzRlOTUzMWU1NTcxMGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzNGZkNmNhNTBlODRiYmEzNmI1NWUyZjI1NjhmMDcyN2VlYmY3MTRlMmE4OWM1MDE1ODQyODQ5ZDBlMWU4NTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQyYjQ3MjBlNTY5MGRhODhmOGE3MzJjNzcyNDE2YTBmNzA3ZGZmYjkwNzQzN2RlM2VhMTdjY2VlYjBiZWIwODcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7b71adbe7980591eb1c6406dcdcea8c2",
+      "statement": "SessionCost reports the agent-recorded cost when present (source agent), otherwise the table sum with source table, partial, or none.",
+      "evidence": [
+        {
+          "resource": "repo://internal/pricing/pricing.go#L80-L122",
+          "version": "repo-lines-v1:sha256:0830de87e43c1a6828e8ea24bb204957c0773cfae40e6a932f37c8c65fa2cc76:eyJzZWxlY3RlZExpbmVDb3VudCI6NDMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlZmEyN2I1ZDZjNGI5MjM0NThlMjIyYTUzZjhjODI0MGY5OGM0Y2Q5ODhjYmM2YWQxYTNiMmRiZmY3ZDg2OTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ5ODAxZmVkMWM0OTMyOGYxMmUwNmFkYTEyZGZjYjRiMWMxZGI5YTFjYmJlNjI0MGQ5MzNkZDk2ZGQ1YjE3OWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_02593a8e4e7b3235054a406688ae9e58",
+      "statement": "When the cost comes from the agent, Price scales each model's table cost so the shares sum to the agent's total.",
+      "evidence": [
+        {
+          "resource": "repo://internal/catalog/catalog.go#L203-L218",
+          "version": "repo-lines-v1:sha256:5b638e016aa54bb12e46b62c269b9af9f40bb96d0735fa577beb88a15bb9dc17:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiYmUzYTk5MWE4NWE4MWVhM2Q0MGU5Yzc0OWUxNWJmMDAzZTQ4YzdlZDE1NjJkYTc0OGE1NDA1ODY3YWU5MzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgzYjQ2MjNmZGMwOTQwZmJjMzNmODc2OTU4NWYwOTM4N2EzYjVhZjRmOTJkMzQ2NDdiZThlMWQyNjIzNTA5NjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzNDAwNjVhMGI4YzVhNjYwY2MyNzk0YzE0MzI2ZWMyMzc5YmQ0ZjVjNDViNTIxODk2NGI4Y2I3ZDUwYjQxMjQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6464230ba8cbedd5937a51732ae9d840",
+      "statement": "Lookup chooses the longest table key that is a prefix of the model id.",
+      "evidence": [
+        {
+          "resource": "repo://internal/pricing/pricing.go#L51-L59",
+          "version": "repo-lines-v1:sha256:eec53d3f4bd35031c278d490f957719424085bfa89efd0968538cd4e5773f4d2:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDY5MzgyNTUzZmNjNWU3YjJhYjEwNmY4NmU0NjI0MDAxNDRkY2U1OGY2YzAxN2Q5ODJiNGM4YjA1YjIxY2QwYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTkzN2JlMTI2ZTMwZDVmNGMwZGUxYzQyMTFmODIzYTgwMTY2YjBiYzFkOWQ2MWMzMWU4YmRjN2FjNWZkOThiYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzhlZTZjMTgyYzRhMmMyY2I3NmU5NTdjMDY2NWQwZjE1YmUyMDQxYWUwZDM0MTFhODIzNWNlOTY1Y2ZiNDAxNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8e369a24e48770da20484bebab96a818",
+      "statement": "Cache writes default to 1.25 times input for 5-minute and 2 times input for 1-hour writes unless overridden.",
+      "evidence": [
+        {
+          "resource": "repo://internal/pricing/pricing.go#L62-L78",
+          "version": "repo-lines-v1:sha256:718bffa5fb56b570e15c6819238c13b11806208f1ba37ba27823de69290c6e21:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNzRiYmMwNDUwNjQ5NDBmNWFkY2YzYWU5YmI2ODcwMmIzNWM2MGY1ZGVmZjUwNzBhNzEwMTMzOGI2NzM3NjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyNzcxMmNiNDE2MzBiNzA5MGI1YTY0NjdmOTcxNmU1MmQ4Y2EwNDlhZjdjNGRiMjQ0MWQwZjU4MzFjMmFhM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4MTZmYjhkOWFjZTg3MGE5YmIwOTBhMGMwMmVhYWZmZDgzYWFmYmMwMTljYzY2M2E2NDM1ODhiYzIzYzc2ZDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7292e722781b3fb3f0de3181bf870981",
+      "statement": "A pricing.toml in the bossman home replaces the embedded default table.",
+      "evidence": [
+        {
+          "resource": "repo://internal/pricing/pricing.go#L34-L48",
+          "version": "repo-lines-v1:sha256:150579442782551eb408118e23eb87b3592b6e955cc8b8567b9da8e9dd1d3090:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVmZjFiNTUzNDUyZDMxN2RjODk5ZjNmYTFjODY0MjkwNWMyNjI4YWJhNjVkODRhZGZkOWNhZTdhYjViZGExMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFlNTY4Y2M1MzU0NDY5YTRjNWJmZGQzMDhkODM4OTZmODRiY2MxOTdmN2M4YTVlM2I0ZWI5MzRlNmY3M2RlYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0NDQzM2JjYThiNTVmNTQxM2RhOGMzYjllZGNlYTg5NzU5Zjc4YzU1Y2I1YTIwNTcxOGY0NGIyODM5ZmJjZWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e65dcef9d7f62865989bcf34f831127e",
+      "statement": "The default table prices Claude models only; Codex models must be added by the user.",
+      "evidence": [
+        {
+          "resource": "repo://internal/pricing/default.toml#L1-L22",
+          "version": "repo-lines-v1:sha256:aae7edf98319b199aa842ad89aa0287ecec85922015b6ef9500eb1f6c3957059:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1YTljOTViMWU4OGZlMTM5NzMwNGJiYTg1M2IxMTFiNzA1OGE3Yjk5Mzc1MTQxMWM2NTM1YjU3NzViZjk5MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2MTc2ODgyYWQ2M2IzZDQ5NjA2NzM0MmUyZDQzNzFiMzBhNzQ5ZTNjYWY1MjkwNzRlMjcxMTA4Njc0MmE3MzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjZGMyNDZmYWYzMDk2ODU5OWJlYzMxYTVjYWYzYjBlNGMwOGI4MTUzMDBmOTVhOGFmNDUzNzEyNzg5ODBiM2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1df71959389f16a5b6e4940656e13891",
+      "statement": "Interventions are prompts after the first plus interrupts plus rejections.",
+      "evidence": [
+        {
+          "resource": "repo://internal/model/model.go#L110-L119",
+          "version": "repo-lines-v1:sha256:fd99a9500d0e9aa72890dd2262a7fd8c9e88d9ba80f33762a47f5fa2721f74b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkNjQ4NWY1Nzc5ZDFjYzIyNzc4YmFkNDNjNzQ2ZGI4NzQzNmRlZDBmNzk0ZTdkYWQ0ZWRiZThlMGU0ZjA1MDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2OTUzMDdjNmE3YjIzYjljYzI4NDRhOGFiODJhZWIzZGM0OGJiODNiODMzNWIyY2U2MmE1YzczOTcyMWZiOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1NGI2MDM5OTA1ZTdlYWNiOGRhZDJjYjI2MzVkNjE5ZWIxNmExNzIyN2U3MDg2MzNhZDc0Yzg2ZjgxMzM3YzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_255cfaef292a3f5d938d1d032e293e23",
+      "statement": "Wall time is the span from the first to the last event.",
+      "evidence": [
+        {
+          "resource": "repo://internal/model/model.go#L102-L108",
+          "version": "repo-lines-v1:sha256:2144fd43f64c64eeb5df5b6883b07cf0b7ecb26ff94d0c35f0b1c9b660e6daef:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2ZkYTM5MGU2OWU5OTQ0MGJhZWZkYzZkMWVkOTBhMTkxNzdhOTRkYWEyMmQ1Mjc5ZDU0ZmZmZTJjNzU5ZjdkOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjdlNTVkZmZiYTA1MDY1NTU0YTRkNmY0NDI1NDE5NGM3NjYxOGFhNTEwNjAyMDA0YzdkYzMyZjg4OWJlYTMwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTgwNjdkZWJjOTg1YjA2YjBkNzc0NTMyMGEyMzI1ODFjYTk3MmRkMWUzZGNiZDU0M2M4MDRlMTRhYmRkNmVjNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e703d26f315cb54c169c23c1115740d",
+      "statement": "Active time is the union of agent-reported turn intervals and inter-event gaps no longer than the idle cap.",
+      "evidence": [
+        {
+          "resource": "repo://internal/parse/common.go#L101-L139",
+          "version": "repo-lines-v1:sha256:64488d8c0b97bd93d682377bbbbc27a685b56696593981bb3f40cf88ceacb81a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxNWViNjE3MzA5ZmYyOGIyNzE5YTkyZjFlMjQ1YmZiMTE5OWI1NDc4YTJhMzRhYTE3NmMyNmU0ZjllYjRiNDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5NGUyYzk1NmM0YmZmZGYyOThhNmExYWM3MjZmMWRjNmVjOTFkZmNlMjNhMDdlNDM3NGUxMDhkZTRiYmY1NTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIzNzI1N2RkNmQ3NGQ2ZDUzOGVkMDc0MzUxNzgxZWJiYmI5MGQzZDQxZjMyNjkwY2YzMGMxNTEyMWE3MDFkZjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b6c8cf813075c7f4abf4db8923b6df7e",
+      "statement": "The idle cap defaults to 5 minutes.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L38-L44",
+          "version": "repo-lines-v1:sha256:d3f234d90892108d0e6dc279de151321211f00338ebf2d9942cfd1b824b72b75:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmM1MWZlYjZhYjYwZGMyN2YyMjNhMzZiZjM4NmEzODg4NGZkYTEzYzRhNjQxMTgxM2QyNDdhYWY4MDA1OTQ4NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFmNGE0NDFjNDBkODZjMGZkNDg3ZmNmOWRiMzYzNDAwMGE3YzliOWQ4Nzc5Yjc2MmY0ZGJmODliZjY0ZjFkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmRlZWUwY2M2MDkyNmE4YTJmYTM3Mjc4Yzk0N2FlODdiNjBjMWRiYjNhMWY3NDJmY2U1YWE2NTk2MzI1OGE4YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWUyY2ZkZGViOGNiNmEyNDBhYjNiOTIyMzkzYWNkODI1MGRhMDAzNTQ3MGM0MGYwODQ4Y2M3MGFiNjE2ZWI2YiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c1f51e5bc626a8c5064a06ba6e0bee6",
+      "statement": "Stats groups by agent, project, day, week, or month from session columns, by model from session_models, and by tool from session_tools; weeks start on Monday in local time.",
+      "evidence": [
+        {
+          "resource": "repo://internal/store/query.go#L365-L395",
+          "version": "repo-lines-v1:sha256:688a5e5a120a930dd233a4631a8e124679173151705d9b6e8455d70b220a29d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNDFiMmI4MzAzYjk2MDk1OWRiNGZmMzZkOGFiYWM0YzQyNWVmMWQ4ZGVkYTM1NjIyNDk4MDkzNmYxNDlmYjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiOThjN2I1YmQzZDU2OTlhNDE4MDZlZDNiNDZmOGNjNGU1NWZmNTdmZjQ1MjE3YTNhMjJhYTY1NDFkYzY0YmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzOTI3YmI1YWY1ODRjOTJjMzlmNWE5OWQ0OGRkODhhMzE5Y2RjZjNjZjUwZjZiMTYyNmMxOWIzYmU3MDEwMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1NjZjZTU4NmFlOTZhMTZlZTYwMGYzMjFkMDRmNDc2NzNiMjRiMTkxYWRjZDNlYjEyZWY1Yzg1ZGQ3MTM5NmUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "owcli/ff31f70",
+    "at": "2026-10-02T15:01:56.141Z"
+  }
+}

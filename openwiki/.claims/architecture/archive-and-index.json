@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:cb2cea1ecd67eca6986fffda3c7e3040e5ba72359ce5b7b9bcaeea901ecb7697",
+  "claims": [
+    {
+      "id": "claim_d6a87da974fddd84a630962746cc7ace",
+      "statement": "Sync mirrors Claude's projects directory to archive/claude, Codex's sessions directory to archive/codex/sessions, and Codex's session_index.jsonl and external_agent_session_imports.json files into archive/codex.",
+      "evidence": [
+        {
+          "resource": "repo://internal/catalog/catalog.go#L42-L53",
+          "version": "repo-lines-v1:sha256:59bd7d56805e55b107e2c97407700beddbb2e751223ec4178d69f44b570273a4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkOTIxNjQxODM0YTJmZDA2NTlmNTUzODBjNWYwOTQ2NDc2OWZiMjM4YmNmMmFkYWQxMmQwNjJkMmI3NzMxZGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxMDlhYWE2Nzc0ZTA4ODZkZTcyNzUzNDc3ZGNhYjJlOTgxYzczNjZiZmFlNDJkZjQ5YmZkMjQ2YmYxODI0YWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY1MDZlOTAyOTBkNzg5OTZmYzRhODg1OTQxNmE1ZTAzMDk0OTVkMmM2OTUyMjU5ZjBkMWVjZTFlYWQwYTE5MzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyZWY4YjgzNDQzMzY4Y2YwNWIxN2ViZTUxNTMxNzU2NmY1YTY4MjM3OTA5NGYxZjAxOTU0NjY5ODA0YzE4NDkifQ"
+        },
+        {
+          "resource": "repo://internal/parse/codex.go#L60-L61",
+          "version": "repo-lines-v1:sha256:784ef7d20c57cde5d4fba3b8e04a63f391b970ef80c8492ac05b1c29dc86cfbf:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWZhZTc5YjNlYjc3MWRjYTc0NWRjMDRjMzQ3Mjc4Mjg2NDI2NmJmMTQwZmZlYmM4NWM2Y2VmNDJhYmJjMjg1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTEwMTNmMWQ4MzRmZDI0M2U3OWRhMGM1NzdjZjAzMWIzOTc0NGRjZmZmODUxMzM1YmE4MmRmM2Q1MTJmZmU4ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmJiNjZmNDliNWIxZDJmZThkOTQwMDQxYmVkNjk0NWQ2ZWY3YTIxYTZiYjljOTVjZDNkYWYyZDZkZDc2OTk0ZiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9ae5b05d78e8324df2c8e9704c5b9032",
+      "statement": "Mirror skips a mapping whose source does not exist.",
+      "evidence": [
+        {
+          "resource": "repo://internal/archive/archive.go#L50-L57",
+          "version": "repo-lines-v1:sha256:d153c49c1a493bc957bce79836f544ded40ea19ff958505a9d28f757332aa9fa:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjQyODQ0ZTY5MGE2YWU3ZTU0MTdlMmI3OTg1ZDg0NmNhZDQ4YmY0NzgxMjc0ZmYxZWY4ODhhNTVjNTI2MGIxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGMxNTRjZGFlZjgyYmEzMzg2NmFmODNhMGZiNDYyNzcwOWZkZTBhZGY2YjM1ZWNlMTYzNTVmNDU3ZjU1ZWQ3NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWNkMTBhMTVkYTAyNWUwNGFiODhlZjg5M2M1ZGRiYjA1Zjc0OWU3NDFmZThkNjk5YWQyMzUzNGZhM2QyMmYyNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWQ4MmUxYzhhMjRiMDAzNzNkNzQyNDM1NDRlZjQwMWVlZmYwZjM1NDhlYjgyYzgxNzQ0ZGRhYjJjMWRhMzQ4MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_eea842efe736b15f3dca468c23351231",
+      "statement": "A file whose archived copy has the same size and mtime is skipped; a file whose archived bytes are a prefix of the source is copied over as grown; otherwise the old copy is renamed to <name>.~<UTC timestamp> before copying.",
+      "evidence": [
+        {
+          "resource": "repo://internal/archive/archive.go#L95-L133",
+          "version": "repo-lines-v1:sha256:717dcd1aaf7627bad7bcfe44b8ef5983e3118bedac61440d8010ce7524641d23:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0YTAzODllNjczMDJiNDg2ZGFiZmU1ZDdlY2I1MzYwODgyYWMxMDIyYmU3MjZjNmJhODViNTRhMDNkZmUzZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxZjA5MjU5ZGI3ODAwM2YxNjRjNDIwYTBhNTU4NmI0ZjYxZTBlODVhNGNhNjNiYjFhYzY2NzliOTlmNGRmY2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkNmFhYjc1NWU2YjJkYTE0MjUyYmQ3NjFhNzU2YjcyMDU3NWI0NWU0OTcwODA1YjFjYmI3Njc5Yzk5MzBmYzgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6fba8cb8d5888e83034c52ecd1c4cd25",
+      "statement": "The prefix check compares SHA-256 hashes of the first len(archived) bytes of both files.",
+      "evidence": [
+        {
+          "resource": "repo://internal/archive/archive.go#L136-L163",
+          "version": "repo-lines-v1:sha256:2d60f26435b5d7c54599c15e5f1035565b76e6913b36a66acacb91f6d20bec2f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1OGExMWRmNjQyODkxYzg5MGQ5ZWI0ZWY0YWI5MjUyMmZiYjJmMWJiMGRiNTcwMWU2ZjhmZWI4NjJlM2M3Y2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyMTYzMTgwYTY3MWNmMzgxNWI0NDlkOWUxMTNlMzcwNTYxODNmYjk2YzJmY2U3YTk0OGRlYTMyMWI5MWEwZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkzN2ZmZGQ1YzIyOGZlMzAwYmM3N2ZhM2ViZWExZTIwN2Q3ZDNmMmJkZjlmNDE4ZmRlZGQ3ZDgxM2M0ZWI3ZjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_962acc6033e0699c5e1162ae75b6b752",
+      "statement": "copyFile writes to a temporary file in the destination directory, renames it into place, and copies the source modification time.",
+      "evidence": [
+        {
+          "resource": "repo://internal/archive/archive.go#L166-L195",
+          "version": "repo-lines-v1:sha256:1f4e43b21f3bb571e932aa31746f258bb66d23982a505d8b09aff827ee5bb2cf:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiYTNlNTE2NjBhNGMwNzBjODdkYzg5MDY3MjY5MmMwOWZlNjc0MDQ3YzNlMzgyZWIzZmVlYTRmMzA3ZDAxNDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQxMjIzZTI2NzM1MjdkZTkyOTlmNDFiZmJlNWQ0MDQyMGM0N2MxNDJkZGI4OTBjZTIyODk2Y2NlZTE4YzI1ZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdjNTg4ZDU0NDI1NGJhYTY5MDFlZWQ5ZjZlOTUwNGJjODM4MGRlOTc0MmYzMjk2YmNhODNiMzlhNzdjZTEzOTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe73dfa4426c533bbd11bc5877583ff0",
+      "statement": "Index skips a session whose size-and-mtime signature matches the stored one unless force is set, and afterwards marks sessions absent from the live agent directories with in_source = 0 via SetInSource.",
+      "evidence": [
+        {
+          "resource": "repo://internal/catalog/catalog.go#L153-L199",
+          "version": "repo-lines-v1:sha256:0f73f044fab68143fea4ad7eb4dbea69a393c34d2d5381670e4e4e3b8921dbfc:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNTM0YTZjMjM2MmFhNjViMGJlN2M3YzRhMDJlZmEyMDkwMTM0MDFhNjU3YTAwZWZmODgzMGI4YzQ2ZWRkNjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5ZTFjMjUwZjBhMDdmZGU4ZTUxNDE5OTFhYTY0Zjg2Zjk3ZmM3MGFjZjNhZjYzMGM1YjVkNjY0ZjQ2ZGE5OGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzYjQ2MjNmZGMwOTQwZmJjMzNmODc2OTU4NWYwOTM4N2EzYjVhZjRmOTJkMzQ2NDdiZThlMWQyNjIzNTA5NjQifQ"
+        },
+        {
+          "resource": "repo://internal/store/store.go#L240-L268",
+          "version": "repo-lines-v1:sha256:ed935ca7e3e6f943261e1feb0e912f238201d5042e834922f5489c109255aa48:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmMDA3NjRjODQxMWU1ZDFlODA4MDM1YWY2ZjJiOGY4YmZhNGVmMjZmNDMxZTgyMzUzNDQwYzU4ZWE1Zjc4ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiNWQ3NjZmNDAwZjM1ODY3NDJjZjZlYzFhYjhjODI2YjBjMjM1NzgxMGIyYTRhZjgxZDhmMzZjOGQyYjU1YTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMDFkNTM2OTM4YjQ4MmM1MTE3OTQ5ODY1YjZlNTI4OTUyMzUyNTNlNjVmZmU3NTZhNGZiYmZhYTE1ZjdiN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkOTY5ZDE1MzQyYWNmZjdhMzQxYjUwYzNlMWMxN2YzOTc5YjYwYjBhMjgzMDFjM2ZjMjliMDhkZmNmOTEzZTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8fbbfe88707b1767ae8d4b55a950e6c3",
+      "statement": "The derived tables are sessions, session_models, session_tools, and session_summaries; the user tables are annotations, links, and tags.",
+      "evidence": [
+        {
+          "resource": "repo://internal/store/store.go#L29-L111",
+          "version": "repo-lines-v1:sha256:23f23891ae75b44a71622ca724383a68f8370d56dc9a15edb2c2a1329e9edeec:eyJzZWxlY3RlZExpbmVDb3VudCI6ODMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzZWRkZTgyODRiOTIwZmI2MTBjOTYzMGZhMjdkYWMxNGU1NGVjMDYwOTVlMDM5Y2E2ZWZiM2ZhZjY3MjZjMjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjOGJhMGYwYzE2YjA3N2ViMjExMGZmNjdiYjNlYTdlMmMwOGQ5NDk0ZDIxZDJmN2M0NjhlYTg4MjUwZWI1YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2NTNjNGIwN2M0MTUxZjZhNzEzMzAwMTQ2MDliZjZjYjBmOTY1MWI3MGNkODZkYTdmZDE3YmUyZDZmYzA1YTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmMjUwN2U3MDc5MzQ2OTlkNTAxMTkxZWI2OGU4ZmY0MDQwMTYyMTAzZThjNTE0M2NjZTNiYmM2MWZmNjBjNjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc86f7aea3d828740bf756072b1f08d5",
+      "statement": "Put deletes a session's model, tool, and summary rows and replaces its sessions row in one transaction, preserving the previous in_source value.",
+      "evidence": [
+        {
+          "resource": "repo://internal/store/store.go#L174-L237",
+          "version": "repo-lines-v1:sha256:8b2bc4541040a7a4dcff728ca60c0b4d9dbf9b1bc591c299099cdc1adf2762f5:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3NGMxYzY3Yzg5NWU1NjY1YzQzMzljZmFlZTEwZThkZTc4NTNkMDYwNzkwZmU0NGZlNDMyZDg4ZmQ3ZGI1ODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyNzQ2ODdjOGZjMDE3MTVkN2EzMjVjNjUzZjViNTRmYWIwMDZiZmI5MWNjZmJkZTUzYTM1ZGQ3YmNlYWQ3YTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0NDgxN2M0ZTFiOTQwOThmZGQxZGEwYTdkYWYxMjVhZDE1ZTUxYTQ2Y2I4MjAzMzY4Mzc4NTlkZjk2ZDJhYWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_52e90c7f015db61b98f506dc54a55a69",
+      "statement": "The stored summary prefers a conclusion, then the latest recap, then a summary line, then the latest compaction summary.",
+      "evidence": [
+        {
+          "resource": "repo://internal/store/store.go#L322-L333",
+          "version": "repo-lines-v1:sha256:c0224c57bdc86b148c559e3dda4297f872644c97612debd9225ff6d6c9702d47:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzZjI5Y2Y3YThjZjhhZmQ0Y2ZhYWM1MTc2NTAwYjkyOWM3MzMwNmIwYTYzMjNmMDhjNjcxMTRkMGIwZGY0MzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOTY0MDc5YzNjNWM4MTUyMGVmMzNhMmI5ZDJlMTVhMWI4NGQ3MjgwZGI4NTkwZGNkNjU3NDdlM2UwMTJhNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2Nzg3YmViYTM3ZjAwMTk0NGNlNjI3ZmVjZWQyOTA0MGFhNDkwZWJhNjY0MjJjMjk3Yzg3MjYyNjdiZDdiOWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_030e52f59294f98096ea1505f4b33287",
+      "statement": "AddLink requires an absolute URL, rejects javascript:, data:, and vbscript: schemes, and updates the label when the URL is already linked.",
+      "evidence": [
+        {
+          "resource": "repo://internal/store/annotate.go#L30-L53",
+          "version": "repo-lines-v1:sha256:7faf785c3e22431b9448c404a19e476789ddf4133a18cd7857f3699a14629b20:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyMTNlNjQ2NGY5YWQ0OTc1MDQ5MDUwODE1NTYyMDE2MTI4YTBkYWVkYjY3ZGM4YWE2ZDUzMWY1YzEyZmU0ODEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc1ZWM0NTVmZjk0YTM1MzI0MTI2ZGU1ODZkMmMyM2Y1OTRiZjUxNzQ2N2IxMTVlMjgyYTU1NTI1NmFkZDRlMWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwNzc2YzgzYTIyMjczYTI1MGEwNmMzMWExYjZjMDBkMmQ3NTI2NzEyNzgzNjk1NjU3YTQ5MDg2ODRhYzA1ZWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6bda1e59ad9bf67e61fd8eef7cb995f9",
+      "statement": "Tags are lowercased and may not contain commas or whitespace.",
+      "evidence": [
+        {
+          "resource": "repo://internal/store/annotate.go#L85-L93",
+          "version": "repo-lines-v1:sha256:f96cac9241dd894e0ad6100c818fe726c331a123ec22838e8f515fb114968c63:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjRiZDk3ZWZhNjM0NDFjYzIyZDE4Mjg3OTNjZjI3MjUwM2UwNGQzODkzYTAzZTJkZTIyYTU1ZjcwNmE2NWJjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOThjZDg1N2FjZTlkYTk0MzA2ZjJmYmIxNDA5NWRmZDViMTk3ZDg1NDNlYzUyY2M2NWFlOGY2MzA3MzQ2Y2I4YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2U1OWQ1YWQ5MDdhNmQ0NTRiZGViM2RkN2Q1OTM4MmUyYzgyMGRhN2NkY2I3OGYxNzljZDNhZTUxMGQ5YTVlMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0c2d3b8a83464aadb5d48c596a3f1c51",
+      "statement": "The database is opened in WAL mode with a 10 second busy timeout and a single open connection.",
+      "evidence": [
+        {
+          "resource": "repo://internal/store/store.go#L119-L135",
+          "version": "repo-lines-v1:sha256:078f91bd46709c27c0bbe12722c8ed02fa83648557d626a80aea4f8910e6f7ad:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3NGMwYjc0ZTQwNTNmNDhlNTQ2ZTdjMzMwMDg2NTA4NDUxZTAyNjMxZjE4ODg2OTVkZDU4ZDlmMmQxNjcyMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmYTFjYWE2MTljMTA3NGNhMTJhYjhiZjY2Y2IyY2IxMzU2YjVlNWY3MzRhZTczYmNjZjM2MzJhZmEzZDM4ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyZDA1Y2M5NDc5M2Y3NDRmNGQ1NmJlZTEwZWUwZTJkNWE3ODc0ZmZlNWYwNmMzMjdiYTQyMGJlOTQ3MjlhZWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fcb4b1382e4378e7bc11fa7232e7769a",
+      "statement": "Stats always excludes imported sessions that have no prompts of their own.",
+      "evidence": [
+        {
+          "resource": "repo://internal/store/query.go#L165-L168",
+          "version": "repo-lines-v1:sha256:7212f0e0ca970c93dd443d93801e2c48a908f42fe59f4d7d5071e6e1f45be103:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWFiZTBjOTUzNGVhOTgwNTc4YzhjNWQ5MzFkYzIwZjM1YmFkZDIzMDIzYTcwNjAzZGQ2YmZjYjQwNTQ2OWQyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmRmYTVjNzgxNDE1NTlhODc5NGY2NjQ1YWNmNWM5ZGI0MTczYjQwYjZmOWMwMWNjYzZiNzhjZjU1OWQzY2ZkNSJ9"
+        },
+        {
+          "resource": "repo://internal/store/query.go#L360-L362",
+          "version": "repo-lines-v1:sha256:cdbbc4a9a7f5d4c03e115f2fd465a1e4349463887a6a7bb60300d403dc022f54:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE0YjEwZTVhMDE1MmFlYWU2ZGU4YzY5YzE0YjJmNjA4YWI0MzEwYjkzMWNjOWEzYzkzYjk5YTUwYzQxNzEzNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGJjZTJmNDRhZWQzOTJiNTYxYzBmNmVhYWEyMzllZGM4NWFiMTRjZDU5ZWE5ZDFhM2M0MmUxY2JkZWQ5MWY1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDBhODZlMDlhODAwNTY0YTI0NmM2NTIwMGU4M2M0YzRmZTlmYzVjYTA5OTVhNDkyZTM3NzEyMjE5NTc1MmJiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWNmNzAyMWMxNTU5NDEyNTM3M2IwNjVhZTNiMjcyZjExOWUzZTJmMzZkMjNiOThlZmU5MDdmNDc1YmM2MWRiZCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "owcli/ff31f70",
+    "at": "2026-10-02T14:59:15.849Z"
+  }
+}

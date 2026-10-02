@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c3778dd2641033c203b9cdc8ccf39f701005e62b07c64ae89f2ba36729578202",
+  "claims": [
+    {
+      "id": "claim_f25edd882c5901d073a136178da4f301",
+      "statement": "Every command accepts the persistent --home and --json flags, and errors are printed as 'bossman: <error>' with exit status 1.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/cli.go#L26-L58",
+          "version": "repo-lines-v1:sha256:27d04a9956d48881d6027b3f5a32a536a5e05a3cbd3986e9fa66dd80ced19dbf:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyODZhZTVkYmQ0NzQ4YzA0NDgwYmZlZTU3ODg0NzUzOTkzNDg0YTFhNGFmYzc4OWU2ZWIzN2U4YjZhZmI2MzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM4NmZjZGM0MzMxN2MwMDY3MWY2NDI3NTU5MjQ3MmFjN2I5ZTZkZmYyZGFiYWQ1Yzc3NzQ5MjVmZDQzNjEwOGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxOWI4NGM1ZDFiYzgwODE0NjE2OWZiMGY1N2U3YTZlMzFhOGRhMzgwZTExNGNkZTQxZDJiYjM2ZDJkNjk0ZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI0OWEwNDY0YjA1NWIxNzY4Y2YwMzY0ZmM4ZTRiODQ1ZTEwNTRhMmNkOTA4M2E4MzBjNDMyMjlhODIyMDFmODQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4ac5b16120c25604b4e10590aba79386",
+      "statement": "Session references resolve as an exact key or id, then a unique prefix of at least four characters, then an exact display name, and ambiguous references fail.",
+      "evidence": [
+        {
+          "resource": "repo://internal/store/store.go#L270-L320",
+          "version": "repo-lines-v1:sha256:946c40b470530e72e053f7d89080ba5152892501ab8501b64ed2bdc01585e0f7:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhYzQyMGI2MWM1NmUxZmQzNTQyZTY0YzUxYzU5MzJlODE5NzJjOGNhYWZhM2UwY2M0MmUxZmQ2NzYxNWFiNjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0OGUyNDhmM2UxNTU5NWRiYjhiYzZmZTk3MGFmZDA1NTk5NGEwMDczZDVjMmI1NGI1MzY2NWViNzdkMTIwZTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dafa3d590e0905d1d46021ca76f0931e",
+      "statement": "ls prints the shortest id prefix of at least eight characters that distinguishes the listed sessions.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/browse.go#L105-L127",
+          "version": "repo-lines-v1:sha256:cac7d18d71a8b6ee96e8dc432a6296e63347d8702e2e13a0242c253ec4a586bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjMDczMjI3MGY1YTNhYTkyNzQzMWUyYWIzM2RiOGUyOTQ2M2ViZGJlMGNkOTBlYTZlMDc4N2VmOTQ0NWMxMDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmODc1N2M0NDZjMTVkMGQyMGU2YjU0MzljM2E1ZDliZTE3M2I1MmEyODEwZTc0YzUwOGY0ZGIxZmM3MDY5OGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhYTE4YmNiNDE3ZTJkZTVmMTFmOTEzNGY5NGNiZjExZmQyNzI2MDYzOWQ0ZTg4NTZiZDc1NTY1OTg4NTZjYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImMxOTAzZGQ5ZGQ0ZWVmMDk5MmNmYWFiMjViNTY3MjhhMzRhOGFiMzFkZjdkZjY4ZDMxMThhN2U3NWFhZjVlOTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_adb4274ae5b65abfbc27fe56c5ef9d67",
+      "statement": "ls and stats share the --agent, --project, --search, --tag, --since, --until, and --archived-only filters.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/browse.go#L22-L30",
+          "version": "repo-lines-v1:sha256:0d7b394664b6465565c53385336a2ebb65d67434409a395c88b1cb14d49c2798:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNlMzcwYTA2YzA2NWQ0Y2U0ZjU0YTViYmE5YzUwNWE1ODc3ZWIyMTM3MzE0YmRjNDY4ODFhN2YyNmRlNmM2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzQyNzZiMTIxNmEyNjlmNTk0MzEzNDFiMDcxNDA3ZjNkM2U1ODdiM2UxZTJhMjM1YzgzNDJkZTc1ZDdhZGY1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjRhODdiNzQ0ODM1MmI3MjYxYWY2MWI2NjMyZDVlYTY4MjY0YjhjMTgzNGFhOTQzODdkM2NmODZiYTAxZmMwNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7641c90f01803066134b141b15b032b7",
+      "statement": "Times accept a YYYY-MM-DD date, an RFC 3339 time, or a duration back from now such as 36h, 7d, or 2w.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/cli.go#L81-L109",
+          "version": "repo-lines-v1:sha256:1b2e2fb8d48aa5712f9c6bf2c82607bfb79943f11eff7017fe1b23dd6b31cd73:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiZTIxMmQzNGYyOTJhNzZlYzkxOWQ3ZWI1YTUzYjk5YmQ1ZGMxMjU1OTk1YTU4Mzc5MTc1OGMwYmU0MTA4NTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjZWY3NGE5ZTU4NmUyZGNjYmZkYWJlOTkxYzJiODA3Nzg5NDNlZTJiYTlkNzc1ZjE5MjdiYjllNWM4YWZhOWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0NjM2NzYyNjkxNTE1NzMxODljZmEzNjFkYTlkZGFmZmVhYWY2Y2FjYzMwMTlmM2FlYzI5NTUzZWFhYmE0YTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1MTQ2ZGNhZjJhNTUxNzc4OTQ5ZTI3YmVhOTY3ODYyNDRlYTMyYWYzOTNmNzIxNTlkZTRlYzdkMGQ2NDFjNjkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5901c280e2bb6cd9ddd7c2a5b44fe95d",
+      "statement": "ls sorts by start time and shows 30 sessions by default.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/browse.go#L57-L59",
+          "version": "repo-lines-v1:sha256:7207901c62737fd8c7a7f81c18cf0726db1bea247d2336a44e81ef0363fa61e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNmY2NlMjczZDBiN2E0ZjkxMjY1ZmRiYmVhNjlkYzQ4YzgzYWNjYjgwZWJlMjc4NjZlMWJjOTExNWNjMjE5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWI2ODc4M2Q4YTc0OWY2NWQ5OGFiMjA0Y2E0YjVlMTlmNmIzMWVkYWFkYzU0MWU3OTQwMGJjZTIzNTRiNThjMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODIzZmFiODAxZWFiZDZiYTU1ODQ4ZmYzOTBmYTJkOTFiZjM4MDYwODJiZmVhMjU1YmE0Mjc1ZTJkNWVjZTliNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2Q3NzA2YzQwZjY1M2I1MDQ3ZTY1ZDBlOWY2YTJlODhkMjRhYTRiMDllNDdlMTE0Mzg4M2E0MTQ2MTIzNjg3NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f79a6ddc9ea2b8df7028e2c5e606688a",
+      "statement": "The accepted sort keys are started, ended, cost, wall, active, prompts, interventions, tools, errors, tokens, output, project, and name.",
+      "evidence": [
+        {
+          "resource": "repo://internal/store/query.go#L113-L121",
+          "version": "repo-lines-v1:sha256:9ff2e9ddb82efbba1380a89cb4870964e9f4f8a0150c9a108c08ce529b8d5bc3:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTA5ZmEwY2I0M2JlMzBlN2NhOThhYzQ1Yjc4ZWI4M2VmNzZkMzcyNTIwMGU5MzVlM2Q1NTNlM2E4MDRiMDAwYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjc4NTI2ZjRhODEwZDA2Mzc1NGY5MDI5NDhlMDNlNzk1MTEwODMzMmFjOThlZTQ4NWI3NGUxMjgzMDY3NjlmYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTMyNWNhNWRmZGM2OTA0N2RkZmU5ODNjMjlkNTE1NzNmMjE1OTRiYjc1MmQxYTc3NDRhMjk5ZDY1MzEzZDcwOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_30a545f44cad15d407201b699bbf18cf",
+      "statement": "show takes --transcript and --full, and stats groups by project unless -b is given.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/browse.go#L154-L155",
+          "version": "repo-lines-v1:sha256:44117bee9f9b802db25fede305fcad21556216bbfca0da7e0302ddd67d8b036b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTI2NjRlNDRhNjM5ZDU4YjYyNzlkZjUxOGYyYTQ4OGYxZDcxZDMyYjk1ZjkxNzVkZjRmZDY5ZDUzNDM0ODVkZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODgzZGQ2M2UzOGJlYzI4YjI3OTI0M2MxOTc2MDMyODg4MmU1ODZiYjUxMjZmZjQ2N2ZiZGU3ZmFjYTQ0ZGM0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjYwMzNhM2M3OGM1NjJmODM2NGVmZTk1YWI0MDEwZTUxMzM1YTQ2NmUwOTI2NTM4ZjFlYzQ1NmE4NmQzMTA5MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2M1NDQyZGExOTdiYzk5YzZjODcyNDY3Nzc5MzFlNDg1MDRjYjA1YzE3NGI0ZWQzZTcxOWViYmFjNjhiNGNkMSJ9"
+        },
+        {
+          "resource": "repo://internal/cli/browse.go#L339-L339",
+          "version": "repo-lines-v1:sha256:6f3be63b42eecfd50b070fc79a1c8c75a5bb68c213c359a5b915decb73f41d7e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmYzYmU2M2I0MmVlY2ZkNTBiMDcwZmM3OWExYzhjNzVhNWJiNjhjMjEzYzM1OWE1YjkxNWRlY2I3M2Y0MWQ3ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmYzYmU2M2I0MmVlY2ZkNTBiMDcwZmM3OWExYzhjNzVhNWJiNjhjMjEzYzM1OWE1YjkxNWRlY2I3M2Y0MWQ3ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTY1NmY1YTYwM2FiMGUzYjljZWNmM2FkMGVkNjYxZmFjMDU4MGNhZDgxZDIyNTM4MDM4ODY2MTM3Y2NhNzU5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2Q3NzA2YzQwZjY1M2I1MDQ3ZTY1ZDBlOWY2YTJlODhkMjRhYTRiMDllNDdlMTE0Mzg4M2E0MTQ2MTIzNjg3NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_86e86fc5ba4f0141bdcd011aa71e43bd",
+      "statement": "Listed costs are '?' when unpriced and end in '+' when only partially priced.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/browse.go#L133-L142",
+          "version": "repo-lines-v1:sha256:0198ed89917d5cf0b31b3e15f07d4c3596b9a5f7c41e86103bdc1e98794cf7af:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI5NTM2ZWEwZjIzMjIzODk1MTQyNTE0NWMyYzQ3NDliYmZlZjFiNTM0Y2EyMzNjYzEyNmNjYTM4MjhmZjViNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5ZjMzMjEzZDc4OTgyYzAxMWQ0ZjY3MzdjM2E2OTk0ZWViYWUxMTBmMmIyNDI3MWNmZTJlOWE3NTA3MDJhMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZjOTU3ZWM3NmIyNjBkNWRiYjc4ODAwYWQ5MDgwY2JkYWQ0ODdlYjg2MzMxMzE5ZTIyNDEwOTQ5MzkzMjhjOWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_beda0894d04534e3271c9c3d4bb216a1",
+      "statement": "name clears the display name when given '-', note reads stdin for '-' and appends with -a, and tag removes tags with --rm.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/meta.go#L16-L60",
+          "version": "repo-lines-v1:sha256:747b8acc61059fdc17acda2ab46487d8a7f560b2e362d41f9e2f7f7415d42c99:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3ODA4ZmJlOTNhNWYxMDM2YjFkZjhmYmRmMzEyMDJlMzA0YTlhN2IzN2RjZDdkZmIwOTEwOTY3ZTY0YTlhNmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjMTU0Y2RhZWY4MmJhMzM4NjZhZjgzYTBmYjQ2Mjc3MDlmZGUwYWRmNmIzNWVjZTE2MzU1ZjQ1N2Y1NWVkNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkYzlhYTJkNDJiNmU4MDM3ZjI4MzgzYjI0MDA5OTUyMzZhNDk0ZTBhNjE3NTVlM2ZhN2Q1YmQ1MzY0Mzk4YTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgwYzU2OGQwMTkwYWRiYmUwMWEzODgzYzVhNTgyMTUyZjk0ODBhNDI0OWU0NDhhMjQ1MmVlMjViZTNkOTBkNTkifQ"
+        },
+        {
+          "resource": "repo://internal/cli/meta.go#L84-L92",
+          "version": "repo-lines-v1:sha256:88c19378a5913ad14932eac55efadbdc3b61a40486bcfbd03a0cf58d107791bc:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjMwMWJkNzNlYzJhNmI0OGQ3NTQ3MmEyYmI0OWVhNjY1MDgyOWE1YjNiZjRmZDI0YmFlYWVjYzg3MTMzMzViYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjI0ZWVlNjAyNTExZWVmYTRiZDRmYTJlZjlkMWRlNDY2OTU0YjYzM2Q2ZGI5MWZkZmFkMWYzMjM2YTJjYmZjNCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTkzYzVlYzliOGI2YjI3ZjljYmVlN2RiMjgzZDQ1YWM5YzA2ZWFiZTc3NzdhMmE0MDMyZDUyZmIxYmE4OTk2NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjc4YmVhZGE1MjY2N2FkODhkNWUxOTQxNzliNjI5NjZhODA1MDE5N2QyZDk3NzBkYTBlOWNjNTliMWU1OTJmOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bda2c1421519fd0dc85e68eefa1beba2",
+      "statement": "link has add (with -l label), rm, and ls subcommands, and meta has export and import.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/meta.go#L143-L200",
+          "version": "repo-lines-v1:sha256:31c727441a97f178e5c48acd39f2086cf0b7128658e16a9ada3012ab50baa580:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkwYTIyMzdkZjZiZmYzNjA4M2Y5MjgzNTVlZDI1M2NlZmExYWUyNzczN2ZkNThjNzU0ZmYxMTM0YzQxZWY1MTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MGNhYjcwMTAzY2JhZDg2Y2E4MjhjYTY5M2ZjMGY1OGY1MjVlM2MxOTgzNjRmMDRiNjU5YzgwY2JlZTllMzYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhYTE4YmNiNDE3ZTJkZTVmMTFmOTEzNGY5NGNiZjExZmQyNzI2MDYzOWQ0ZTg4NTZiZDc1NTY1OTg4NTZjYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3ZDE3YzEzNmY4NmFmMDQ2Y2Q2MzNjMjAzMTAyOGYxYWU2M2U5ZjRhYzUwMjIwODYwNjVmZTE4NzE3OGRiNWYifQ"
+        },
+        {
+          "resource": "repo://internal/cli/meta.go#L208-L240",
+          "version": "repo-lines-v1:sha256:a452bb08d89e67accaad36e8f1818d03a5f5d727629c5ea5ac050f8cac3f600b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5OTRhMDZjNzAxMTY3ODYwYjY1ZTc2ZDA3ZWIyZWIwMWNiNDc4NjEwMDY1NjdmYTliM2VmZmZhNGUyYzFkMmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2MmE1OWQ5MGZlYmIxZGY3ZWNhYzFhODZjNDYwMTBkMTE4YmEyOWQ4MzA0YzNiNDM0NzhjYjAyMzI3NGZkMDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJhYTE4YmNiNDE3ZTJkZTVmMTFmOTEzNGY5NGNiZjExZmQyNzI2MDYzOWQ0ZTg4NTZiZDc1NTY1OTg4NTZjYWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1OTg1NmZmNDg0NDk5Zjk5ZDE5YjE2NDY1ODE0YmQ3OThjMTFiMzk5YTYwN2VmNmNiMGYzNjRiYWQyYzU0NjgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c2dd8ace982830b594bdb95ac887edf0",
+      "statement": "scan --all also lists sessions already archived; sync and index take --force.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/sync.go#L110-L110",
+          "version": "repo-lines-v1:sha256:a9447395314442e0aadab51aa8076e38a54a29f5a6395bde584a6328b946ad7f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTk0NDczOTUzMTQ0NDJlMGFhZGFiNTFhYTgwNzZlMzhhNTRhMjlmNWE2Mzk1YmRlNTg0YTYzMjhiOTQ2YWQ3ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTk0NDczOTUzMTQ0NDJlMGFhZGFiNTFhYTgwNzZlMzhhNTRhMjlmNWE2Mzk1YmRlNTg0YTYzMjhiOTQ2YWQ3ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmM2NjhhN2IxNTVkYTRiOTk0N2RmZjhlOWRjNzQyYzZlYjY0Y2M5NDI3Mzk3ZmNmOGMwOTFiZGJkNGQyY2FlNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzM4NDM0ZGFkYTgzOTA2YzkwNjlkNjQ3ZDJkMDliZDNjMDFhNzg4ODAyZjFkNmVlNzljYWY4MmZjOTdkOWJlNSJ9"
+        },
+        {
+          "resource": "repo://internal/cli/sync.go#L24-L24",
+          "version": "repo-lines-v1:sha256:58fd07a3d29170ffe6b27f35dac3eb1d399838b8d5df6b1fa4563b856d003dae:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNThmZDA3YTNkMjkxNzBmZmU2YjI3ZjM1ZGFjM2ViMWQzOTk4MzhiOGQ1ZGY2YjFmYTQ1NjNiODU2ZDAwM2RhZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNThmZDA3YTNkMjkxNzBmZmU2YjI3ZjM1ZGFjM2ViMWQzOTk4MzhiOGQ1ZGY2YjFmYTQ1NjNiODU2ZDAwM2RhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGVkMWYyZDc5ZmIyMGM4YTAzMmJmMzdkMWRlNmMxY2IxNzc2Y2M4OTBlNzA2MGNkYTcwMjM1MzVkNTdiODU0MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzY0OGNhYWU2OGViMmY3MTY5MmQ2ZjI1YjRkNjRhZjQzNjBlNWIyYzFkZWIxYjUzYmNlMGMwZTI0NzBhZjE4MyJ9"
+        },
+        {
+          "resource": "repo://internal/cli/sync.go#L69-L69",
+          "version": "repo-lines-v1:sha256:58fd07a3d29170ffe6b27f35dac3eb1d399838b8d5df6b1fa4563b856d003dae:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNThmZDA3YTNkMjkxNzBmZmU2YjI3ZjM1ZGFjM2ViMWQzOTk4MzhiOGQ1ZGY2YjFmYTQ1NjNiODU2ZDAwM2RhZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNThmZDA3YTNkMjkxNzBmZmU2YjI3ZjM1ZGFjM2ViMWQzOTk4MzhiOGQ1ZGY2YjFmYTQ1NjNiODU2ZDAwM2RhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2FhZmY1NTgxNWZmOWY1Y2YwMmExZmE3ODQ2N2I1YjQxYTllZGRiYjQwZDhlNmE1YTQ5NzU2NjNhYTcyZDI0YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmI1YTI1YzA0OGQ0YmRlN2NmODcxN2VlMzU2NjNmMDEyYWVhZGE5NDczOWNjYjViNDJlN2ZlYWI1OGNmMzgyNiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "owcli/ff31f70",
+    "at": "2026-10-02T15:03:09.622Z"
+  }
+}

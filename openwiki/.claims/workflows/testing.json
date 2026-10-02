@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:2ac474af2dc21fe5293b675b66e72ec3a4297e3c66a25229fe64fe33e117b51a",
+  "claims": [
+    {
+      "id": "claim_991a8b606573e657563167d1581f63b3",
+      "statement": "make check runs go vet and go test over all packages.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L11-L17",
+          "version": "repo-lines-v1:sha256:d63dbec931e8171c0b81b449d505654cc1e4970895d3a5841a6d6e343bf0a6ee:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDAwN2I1MTE4ODQ1MWRiMzc5M2FlMjRlYTE3OTQ4NTgzNjcyZWM1NTE0MmFmYWI5NWYzMTQxM2RmMTFkNWI5ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDZmNGU1ZmZkM2E2MTY5OTMxNjI2ODZkOGYyYmE2YWY0YzY4MTIyOTIzZTY4ZjQ0ZmFlMjhiZTJhNjFlYzdjOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2ZkOTRhYzNhMzhiNTJhYzdjMDZhYjM3ZjQzZjgzNjM2MGQ3YTQxMDc0OTM3MGU4Y2VhNDFiYzFlN2YxNWFiNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTIyOTViZWY2YmE4YjVmMDJmZDc1OGFjYTE0ZmVkNTQ4ZWFjZDJlYjk3OTZlYzA3NTc3MzI0OWExZTY4YThiMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_62866ae765639d8223ba3162b6b4bb6b",
+      "statement": "End-to-end tests point bossman at temporary agent directories through BOSSMAN_CLAUDE_DIR and BOSSMAN_CODEX_DIR.",
+      "evidence": [
+        {
+          "resource": "repo://internal/catalog/catalog_test.go#L33-L42",
+          "version": "repo-lines-v1:sha256:9728f9a3436dfe137970265d463be1ba6411a5f76eaa3aea20c192bf6527b165:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyYmYzMDljZGQ1N2M2OTcyNzA1ZmViNDliZTY4MTYzYzY0Yzc5NjdiMDg5ZWU0YjVlYWNkNDA2NmJhNTcwNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjIzMjMxM2ZlMGZkOTMyYjM1MTQzOTRlNGZjNTAwZGU0MzFlOTAzNzFlYmVjMmNhMmI3OTNiZTc5N2FiMGVmMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVhNGRlYmQ3NWNjODcyNjc2NjI5ZjM3OTE5M2YyYTM0NGMzMTczMGFmN2NjNGJjMmY4ZDQwOGI5OGE4ZmFjZTcifQ"
+        },
+        {
+          "resource": "repo://internal/web/web_test.go#L15-L35",
+          "version": "repo-lines-v1:sha256:893fbd12f5af52d4e7f9f9cbc060c1bc30b0a0948c058042807ba139048e7b9e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlOWFmMmJiMzc4YzI0MDUxYjk3MWYyYTQ1MzA3NmJlMDEwMzA2N2U0NTdmNzg0YWJlMmUxMTI2MTk3ZTc0MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4MGRhNGI1ZDk0ZmRiNzExYjg5ODkzNTc4ZTQ5M2Q0MzBkNDk1MzZkMTM3YmZhZTQxNGZkOGM1NDczOTk5M2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3ZjlkMTcxZjE4NTc0YzlmMzY4MGY0NGZhMWYwODVjODYyOWNiOWU0ZmYwN2Q0MmY2MTBmZDQ4MzkwYjg0ZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA5OWFlNDI3MGE0OWMwOTFhMjVkZTNmYjk2M2M3ZWU2NDMxYzhkNzYzNDI5ZTA4M2RmZTM4NjE1NDY5NGM1ZDQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d7aaafaa90213274554c0ff56bedcaa4",
+      "statement": "The Claude fixture repeats one assistant message across two lines with the same usage and ends with a truncated line.",
+      "evidence": [
+        {
+          "resource": "repo://internal/parse/claude_test.go#L22-L42",
+          "version": "repo-lines-v1:sha256:f1f3a0803c9c9ec910f277e0fce9502f202bd16e8b1a9481825ca07e951670d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkOTBlMDViNDE0NjE3MzJhOTZkMWI4ODczZTZmZTg0N2FkMGI2MzU4MjEzYTZlODE2M2RjZmJkZDg5ZDhlMjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2YmUzOTNmZTc5ZWEzMjQyYTU4YTA2ZWVhMTRlMzE2N2IzYjVmYWY3OTRkY2UzNGMxYzdjMTBhZDhjZWNjMGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjViOWY5NzkwYmNhYWMxOGI1YjY3MWVkYTdkMzAyMTlmOTNmNGE3OWEzYjgwN2Y1MGYwYzUxMTgzMWY1YTI2MGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM4NjJjOGRkN2YwZjFlYzhhZjMyZDRiM2E1NWI1OTI2ODI3OTc4M2JlMmUzMjY3ZjNiYTYyZjg4MDExODE3YTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4db2b6cd4ae3743da5d708d827f40d5a",
+      "statement": "The Codex legacy fixture contains a repeated token_count total and a model switch, and the test checks per-model token deltas.",
+      "evidence": [
+        {
+          "resource": "repo://internal/parse/codex_test.go#L33-L41",
+          "version": "repo-lines-v1:sha256:2d4d2e1a2d163d0ec96a23df36c49105d755de5eb3c1096165c315623f1d3694:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmZhYjFkN2I5YjQ4ZjNhMjkxYWJlMDNhODY2N2Q4ODI3NjlmYjMyZGVlZDM2NWQ3ZmI2ZGRhZTU4MWNjNzcwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTY2Y2NhOGEwZmJhMzgwNjg3NDUwOThjYmRmODJiMDQ4OTFiM2U1ZmFiNzg5ZTNjOTFkYzFiMjZkNTAxYTE5YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjQ1ZjY3Yzk4ZWYyNDUzM2NmOTM0MjFiMjgxNDVjZWY0NDBjYjQzYTdkMTg3MDNjYjQ3ODUzNmMwNzVhNjNjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjA0Y2JjZjk4YzU5MzI1MjMzZmE0YWU2ZDM0ZmIzYTAxNjU1YTFkMDgwMWQ4ZDE3M2VhOTViNTExN2QyMTQwZSJ9"
+        },
+        {
+          "resource": "repo://internal/parse/codex_test.go#L84-L105",
+          "version": "repo-lines-v1:sha256:7fa61d4ad6137eb45b510a9211ccd0c64ec1221f25c2bca9aceee46fffb32bce:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1YTc2Y2VhNmExNThlZGIxNjNmODRjZTRkM2VlZWZkZTI4YWFkYjlhZTRhOTI0OWZjMTY1Mzk1N2U3NDhjODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhYzc5NTAyMTY3NGQ0NGU2ZTMxMGE1YzI0YjM1ZTc5YmNlYzNmNjE1NDM0NmYyMTdlMTU4YWU5YWRjNDYzMTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjYjM0YTFkYTUwODYyYTc5M2VkY2Y5MWFhZmI4ZWQzZjkyYjFmNzg4NjQ1NDM0M2EyNGI5ZWM3ZjAzNGEwMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjMTFmYjNjZjczZWE0YmY0MjllN2ZkODI4Zjk4ODc5MzExMmNjYzlhMmIxYWJlMGVjYjZjZTM3MjBlZGM1NTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_481fc23c2d19f0f124a5ce98c4b2f602",
+      "statement": "TestOpusCostMatchesAgent checks that the pricing table reproduces a real Claude-recorded cost of about $41.70.",
+      "evidence": [
+        {
+          "resource": "repo://internal/pricing/pricing_test.go#L31-L40",
+          "version": "repo-lines-v1:sha256:82dad26fe67feb0c64f9dd3c8e2bc3f17717e81e7f6f8fe1615492177bd1f39a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1YTc4MGMxNTUwNTZkMzNjMWY1Y2ZmZmU4M2ZiYWNmNjMyYTVlZWYwOTQyNDc5YTViZTJmMjdhYzRmMmU4MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOTY0MDc5YzNjNWM4MTUyMGVmMzNhMmI5ZDJlMTVhMWI4NGQ3MjgwZGI4NTkwZGNkNjU3NDdlM2UwMTJhNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3ODRlY2QzMzQyMmJkNjBiM2M0ZmIxN2NhMmM3YTE2MGFlYjZiZGQ3MDc2M2Q4YmJjM2IzYWI3NTk5N2QxMTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e149625365be3374e8d53781d9900bad",
+      "statement": "The catalog test deletes a source session and checks that it remains indexed, keeps its display name, and has a transcript from the archive.",
+      "evidence": [
+        {
+          "resource": "repo://internal/catalog/catalog_test.go#L44-L101",
+          "version": "repo-lines-v1:sha256:c11262d661df55cd287307fc6be11dc5ec77324338f9803e96bba23ba27899dc:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1NDNjM2U0YjExYzA1OTFhYjEzYTliMWM3ODFmMjg5N2QwN2QwYWFhZTU3MmY4NDUyOTcxM2ZmZWVhNmNmMDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiYzQwMGM2NjdhMzBkMDYzZTMwNDIyMjE4YzIzMDM3NmJlZjlmZWIyNTQyMmJlOWZkN2JjNzU1ZDZmYTdmZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhNjgzYmE2MDMzY2NkMWVjNWZhZWU1OTZkYzViMzA5ZmMzYzg1ZWU2OTZiZTczNzE4ODdlM2Y1NDI3OTZmNjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_226943bb0ccd2e3028282bb30834ea01",
+      "statement": "Adding an agent requires a parser case in Catalog.parseEvents alongside the Claude and Codex cases.",
+      "evidence": [
+        {
+          "resource": "repo://internal/catalog/catalog.go#L225-L240",
+          "version": "repo-lines-v1:sha256:db8e44dac544d5cf8bde13a9b495bc81c93302235932ede407498e4f9270f0e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0Mjg3ZDYxMmE0OWYzM2UzYmM3ZTgwOTU2YjNhNjAxYTJkOGE3MjEzN2MyNDFlNDA0YTBkMmE1NDE1Y2ExNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJmODA3YjEwZTM1NDNlNTExNzNlNDQyNDVjZWE2NzViZmUxOTc5ZjhiNzhlMjgwMjg0YjYxM2YwODk0NTJhNGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2YmZhMjZlYjlhN2NiNWI4YjVjOTA1MDk0ZDBiZjc4ZTZkYTcwMTU3ZGUyYmU3ZWIyZTNiYzRlZDY3OGZhYzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwYjNiMDI2NTgzZDFmYzZmNDQwYjA5OWI5OWZlOGMyNTYwOTNiNjI2ZDRmMmQ0MDU2Nzc0YmYzNzZkZjUyMWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_07ab850c49ca27b4da6cf28e38e6749b",
+      "statement": "Agent identifiers are the constants claude and codex in internal/model.",
+      "evidence": [
+        {
+          "resource": "repo://internal/model/model.go#L8-L11",
+          "version": "repo-lines-v1:sha256:3a68f132b3a76ecc74bf32991b037127299f76b0f79fcbe0fa2f0e36c613c119:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDBkOTg2YjBkZjdlOWM0N2FhNzgyYjA2NjA5NDY5YmM4ZWVjYTQ3NjEyYjgzOGNmODI5ZGRhNGJjZGRkMzMyOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWZiZTNiY2ZhNjEyNmQxMjMxYTk4YjNlODUxNzU5ZGEwMTQwYjkxZDJiYmFjZmM0YmYyM2Y4N2RkYzU3MzExOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTg0NGE3ODJjYzNhN2FmM2JhNjY2NzA3ZTczNGJmZTFiMzU1YTBkODE2YjQwZjlhNTljMzI5YmNmNmYxOWY2NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "owcli/ff31f70",
+    "at": "2026-10-02T15:03:43.517Z"
+  }
+}

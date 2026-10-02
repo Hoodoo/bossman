@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/archive-and-index.md": {
+      "pageVersion": "sha256:cb2cea1ecd67eca6986fffda3c7e3040e5ba72359ce5b7b9bcaeea901ecb7697",
+      "completedBy": "owcli/ff31f70",
+      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
+      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
+      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+    },
+    "/openwiki/architecture/overview.md": {
+      "pageVersion": "sha256:95e30e97f76ece05ec264e9dabb8618e8f1fd9f237cfaa8d2041575f350d1b18",
+      "completedBy": "owcli/ff31f70",
+      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
+      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
+      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+    },
+    "/openwiki/architecture/web-ui.md": {
+      "pageVersion": "sha256:2bb2865b1227d443f78c492958f53bb503c29ad186e54015e2c703bbe94765b4",
+      "completedBy": "owcli/ff31f70",
+      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
+      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
+      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+    },
+    "/openwiki/concepts/agent-logs.md": {
+      "pageVersion": "sha256:369b6f5b31c676f66d4dab5e56a741f32777e2faf67bb712ae7024e609b618f9",
+      "completedBy": "owcli/ff31f70",
+      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
+      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
+      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+    },
+    "/openwiki/concepts/metrics.md": {
+      "pageVersion": "sha256:106867c69b30698bbfe61a6a3deacc89c8d1554d11c2455faff8ea479f0bd6fc",
+      "completedBy": "owcli/ff31f70",
+      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
+      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
+      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+    },
+    "/openwiki/operations/configuration.md": {
+      "pageVersion": "sha256:fe8c2ba2dff68f99f9d22c0da97a6c1a0c38c484ea7b0f3ebe2b98c8e46c6e10",
+      "completedBy": "owcli/ff31f70",
+      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
+      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
+      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+    },
+    "/openwiki/quickstart.md": {
+      "pageVersion": "sha256:65e452b13f7ba5f471b8903f7fbc0c563b85fb3d88150d96abf96108d7d4033f",
+      "completedBy": "owcli/ff31f70",
+      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
+      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
+      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+    },
+    "/openwiki/reference/cli.md": {
+      "pageVersion": "sha256:c3778dd2641033c203b9cdc8ccf39f701005e62b07c64ae89f2ba36729578202",
+      "completedBy": "owcli/ff31f70",
+      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
+      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
+      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+    },
+    "/openwiki/workflows/testing.md": {
+      "pageVersion": "sha256:2ac474af2dc21fe5293b675b66e72ec3a4297e3c66a25229fe64fe33e117b51a",
+      "completedBy": "owcli/ff31f70",
+      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
+      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
+      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+    }
+  }
+}

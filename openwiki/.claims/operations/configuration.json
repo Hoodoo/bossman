@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fe8c2ba2dff68f99f9d22c0da97a6c1a0c38c484ea7b0f3ebe2b98c8e46c6e10",
+  "claims": [
+    {
+      "id": "claim_9228079c94f15e63502bbb61be932868",
+      "statement": "The home directory is the --home value, else BOSSMAN_HOME, else $XDG_DATA_HOME/bossman, else ~/.local/share/bossman.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/cli.go#L50-L50",
+          "version": "repo-lines-v1:sha256:92cc5299bc9dff14d23719ab1413f587da046fe6a562eb45a8f68d639e03b0fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJjYzUyOTliYzlkZmYxNGQyMzcxOWFiMTQxM2Y1ODdkYTA0NmZlNmE1NjJlYjQ1YThmNjhkNjM5ZTAzYjBmYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTJjYzUyOTliYzlkZmYxNGQyMzcxOWFiMTQxM2Y1ODdkYTA0NmZlNmE1NjJlYjQ1YThmNjhkNjM5ZTAzYjBmYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODdjZmEyNWYzMzdmNGIwZjRkMmI2MjBlY2Q1NDcxNDBhYjJhYTBkZjFkYzY3YTRjNjUxNTIxOGNjZTlkOWI2YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjEyYmJiNmU2YzFlNDhlOTkwZGFjOTRkNWM5YTI1YTNmMjM3ZDliNzk0MjQxYmRhYjA1YzRjZDM2OTRkMzMzYyJ9"
+        },
+        {
+          "resource": "repo://internal/config/config.go#L30-L35",
+          "version": "repo-lines-v1:sha256:ae9a2845d634898a967f6a0f76464baef3d6236526effb902040da7d9bad7336:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTgxNjEyOTViMzU3OTY0ZTY0YmEyNzc2NGU4YWM4ZjU0NjZhYWQ2ZWIzZGNkZjg3MjViYmUyYzIyMDhmZjY2NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmI4NmU1ZDI2MWFkOTk1N2FlOTE5MmQyMmYzZWZhZWUxNWRhNzk3NGNkNGM1MGRmZDE1M2FhZWY5ZDJjY2Q2OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzU5MGVhMGRmNjcxNDhlMTUzNTA4NWQxZjczZjdkMzA5NTNmMGE3YzQ0M2IxMTc2ZTJiOGNjYTFkNTBiMjJjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWFjM2U0ZTFhYTRmZDhkOGMwMDc4OTEyZmUwZWM2N2FhYmY4ZGM2MmNiZWIwMmFhMDA2YTllMGUxYmEyNWE1ZCJ9"
+        },
+        {
+          "resource": "repo://internal/config/config.go#L61-L67",
+          "version": "repo-lines-v1:sha256:5832cbdb9286eac2cef6f5f16ca97385ae34c56273ed798f6f494d9f1aa7e811:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjhjN2RkNDc4YjVjOTkwMzZmMzk3NThhZmY4ODZiYTIzYWVkNjFhZDlkNDFjMDlhYzFhMWNlYmM3MDE4ZGVmZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjczZmE0MzM0NzkwMzgxMjAzOTlkMGFlZTU1ZmZhMjJmNzNiOTVhNDM5OTJkNzVjOWM2MWU2ZWNjZTk2ODYzNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWI0NjE0MjYxMWI2ODlmNjFkNjhkYjlkMmI4ZDA2M2M2OTNkMjBkZDlkZGVhMGQxZWEwMTdmNmFkMTUxYTFhMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_19469588f9806f952ab74d070aae491c",
+      "statement": "The database, archive, config file, and pricing file live at bossman.db, archive/, config.toml, and pricing.toml in the home.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L77-L80",
+          "version": "repo-lines-v1:sha256:4cc50dc8fc19ba1f01fa73791f79441677f3a3097f5c116b822ec9f4c9efad8c:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWRkMDhkN2ZhZWFlMGRlZTk4MDRjMjkyYmFjNmU4NmExZGY4NjMxMGYzZGNlZDRlMDNhNjM4NWQ2Y2Y1Y2I0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTRkZTY5MDkyNDc5MmJhYzRmMDE0YjJhNTc3NmNkNDE2YmIzNGQ4NDljYmQzNzhlMDRhNTBmMTg1NmQ5NWM5YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDA5MDIzY2ZiYzMwNGI5OTkwMWI3NmMwOGI4Y2FhYzU3MjRiYzJmYThjNDBhYzU2MTgxOTQ1ZWI1YjljZGZjMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTQxZjhjMjQ3ZTRlOWIzYjVkZGNlZmE3MjNlMjAwNTVkZDUyNTVjZmJjY2NiNTJjMTcyY2UzOGI4MTA2MjkxNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_2bc98538cb264a8399848cb7d0e9c3a8",
+      "statement": "Claude and Codex directories default to ~/.claude/projects and ~/.codex, can be set in config.toml as claude_dir and codex_dir, and are overridden by BOSSMAN_CLAUDE_DIR and BOSSMAN_CODEX_DIR.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L18-L28",
+          "version": "repo-lines-v1:sha256:f888a89bd39ebb70e69cc908648cac779029b4a461dc40d1f90b2d26ce93a329:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2YWVkM2E1Yjc3NWEwYzkwMGU5ZjVmYjAwNTVkZjgzYTc3ZDMyNmE1Y2RhYTY2MDU0ZmYzZGE5OGNkYTFlMzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlZjI1NDFjYTQ4NDM1NzAxNjcyYjI4MDhlMGVlYmFhZWZiY2EwYjliOWI4YTAxZWJhNmNlOWI2NjA4ZmRhOTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFkYjg5YTkwYjRiZTg1ZGNmODljYjAzMDkxZGRjY2Q3MzEwOWMxNjMyNzA5ZTU0MGU4ZjEyY2ViNzYzZmZhY2YifQ"
+        },
+        {
+          "resource": "repo://internal/config/config.go#L36-L59",
+          "version": "repo-lines-v1:sha256:ae95fd46c31c129c6568d80ce5992386287d1874fb4ceb0cec11d7d26b956bb4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkNTEyYWVkMmY2NmVmMWY2NDEyOGYyMGJkNDNlOGZhMjM4MGIyYzZkNzgxNDFiMmE3ZjQxZjRlYTYyYWVmOTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhYzE4NjYxOTcwYzFjNjgwNWI5ODRjNGMwYjU0MGNhMTk2ZDczYWQ4NjE2ZDVhYTBjNDEyZTU0Mjk4ZDRhMWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a433de4a9546e6b0407c2a1ec6e6a914",
+      "statement": "A missing config.toml is not an error, and a leading ~/ in directory settings is expanded.",
+      "evidence": [
+        {
+          "resource": "repo://internal/config/config.go#L44-L54",
+          "version": "repo-lines-v1:sha256:06870dd2487e57fafe2b762fcff1ab26b629c8b45eae77b7c6822bef8f29525d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxZjRhNDQxYzQwZDg2YzBmZDQ4N2ZjZjlkYjM2MzQwMDBhN2M5YjlkODc3OWI3NjJmNGRiZjg5YmY2NGYxZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhZGIxYzMyMTgzOWZhYzI3MWM2YzkwZDA1MWRlOGY4ZTA1N2VkOTNhMTMzMDU4MzMzN2JiYmUxNjhhYTZkOTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA2ZGExZTE0OThkMzk0NjVlMTA2OWNlNGNkMWQzZGNlMTM3NmZmMmQyZjM4NTliNWNlYWE0ODczM2MwMWViMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3NmQyMzQ3MzE3OWVkNjlhNGQ4N2M3M2U4MjU3OWFkODAxYTllYWVkMjg5Yzk1YmNmNTg4NmJiOTcwNGFkMjIifQ"
+        },
+        {
+          "resource": "repo://internal/config/config.go#L69-L75",
+          "version": "repo-lines-v1:sha256:88efe84ec31329980bc3abb28cca1f54ab2228bb4156881a3a0bcd4e26ca2546:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTFmYTY4YjIxY2I5YmExMzU3ZGQ5ZGQxMGZhMjAxN2VmM2U0ODFiZWMyYWVmY2M5YzQ5ODQ4MDAxNDc4NzNmMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmY5MDE1OTliOTQyOWUwMjQ5M2M1NmJmZDk5MGQ2MjZhNzZkMWYxNGRjYWQyNjY0ZWU0YmU4ODdlZDY4Y2RiNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjgzNTNiMWEwMDY0N2U1OGVjNGViZjlmMzQ2OTRhMGZkNTA3NzgxOGFiYjY1ZTA0M2QwODc1NzMxZmRkNDVjZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0f0aea93af47d1ceb7311d8e3124fb50",
+      "statement": "prices --init writes the built-in table to the pricing file and refuses to overwrite an existing one.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/serve.go#L95-L120",
+          "version": "repo-lines-v1:sha256:bad871d6eb05e9c7e5d591f5b5d0f824fb7573b30becae2a431f5fa6ab0cae93:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmOGE0YjlmOTE1MzUyMDcwNjVjNWI0OTgwMWFhMjliOWYxYTNhYzU1MzY1OWM5NDUwNTg2ZTZlODk4ZjcxNDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0ZWZjNDk0MThkMjZkY2YxMjliMjJhNmFhMjExMDhjZWVjMzc2NzdhMzJkMDhlOWQ1ZmVlMzVkZGE2NmJiOWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyYzJlOGFmMGZlZDAwMjE0YTQ5MzcyNzlkYTNhYjViMDA2ZDMyZTFiYzQzMmQyYzA4ZjU0NmM3NzZmYzkzYjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyYWNkNDBmYmYxYjNkMzAxODZhZWU0NzA0YTE2Y2M3MzM2ZjgzOGEzY2RhNjk5MzkyMzhmMjE5MTVkZDRmODEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5da4004383db63b1c93450a8f8b647aa",
+      "statement": "make install installs bin/bossman to $(PREFIX)/bin, defaulting to ~/.local/bin.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L19-L22",
+          "version": "repo-lines-v1:sha256:308040726e7f529a9870151ff2c19e53b187aab4088217b893a4ca9225d6c967:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYjQyZjE2MWY0M2I0ODBjMWFmMzA4NWRjNjZhMjI0M2YzMGNmOTgxMjMzYTM4ZTI0MjM2MzFiZDI5ZTA3MmQxYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2M5NWUwNWI3NWU5ZTAwNjhhYTllZmM5YzNjMTI0ZDVkMWRhZDllZjg0YTQ5YzVlZDYwZjkxOTgwYjc4YjY0NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjEyZDQyZGNlOWRiNTUxMDJlYTA1Mzg2NTJhNjIwNzY0OWRiOWVlY2VhNWFhNjU5OGU0Mzc5Y2VhY2M2ZjJiYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://Makefile#L3-L4",
+          "version": "repo-lines-v1:sha256:054a8e3c0e99f689e684d091ad9f91a74f9a639ad32fbea60e9cbd92434f4eb0:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjk4YzE3MmY5NTYzMmNiYjIzNDc0NjY5ZWM5MzdlMDc5ZDBkZjNjMmYzYWFlZjhhODQzNzY3ZTYzZDhlNWY2NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDEyMjc4ODc0NDI2NWI0NWI3YmIyZmFkMzI5Yzc5OGI5ODQ4Mzk5NDBmMzY5YjU4N2RlNWI2OTA5OGY4NWNhMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDNkMjVkNDYwNmEwOTk0OTRkZDljY2E3MmU2MmJjMmZlMTEwMWY2ZmE2ZGY5MGZiNjE1M2E3YTAyMzJkMDk5OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWU5NDhiZDEzNTY5YjAxZTkwODEzMTg1YTE5NWExMWY1YWVkYzQ1ZTRiMDMwMjUzOTc1NmI2MmE0YmU0MGRiOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_23851b438db5e67339959754ac88e129",
+      "statement": "SQLite access uses the pure-Go modernc.org/sqlite driver.",
+      "evidence": [
+        {
+          "resource": "repo://go.mod#L1-L10",
+          "version": "repo-lines-v1:sha256:931c5481909f9045d3ba741d3e034415400b69693ea2bcbf0d16fc9a7ad62eac:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4NWQzYzk4YzRlMmQ2OWMzZDAyMzc2MDY3NDI3NTM5MGM0Y2U4MjM0Mjg2NDVlMDkzNzJiZDZiZDJkN2E4ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5NmE5YzA3MzgwZTBmNTVhOTc2YWQyNjQ4MThmZGJmOGMyMWE3OTM2MzhlZWFlZjMxNGI4ODc2MGU4NTkzY2UifQ"
+        },
+        {
+          "resource": "repo://internal/store/store.go#L17-L17",
+          "version": "repo-lines-v1:sha256:f05b48055b78db9e9e8993848d47169d7abd312df35886aa83d4014d37eb4009:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjA1YjQ4MDU1Yjc4ZGI5ZTllODk5Mzg0OGQ0NzE2OWQ3YWJkMzEyZGYzNTg4NmFhODNkNDAxNGQzN2ViNDAwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjA1YjQ4MDU1Yjc4ZGI5ZTllODk5Mzg0OGQ0NzE2OWQ3YWJkMzEyZGYzNTg4NmFhODNkNDAxNGQzN2ViNDAwOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTAxMTU1MzU5MDU2ZTg3MzUxNmMyNDQxNDIzNmY2Njk0M2MzNjc5ZjFkYjYxNzY5NDViM2RiZTc4MGIwMGViZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTMyODMwNzc5YmY5YWE2OTM5YThjNzE3MWUzZjA5NWIwMDNlMDYxODQxNDQ2NTU5MDhmMWYyOTUxODM5ZGRhNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_16396a0d464486881bb41436982f5936",
+      "statement": "The sync command's help tells users to run it regularly because Claude Code deletes sessions older than cleanupPeriodDays.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/sync.go#L16-L22",
+          "version": "repo-lines-v1:sha256:5cc231881a8fbd2bdc208b523ad8e8bb2d2aaf6c98cbbf45b8733ae1afce5f13:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk2NjcxYTY1YjI5NTI3ZTFjOWZiNjRjMDU4MThkZjE5ZjdhNTY0Njc0YTE1YzZjYWI2M2M3YzZjNjAzMTM3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjIzN2M0OTk2MDJkNzc2NGY5YzViMTA3NzVlYmZjNzdlYWMyNDY5NjRjNDE2ODJjYzA4MDBkYmUzOWFjOTQ0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2ZhOTZhNjhkZTkyYTllMGQzODZlMjExMzRjZTJlYmU4NDU3MGViMDE1ZGY5YjcwMGNhODMyMzFiM2RmNTEwMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGRkYjgyNTg3OWFhNTZlZmZkZmIzNWE2OGJmN2E1ZmVmNzM4NWU4MzNlOWI5ZWViNWEzOTQ5MzBjNGM2MmQxNCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "owcli/ff31f70",
+    "at": "2026-10-02T15:02:25.003Z"
+  }
+}

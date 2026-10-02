@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:65e452b13f7ba5f471b8903f7fbc0c563b85fb3d88150d96abf96108d7d4033f",
+  "claims": [
+    {
+      "id": "claim_dc10939d10708d3f8d6f0f43106ceb76",
+      "statement": "make build produces bin/bossman and make check runs vet and tests.",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L8-L17",
+          "version": "repo-lines-v1:sha256:647e3543f3d2aefc0b070eb10c6da21fa0777a83fcd1ac330552f1514548495f:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlkZmZhMDlhMTQ0YTcyNzk5YTZiZDQ5NzVjNzA1YWIwOTI2OGU2OWE5NzFhY2Q2MzBlZjI1MTNhMzQ0YzQwYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ZjRlNWZmZDNhNjE2OTkzMTYyNjg2ZDhmMmJhNmFmNGM2ODEyMjkyM2U2OGY0NGZhZTI4YmUyYTYxZWM3YzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlOTQ4YmQxMzU2OWIwMWU5MDgxMzE4NWExOTVhMTFmNWFlZGM0NWU0YjAzMDI1Mzk3NTZiNjJhNGJlNDBkYjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUyMjk1YmVmNmJhOGI1ZjAyZmQ3NThhY2ExNGZlZDU0OGVhY2QyZWI5Nzk2ZWMwNzU3NzMyNDlhMWU2OGE4YjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_32c76dc5ff1c834b5a47e9c7adcddf3e",
+      "statement": "The root command describes bossman as archiving, indexing, and analyzing Claude Code and Codex sessions and suggests starting with bossman sync.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/cli.go#L36-L49",
+          "version": "repo-lines-v1:sha256:f9180b60d3a42011f5c27b5ce61db8cda71f58a262f136dd1e1ad6ec7ea81621:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyMzM4ODhkMDU2MmYwY2QyNjJjODg5YmE3NDYwOThkMDcyOWE5OWQ3YmNiMDA4NWNkZmZkMmY4ZDI5NWM4ZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3MDI4N2Y2YmIyZDY3YThhZGM2ZmE3MmUzNDY1MTU3YTQ0MjBjMzE5OWE0MDk1YjIzMzg1YmM2NGY4ZDJkZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1YTlmZWI5OTA4ZWYxZDg4MjVlYjU0YzcxZDJkZWJmZjkyZmJjNjRiNzA3YjRkNjgyZWM2ZGJkNmY1NDM2YWYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_cebaa9054a66686f52c25417558f3089",
+      "statement": "serve defaults to 127.0.0.1:7788.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/serve.go#L34-L34",
+          "version": "repo-lines-v1:sha256:51b71bed79d4813cf58447a6c126188352faca84b7c41f81c75e95c30964c98e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTFiNzFiZWQ3OWQ0ODEzY2Y1ODQ0N2E2YzEyNjE4ODM1MmZhY2E4NGI3YzQxZjgxYzc1ZTk1YzMwOTY0Yzk4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTFiNzFiZWQ3OWQ0ODEzY2Y1ODQ0N2E2YzEyNjE4ODM1MmZhY2E4NGI3YzQxZjgxYzc1ZTk1YzMwOTY0Yzk4ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmRmNjliY2U1YWU1OTM0OTA5ZjlkM2NjYjJmNzRmN2M1NTExYTliZjBhNGU5ZmM1NjU2N2ZmZjQ4MjFjZGVjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzRjNWY2ODYwNGJhMzlhMTg5OGIxNmZmMTQ4MDUyMDFjOWIwNjUxMTJhMGEyMmMwY2QyYjcwNjc5YTZlYTUzMiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_1eb75e7ac129fb512d5c2e2a5288834b",
+      "statement": "Parsing for indexing reads the archive directories, not the agents' live directories.",
+      "evidence": [
+        {
+          "resource": "repo://internal/catalog/catalog.go#L159-L161",
+          "version": "repo-lines-v1:sha256:3cf415f77a8206b9a51ee0fe23b2ff198cdd0bbb16a1269128c35085c42cbe16:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjViZDMzZjY4ZDY4YjljYjQyYjNjYzEyMzZkZjRlODBhNDJiYjA2Njg5NGRlZDhhZmQ5ZDA3OWEwYmJmNDc3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjM4ZDI1YTQxZWVlZWIxYTNlZTRmYThlNTA0NWU5NTY2ZGU1ZDAyNDU0N2ZmZmJhZDdhZTI2ZjAyODI2ZDdmMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmRhMmVlNGM4MzAwNjhhMGM1NmQ2MDlhODc3NzMwZGVmNDkxNWE5M2MxNWI2MjAwMmM1NDJjNDc2ODIxZGQyNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGQ3YmE1ZmI0OTVhN2MxN2FlNjc4ZDFiMTk1MzYxNTFlZjFlOTZkN2U0NWM2MjRlZjRhMmZkZjdhMzJlZDVhZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_8f3abaa9c7b1e0c3a78ab45ec82d9af5",
+      "statement": "The design note docs/design.md records the log formats and metric reasoning.",
+      "evidence": [
+        {
+          "resource": "repo://docs/design.md#L1-L12",
+          "version": "repo-lines-v1:sha256:26adedd3eafd3545e291d8df9a291a4baa470b39739a9aa8d7515f7482ac1c47:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFmNTIwNmQ4ZjY3NjYwNjRhMWRhYTgxNzNmODdlMmQ5ZjczMmU4NmIwNjY5ZDI1NGYxYTYzZTBkMjRmY2I5NTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3YzA2YzU2MWQ1YzMyNzM0MzY4NTI2OGE0NmIzMzkxZjM5OThlZWU4OTBkMmJlNTFmMGQyMWNjNGE1M2FlNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiYzVmN2E4YWMyYmI2YTYzZjc5MzNiN2I4MThlNzA3YjU3ODc0YjJiYTBjMjM5ZGUxOGJjN2M2N2I3ZTk2OGEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "owcli/ff31f70",
+    "at": "2026-10-02T15:04:02.525Z"
+  }
+}
