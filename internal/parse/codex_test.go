@@ -2,6 +2,7 @@ package parse
 
 import (
 	"path/filepath"
+	"strconv"
 	"testing"
 	"time"
 )
@@ -186,5 +187,38 @@ func TestCodexFailed(t *testing.T) {
 		if f != want[0] || a != want[1] {
 			t.Errorf("codexFailed(%q) = %v, %v; want %v", out, f, a, want)
 		}
+	}
+}
+
+// Codex Desktop's import sync appends a new batch when the Claude session
+// grows. Work done in Codex between batches must still count.
+func TestParseCodexImportResync(t *testing.T) {
+	rollout := `
+{"timestamp":"2026-09-25T21:08:19.344Z","type":"session_meta","payload":{"id":"` + codexID + `","cwd":"/work/cat"}}
+{"timestamp":"2026-09-25T21:08:19.349Z","type":"event_msg","payload":{"type":"user_message","message":"Copied prompt 1"}}
+{"timestamp":"2026-09-25T21:08:19.350Z","type":"event_msg","payload":{"type":"task_complete","duration_ms":90000}}
+{"timestamp":"2026-09-25T21:08:19.355Z","type":"event_msg","payload":{"type":"token_count","info":{"total_token_usage":{"input_tokens":0,"output_tokens":0,"total_tokens":37942}}}}
+{"timestamp":"2026-09-25T22:00:00.000Z","type":"turn_context","payload":{"model":"gpt-5.5"}}
+{"timestamp":"2026-09-25T22:00:00.000Z","type":"event_msg","payload":{"type":"user_message","message":"Typed in Codex"}}
+{"timestamp":"2026-09-25T22:00:30.000Z","type":"event_msg","payload":{"type":"token_count","info":{"total_token_usage":{"input_tokens":1000,"output_tokens":100,"total_tokens":1100}}}}
+{"timestamp":"2026-09-25T22:00:31.000Z","type":"event_msg","payload":{"type":"task_complete","duration_ms":31000}}
+{"timestamp":"2026-09-26T21:08:19.700Z","type":"event_msg","payload":{"type":"user_message","message":"Copied prompt 2"}}
+{"timestamp":"2026-09-26T21:08:19.787Z","type":"event_msg","payload":{"type":"token_count","info":{"total_token_usage":{"input_tokens":0,"output_tokens":0,"total_tokens":57472}}}}
+`
+	// The imports file records only the latest sync.
+	imports := `{"records":[{"source_path":"/home/u/.claude/projects/-work-cat/7f9aa3a6-4660-44fb-a703-27e5f74a1be0.jsonl","imported_thread_id":"` + codexID + `","imported_at":` + strconv.FormatInt(time.Date(2026, 10, 2, 9, 8, 18, 0, time.UTC).Unix(), 10) + `}]}`
+	c, meta := codexFixture(t, rollout, map[string]string{"external_agent_session_imports.json": imports})
+	s, _, err := ParseCodex(c, meta, 5*time.Minute, false)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if s.Prompts != 1 || s.FirstPrompt != "Typed in Codex" {
+		t.Errorf("prompts = %d (%q), want only the one typed between syncs", s.Prompts, s.FirstPrompt)
+	}
+	if s.AgentSeconds != 31 {
+		t.Errorf("agent seconds = %v, want 31", s.AgentSeconds)
+	}
+	if u := s.Models["gpt-5.5"]; u == nil || u.Input != 1000 || u.Output != 100 {
+		t.Errorf("usage = %+v", s.Models)
 	}
 }

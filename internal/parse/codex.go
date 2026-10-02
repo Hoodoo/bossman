@@ -1,6 +1,7 @@
 package parse
 
 import (
+	"bytes"
 	"encoding/json"
 	"os"
 	"path/filepath"
@@ -95,9 +96,48 @@ func LoadCodexMeta(root string) CodexMeta {
 	return m
 }
 
-// importGrace is how long after an import's recorded time its copied
-// lines may still be stamped.
-const importGrace = 2 * time.Minute
+// Codex Desktop's external-agent import sync (config.toml [desktop]
+// external-agent-import-sync-enabled) copies Claude sessions into Codex
+// threads on its own, roughly daily, and appends to a thread when the
+// Claude session has grown. Each sync writes its batch of copied lines
+// within milliseconds and ends it with a token_count whose total is set
+// but whose components are all zero. Lines stamped up to importBatch
+// before such a marker are copies. A thread without markers falls back to
+// everything up to importBatch after the recorded import time.
+const importBatch = 2 * time.Minute
+
+// importMarkers returns the end times of the import batches in a rollout.
+func importMarkers(path string) ([]time.Time, error) {
+	var marks []time.Time
+	err := eachLine(path, func(raw []byte) {
+		if !bytes.Contains(raw, []byte(`"token_count"`)) {
+			return
+		}
+		var l codexLine
+		var pl codexPayload
+		if json.Unmarshal(raw, &l) != nil || json.Unmarshal(l.Payload, &pl) != nil {
+			return
+		}
+		if pl.Type != "token_count" || pl.Info == nil || pl.Info.Total == nil {
+			return
+		}
+		t := pl.Info.Total
+		if t.Total > 0 && t.Input == 0 && t.Cached == 0 && t.CacheWrite == 0 && t.Output == 0 {
+			marks = append(marks, parseTime(l.Timestamp))
+		}
+	})
+	return marks, err
+}
+
+// copied reports whether a line stamped at belongs to an import batch.
+func (p *codexParser) copied(at time.Time) bool {
+	for _, m := range p.importEnds {
+		if !at.After(m) && at.After(m.Add(-importBatch)) {
+			return true
+		}
+	}
+	return false
+}
 
 type codexLine struct {
 	Timestamp string          `json:"timestamp"`
@@ -168,7 +208,7 @@ type codexParser struct {
 	// s is the session being counted: real, or scratch while reading
 	// lines copied in by an import, which must not count twice.
 	s, real, scratch *model.Session
-	cutoff           time.Time
+	importEnds       []time.Time
 	importedPrompt   string
 	clock            clock
 	idle             time.Duration
@@ -206,8 +246,15 @@ func ParseCodex(c Candidate, meta CodexMeta, idle time.Duration, events bool) (*
 	p.s = p.real
 	imp, imported := meta.Imports[c.ID]
 	if imported {
-		p.cutoff = imp.At.Add(importGrace)
 		p.real.ImportedFrom = imp.From
+		marks, err := importMarkers(c.Main)
+		if err != nil {
+			return nil, nil, err
+		}
+		if len(marks) == 0 {
+			marks = []time.Time{imp.At.Add(importBatch)}
+		}
+		p.importEnds = marks
 	}
 	if err := eachLine(c.Main, p.line); err != nil {
 		return nil, nil, err
@@ -236,7 +283,7 @@ func (p *codexParser) line(raw []byte) {
 	}
 	at := parseTime(l.Timestamp)
 	p.s = p.real
-	if !p.cutoff.IsZero() && !at.After(p.cutoff) && l.Type != "session_meta" {
+	if l.Type != "session_meta" && p.copied(at) {
 		p.s = p.scratch
 	} else {
 		p.clock.add(at)

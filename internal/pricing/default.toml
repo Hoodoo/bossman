@@ -7,12 +7,8 @@
 #
 # Claude Code records its own cost in most sessions; bossman prefers that
 # and uses this table only when it is missing. Codex records no cost, so
-# its sessions stay unpriced until you add its models here, e.g.
-#
-#   [models."gpt-5.5"]
-#   input = 0.0
-#   output = 0.0
-#   cache_read = 0.0
+# its sessions are always priced from this table. When Codex runs on a
+# ChatGPT plan, that is the API-equivalent cost, not what you were billed.
 #
 # Run `bossman prices --init` to copy this file into your bossman home and
 # edit it there.
@@ -76,3 +72,38 @@ cache_read = 0.30
 input = 1.0
 output = 5.0
 cache_read = 0.10
+
+# OpenAI list prices, standard tier, short context (<= 272K input tokens),
+# from https://developers.openai.com/api/docs/pricing (checked 2026-10-02).
+# Codex sessions stay below 272K: their context window is about 258K.
+# OpenAI does not charge extra for cache writes, so they cost input.
+
+[models."gpt-5.6-sol"]
+input = 4.0
+output = 20.0
+cache_read = 0.40
+cache_write_5m = 4.0
+
+[models."gpt-5.6-terra"]
+input = 2.0
+output = 12.0
+cache_read = 0.20
+cache_write_5m = 2.0
+
+[models."gpt-5.6-luna"]
+input = 0.20
+output = 1.20
+cache_read = 0.02
+cache_write_5m = 0.20
+
+[models."gpt-5.5"]
+input = 5.0
+output = 30.0
+cache_read = 0.50
+cache_write_5m = 5.0
+
+[models."gpt-5.4"]
+input = 2.50
+output = 15.0
+cache_read = 0.25
+cache_write_5m = 2.50

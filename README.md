@@ -59,7 +59,7 @@ or leave `bossman serve --sync-every 30m` running.
 
 | Metric | Meaning |
 | --- | --- |
-| cost | Claude Code's own recorded cost when present; otherwise tokens × the pricing table. Codex records no cost; add its models with `bossman prices --init` |
+| cost | Claude Code's own recorded cost when present; otherwise tokens × the pricing table (Claude and OpenAI list prices; for Codex on a ChatGPT plan this is the API-equivalent cost). `bossman prices --init` lets you edit the rates |
 | tokens | input, cache write (5m/1h), cache read, output (incl. reasoning), per model |
 | prompts | messages the human typed (slash commands count; injected context does not) |
 | interventions | follow-up prompts + interrupts + rejected tool calls |
@@ -70,8 +70,10 @@ or leave `bossman serve --sync-every 30m` running.
 | concluded | the session ended with the `session-catalogue-close` marker |
 | summaries | what the agents wrote: Claude titles, recaps and compaction summaries, Codex thread names, the catalogue away-summary |
 
-Codex threads imported from Claude sessions are linked to their source,
-and only activity after the import counts.
+Codex Desktop can copy Claude Code sessions into Codex threads on its own
+(`external-agent-import-sync-enabled` under `[desktop]` in
+`~/.codex/config.toml`). bossman marks those threads as "Claude copy",
+links them to their source, and counts only work done in Codex.
 
 See [docs/design.md](docs/design.md) for the log formats and the reasoning
 behind each metric.

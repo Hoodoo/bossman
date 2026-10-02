@@ -300,7 +300,7 @@ async function renderSessions(params) {
     const badges = [];
     if (!r.in_source) badges.push(h("span", { class: "chip", title: "The agent deleted it; bossman's archive still has it" }, "archived"));
     if (r.concluded) badges.push(h("span", { class: "chip", title: "Ended with the catalogue marker" }, "concluded"));
-    if (r.imported_from) badges.push(h("span", { class: "chip", title: "Imported from " + r.imported_from + "; only later activity is counted" }, "import"));
+    if (r.imported_from) badges.push(h("span", { class: "chip", title: copyNote(r.imported_from) }, "Claude copy"));
     const errRate = r.tool_calls ? r.tool_errors / r.tool_calls : 0;
     return h("tr", { class: "clickable", onclick: () => { location.hash = "#/s/" + encodeURIComponent(r.key); } },
       h("td", { class: "num secondary" }, fmt.when(r.started_at)),
@@ -368,7 +368,7 @@ async function renderDetail(key) {
     const tiles = h("div", { class: "tiles" },
       tile("Cost", fmt.money(d.cost_usd, d.cost_source),
         d.cost_source === "agent" ? `recorded by agent · table ${fmt.money(d.table_cost_usd)}` :
-        d.cost_source === "none" ? "model not in pricing table" : "from pricing table"),
+        d.cost_source === "none" ? (fmt.tokens(d) ? "model not in pricing table" : "no usage recorded") : "from pricing table"),
       tile("Tokens", fmt.count(fmt.tokens(d)), `${fmt.count(d.output)} output · ${d.requests} requests`),
       tile("Active time", fmt.dur(d.active_s), `${fmt.dur(d.wall_s)} wall · ${fmt.dur(d.agent_s)} agent working`),
       tile("Human", `${d.prompts} prompts`, `${d.interventions} interventions (${d.interrupts} interrupts, ${d.rejections} rejections)`),
@@ -385,7 +385,8 @@ async function renderDetail(key) {
         ["Models", d.models.split(",").join(", ")],
         ["Started", fmt.when(d.started_at)],
         ["Ended", fmt.when(d.ended_at)],
-        ["Imported from", d.imported_from],
+        ["Copy of", d.imported_from ? h("span", {}, h("a", { href: "#/s/" + encodeURIComponent(d.imported_from) }, d.imported_from),
+          h("div", { class: "muted" }, copyNote(d.imported_from))) : null],
         ["Archived as", d.path],
       ].filter(([, v]) => v).flatMap(([k, v]) => [h("dt", {}, k), h("dd", {}, v)]),
     );
@@ -501,6 +502,12 @@ async function renderDetail(key) {
   draw();
 }
 
+// copyNote explains Codex threads that Codex Desktop copied from Claude.
+function copyNote(from) {
+  return `Codex Desktop copied this from ${from} (external-agent-import-sync-enabled in ` +
+    "~/.codex/config.toml). Only work done in Codex counts here.";
+}
+
 function safeLink(url, label) {
   let ok = false;
   try { ok = ["http:", "https:", "file:", "mailto:"].includes(new URL(url).protocol); } catch { /* invalid */ }
@@ -549,7 +556,8 @@ async function renderStats(params) {
 
   const unpriced = total.unpriced;
   const tiles = h("div", { class: "tiles" },
-    tile("Cost", fmt.money(total.cost_usd), unpriced ? `${unpriced} sessions unpriced` : "all sessions priced"),
+    tile("Cost", unpriced && unpriced === total.sessions ? "—" : fmt.money(total.cost_usd),
+      unpriced ? `${unpriced} of ${total.sessions} sessions unpriced` : "all sessions priced"),
     tile("Sessions", total.sessions, `${total.prompts} prompts`),
     tile("Tokens", fmt.count(total.input + total.cache_write + total.cache_read + total.output),
       `${fmt.pct(total.cache_read, total.input + total.cache_write + total.cache_read)} of input from cache`),
@@ -568,7 +576,7 @@ async function renderStats(params) {
   const chartCard = h("div", { class: "card" },
     h("div", { class: "chart-head" }, h("h2", {}, metrics[metric].label + " per day"), metricSeg),
     metric === "cost" && unpriced ? h("p", { class: "muted", style: "margin:0 0 6px" },
-      "Codex records no cost; add its models with `bossman prices --init` to include it.") : null,
+      `${unpriced} sessions use models missing from the pricing table and are left out; see \`bossman prices\`.`) : null,
     dailyChart(daily, metrics[metric], since));
 
   const groupSeg = h("div", { class: "seg", role: "group", "aria-label": "Group by" },

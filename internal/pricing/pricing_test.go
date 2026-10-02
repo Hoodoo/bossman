@@ -23,8 +23,11 @@ func TestDefaultTable(t *testing.T) {
 	if _, ok := tab.Models["claude-sonnet-5-5"]; !ok {
 		t.Error("missing claude-sonnet-5-5")
 	}
-	if _, ok := tab.Lookup("gpt-5.5"); ok {
-		t.Error("Codex models are unpriced by default")
+	if r, ok := tab.Lookup("gpt-5.6-sol"); !ok || r.Input != 4 || r.CacheRead != 0.4 || r.Output != 20 {
+		t.Errorf("gpt-5.6-sol = %+v, %v", r, ok)
+	}
+	if _, ok := tab.Lookup("gpt-4o"); ok {
+		t.Error("unlisted OpenAI models must stay unpriced")
 	}
 }
 
@@ -51,8 +54,8 @@ func TestSessionCostSources(t *testing.T) {
 		source string
 	}{
 		{"table", model.Session{Models: map[string]*model.Usage{"claude-opus-5-5": priced}}, 4, SourceTable},
-		{"partial", model.Session{Models: map[string]*model.Usage{"claude-opus-5-5": priced, "gpt-5.5": unknown}}, 4, SourcePartial},
-		{"none", model.Session{Models: map[string]*model.Usage{"gpt-5.5": unknown}}, 0, SourceNone},
+		{"partial", model.Session{Models: map[string]*model.Usage{"claude-opus-5-5": priced, "gpt-4o": unknown}}, 4, SourcePartial},
+		{"none", model.Session{Models: map[string]*model.Usage{"gpt-4o": unknown}}, 0, SourceNone},
 		{"agent", model.Session{Models: map[string]*model.Usage{"claude-opus-5-5": priced}, ReportedCostUSD: &reported}, 9, SourceAgent},
 	} {
 		got, src, _ := tab.SessionCost(&tc.s)

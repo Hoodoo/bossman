@@ -101,13 +101,22 @@ is `{timestamp, type, payload}`.
 - `~/.codex/session_index.jsonl` appends `{id, thread_name}` on every
   rename; the last wins.
 - `~/.codex/external_agent_session_imports.json` lists Codex threads
-  imported from Claude Code sessions. Their rollouts start with a copy of
-  the Claude conversation, all stamped at import time. bossman records
-  `imported_from` and ignores lines up to two minutes after `imported_at`.
-  Aggregates also skip imports with no later activity, so the same work is
-  not counted twice.
-- Codex records no cost. Its models are absent from the default pricing
-  table, so Codex sessions show as unpriced until the user adds rates.
+  copied from Claude Code sessions. Codex Desktop makes these copies itself
+  when `external-agent-import-sync-enabled = true` (under `[desktop]` in
+  `~/.codex/config.toml`): roughly daily, it copies new Claude sessions and
+  appends to a thread when its Claude session has grown. The file records
+  only the latest sync per thread. Each sync writes its batch within
+  milliseconds and ends it with a `token_count` whose total is set but
+  whose components are all zero. bossman records `imported_from` and
+  ignores lines stamped up to two minutes before each such marker (or, with
+  no marker, up to two minutes after `imported_at`), so work typed in Codex
+  between syncs still counts. Aggregates also skip copies with no activity
+  of their own, so the same work is not counted twice.
+- Codex records no cost, so its sessions are priced from the table, which
+  includes OpenAI list prices for the gpt-5.4 to gpt-5.6 models Codex uses
+  (short-context rates; Codex's window is about 258K tokens, under the
+  272K long-context threshold). On a ChatGPT plan that is an API-equivalent
+  figure, not a bill.
 
 ## Metrics
 

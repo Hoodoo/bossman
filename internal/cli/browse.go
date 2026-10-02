@@ -86,14 +86,14 @@ func (a *app) lsCmd() *cobra.Command {
 				flags += " [concluded]"
 			}
 			if r.ImportedFrom != "" {
-				flags += " [import of " + r.ImportedFrom + "]"
+				flags += " [Claude copy]"
 			}
 			if len(r.Tags) > 0 {
 				flags += " #" + strings.Join(r.Tags, " #")
 			}
 			fmt.Fprintf(tw, "%s\t%s\t%s\t%s\t%s\t%s\t%d\t%s\t%s\t%s%s\n",
 				r.ID[:min(width, len(r.ID))], localTime(r.StartedAt), r.Agent, clip(shortPath(r.Project), 28),
-				costLabel(r.CostUSD, r.CostSource), count(r.Input+r.CacheWrite+r.CacheRead+r.Output),
+				costLabel(r.CostUSD, r.CostSource, r.Input+r.CacheWrite+r.CacheRead+r.Output), count(r.Input+r.CacheWrite+r.CacheRead+r.Output),
 				r.Prompts, pct(int64(r.ToolErrors), int64(r.ToolCalls)), dur(r.ActiveS),
 				clip(r.Name(), 60), flags)
 		}
@@ -130,12 +130,15 @@ func sortedKeys() []string {
 	return k
 }
 
-// costLabel marks costs that are incomplete.
-func costLabel(v float64, source string) string {
-	switch source {
-	case "none":
+// costLabel marks costs that are incomplete: "?" for usage that could
+// not be priced, "-" when there was no usage at all.
+func costLabel(v float64, source string, tokens int64) string {
+	switch {
+	case source == "none" && tokens == 0:
+		return "-"
+	case source == "none":
 		return "?"
-	case "partial":
+	case source == "partial":
 		return money(v) + "+"
 	}
 	return money(v)
@@ -204,7 +207,7 @@ func (a *app) printDetail(d *store.Detail) {
 	kv("started", localTime(d.StartedAt))
 	kv("ended", localTime(d.EndedAt))
 	kv("time", fmt.Sprintf("%s wall, %s active, %s agent working", dur(d.WallS), dur(d.ActiveS), dur(d.AgentS)))
-	kv("cost", fmt.Sprintf("%s (%s)", costLabel(d.CostUSD, d.CostSource), costSourceText(d)))
+	kv("cost", fmt.Sprintf("%s (%s)", costLabel(d.CostUSD, d.CostSource, d.Input+d.CacheWrite+d.CacheRead+d.Output), costSourceText(d)))
 	kv("tokens", fmt.Sprintf("%s input, %s cache write, %s cache read, %s output (%s reasoning), %d requests",
 		count(d.Input), count(d.CacheWrite), count(d.CacheRead), count(d.Output), count(d.Reasoning), d.Requests))
 	kv("human", fmt.Sprintf("%d prompts, %d interrupts, %d rejected tool calls → %d interventions",
@@ -220,7 +223,7 @@ func (a *app) printDetail(d *store.Detail) {
 	}
 	kv("state", state)
 	if d.ImportedFrom != "" {
-		kv("imported from", d.ImportedFrom+" (only activity after the import is counted)")
+		kv("copy of", d.ImportedFrom+" (made by Codex Desktop's external-agent import sync; only work done in Codex counts)")
 	}
 	kv("archived as", d.Path)
 	if len(d.Tags) > 0 {
@@ -292,6 +295,9 @@ func costSourceText(d *store.Detail) string {
 		return "from the pricing table"
 	case "partial":
 		return "some models are missing from the pricing table"
+	}
+	if d.Input+d.CacheWrite+d.CacheRead+d.Output == 0 {
+		return "no usage recorded"
 	}
 	return "no model in the pricing table; see `bossman prices`"
 }
