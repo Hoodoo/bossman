@@ -1,0 +1,113 @@
+package web
+
+import (
+	"encoding/json"
+	"net/http"
+	"net/http/httptest"
+	"os"
+	"path/filepath"
+	"strings"
+	"testing"
+
+	"bossman/internal/catalog"
+)
+
+func server(t *testing.T) *Server {
+	t.Helper()
+	dir := t.TempDir()
+	claude := filepath.Join(dir, "claude")
+	t.Setenv("BOSSMAN_CLAUDE_DIR", claude)
+	t.Setenv("BOSSMAN_CODEX_DIR", filepath.Join(dir, "codex"))
+	p := filepath.Join(claude, "-w", "s1.jsonl")
+	if err := os.MkdirAll(filepath.Dir(p), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(p, []byte(`{"type":"user","timestamp":"2026-10-01T10:00:00.000Z","message":{"role":"user","content":"hi"}}`+"\n"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	c, err := catalog.Open(filepath.Join(dir, "home"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Cleanup(func() { c.Close() })
+	s := New(c, "127.0.0.1")
+	if _, err := s.Sync(false); err != nil {
+		t.Fatal(err)
+	}
+	return s
+}
+
+func do(s *Server, method, path, body string, hdr map[string]string) *httptest.ResponseRecorder {
+	req := httptest.NewRequest(method, "http://127.0.0.1:7788"+path, strings.NewReader(body))
+	for k, v := range hdr {
+		req.Header.Set(k, v)
+	}
+	w := httptest.NewRecorder()
+	s.ServeHTTP(w, req)
+	return w
+}
+
+var jsonHdr = map[string]string{"Content-Type": "application/json"}
+
+func TestAPI(t *testing.T) {
+	s := server(t)
+	if w := do(s, "GET", "/", "", nil); w.Code != 200 || !strings.Contains(w.Body.String(), "bossman") {
+		t.Errorf("index: %d", w.Code)
+	}
+	w := do(s, "GET", "/api/sessions", "", nil)
+	var rows []map[string]any
+	if err := json.Unmarshal(w.Body.Bytes(), &rows); err != nil || len(rows) != 1 {
+		t.Fatalf("sessions: %d %s", w.Code, w.Body)
+	}
+	w = do(s, "PUT", "/api/sessions/claude:s1/meta", `{"display_name":"Named","notes":"n"}`, jsonHdr)
+	if w.Code != 200 || !strings.Contains(w.Body.String(), `"display_name":"Named"`) {
+		t.Errorf("meta: %d %s", w.Code, w.Body)
+	}
+	w = do(s, "PUT", "/api/sessions/claude:s1/tags", `{"tags":["a","b"]}`, jsonHdr)
+	if w.Code != 200 || !strings.Contains(w.Body.String(), `"tags":["a","b"]`) {
+		t.Errorf("tags: %d %s", w.Code, w.Body)
+	}
+	if w = do(s, "PUT", "/api/sessions/claude:s1/tags", `{"tags":["a b"]}`, jsonHdr); w.Code != 400 {
+		t.Errorf("bad tag: %d", w.Code)
+	}
+	if w = do(s, "POST", "/api/sessions/claude:s1/links", `{"url":"https://x.test/1"}`, jsonHdr); w.Code != 200 {
+		t.Errorf("link: %d %s", w.Code, w.Body)
+	}
+	if w = do(s, "POST", "/api/sessions/claude:s1/links", `{"url":"javascript:alert(1)"}`, jsonHdr); w.Code != 400 {
+		t.Errorf("javascript link: %d", w.Code)
+	}
+	if w = do(s, "DELETE", "/api/sessions/claude:s1/links/1", "", jsonHdr); w.Code != 200 || strings.Contains(w.Body.String(), "x.test") {
+		t.Errorf("unlink: %d %s", w.Code, w.Body)
+	}
+	if w = do(s, "PUT", "/api/sessions/claude:nope/meta", `{}`, jsonHdr); w.Code != 404 {
+		t.Errorf("unknown session: %d", w.Code)
+	}
+	if w = do(s, "GET", "/api/sessions/claude:s1/transcript", "", nil); w.Code != 200 {
+		t.Errorf("transcript: %d", w.Code)
+	}
+	for _, by := range []string{"day", "project", "model", "tool"} {
+		if w = do(s, "GET", "/api/stats?by="+by, "", nil); w.Code != 200 {
+			t.Errorf("stats by %s: %d", by, w.Code)
+		}
+	}
+	if w = do(s, "GET", "/api/stats?by=nope", "", nil); w.Code != 400 {
+		t.Errorf("bad grouping: %d", w.Code)
+	}
+}
+
+func TestRequestGuards(t *testing.T) {
+	s := server(t)
+	// A cross-site form post cannot set a JSON content type.
+	if w := do(s, "PUT", "/api/sessions/claude:s1/meta", `display_name=x`, map[string]string{"Content-Type": "application/x-www-form-urlencoded"}); w.Code != 415 {
+		t.Errorf("form post: %d", w.Code)
+	}
+	if w := do(s, "PUT", "/api/sessions/claude:s1/meta", `{}`, map[string]string{"Content-Type": "application/json", "Origin": "https://evil.test"}); w.Code != 403 {
+		t.Errorf("foreign origin: %d", w.Code)
+	}
+	req := httptest.NewRequest("GET", "http://evil.test/api/sessions", nil)
+	w := httptest.NewRecorder()
+	s.ServeHTTP(w, req)
+	if w.Code != http.StatusForbidden {
+		t.Errorf("rebinding host: %d", w.Code)
+	}
+}
