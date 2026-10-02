@@ -5,7 +5,7 @@ description: Every bossman command and flag, how sessions are referenced, the fi
 tags: [cli, reference, commands]
 verified:
   - by: owcli/ff31f70
-    at: "2026-10-02T15:03:09.622Z"
+    at: "2026-10-02T15:18:23.045Z"
 sources:
   - id: openwiki-source-40f02473f25984711e4a2563
     resource: repo://internal/cli/browse.go
@@ -19,7 +19,7 @@ sources:
     resource: repo://internal/store/query.go
   - id: openwiki-source-4a81fcd95533ed8ba5a77739
     resource: repo://internal/store/store.go
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:04:05.474Z" }
+generated: { by: "owcli/ff31f70", at: "2026-10-02T15:18:40.390Z" }
 ---
 
 # CLI Reference
@@ -76,7 +76,7 @@ See [Archive and Index](../architecture/archive-and-index.md) for what these do 
 
 `ls` lists sessions. Its own flags are `--sort` (`started` by default; also `ended`, `cost`, `wall`, `active`, `prompts`, `interventions`, `tools`, `errors`, `tokens`, `output`, `project`, `name`), `--asc`, and `-n/--limit` (30 by default; 0 means all).
 
-Each row shows the start time, agent, project, cost, tokens, prompts, error rate, active time, and name. The name is the display name, else the agent's title, else the first prompt. Flags such as `[archived]`, `[concluded]`, and `[import of …]` and the tags follow the name. Cost is `?` when unpriced and ends in `+` when partially priced.
+Each row shows the start time, agent, project, cost, tokens, prompts, error rate, active time, and name. The name is the display name, else the agent's title, else the first prompt. Flags such as `[archived]`, `[concluded]`, and `[Claude copy]` (a Codex thread that Codex Desktop copied from a Claude session) and the tags follow the name. Cost is `-` when the session has no usage, `?` when its usage could not be priced, and ends in `+` when partially priced. `show` names the source of a copy on its `copy of` line.
 
 ### show
 

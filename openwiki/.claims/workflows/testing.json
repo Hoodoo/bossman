@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:2ac474af2dc21fe5293b675b66e72ec3a4297e3c66a25229fe64fe33e117b51a",
+  "pageVersion": "sha256:8d4d54179d004f62c575f8e0b9daa9aa4bf9bfc8bef2c4e3fe0ead6c81eadeeb",
   "claims": [
     {
       "id": "claim_991a8b606573e657563167d1581f63b3",
@@ -41,11 +41,11 @@
       "statement": "The Codex legacy fixture contains a repeated token_count total and a model switch, and the test checks per-model token deltas.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex_test.go#L33-L41",
+          "resource": "repo://internal/parse/codex_test.go#L34-L42",
           "version": "repo-lines-v1:sha256:2d4d2e1a2d163d0ec96a23df36c49105d755de5eb3c1096165c315623f1d3694:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmZhYjFkN2I5YjQ4ZjNhMjkxYWJlMDNhODY2N2Q4ODI3NjlmYjMyZGVlZDM2NWQ3ZmI2ZGRhZTU4MWNjNzcwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTY2Y2NhOGEwZmJhMzgwNjg3NDUwOThjYmRmODJiMDQ4OTFiM2U1ZmFiNzg5ZTNjOTFkYzFiMjZkNTAxYTE5YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjQ1ZjY3Yzk4ZWYyNDUzM2NmOTM0MjFiMjgxNDVjZWY0NDBjYjQzYTdkMTg3MDNjYjQ3ODUzNmMwNzVhNjNjNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjA0Y2JjZjk4YzU5MzI1MjMzZmE0YWU2ZDM0ZmIzYTAxNjU1YTFkMDgwMWQ4ZDE3M2VhOTViNTExN2QyMTQwZSJ9"
         },
         {
-          "resource": "repo://internal/parse/codex_test.go#L84-L105",
+          "resource": "repo://internal/parse/codex_test.go#L85-L106",
           "version": "repo-lines-v1:sha256:7fa61d4ad6137eb45b510a9211ccd0c64ec1221f25c2bca9aceee46fffb32bce:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1YTc2Y2VhNmExNThlZGIxNjNmODRjZTRkM2VlZWZkZTI4YWFkYjlhZTRhOTI0OWZjMTY1Mzk1N2U3NDhjODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhhYzc5NTAyMTY3NGQ0NGU2ZTMxMGE1YzI0YjM1ZTc5YmNlYzNmNjE1NDM0NmYyMTdlMTU4YWU5YWRjNDYzMTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjYjM0YTFkYTUwODYyYTc5M2VkY2Y5MWFhZmI4ZWQzZjkyYjFmNzg4NjQ1NDM0M2EyNGI5ZWM3ZjAzNGEwMjIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjMTFmYjNjZjczZWE0YmY0MjllN2ZkODI4Zjk4ODc5MzExMmNjYzlhMmIxYWJlMGVjYjZjZTM3MjBlZGM1NTYifQ"
         }
       ]
@@ -55,7 +55,7 @@
       "statement": "TestOpusCostMatchesAgent checks that the pricing table reproduces a real Claude-recorded cost of about $41.70.",
       "evidence": [
         {
-          "resource": "repo://internal/pricing/pricing_test.go#L31-L40",
+          "resource": "repo://internal/pricing/pricing_test.go#L34-L43",
           "version": "repo-lines-v1:sha256:82dad26fe67feb0c64f9dd3c8e2bc3f17717e81e7f6f8fe1615492177bd1f39a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1YTc4MGMxNTUwNTZkMzNjMWY1Y2ZmZmU4M2ZiYWNmNjMyYTVlZWYwOTQyNDc5YTViZTJmMjdhYzRmMmU4MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOTY0MDc5YzNjNWM4MTUyMGVmMzNhMmI5ZDJlMTVhMWI4NGQ3MjgwZGI4NTkwZGNkNjU3NDdlM2UwMTJhNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3ODRlY2QzMzQyMmJkNjBiM2M0ZmIxN2NhMmM3YTE2MGFlYjZiZGQ3MDc2M2Q4YmJjM2IzYWI3NTk5N2QxMTYifQ"
         }
       ]
@@ -89,10 +89,20 @@
           "version": "repo-lines-v1:sha256:3a68f132b3a76ecc74bf32991b037127299f76b0f79fcbe0fa2f0e36c613c119:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDBkOTg2YjBkZjdlOWM0N2FhNzgyYjA2NjA5NDY5YmM4ZWVjYTQ3NjEyYjgzOGNmODI5ZGRhNGJjZGRkMzMyOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWZiZTNiY2ZhNjEyNmQxMjMxYTk4YjNlODUxNzU5ZGEwMTQwYjkxZDJiYmFjZmM0YmYyM2Y4N2RkYzU3MzExOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTg0NGE3ODJjYzNhN2FmM2JhNjY2NzA3ZTczNGJmZTFiMzU1YTBkODE2YjQwZjlhNTljMzI5YmNmNmYxOWY2NSJ9"
         }
       ]
+    },
+    {
+      "id": "claim_bd04bb0eb5933730f5e255e460a6c631",
+      "statement": "TestParseCodexImportResync checks that a prompt typed in Codex between two import-sync batches is counted while both copied batches are not.",
+      "evidence": [
+        {
+          "resource": "repo://internal/parse/codex_test.go#L195-L224",
+          "version": "repo-lines-v1:sha256:758f2f8f4b2970e4abf9f042af1cc98bea0967ee3c49a8bbfb6e74285612ed48:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxZWZlZWY0Njk5YzFiMzYzMjAxYTJkZWJkZWQ0OTIwNTNkNzc0MGVkYzlkOGY2MjgzYzZjZDc2MzU3YzU2NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjNDEwMDY4N2I1YzdiOWM0MTgyOGI3YmYwZWRmYTg4YTRlNDczZmMwY2U1M2E0MmI4ZDZlNzQ3MGZjNjBjMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "owcli/ff31f70",
-    "at": "2026-10-02T15:03:43.517Z"
+    "at": "2026-10-02T15:18:31.760Z"
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:369b6f5b31c676f66d4dab5e56a741f32777e2faf67bb712ae7024e609b618f9",
+  "pageVersion": "sha256:6b2f79b9dc01340f12d035cf0a953d037ad043c2efd1a13e2d312cefb632f5b7",
   "claims": [
     {
       "id": "claim_6ffc2f75df11cc4e25e55441ae12990b",
@@ -115,7 +115,7 @@
       "statement": "Codex sessions are discovered as sessions/**/rollout-*.jsonl with the id taken from the trailing UUID.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex.go#L18-L44",
+          "resource": "repo://internal/parse/codex.go#L19-L45",
           "version": "repo-lines-v1:sha256:12a25abed4821557aa39a751cc1093aeb2035f4184626a13a8bab06aed38c586:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyYTFlZDgwZGI2NzU1OTU2YmRhZDMyYjRiZGNmYWFkNTcxZWU0N2Q1ZTlkODI2NDM5MzFiNDg4NjE1MTQ5YmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjNmQ1NzVhNjYzOTdiNTM4ZDYzZjhhZjlmNzljMWI2NGMwMjEwYjBmMTg4MDQ3Zjc3NDBkYWIwYmZkZjk3ZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM5NzhjNjRiMzY4MjQ2YWQwZTNiMmY2NTg3NmE0ZjFkNTYyMTQ5ZTI0NDdkZDQ1N2RhODQxZTRjNjJlYzdlMGEifQ"
         }
       ]
@@ -125,7 +125,7 @@
       "statement": "LoadCodexMeta takes the last thread_name per id from session_index.jsonl and maps imported threads from external_agent_session_imports.json to claude:<id> sources.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex.go#L62-L96",
+          "resource": "repo://internal/parse/codex.go#L63-L97",
           "version": "repo-lines-v1:sha256:e80e67a9c3c32dd54b115f7a1233c34efe04c544e0299eeb66930ee0e8cd2e05:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczY2FkOTAzMjE4N2Y4NmI1MzE4ODRhYTY2ZmUwMzZkNTFmOTg1M2E2ZjIzNmI5ZDA3ZTYyNDc1ZmRiM2U3NTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ1Yjk3NTMxNmFjMTZkODNkNjQxOTMxNWIwYjU2OTdlMTBkM2ExMDEyN2MyYWUyMDBjYTg1MWI1NmVjMmY1ZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU4OTEzNzEyYzg4YmUxN2MzMTFhMWE0N2FmMGMyYmJmOTkyZjViYjg5ZDgyNDczNTU3YTZmYjI3ZjMzZmU0NWUifQ"
         }
       ]
@@ -135,7 +135,7 @@
       "statement": "Codex token_count totals are cumulative; increases are attributed to the current model, a decrease is treated as a reset, and uncached input is input minus cached minus cache-write tokens.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex.go#L414-L442",
+          "resource": "repo://internal/parse/codex.go#L461-L489",
           "version": "repo-lines-v1:sha256:5285e88c8a435d71008c40bd4385e3e77336a460acf724776a8db50f072bd512:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxODI3NzUzOTQzZTgzOTYyNzBiMjU1MWE5MTI2NDFlNmQ4NzBhNmYxODhkY2VjYjc2YWRlMTNjNDNlYjgyYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMWZkNWM0YjQ5YzRkZjM2MzRlYWRjNmE0MmIwZDRjYTEyMTEyMjllY2ZjMWM3OTQ2YzM4YmQxZmQ3NDgzODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1MDFlNTFhZjI0YTRjYzllYjA1YTk2ZDhiYzhjYTk3NTczYWM0MTliOTM3NjU1YmI3YzVkZTNlNTA0NDE4NzkifQ"
         }
       ]
@@ -145,7 +145,7 @@
       "statement": "Codex prompts come from UserMessage items when any exist, otherwise from user_message events.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex.go#L466-L500",
+          "resource": "repo://internal/parse/codex.go#L513-L547",
           "version": "repo-lines-v1:sha256:8a6fa83ff79cc1983517cbe582049b78e2d06df273e4b17358acbc337dc22825:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3YTA1N2M1YmZhODAyZjYyZTFiOWVkMDUyMDY2ZGQxMjczNTFiYjUzMzQ3OWI0ZWVjMmRhZDA3NzhjNzc2ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0ZWZjNDk0MThkMjZkY2YxMjliMjJhNmFhMjExMDhjZWVjMzc2NzdhMzJkMDhlOWQ1ZmVlMzVkZGE2NmJiOWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOTY0MDc5YzNjNWM4MTUyMGVmMzNhMmI5ZDJlMTVhMWI4NGQ3MjgwZGI4NTkwZGNkNjU3NDdlM2UwMTJhNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2OWJhYWVhYzM1MzdhN2FjOGExNDQzNTU2NmVjNjM1YzE3MTY0ZmRiYzFkZTRmNWU3ZGUxOGU1MzZjYzkxOTEifQ"
         }
       ]
@@ -155,11 +155,11 @@
       "statement": "When CommandExecution records exist they replace the shell wrapper tools (exec, exec_command, shell, local_shell) in tool counts; otherwise the wrappers are counted under their names.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex.go#L150-L163",
+          "resource": "repo://internal/parse/codex.go#L190-L203",
           "version": "repo-lines-v1:sha256:5debf41e89cd8b80047f51d1af401005be18245c16a390408ec634898d39a3a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzM2Y1YjE4MGFhNjI5YzI5ZmNmOWMyNzQ3Mzc3M2VlNjE2OGVkMzYxMTFiMDlhNDQwZjY4MzA0N2Q4MDhmOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiMTMyNGM0ZjkzMGE0YmVkZWNkOWExZWNlNjljNWM5MzQ3NGZiMzE4YjUxNDYzZjZjMDRmYmJkZTViN2Y1YzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1YzAyOGMxNTg5ZDI5MzAxZDNkNjlmZWY4MjFlZWM0N2VkNmFiY2M2MWYwNWNlZDc4NjI1NmRjMWU5MzM4YmEifQ"
         },
         {
-          "resource": "repo://internal/parse/codex.go#L466-L490",
+          "resource": "repo://internal/parse/codex.go#L513-L537",
           "version": "repo-lines-v1:sha256:89d5ee08c8698fe753a7307917245cccef09db015c968a3e91367b2b3c5b797e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3YTA1N2M1YmZhODAyZjYyZTFiOWVkMDUyMDY2ZGQxMjczNTFiYjUzMzQ3OWI0ZWVjMmRhZDA3NzhjNzc2ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ZjA4MDViNjE0Zjc1ZWE3NmJlYzkyYjliZWVlZTc3NDUwYzgzNGU5ZTMwOTczNjhjMDkxMGM1YTEyYmU1NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOTY0MDc5YzNjNWM4MTUyMGVmMzNhMmI5ZDJlMTVhMWI4NGQ3MjgwZGI4NTkwZGNkNjU3NDdlM2UwMTJhNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1Y2U1NGVhNDQzOThjNzE5MjdiOTAyM2Y5YWNiYjZlNGZlYzM0MTA2ODViMDNiNmIwMDdkM2ViMWJiMWM4NzcifQ"
         }
       ]
@@ -169,30 +169,30 @@
       "statement": "codexFailed treats 'aborted by user' as a rejection, 'Script failed' or 'verification failed' as an error, and otherwise uses the first non-zero exit code found.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex.go#L165-L165",
+          "resource": "repo://internal/parse/codex.go#L205-L205",
           "version": "repo-lines-v1:sha256:7b2d62e2fc70f7abfc8f2ffeec4932d04998a1554913d0661af82e2057b6334a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IyZDYyZTJmYzcwZjdhYmZjOGYyZmZlZWM0OTMyZDA0OTk4YTE1NTQ5MTNkMDY2MWFmODJlMjA1N2I2MzM0YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IyZDYyZTJmYzcwZjdhYmZjOGYyZmZlZWM0OTMyZDA0OTk4YTE1NTQ5MTNkMDY2MWFmODJlMjA1N2I2MzM0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODFhY2IzZWM2ZDdiOGU3ZjFmNzA1M2IwZDEzZjg0NmI5ODY3OTljM2IwNjFjMjE5NmQzYzUzMWUxN2FjNGIxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzVkMTIzMGE0ZDlkZGMyYTYyMjcxZThhOGZmMGQ4YTc0M2E3N2U5MzVhOTE0MDgyY2VjYWZlNjA4MmNlOTI5YSJ9"
         },
         {
-          "resource": "repo://internal/parse/codex.go#L554-L571",
+          "resource": "repo://internal/parse/codex.go#L601-L618",
           "version": "repo-lines-v1:sha256:3c1eef35ab4548ad998eba931c8589f7dac6e98e922f3b29554f9529230bbcc4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwMjcwOWEyNjQ5ZTZjNTE2NjdhYWIyZjljOGZmZjE5NGQ1OWE0NDI2NDg1ZGQyYTAzMTFlNTU1NTBiN2UwM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczNWFhNzNkYTM2MjViM2ExNWZhZGYzMmI3ODE1YjQ2MzM4MzM4NmNiMjQ4MTFjZGQ0OTBkNjAzYzg0YTM5ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjYTI5ZWM4M2M0NmU1NjVmNWMyODRmYTQwNmJmZDgyNDc0OTI3NzBjYzYxYmY0MTE4ZmE4ZGQ3MTJhYjA2NDEifQ"
         }
       ]
     },
     {
       "id": "claim_520fff86ba7c5175d1e63481723781dd",
-      "statement": "For imported Codex threads, lines stamped up to two minutes after the import time are parsed into a discarded scratch session.",
+      "statement": "For Codex threads copied from Claude sessions, lines stamped within two minutes before a zero-component token_count marker (or, without markers, up to two minutes after the import time) are parsed into a discarded scratch session.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex.go#L205-L212",
-          "version": "repo-lines-v1:sha256:e0f2fdabcc70e74955cf34c632f4a1619e557f8aef52937eddbb7f367aacd684:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGEyYzFmMzQyZmYzNGQxZDgwMWUzNGQ0YmQ4YTA0OWZlMDVkOTFjMzU1MWI2NzdlYWNkZGY4MDc3MmEyZDQ3NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGNiMWI1NTkwNWY0ZTNmMmNkOTAxNTBhZmVjMGYzMTMyNGUyMDBkOWJjODk0YTMyMTdiM2QyZDEzNjE5NTRhMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiM2ZkMWNhNWY4ODU1YWY3ZjMzMmQ3NTVjYmJjYmQxZWY3ZTBiZDBlM2QxYmUwNjkyMDE3MDVhODQ0NDkxM2EzMiJ9"
+          "resource": "repo://internal/parse/codex.go#L248-L258",
+          "version": "repo-lines-v1:sha256:f85dd42f030c3bf3bb1a44e4712a8f90da1e3826c41246ef9a65f96f0df89a60:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3Y2MyYTIyMjczZWJmNjJlMWY3MjM4NDAxODUyMjg4NzM3OGFmY2JkYjQzNzNhMTRlMmVjMzk2NDNlMzg0MjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3OTMwNmU2MTk2ZWRkNTBiM2IwNjJiOGE5MzBlOWM1NWFlYzU5MzJlODVmN2ZiZjc5ZmEyNmY4ODU4MTc3MWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzZDM3MDdjYTI4YWQ4MDQ5NjgwNTZjNDMyMTExZDFmNDJjMDIzOGMwNDRjMzI0NDc2YTVhYjM2ZmJjZDVjZTcifQ"
         },
         {
-          "resource": "repo://internal/parse/codex.go#L228-L245",
-          "version": "repo-lines-v1:sha256:3436df7ffae08eea1d53a2d1165c8bfccb2b68130009e5c90cd942ac7133ea76:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5NjJmODA5M2I1MzIzZmI4ZjcxNjhmYWVmYjhkMDcwZjc4NzExZjE0ODhlYWJhODBiNzRjMmNmZTFkNmVhZDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5ZTRiOWJhYjc4MDBlODU3ODNhOTU4ZjQ2ODFjMDA2YTQ0Mjc0NjM0ZTBlZGMxYzVjMDJjZWE2MzkxYzBjMDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjOTRhMzQ2OTk0M2QzZmZlYWE2MmQxYzQwYTIwOWFiNjY5NzkwYzJjMWJmOTRlMDA4ZTkwYWU1ZWQ2NGNkNTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ3NWYyZjBiN2U2ZWNlYWMyOGE5NmMzOTMwZjRiY2I2NjU5YzU5NzQ1NTliM2ZjYTQzM2VhYjM4ODNkMTRkZTIifQ"
+          "resource": "repo://internal/parse/codex.go#L282-L290",
+          "version": "repo-lines-v1:sha256:f10570649b7c477cbaad4a62e2e1165afa05c642e4e241e175b8eefbd0e0629f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY2YTM0MjQxZGZkN2RlMjIzODY1NjdkMTVlZTE3ZGVlYjJmZjk0ZjRiMTEzNDAxZWE3NjUzMmQyYTBkOTU3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjU1NmViM2FhOTM3Mzg2YTBiOTBmNjRiNTRjNTM3M2VlOTQ3MjgxZmY2NWJhODQwZTcxODY2MGU1Mzg1NDgzNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I0OWY3YzAzZGRjODEwNGRlMzBkODM5MzUyNDk4MGU3MjJlM2FkNTU1ZmE4ZTEwNTM0ODk1N2FlNmQzYTdlMiJ9"
         },
         {
-          "resource": "repo://internal/parse/codex.go#L98-L100",
-          "version": "repo-lines-v1:sha256:769f1557b63ea816d1af176b32665cf013d4459ac0a7fa6821a16d145852076f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmU5MjIyY2U5ZGFmNzRjMzQ5MDU5MDE4MDI5MjNmYTU2M2NkODQ5YjA1ZGE1ZjBiNjkyZWExMGU4YzAwNTM0ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2FkNTZjMDJkZGQ2MDBiYTcyMTBkMmZjODQ3MjVmZjNlMDMyNzk4N2IxZWNmN2ZjMjRmMmRkM2EzMGE1YmJhZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2QwYzlkN2NiNDkzY2FiYTE5YzRlZGFkMjkzOWVjZTNlZmE1NTYyZThkN2MzN2Q0N2I3MjFjM2VjOWUyOTIxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTA2YTQ2ZDNiNGRlYjM5MDM5OGUzMzM0YjkxM2ZkNzNjY2E1ZmE4MzFiNTdhMzM5NjY1NTc2YjU1MDQ1YmZhYyJ9"
+          "resource": "repo://internal/parse/codex.go#L98-L141",
+          "version": "repo-lines-v1:sha256:2e31229e61d2e0c6790ea7f48168d89dcfe083d8de1b51a2c134b1ef67f6885a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiYmU3OWYzMWU3MWNjMmMzY2ExYmFkMGQwODM0YmY0NTZjMTVlOGRjMzY1OTcxMmJiNmVlYzU0ZmZjNDUwMGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2YjliNzY5NmU4MWNmYTQ3MDIzYWMxZjRkM2Y1YzJlYmYxNWEzZTk1ZGY5MzgwYTliMmUzNWJkNjY5YzQ3NzIifQ"
         }
       ]
     },
@@ -209,10 +209,30 @@
           "version": "repo-lines-v1:sha256:c6eb328a29ade1e30224891159ec6efde6ed5a3e0f5ae94ede6e7b8a86ba129c:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwYzQ2ZWZhMzc3YTg2MGJiNGI3MTUzNGYyODkzMDA0NTVjOTIzZjc4NzY2MDk1NTIwODBhOGYwNDA0MmZlOGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5Mjc2OGZiMTEyODJhMjU2ZjFmNjY2MGUzYWM0MTE5M2UzMDZiYmNjNzQ0NjcxZjljZGQyMmZkODFlM2RlOWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwMzJlZjI2YmZmMmY4YTUxZmI3MTllODI1NmNiY2U3YzE4NWE4YjM0NzVhMzIzNmM1Yzk2OThjZGQzODM2MTYifQ"
         }
       ]
+    },
+    {
+      "id": "claim_7efbf469cc58efc3cf7af9a22f25fb3b",
+      "statement": "Work typed in Codex between two import syncs is counted, as tested by TestParseCodexImportResync.",
+      "evidence": [
+        {
+          "resource": "repo://internal/parse/codex_test.go#L195-L224",
+          "version": "repo-lines-v1:sha256:758f2f8f4b2970e4abf9f042af1cc98bea0967ee3c49a8bbfb6e74285612ed48:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxZWZlZWY0Njk5YzFiMzYzMjAxYTJkZWJkZWQ0OTIwNTNkNzc0MGVkYzlkOGY2MjgzYzZjZDc2MzU3YzU2NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjNDEwMDY4N2I1YzdiOWM0MTgyOGI3YmYwZWRmYTg4YTRlNDczZmMwY2U1M2E0MmI4ZDZlNzQ3MGZjNjBjMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_20f62febf2508a2eeb90800e8e6f35a3",
+      "statement": "Codex Desktop's external-agent import sync is what creates these copies, and it can append to a thread on later syncs.",
+      "evidence": [
+        {
+          "resource": "repo://internal/parse/codex.go#L98-L107",
+          "version": "repo-lines-v1:sha256:a2224baae434520ec90bafc9dd98245351c0f4abb6a1f865d38616b386a37113:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlMzBiOTE3OWU5YmM2NjdiZDJmN2I2MGYyMmI2Zjk2ZTdkN2M5ZTZiZmM4MDU5MGVlYzc3NmMzYzc4Zjk0MjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiYmU3OWYzMWU3MWNjMmMzY2ExYmFkMGQwODM0YmY0NTZjMTVlOGRjMzY1OTcxMmJiNmVlYzU0ZmZjNDUwMGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxYjUzNTEyM2FiNmViY2IxM2E2MTRjZWViYTJjZjdlNjQyOGViZDI1NGEwOTU3NDAwZjg3NjgxOTM1NTBmM2EifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "owcli/ff31f70",
-    "at": "2026-10-02T15:01:19.902Z"
+    "at": "2026-10-02T15:17:54.597Z"
   }
 }

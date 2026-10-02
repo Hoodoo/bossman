@@ -5,15 +5,17 @@ description: What Claude Code and Codex write to disk, and the rules bossman's p
 tags: [parsing, claude-code, codex, jsonl]
 verified:
   - by: owcli/ff31f70
-    at: "2026-10-02T15:01:19.902Z"
+    at: "2026-10-02T15:17:54.597Z"
 sources:
   - id: openwiki-source-e8dc539cc499715db5d6b44f
     resource: repo://internal/parse/claude.go
   - id: openwiki-source-316c7740ea0d2064293330cb
     resource: repo://internal/parse/codex.go
+  - id: openwiki-source-398ec2ac7812c24b1f68756a
+    resource: repo://internal/parse/codex_test.go
   - id: openwiki-source-0a07e754760ec9f5cbce7d6c
     resource: repo://internal/parse/common.go
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:04:05.474Z" }
+generated: { by: "owcli/ff31f70", at: "2026-10-02T15:18:40.390Z" }
 ---
 
 # Agent Log Formats and Parsing
@@ -59,7 +61,7 @@ Shared helpers in `common.go`:
 `DiscoverCodex(root)` walks `<root>/sessions/**/rollout-*.jsonl` and takes the session id from the UUID at the end of the file name. `LoadCodexMeta(root)` reads two side files:
 
 - `session_index.jsonl`, to which Codex appends `{id, thread_name}` on every rename. The last entry wins and becomes the title.
-- `external_agent_session_imports.json`, which lists Codex threads imported from Claude Code sessions (Codex Desktop can do this). Each record maps the thread id to its source path, title, and `imported_at` time. A source under `/.claude/` becomes `imported_from = claude:<id>`.
+- `external_agent_session_imports.json`, which lists Codex threads copied from Claude Code sessions. Each record maps the thread id to its source path, title, and `imported_at` time. That time is the latest sync only. A source under `/.claude/` becomes `imported_from = claude:<id>`.
 
 Both files are archived alongside the sessions (`CodexMetaFiles`).
 
@@ -92,9 +94,13 @@ For outputs, `codexFailed` checks the first 400 characters:
 
 On real sessions, the wrapper outputs showed 0 errors where Codex's command records showed 9 failures out of 97 commands.
 
-## Codex: imported threads
+## Codex: copies of Claude sessions
 
-An imported rollout starts with a copy of the Claude conversation, all stamped at import time. When a session is in the imports file, every line stamped no later than `imported_at + 2 minutes` (`importGrace`) is parsed into a scratch session that is then discarded. Those lines still appear in the transcript, but they add no prompts, tokens, tools, or time. Only work done in Codex afterwards counts. The first copied prompt is kept as `FirstPrompt` for display when nothing was typed afterwards.
+Codex Desktop copies Claude Code sessions into Codex threads by itself when `external-agent-import-sync-enabled = true` is set under `[desktop]` in `~/.codex/config.toml`. It does this roughly daily, without the user asking. A copy can therefore look like a Codex session the user never started. A later sync appends to the thread when its Claude session has grown.
+
+Each sync writes its batch of copied lines within milliseconds and ends it with a `token_count` whose `total_tokens` is set but whose components are all zero. For sessions listed in the imports file, `importMarkers` pre-scans the rollout for these markers. `copied` then treats any line stamped within `importBatch` (2 minutes) before a marker as a copy. If no marker is found, the fallback is everything up to `imported_at` + 2 minutes.
+
+Copied lines are parsed into a scratch session that is then discarded. They still appear in the transcript, but they add no prompts, tokens, tools, or time. Work typed in Codex between two syncs still counts. An earlier rule that cut at the latest `imported_at` would have discarded it; `TestParseCodexImportResync` covers this case. The first copied prompt is kept as `FirstPrompt` for display when nothing was typed in Codex. The CLI and UI label these sessions "Claude copy" and link to the source session.
 
 ## Conclusion marker
 

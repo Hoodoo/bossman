@@ -5,7 +5,7 @@ description: What bossman is, how to build and run it, and which wiki page answe
 tags: [quickstart, overview, navigation]
 verified:
   - by: owcli/ff31f70
-    at: "2026-10-02T15:04:02.525Z"
+    at: "2026-10-02T15:18:40.164Z"
 sources:
   - id: openwiki-source-0542b60281e3aea77c59392e
     resource: repo://docs/design.md
@@ -17,7 +17,9 @@ sources:
     resource: repo://internal/cli/serve.go
   - id: openwiki-source-012f2c78e3b1446dfc35803f
     resource: repo://Makefile
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:04:05.474Z" }
+  - id: openwiki-source-23775c3de52f3ab95a13cb8b
+    resource: repo://README.md
+generated: { by: "owcli/ff31f70", at: "2026-10-02T15:18:40.390Z" }
 ---
 
 # Quickstart
@@ -71,5 +73,5 @@ To experiment without touching your real bossman data, set `BOSSMAN_HOME` to a s
 
 - **The archive is the source of truth.** Parsing reads only the archive, so sessions stay available after the agents delete their originals.
 - **The index can be rebuilt; annotations cannot.** `bossman index --force` regenerates every derived table and never touches names, notes, tags, or links.
-- **Agents' own numbers first.** Claude Code's recorded cost is preferred to the pricing table. Codex has no recorded cost and is unpriced until its models are added to `pricing.toml`.
-- **Logs are tricky.** Claude repeats usage on every line of a message, Codex token counts are cumulative, and Codex can import Claude sessions. The parsers handle each case, and tests pin them down.
+- **Agents' own numbers first.** Claude Code's recorded cost is preferred to the pricing table. Codex records no cost, so its sessions are priced from OpenAI list prices in the default table. On a ChatGPT plan that is an API-equivalent figure.
+- **Logs are tricky.** Claude repeats usage on every line of a message, Codex token counts are cumulative, and Codex Desktop silently copies Claude sessions into Codex threads (shown as "Claude copy"). The parsers handle each case, and tests pin them down.

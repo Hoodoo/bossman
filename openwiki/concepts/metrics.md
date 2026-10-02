@@ -5,7 +5,7 @@ description: How bossman defines and computes each reported metric, from cost an
 tags: [metrics, cost, pricing, analytics]
 verified:
   - by: owcli/ff31f70
-    at: "2026-10-02T15:01:56.141Z"
+    at: "2026-10-02T15:18:08.889Z"
 sources:
   - id: openwiki-source-4f22ab0c79d636fe0ca2b8b9
     resource: repo://internal/catalog/catalog.go
@@ -19,9 +19,13 @@ sources:
     resource: repo://internal/pricing/default.toml
   - id: openwiki-source-d00cad2416dd34b5ab641a43
     resource: repo://internal/pricing/pricing.go
+  - id: openwiki-source-44a1f87e0577b42841944fde
+    resource: repo://internal/pricing/pricing_test.go
   - id: openwiki-source-6f70615716e7cd05fe8db472
     resource: repo://internal/store/query.go
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:04:05.474Z" }
+  - id: openwiki-source-213e0022dfc208535b4c26a9
+    resource: repo://internal/web/static/app.js
+generated: { by: "owcli/ff31f70", at: "2026-10-02T15:18:40.390Z" }
 ---
 
 # Metrics and Cost
@@ -60,7 +64,7 @@ The table estimate is always stored as well (`table_cost_usd`), so `show` can pr
 
 `internal/pricing/default.toml` is embedded in the binary and lists USD per million tokens for current Claude models. `Lookup` picks the **longest key that is a prefix** of the model id, so `claude-haiku-4-5` also prices `claude-haiku-4-5-20251001`, and `claude-sonnet-5-5` is not priced as `claude-sonnet-5`. Cache writes default to 1.25× input for 5-minute writes and 2× for 1-hour writes, unless `cache_write_5m` or `cache_write_1h` is set.
 
-Codex models are deliberately absent, because Codex records no cost and bossman does not guess OpenAI prices. Codex sessions therefore show as unpriced until the user adds rates. `bossman prices --init` copies the default table to `<home>/pricing.toml`, which then replaces the built-in table entirely. Run `bossman index --force` after editing so existing sessions are repriced. See [Configuration and Operations](../operations/configuration.md).
+Codex records no cost, so Codex sessions are always priced from the table. It includes OpenAI list prices for the models Codex uses: `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`, `gpt-5.5`, and `gpt-5.4`. These are the standard-tier short-context rates (≤272K input tokens), which apply because Codex's context window is about 258K. OpenAI charges no extra for cache writes, so `cache_write_5m` is set to the input rate. When Codex runs on a ChatGPT plan, this is an API-equivalent figure, not what was billed. Models missing from the table (e.g. `gpt-4o`) stay unpriced. `bossman prices --init` copies the default table to `<home>/pricing.toml`, which then replaces the built-in table entirely. Run `bossman index --force` after editing, or after upgrading bossman with new default rates, so existing sessions are repriced. See [Configuration and Operations](../operations/configuration.md).
 
 ## Human involvement
 
@@ -94,4 +98,4 @@ The error rate is tool errors divided by tool calls. Rejections are excluded, be
 - **Session-level groups** sum the session columns. Their `unpriced` count is the number of sessions whose cost source is `none` or `partial`.
 - **Model groups** sum `session_models`, counting a session once per model it used, with cost from the per-model shares.
 - **Tool groups** sum `session_tools` calls and errors.
-- **Imported Codex threads without their own prompts** are excluded from every aggregate, so work imported from Claude is not counted twice.
+- **Codex copies of Claude sessions without their own prompts** are excluded from every aggregate, so the same work is not counted twice. The UI shows the cost tile as "—" when every session in view is unpriced, rather than "$0".

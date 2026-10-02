@@ -23,18 +23,18 @@
       "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
     },
     "/openwiki/concepts/agent-logs.md": {
-      "pageVersion": "sha256:369b6f5b31c676f66d4dab5e56a741f32777e2faf67bb712ae7024e609b618f9",
+      "pageVersion": "sha256:6b2f79b9dc01340f12d035cf0a953d037ad043c2efd1a13e2d312cefb632f5b7",
       "completedBy": "owcli/ff31f70",
-      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
-      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
-      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+      "completedRunId": "45305faf-dbb0-4a16-8c72-29aab174c943",
+      "gitHead": "c72d38d3448f9d5e785cc3846fcc233eba0153d2",
+      "sourceFingerprint": "sha256:c28577ca1c29091f3d62f4493ade6cabc78920dabe85760a4a2b9ca6dc9c3342"
     },
     "/openwiki/concepts/metrics.md": {
-      "pageVersion": "sha256:106867c69b30698bbfe61a6a3deacc89c8d1554d11c2455faff8ea479f0bd6fc",
+      "pageVersion": "sha256:0683c2e3d4e17a387974c61f47a51f038098bd667aad4ed0d7d07697a96f26c1",
       "completedBy": "owcli/ff31f70",
-      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
-      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
-      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+      "completedRunId": "45305faf-dbb0-4a16-8c72-29aab174c943",
+      "gitHead": "c72d38d3448f9d5e785cc3846fcc233eba0153d2",
+      "sourceFingerprint": "sha256:c28577ca1c29091f3d62f4493ade6cabc78920dabe85760a4a2b9ca6dc9c3342"
     },
     "/openwiki/operations/configuration.md": {
       "pageVersion": "sha256:3c7aafb5e4862f195b6ace6d4f92398d07801242fee6f2cd55913afbbf6c0050",
@@ -44,25 +44,25 @@
       "sourceFingerprint": "sha256:0f10bcf906e628a7980cd1ddd7ee9389d1dc8045cac408f08bed863091bff978"
     },
     "/openwiki/quickstart.md": {
-      "pageVersion": "sha256:65e452b13f7ba5f471b8903f7fbc0c563b85fb3d88150d96abf96108d7d4033f",
+      "pageVersion": "sha256:f3db081e9cc0850677f5786821a0cabdab3d4a23f713cde680cb2c8ca3a05c39",
       "completedBy": "owcli/ff31f70",
-      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
-      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
-      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+      "completedRunId": "45305faf-dbb0-4a16-8c72-29aab174c943",
+      "gitHead": "c72d38d3448f9d5e785cc3846fcc233eba0153d2",
+      "sourceFingerprint": "sha256:c28577ca1c29091f3d62f4493ade6cabc78920dabe85760a4a2b9ca6dc9c3342"
     },
     "/openwiki/reference/cli.md": {
-      "pageVersion": "sha256:c3778dd2641033c203b9cdc8ccf39f701005e62b07c64ae89f2ba36729578202",
+      "pageVersion": "sha256:cb824a5f5fa3234ab7a2ff13561f44c69820b84b71fa9e753e04a56267486d57",
       "completedBy": "owcli/ff31f70",
-      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
-      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
-      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+      "completedRunId": "45305faf-dbb0-4a16-8c72-29aab174c943",
+      "gitHead": "c72d38d3448f9d5e785cc3846fcc233eba0153d2",
+      "sourceFingerprint": "sha256:c28577ca1c29091f3d62f4493ade6cabc78920dabe85760a4a2b9ca6dc9c3342"
     },
     "/openwiki/workflows/testing.md": {
-      "pageVersion": "sha256:2ac474af2dc21fe5293b675b66e72ec3a4297e3c66a25229fe64fe33e117b51a",
+      "pageVersion": "sha256:8d4d54179d004f62c575f8e0b9daa9aa4bf9bfc8bef2c4e3fe0ead6c81eadeeb",
       "completedBy": "owcli/ff31f70",
-      "completedRunId": "e04c9641-6d8d-4c2b-bf57-a52224f92a53",
-      "gitHead": "9b09d941d72d0ce7a9aa2c765c968a2f589f980f",
-      "sourceFingerprint": "sha256:905a7a7a3233db7670d72235a4e2a29d2e1affd97c2728444429f1b7b073470b"
+      "completedRunId": "45305faf-dbb0-4a16-8c72-29aab174c943",
+      "gitHead": "c72d38d3448f9d5e785cc3846fcc233eba0153d2",
+      "sourceFingerprint": "sha256:c28577ca1c29091f3d62f4493ade6cabc78920dabe85760a4a2b9ca6dc9c3342"
     }
   }
 }

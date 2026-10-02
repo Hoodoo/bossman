@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:106867c69b30698bbfe61a6a3deacc89c8d1554d11c2455faff8ea479f0bd6fc",
+  "pageVersion": "sha256:0683c2e3d4e17a387974c61f47a51f038098bd667aad4ed0d7d07697a96f26c1",
   "claims": [
     {
       "id": "claim_23a12da055ee46bb6bb0db50799016fe",
@@ -64,11 +64,11 @@
     },
     {
       "id": "claim_e65dcef9d7f62865989bcf34f831127e",
-      "statement": "The default table prices Claude models only; Codex models must be added by the user.",
+      "statement": "The default table includes OpenAI short-context list prices for gpt-5.6-sol, gpt-5.6-terra, gpt-5.6-luna, gpt-5.5, and gpt-5.4, with cache writes priced at the input rate.",
       "evidence": [
         {
-          "resource": "repo://internal/pricing/default.toml#L1-L22",
-          "version": "repo-lines-v1:sha256:aae7edf98319b199aa842ad89aa0287ecec85922015b6ef9500eb1f6c3957059:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1YTljOTViMWU4OGZlMTM5NzMwNGJiYTg1M2IxMTFiNzA1OGE3Yjk5Mzc1MTQxMWM2NTM1YjU3NzViZjk5MzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2MTc2ODgyYWQ2M2IzZDQ5NjA2NzM0MmUyZDQzNzFiMzBhNzQ5ZTNjYWY1MjkwNzRlMjcxMTA4Njc0MmE3MzciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjZGMyNDZmYWYzMDk2ODU5OWJlYzMxYTVjYWYzYjBlNGMwOGI4MTUzMDBmOTVhOGFmNDUzNzEyNzg5ODBiM2IifQ"
+          "resource": "repo://internal/pricing/default.toml#L76-L109",
+          "version": "repo-lines-v1:sha256:fd3dfe38710f283f0b832cfa1336d0d92d5d47ef8ae49489013593ab823f87f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiMzY1ODNiMjYxNmM4OTBlNTBlZDk3NDIwMjNkMGM3ZDg2MDJiOGM2MzU0ZGNmOWQzNWY5N2M0ZWUxYzRlMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3YTBlZTU4MWNiMzgyMDhmNTg5OTZkMzFjMGRiYjRmOGM5YTU5ZDk4OTAxMTRiNDZiNDUwNDMyZGRlZjcyMGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM5ODg5NTdkMmMwNjRlOGI4Yjk2NWE2YjMxZGZkOTUyNTBlODQyYTZiODBhYmFlZDEzZGE0ZTA1OTNmMjA5MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
@@ -121,10 +121,30 @@
           "version": "repo-lines-v1:sha256:688a5e5a120a930dd233a4631a8e124679173151705d9b6e8455d70b220a29d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNDFiMmI4MzAzYjk2MDk1OWRiNGZmMzZkOGFiYWM0YzQyNWVmMWQ4ZGVkYTM1NjIyNDk4MDkzNmYxNDlmYjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiOThjN2I1YmQzZDU2OTlhNDE4MDZlZDNiNDZmOGNjNGU1NWZmNTdmZjQ1MjE3YTNhMjJhYTY1NDFkYzY0YmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzOTI3YmI1YWY1ODRjOTJjMzlmNWE5OWQ0OGRkODhhMzE5Y2RjZjNjZjUwZjZiMTYyNmMxOWIzYmU3MDEwMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1NjZjZTU4NmFlOTZhMTZlZTYwMGYzMjFkMDRmNDc2NzNiMjRiMTkxYWRjZDNlYjEyZWY1Yzg1ZGQ3MTM5NmUifQ"
         }
       ]
+    },
+    {
+      "id": "claim_56ac58000651b541fd545075a55e791f",
+      "statement": "Unlisted OpenAI models such as gpt-4o remain unpriced.",
+      "evidence": [
+        {
+          "resource": "repo://internal/pricing/pricing_test.go#L26-L31",
+          "version": "repo-lines-v1:sha256:d20e89f9175a4d5eef0877bba86e3d2ee0bc2b52ecd484f00aaa2a8449ea5f14:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE0YjU3ZWRkNjZhMmM5ZGE2Yjg1Yjk1Nzg2NzRiYzU4ZDc3MzQ3YjM0NTk0MTUyYTk2YzdlYmIxZTFmN2Y2MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzg0YTUzNWY0ZTQ0YWM1Njc0NWEwMTYxNGViYTViZWUyNmQwZjk5MTMzZDcxMmQ4OGIzOTRjYzdhMzMxYjJiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWM1MGIxZGNlNzc0NWMyOTRjNWFlM2M4MjY4YzAwYTZhMmRjZjBmNmY2ZTllN2EyYThhZTI0NjE4MGU0NjFmZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9cb21dfebb82c9dcb89664aca8e943ab",
+      "statement": "The UI cost tile shows a dash instead of $0 when every session in view is unpriced.",
+      "evidence": [
+        {
+          "resource": "repo://internal/web/static/app.js#L559-L560",
+          "version": "repo-lines-v1:sha256:6ecae76c0e3a78ee8e0567af86b8a587bfa29ebbfd9c29fd149ce4f2ceecf8d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjhmMjVhZGNlOTgzNTNlMTRjMDVmOWFjYWExMjY4NGIwNmM1ODJmOGFiNDk3MzE0ZDc2MDA4M2EyOGE0YmU3OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGZlNDc4ODYzNjgwZDA1NWQ2MzdjYWRlZmVmZmE3ZjQ5Y2ZmY2Q5Y2Q1ODhiYzk5MWZiYzk0N2UwNWY4OTJjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjYzMDk4OWQxN2FiYzZhOTJjNjczOWVlNDkzM2I2ODEyYjhiOWE3NmRjZTljNmQwMmNjZjU3MzRlMDY4MDM1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGViZDY4Yzk0MDZjMDA5NTQ4M2UzMGJlZWQ3OWUzODc4MTk4OWI4ZDYyODM4MjdhNzZlM2VkYTU5ZjMwZDA3YSJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "owcli/ff31f70",
-    "at": "2026-10-02T15:01:56.141Z"
+    "at": "2026-10-02T15:18:08.889Z"
   }
 }

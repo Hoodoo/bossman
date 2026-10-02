@@ -5,7 +5,7 @@ description: How the test suite is organized, how fixtures reproduce real agent 
 tags: [testing, fixtures, extending, adapters]
 verified:
   - by: owcli/ff31f70
-    at: "2026-10-02T15:03:43.517Z"
+    at: "2026-10-02T15:18:31.760Z"
 sources:
   - id: openwiki-source-4f22ab0c79d636fe0ca2b8b9
     resource: repo://internal/catalog/catalog.go
@@ -23,7 +23,7 @@ sources:
     resource: repo://internal/web/web_test.go
   - id: openwiki-source-012f2c78e3b1446dfc35803f
     resource: repo://Makefile
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:04:05.474Z" }
+generated: { by: "owcli/ff31f70", at: "2026-10-02T15:18:40.390Z" }
 ---
 
 # Testing and Extending
@@ -35,7 +35,7 @@ generated: { by: "owcli/ff31f70", at: "2026-10-02T15:04:05.474Z" }
 | Package | Tests | What they pin down |
 | --- | --- | --- |
 | `parse` | `TestParseClaude`, `TestDiscoverClaude`, `TestClaudeConclusion`, `TestHumanPrompt` | Usage counted once per message id; prompts vs. injected text; interrupts, rejections, and errors; recap footer stripped; subagents; reported cost; active time; conclusion marker (and its cancellation by a later prompt) |
-| `parse` | `TestParseCodexLegacy`, `TestParseCodexCommandRecords`, `TestParseCodexImport`, `TestCodexFailed` | Cumulative tokens split per model; prompts counted from one source; command records replacing wrappers; exit-code classification; imported threads counting only later activity |
+| `parse` | `TestParseCodexLegacy`, `TestParseCodexCommandRecords`, `TestParseCodexImport`, `TestParseCodexImportResync`, `TestCodexFailed` | Cumulative tokens split per model; prompts counted from one source; command records replacing wrappers; exit-code classification; Claude copies counting only work done in Codex, including work between two import syncs |
 | `parse` | `TestClockActive`, `TestCatalogueSummary` | Active time as a union with agent turns; marker parsing |
 | `archive` | `TestMirror`, `TestMirrorSingleFile` | New, grown, rewritten (kept as a version), and deleted-at-source files |
 | `store` | `TestAnnotationsSurviveReindex`, `TestResolve`, `TestListAndStats` | Annotations untouched by `Put`; export/import round trip; reference resolution; filters; aggregates skip empty imports |
@@ -64,7 +64,7 @@ Useful cross-checks used during development:
 
 - **Claude cost:** compare `cost_usd` with `table_cost_usd` (`ls --json`) for sessions whose source is `agent`. They should be within a few percent.
 - **Codex errors:** count `item_completed` `CommandExecution` items with status `failed` in a rollout using `jq`, and compare with `show <id>`.
-- **Sessions with zero tokens** usually mean an unrecognised shape, or an import.
+- **Sessions with zero tokens** usually mean an unrecognised shape, or a Claude copy made by Codex Desktop's import sync (`ls` flags those as `[Claude copy]`).
 
 ## Adding an agent
 
