@@ -4,8 +4,8 @@ title: Quickstart
 description: What bossman is, how to build and run it, and which wiki page answers each common question.
 tags: [quickstart, overview, navigation]
 verified:
-  - by: owcli/ff31f70
-    at: "2026-10-02T15:18:40.164Z"
+  - by: owcli/2d956c2
+    at: "2026-10-03T15:42:31.750Z"
 sources:
   - id: openwiki-source-0542b60281e3aea77c59392e
     resource: repo://docs/design.md
@@ -19,7 +19,7 @@ sources:
     resource: repo://Makefile
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:18:40.390Z" }
+generated: { by: "owcli/2d956c2", at: "2026-10-03T15:42:31.910Z" }
 ---
 
 # Quickstart
@@ -37,6 +37,8 @@ make check                 # go vet + go test
 ./bin/bossman stats -b project
 ./bin/bossman serve --open # web UI on http://127.0.0.1:7788/
 ```
+
+To install without a clone: `go install github.com/Hoodoo/bossman/cmd/bossman@latest`. For Claude Code, also install the shipped `skills/session-catalogue-close` skill (see [Configuration and Operations](operations/configuration.md)).
 
 To experiment without touching your real bossman data, set `BOSSMAN_HOME` to a scratch directory.
 

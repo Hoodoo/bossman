@@ -4,11 +4,13 @@ title: Architecture Overview
 description: The packages that make up bossman and how session data flows from the agents' log directories to the CLI and web UI.
 tags: [architecture, packages, data-flow]
 verified:
-  - by: owcli/ff31f70
-    at: "2026-10-02T14:59:42.905Z"
+  - by: owcli/2d956c2
+    at: "2026-10-03T15:41:56.739Z"
 sources:
   - id: openwiki-source-5901447480c8c833b758527a
     resource: repo://cmd/bossman/main.go
+  - id: openwiki-source-7bd911fdd3026b7b031a01e3
+    resource: repo://go.mod
   - id: openwiki-source-4f22ab0c79d636fe0ca2b8b9
     resource: repo://internal/catalog/catalog.go
   - id: openwiki-source-da21f52d07ab623ce6a4f0a7
@@ -17,11 +19,13 @@ sources:
     resource: repo://internal/model/model.go
   - id: openwiki-source-d00cad2416dd34b5ab641a43
     resource: repo://internal/pricing/pricing.go
+  - id: openwiki-source-d7020a16bee4dd2b35383c30
+    resource: repo://internal/version/version.go
   - id: openwiki-source-6dbe79f2b1613ac94797fd56
     resource: repo://internal/web/web.go
   - id: openwiki-source-012f2c78e3b1446dfc35803f
     resource: repo://Makefile
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:04:05.474Z" }
+generated: { by: "owcli/2d956c2", at: "2026-10-03T15:42:31.910Z" }
 ---
 
 # Architecture Overview
@@ -61,7 +65,7 @@ flowchart LR
 | `internal/store` | The SQLite schema, the index writes, the queries (`List`, `Get`, `Stats`, `Resolve`), and the user annotations. |
 | `internal/web` | `bossman serve`: the embedded static UI and the JSON API. See [Web UI and API](web-ui.md). |
 | `internal/config` | The data directory, the source directories, and the idle cap. See [Configuration and Operations](../operations/configuration.md). |
-| `internal/version` | The build version, set by `make build` via `-ldflags`. |
+| `internal/version` | The build version, set by `make build` via `-ldflags`; a plain `go install` falls back to the module version in the binary's build info. |
 
 ## Key types
 

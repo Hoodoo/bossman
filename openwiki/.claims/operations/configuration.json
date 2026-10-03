@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:3c7aafb5e4862f195b6ace6d4f92398d07801242fee6f2cd55913afbbf6c0050",
+  "pageVersion": "sha256:18abc5f304c88f34c3a121ccd3460eca5b2255f15ee4ab16f14e82e8f31d48ca",
   "claims": [
     {
       "id": "claim_9228079c94f15e63502bbb61be932868",
@@ -105,10 +105,44 @@
           "version": "repo-lines-v1:sha256:5cc231881a8fbd2bdc208b523ad8e8bb2d2aaf6c98cbbf45b8733ae1afce5f13:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTk2NjcxYTY1YjI5NTI3ZTFjOWZiNjRjMDU4MThkZjE5ZjdhNTY0Njc0YTE1YzZjYWI2M2M3YzZjNjAzMTM3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjIzN2M0OTk2MDJkNzc2NGY5YzViMTA3NzVlYmZjNzdlYWMyNDY5NjRjNDE2ODJjYzA4MDBkYmUzOWFjOTQ0NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiM2ZhOTZhNjhkZTkyYTllMGQzODZlMjExMzRjZTJlYmU4NDU3MGViMDE1ZGY5YjcwMGNhODMyMzFiM2RmNTEwMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOGRkYjgyNTg3OWFhNTZlZmZkZmIzNWE2OGJmN2E1ZmVmNzM4NWU4MzNlOWI5ZWViNWEzOTQ5MzBjNGM2MmQxNCJ9"
         }
       ]
+    },
+    {
+      "id": "claim_1f0b08cf2468c01a88ef8ca34c3c0fd7",
+      "statement": "The repository ships the session-catalogue-close Claude Code skill, which ends a session with the <!-- cc-catalogue:session-concluded marker and an away-summary.",
+      "evidence": [
+        {
+          "resource": "repo://skills/session-catalogue-close/SKILL.md#L1-L26",
+          "version": "repo-lines-v1:sha256:fdce20a6dd919c7bbb731c071507a0fd3956edbc972a9e38494859decfa350ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MmQ3MTExMDNkNTBhNDM3ODMwYzZmYmNkMDRmYjRiYWI0OWEwZjgyZjZkMjZkMWM3OTFjNmU4NDg4ZGQwOTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMyMDI5NjA1N2MyYWY0MzBlZGI0YWEyOTRhZDRkOGZlZmZmNmY3ODEyNjE3ZTEzZTFkODRmODBlYmFhZWZiNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1138342c21f31a7239ae1d070245fbc3",
+      "statement": "The parsers detect a concluded session by the CatalogueMarker constant \"<!-- cc-catalogue:session-concluded\".",
+      "evidence": [
+        {
+          "resource": "repo://internal/parse/common.go#L144-L144",
+          "version": "repo-lines-v1:sha256:e294c519691d33bffaf0939c6d7f051ee6163e320184b5e4445a12fa5a91c738:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTI5NGM1MTk2OTFkMzNiZmZhZjA5MzljNmQ3ZjA1MWVlNjE2M2UzMjAxODRiNWU0NDQ1YTEyZmE1YTkxYzczOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTI5NGM1MTk2OTFkMzNiZmZhZjA5MzljNmQ3ZjA1MWVlNjE2M2UzMjAxODRiNWU0NDQ1YTEyZmE1YTkxYzczOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQwNmU5NzA4OGRhODY1NTE2ZGEzNTU1NzMwZmM4YThkOTRmNGIwN2UxOGZjYjYwMzIxMjc3MWYxNzBhN2IxMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjBhNTJhNGZkMWNlNzgyODNlYjgyNjNkZWZiMTFiZWYyYmZhMmUwNDVlMzgwYmQyYjEzN2EwODhkMWU4NTlhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ef99bc86900d6459e5b6eeec278f548b",
+      "statement": "bossman can be installed from GitHub with go install github.com/Hoodoo/bossman/cmd/bossman@latest.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L14-L19",
+          "version": "repo-lines-v1:sha256:a7144e0d81ec107f9bd377b35de84afc9f0e5fbc6177675ab46ec02e449e2803:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWM2ZGU5MDgyYjc4Mjg0MDI4ZWY1MGRmNmY1OTRjOTVhOTE2NzY4N2YwNzgyZmI2OGE5ZjI1MDI1YjIwN2JlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI1YWQyZmM4NWQ4YjQwMWY2MTc3YmFjZmMzYjMyZjg0MjdjNDllMWM4YzJmMzQ2MjFmNjFmYjU1ZjliZTAwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2QxOGNhYjNmZTE5NjUwNWJhOTQxNzJjOTg3OWNjZWM5ZWYzMThhZjk4MzdkNDY2NjNiODAwZmMwNzdkZDVlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWVmYTFiYjBhOGEyMGI4Y2IyYzc2ZDJlMTY5OGM3NDRjNmY1ODUxMDAxNTI1ZWMxODI1YjE0NjgxYjE5YmVhZCJ9"
+        },
+        {
+          "resource": "repo://go.mod#L1-L1",
+          "version": "repo-lines-v1:sha256:e8292b91dc05e84c9410e994961156c6c5fb9537a0bf95cb2de38f411c924345:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTgyOTJiOTFkYzA1ZTg0Yzk0MTBlOTk0OTYxMTU2YzZjNWZiOTUzN2EwYmY5NWNiMmRlMzhmNDExYzkyNDM0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTgyOTJiOTFkYzA1ZTg0Yzk0MTBlOTk0OTYxMTU2YzZjNWZiOTUzN2EwYmY5NWNiMmRlMzhmNDExYzkyNDM0NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTMxNjM4MDFlMWQxMDc1YzdhMzRjY2JiOTY2OGY5NGMzOTgxYTc0MjQxZjQzZDAwMjNkNTE3Njk2MWE5OTkzOSJ9"
+        }
+      ]
     }
   ],
   "verification": {
-    "by": "owcli/ff31f70",
-    "at": "2026-10-02T15:04:24.881Z"
+    "by": "owcli/2d956c2",
+    "at": "2026-10-03T15:42:20.147Z"
   }
 }

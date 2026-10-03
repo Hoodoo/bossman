@@ -4,8 +4,8 @@ title: Configuration and Operations
 description: Where bossman keeps its data, how configuration, environment variables, and the pricing file are resolved, and how to keep archiving running before the agents clean up.
 tags: [configuration, operations, paths, cron]
 verified:
-  - by: owcli/ff31f70
-    at: "2026-10-02T15:04:24.881Z"
+  - by: owcli/2d956c2
+    at: "2026-10-03T15:42:20.147Z"
 sources:
   - id: openwiki-source-7bd911fdd3026b7b031a01e3
     resource: repo://go.mod
@@ -17,11 +17,17 @@ sources:
     resource: repo://internal/cli/sync.go
   - id: openwiki-source-a8910515ddd14810ad43f5c1
     resource: repo://internal/config/config.go
+  - id: openwiki-source-0a07e754760ec9f5cbce7d6c
+    resource: repo://internal/parse/common.go
   - id: openwiki-source-4a81fcd95533ed8ba5a77739
     resource: repo://internal/store/store.go
   - id: openwiki-source-012f2c78e3b1446dfc35803f
     resource: repo://Makefile
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:04:05.474Z" }
+  - id: openwiki-source-23775c3de52f3ab95a13cb8b
+    resource: repo://README.md
+  - id: openwiki-source-0c2fa3cc95f42154388ca0ae
+    resource: repo://skills/session-catalogue-close/SKILL.md
+generated: { by: "owcli/2d956c2", at: "2026-10-03T15:42:31.910Z" }
 ---
 
 # Configuration and Operations
@@ -75,7 +81,11 @@ Archiving only helps if it runs before the agents delete their files. Claude Cod
 
 ## Install and build
 
-`make install` builds with the git-described version and installs to `~/.local/bin/bossman` (override with `PREFIX` or `BINDIR`). The binary is self-contained: the UI and default pricing are embedded, and SQLite is the pure-Go `modernc.org/sqlite`, so no cgo or runtime dependencies are needed.
+`go install github.com/Hoodoo/bossman/cmd/bossman@latest` installs from GitHub; the version then comes from the module version Go records in the binary. From a clone, `make install` builds with the git-described version and installs to `~/.local/bin/bossman` (override with `PREFIX` or `BINDIR`). The binary is self-contained: the UI and default pricing are embedded, and SQLite is the pure-Go `modernc.org/sqlite`, so no cgo or runtime dependencies are needed.
+
+## The session-catalogue-close skill
+
+The repository ships a Claude Code skill in `skills/session-catalogue-close/SKILL.md`. Copy it to `~/.claude/skills/session-catalogue-close/` so that asking the agent to "conclude this session" ends the session with the `<!-- cc-catalogue:session-concluded` marker and an away-summary. bossman reports such sessions as concluded rather than interrupted; see [Agent Log Formats and Parsing](../concepts/agent-logs.md).
 
 ## Recovering
 

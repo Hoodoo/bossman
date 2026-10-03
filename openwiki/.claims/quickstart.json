@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:f3db081e9cc0850677f5786821a0cabdab3d4a23f713cde680cb2c8ca3a05c39",
+  "pageVersion": "sha256:288a2e49c7152d7d16fcece6580ebe39a4bee378918e7a532b435f7fa27502fc",
   "claims": [
     {
       "id": "claim_dc10939d10708d3f8d6f0f43106ceb76",
@@ -57,18 +57,28 @@
       "statement": "The README documents that Codex costs come from the pricing table and are API-equivalent on a ChatGPT plan, and that Codex Desktop's import sync creates Claude copies.",
       "evidence": [
         {
-          "resource": "repo://README.md#L62-L62",
+          "resource": "repo://README.md#L73-L73",
           "version": "repo-lines-v1:sha256:bb3f61ddf95155e0bf5a4104ea830d626bd8fa0284fb4b0f41ff3bcb3ce9e50e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmIzZjYxZGRmOTUxNTVlMGJmNWE0MTA0ZWE4MzBkNjI2YmQ4ZmEwMjg0ZmI0YjBmNDFmZjNiY2IzY2U5ZTUwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmIzZjYxZGRmOTUxNTVlMGJmNWE0MTA0ZWE4MzBkNjI2YmQ4ZmEwMjg0ZmI0YjBmNDFmZjNiY2IzY2U5ZTUwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWNkNGM3MDAzNDFhM2M4YmI4ZmQ2NTdiYTUzZGNhMzc2MTkzNTQzYTI5ZGI3ZGE1OGRmZGM3YjUzZGFjYjk1OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDRmZjUyNDJiMTg2NmJmMTAxYjc1MGNhODc0ODFjOGIyYTFhNzA1YzVmN2UzZGNiZjEzYzFkZDI2ZGViMjM0YiJ9"
         },
         {
-          "resource": "repo://README.md#L73-L76",
+          "resource": "repo://README.md#L84-L87",
           "version": "repo-lines-v1:sha256:e0f4a314cf30bb5e6158d01638812768162e64b86dbc528721e038ab5e4c3b8f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTVlOWE4YzE1NWIzZjNhYTM0YmFlZjVjNjkzMDUwOTZiZjYyNjc3NGViMDg1MjJiYzM2YjhiMTVhY2ZhMTAzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmNhOWFkNzliNTk4ZmM2NDkwZWMzNWE3NDU4Zjc4MzVjN2FhMTZjMzliMmFiOGFlMzM5NTliOWFiM2IwYWNiOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjFkMGQ2Y2NiYjYyZmMyYmE2N2I0MDQ1YWEwMWEyYjVkYWMwMTk5ZDMxM2YzM2E1MDk1YTcwNTdhMzFlMzMwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmE4ZmVlODI0MWVlZGI0OThiYzdkNmU1ZGEwMTUyZTAzYTdmODYzY2IzODRiNGU2NDBiYTBjYTNhMTYyNWZhOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_cfda544ce6abd7c2cb84781a873f6487",
+      "statement": "bossman can be installed without a clone via go install github.com/Hoodoo/bossman/cmd/bossman@latest.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L14-L19",
+          "version": "repo-lines-v1:sha256:a7144e0d81ec107f9bd377b35de84afc9f0e5fbc6177675ab46ec02e449e2803:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWM2ZGU5MDgyYjc4Mjg0MDI4ZWY1MGRmNmY1OTRjOTVhOTE2NzY4N2YwNzgyZmI2OGE5ZjI1MDI1YjIwN2JlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI1YWQyZmM4NWQ4YjQwMWY2MTc3YmFjZmMzYjMyZjg0MjdjNDllMWM4YzJmMzQ2MjFmNjFmYjU1ZjliZTAwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2QxOGNhYjNmZTE5NjUwNWJhOTQxNzJjOTg3OWNjZWM5ZWYzMThhZjk4MzdkNDY2NjNiODAwZmMwNzdkZDVlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWVmYTFiYjBhOGEyMGI4Y2IyYzc2ZDJlMTY5OGM3NDRjNmY1ODUxMDAxNTI1ZWMxODI1YjE0NjgxYjE5YmVhZCJ9"
         }
       ]
     }
   ],
   "verification": {
-    "by": "owcli/ff31f70",
-    "at": "2026-10-02T15:18:40.164Z"
+    "by": "owcli/2d956c2",
+    "at": "2026-10-03T15:42:31.750Z"
   }
 }

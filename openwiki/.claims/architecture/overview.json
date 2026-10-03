@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:95e30e97f76ece05ec264e9dabb8618e8f1fd9f237cfaa8d2041575f350d1b18",
+  "pageVersion": "sha256:caa5c6be2eae335e151a26cfcb81160d3d70cb0f58cd2bbf045a854dc58031d7",
   "claims": [
     {
       "id": "claim_babf0b7583510fdd87317fec73793d81",
@@ -78,17 +78,37 @@
     },
     {
       "id": "claim_ce01cddb80292182a83fc53f101f5ae8",
-      "statement": "The build version is injected into internal/version via -ldflags by make build.",
+      "statement": "The build version is injected into github.com/Hoodoo/bossman/internal/version via -ldflags by make build.",
       "evidence": [
         {
           "resource": "repo://Makefile#L1-L9",
-          "version": "repo-lines-v1:sha256:3de3eca1eb12069a8a2161e837340bc653ad715b4fbe59bc1111a3854a35a2c8:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg4N2Q0NWY5OWY3ZDk3MjhiNTRkYWRjOTg3OTc3ZjdiYWNhNzcwNWZhZmI5N2JlNzgxYmQxOWQzOTI4YTkwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODcxMGI0ZmRiZjhlOGI1MDU2OTllZGE1MDkxNWQ4MGE3ZDY4Y2NhZmM1YWEyZDlkMzE1NjQ4OTc2NjJkZjQyOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWNhYmQyN2FjMTJhMDllMzI0YjdkN2RlMmQ4OTk1MjMxYTViZTQzNjExMjU1MzI0NGRkNTJiODgyNDJiODdlNiJ9"
+          "version": "repo-lines-v1:sha256:8a9d40d9181bca1627df142db9f35c5ba0cdf1d404006c05d2fc40ff5e49e202:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzg4N2Q0NWY5OWY3ZDk3MjhiNTRkYWRjOTg3OTc3ZjdiYWNhNzcwNWZhZmI5N2JlNzgxYmQxOWQzOTI4YTkwOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODcxMGI0ZmRiZjhlOGI1MDU2OTllZGE1MDkxNWQ4MGE3ZDY4Y2NhZmM1YWEyZDlkMzE1NjQ4OTc2NjJkZjQyOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWNhYmQyN2FjMTJhMDllMzI0YjdkN2RlMmQ4OTk1MjMxYTViZTQzNjExMjU1MzI0NGRkNTJiODgyNDJiODdlNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7f78dfb76f5ce3831acca1561ea2ebd9",
+      "statement": "When no -ldflags version is set, internal/version falls back to the main module version from runtime/debug.ReadBuildInfo, ignoring \"(devel)\".",
+      "evidence": [
+        {
+          "resource": "repo://internal/version/version.go#L8-L17",
+          "version": "repo-lines-v1:sha256:fe9392c51c0be482d008f863de71ea792dcc86e45c5436b93b3700693229d103:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3ZjU3ZTZlYzdiMjc1ZjlhNmU3ZmNhODE2OGU4Y2U1NTM1Y2E1MzJmZTFkZDg4NWU3OWRjYjZmY2ZkYWM2YmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2ZTZjMTY5Njk0OGExZWYxYjhlMDcyYjFmMGI1NzIxYjJkNDljZDRkMTFiNzllMzkwNjU0OTZjZmZhYmFkYTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6f8ec6959b22b92e80f3dfddeb7dcd9d",
+      "statement": "The Go module path is github.com/Hoodoo/bossman.",
+      "evidence": [
+        {
+          "resource": "repo://go.mod#L1-L1",
+          "version": "repo-lines-v1:sha256:e8292b91dc05e84c9410e994961156c6c5fb9537a0bf95cb2de38f411c924345:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTgyOTJiOTFkYzA1ZTg0Yzk0MTBlOTk0OTYxMTU2YzZjNWZiOTUzN2EwYmY5NWNiMmRlMzhmNDExYzkyNDM0NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTgyOTJiOTFkYzA1ZTg0Yzk0MTBlOTk0OTYxMTU2YzZjNWZiOTUzN2EwYmY5NWNiMmRlMzhmNDExYzkyNDM0NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTMxNjM4MDFlMWQxMDc1YzdhMzRjY2JiOTY2OGY5NGMzOTgxYTc0MjQxZjQzZDAwMjNkNTE3Njk2MWE5OTkzOSJ9"
         }
       ]
     }
   ],
   "verification": {
-    "by": "owcli/ff31f70",
-    "at": "2026-10-02T14:59:42.905Z"
+    "by": "owcli/2d956c2",
+    "at": "2026-10-03T15:41:56.739Z"
   }
 }
