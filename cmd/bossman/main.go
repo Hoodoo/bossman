@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"bossman/internal/cli"
+	"github.com/Hoodoo/bossman/internal/cli"
 )
 
 func main() {

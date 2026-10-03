@@ -9,8 +9,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"bossman/internal/catalog"
-	"bossman/internal/store"
+	"github.com/Hoodoo/bossman/internal/catalog"
+	"github.com/Hoodoo/bossman/internal/store"
 )
 
 func (a *app) nameCmd() *cobra.Command {

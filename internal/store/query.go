@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"bossman/internal/model"
+	"github.com/Hoodoo/bossman/internal/model"
 )
 
 // Row is one session as listed.

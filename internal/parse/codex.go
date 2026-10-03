@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"bossman/internal/model"
+	"github.com/Hoodoo/bossman/internal/model"
 )
 
 // rolloutID matches the session UUID at the end of a Codex rollout file

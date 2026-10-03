@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"bossman/internal/model"
+	"github.com/Hoodoo/bossman/internal/model"
 )
 
 // DiscoverClaude finds Claude Code sessions under a projects directory

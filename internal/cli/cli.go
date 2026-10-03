@@ -13,8 +13,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"bossman/internal/catalog"
-	"bossman/internal/version"
+	"github.com/Hoodoo/bossman/internal/catalog"
+	"github.com/Hoodoo/bossman/internal/version"
 )
 
 type app struct {

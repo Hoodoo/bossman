@@ -14,9 +14,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"bossman/internal/catalog"
-	"bossman/internal/pricing"
-	"bossman/internal/web"
+	"github.com/Hoodoo/bossman/internal/catalog"
+	"github.com/Hoodoo/bossman/internal/pricing"
+	"github.com/Hoodoo/bossman/internal/web"
 )
 
 func (a *app) serveCmd() *cobra.Command {

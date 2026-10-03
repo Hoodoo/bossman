@@ -15,8 +15,8 @@ import (
 	"sync"
 	"time"
 
-	"bossman/internal/catalog"
-	"bossman/internal/store"
+	"github.com/Hoodoo/bossman/internal/catalog"
+	"github.com/Hoodoo/bossman/internal/store"
 )
 
 //go:embed static

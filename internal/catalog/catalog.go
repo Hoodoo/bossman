@@ -7,12 +7,12 @@ import (
 	"path/filepath"
 	"time"
 
-	"bossman/internal/archive"
-	"bossman/internal/config"
-	"bossman/internal/model"
-	"bossman/internal/parse"
-	"bossman/internal/pricing"
-	"bossman/internal/store"
+	"github.com/Hoodoo/bossman/internal/archive"
+	"github.com/Hoodoo/bossman/internal/config"
+	"github.com/Hoodoo/bossman/internal/model"
+	"github.com/Hoodoo/bossman/internal/parse"
+	"github.com/Hoodoo/bossman/internal/pricing"
+	"github.com/Hoodoo/bossman/internal/store"
 )
 
 // Catalog is an opened bossman home.

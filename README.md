@@ -14,7 +14,18 @@ A single Go binary; no runtime dependencies.
 ## Install
 
 ```sh
+go install github.com/Hoodoo/bossman/cmd/bossman@latest
+# or, from a clone:
 make install          # builds and installs ~/.local/bin/bossman
+```
+
+For Claude Code, install the `session-catalogue-close` skill so you can end
+a session with "conclude this session" and bossman reports it as concluded
+rather than interrupted:
+
+```sh
+mkdir -p ~/.claude/skills/session-catalogue-close
+cp skills/session-catalogue-close/SKILL.md ~/.claude/skills/session-catalogue-close/
 ```
 
 ## Use

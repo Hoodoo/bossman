@@ -19,7 +19,7 @@ import (
 
 	_ "modernc.org/sqlite"
 
-	"bossman/internal/model"
+	"github.com/Hoodoo/bossman/internal/model"
 )
 
 // TimeFormat is how timestamps are stored: UTC, fixed width, sortable.

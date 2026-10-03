@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"bossman/internal/model"
+	"github.com/Hoodoo/bossman/internal/model"
 )
 
 func TestDefaultTable(t *testing.T) {

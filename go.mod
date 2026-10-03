@@ -1,4 +1,4 @@
-module bossman
+module github.com/Hoodoo/bossman
 
 go 1.22.2
 

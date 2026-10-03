@@ -8,10 +8,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"bossman/internal/catalog"
-	"bossman/internal/model"
-	"bossman/internal/parse"
-	"bossman/internal/store"
+	"github.com/Hoodoo/bossman/internal/catalog"
+	"github.com/Hoodoo/bossman/internal/model"
+	"github.com/Hoodoo/bossman/internal/parse"
+	"github.com/Hoodoo/bossman/internal/store"
 )
 
 type filterFlags struct {

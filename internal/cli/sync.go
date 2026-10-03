@@ -7,8 +7,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"bossman/internal/archive"
-	"bossman/internal/catalog"
+	"github.com/Hoodoo/bossman/internal/archive"
+	"github.com/Hoodoo/bossman/internal/catalog"
 )
 
 func (a *app) syncCmd() *cobra.Command {

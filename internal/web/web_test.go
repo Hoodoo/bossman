@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"bossman/internal/catalog"
+	"github.com/Hoodoo/bossman/internal/catalog"
 )
 
 func server(t *testing.T) *Server {

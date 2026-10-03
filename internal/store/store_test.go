@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"bossman/internal/model"
+	"github.com/Hoodoo/bossman/internal/model"
 )
 
 func session(id, project string, started time.Time, cost float64) (*model.Session, Priced) {
