@@ -66,6 +66,21 @@ regularly, e.g. from cron:
 
 or leave `bossman serve --sync-every 30m` running.
 
+### Behind a reverse proxy
+
+`serve` stays on loopback by default. To publish the UI through a proxy that
+signs people in, such as Google IAP, let it listen where the proxy reaches
+it, accept the public name, and trust the proxy's user header:
+
+```sh
+bossman serve --addr 0.0.0.0:7788 --allow-host bossman.example.com \
+  --user-header X-Goog-Authenticated-User-Email
+```
+
+Requests without the header are refused, and `GET /api/viewer` reports who
+is signed in. Only trust the header when nothing but the proxy can reach the
+address (on GCP, a firewall that admits only the load balancer).
+
 ## What is measured
 
 | Metric | Meaning |

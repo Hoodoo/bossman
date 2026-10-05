@@ -14,6 +14,11 @@ import (
 
 func server(t *testing.T) *Server {
 	t.Helper()
+	return serverWith(t, Options{})
+}
+
+func serverWith(t *testing.T, opts Options) *Server {
+	t.Helper()
 	dir := t.TempDir()
 	claude := filepath.Join(dir, "claude")
 	t.Setenv("BOSSMAN_CLAUDE_DIR", claude)
@@ -30,7 +35,7 @@ func server(t *testing.T) *Server {
 		t.Fatal(err)
 	}
 	t.Cleanup(func() { c.Close() })
-	s := New(c, "127.0.0.1")
+	s := New(c, "127.0.0.1", opts)
 	if _, err := s.Sync(false); err != nil {
 		t.Fatal(err)
 	}
@@ -109,5 +114,47 @@ func TestRequestGuards(t *testing.T) {
 	s.ServeHTTP(w, req)
 	if w.Code != http.StatusForbidden {
 		t.Errorf("rebinding host: %d", w.Code)
+	}
+}
+
+// TestBehindProxy: a public name and a trusted user header let the server
+// run behind Google IAP; requests without the header are refused.
+func TestBehindProxy(t *testing.T) {
+	s := serverWith(t, Options{AllowHosts: []string{"Bossman.Example.com"}, UserHeader: "X-Goog-Authenticated-User-Email"})
+	req := func(method, host, path, body string, hdr map[string]string) int {
+		r := httptest.NewRequest(method, "http://"+host+path, strings.NewReader(body))
+		for k, v := range hdr {
+			r.Header.Set(k, v)
+		}
+		w := httptest.NewRecorder()
+		s.ServeHTTP(w, r)
+		if path == "/api/viewer" && w.Code == 200 && !strings.Contains(w.Body.String(), `"user":"alice@example.com"`) {
+			t.Errorf("viewer body %s", w.Body.String())
+		}
+		return w.Code
+	}
+	user := map[string]string{"X-Goog-Authenticated-User-Email": "accounts.google.com:alice@example.com"}
+	if code := req("GET", "bossman.example.com", "/api/viewer", "", user); code != 200 {
+		t.Errorf("signed-in viewer: %d", code)
+	}
+	if code := req("GET", "bossman.example.com", "/api/sessions", "", nil); code != 401 {
+		t.Errorf("no user header: %d", code)
+	}
+	if code := req("GET", "evil.test", "/api/sessions", "", user); code != 403 {
+		t.Errorf("unknown host: %d", code)
+	}
+	write := map[string]string{"Content-Type": "application/json", "Origin": "https://bossman.example.com"}
+	for k, v := range user {
+		write[k] = v
+	}
+	if code := req("PUT", "bossman.example.com", "/api/sessions/claude:s1/meta", `{"display_name":"x"}`, write); code != 200 {
+		t.Errorf("same-origin write through the proxy: %d", code)
+	}
+	write["Origin"] = "https://evil.test"
+	if code := req("PUT", "bossman.example.com", "/api/sessions/claude:s1/meta", `{}`, write); code != 403 {
+		t.Errorf("foreign origin through the proxy: %d", code)
+	}
+	if v := serverWith(t, Options{}).Viewer(httptest.NewRequest("GET", "/", nil)); v != "" {
+		t.Errorf("viewer without a user header option: %q", v)
 	}
 }

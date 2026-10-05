@@ -27,23 +27,35 @@ func (a *app) serveCmd() *cobra.Command {
 		Use:   "serve",
 		Short: "Run the local web UI",
 		Long: `serve starts the web UI on a loopback address. It syncs once at start-up
-(unless --no-sync) and, with --sync-every, keeps archiving while it runs.`,
+(unless --no-sync) and, with --sync-every, keeps archiving while it runs.
+
+Behind a reverse proxy such as Google IAP, listen where the proxy can reach
+the server, accept the public name, and trust the proxy's user header:
+
+  bossman serve --addr 0.0.0.0:7788 --allow-host bossman.example.com \
+    --user-header X-Goog-Authenticated-User-Email
+
+With --user-header, requests without that header are refused. Only use it
+when nothing but the proxy can reach the address.`,
 		Args: cobra.NoArgs,
 	}
 	var noSync bool
+	var opts web.Options
 	cmd.Flags().StringVar(&addr, "addr", "127.0.0.1:7788", "listen address (keep it on loopback)")
 	cmd.Flags().BoolVar(&open, "open", false, "open the UI in a browser")
 	cmd.Flags().DurationVar(&every, "sync-every", 0, "also sync periodically, e.g. 15m (0 disables)")
 	cmd.Flags().BoolVar(&noSync, "no-sync", false, "do not sync at start-up")
+	cmd.Flags().StringArrayVar(&opts.AllowHosts, "allow-host", nil, "also accept this name in the Host header, e.g. a proxy's public name (repeatable)")
+	cmd.Flags().StringVar(&opts.UserHeader, "user-header", "", "trust this request header as the signed-in user and refuse requests without it")
 	cmd.RunE = a.withCatalog(func(c *catalog.Catalog, _ []string) error {
 		host, _, err := net.SplitHostPort(addr)
 		if err != nil {
 			return fmt.Errorf("--addr %q: %w", addr, err)
 		}
-		if ip := net.ParseIP(host); host != "localhost" && (ip == nil || !ip.IsLoopback()) {
+		if ip := net.ParseIP(host); host != "localhost" && (ip == nil || !ip.IsLoopback()) && opts.UserHeader == "" {
 			fmt.Fprintf(os.Stderr, "warning: %s is not a loopback address; anyone who can reach it can read your sessions\n", host)
 		}
-		srv := web.New(c, host)
+		srv := web.New(c, host, opts)
 		if !noSync {
 			if st, err := srv.Sync(false); err != nil {
 				fmt.Fprintln(os.Stderr, "sync:", err)

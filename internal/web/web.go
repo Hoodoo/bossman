@@ -24,20 +24,38 @@ var static embed.FS
 
 // Server is an http.Handler for the UI and API.
 type Server struct {
-	c        *catalog.Catalog
-	mux      *http.ServeMux
-	allowed  map[string]bool
-	syncMu   sync.Mutex
-	lastSync time.Time
+	c          *catalog.Catalog
+	mux        *http.ServeMux
+	allowed    map[string]bool
+	userHeader string
+	syncMu     sync.Mutex
+	lastSync   time.Time
+}
+
+// Options let the server run behind a reverse proxy.
+type Options struct {
+	// AllowHosts are further names accepted in the Host header, such as the
+	// public name a proxy forwards.
+	AllowHosts []string
+	// UserHeader names a request header the proxy sets to the signed-in
+	// viewer (X-Goog-Authenticated-User-Email behind Google IAP). When set,
+	// requests without it are refused, so traffic that bypasses the proxy
+	// fails closed. Only set it when nothing but the proxy can reach the
+	// server, since anyone else could send the header.
+	UserHeader string
 }
 
 // New builds the server. listenHost is the host part of the listen
-// address; requests must name it or a loopback name in their Host header,
-// which keeps other web pages from reaching the API by DNS rebinding.
-func New(c *catalog.Catalog, listenHost string) *Server {
-	s := &Server{c: c, mux: http.NewServeMux(), allowed: map[string]bool{
+// address; requests must name it, a loopback name, or one of
+// opts.AllowHosts in their Host header, which keeps other web pages from
+// reaching the API by DNS rebinding.
+func New(c *catalog.Catalog, listenHost string, opts Options) *Server {
+	s := &Server{c: c, mux: http.NewServeMux(), userHeader: opts.UserHeader, allowed: map[string]bool{
 		"localhost": true, "127.0.0.1": true, "::1": true, listenHost: true,
 	}}
+	for _, h := range opts.AllowHosts {
+		s.allowed[strings.ToLower(h)] = true
+	}
 	sub, _ := fs.Sub(static, "static")
 	s.mux.Handle("GET /", http.FileServer(http.FS(sub)))
 	s.mux.HandleFunc("GET /api/sessions", s.listSessions)
@@ -50,7 +68,25 @@ func New(c *catalog.Catalog, listenHost string) *Server {
 	s.mux.HandleFunc("GET /api/stats", s.stats)
 	s.mux.HandleFunc("GET /api/facets", s.facets)
 	s.mux.HandleFunc("POST /api/sync", s.sync)
+	s.mux.HandleFunc("GET /api/viewer", s.viewer)
 	return s
+}
+
+// Viewer returns who the proxy says is signed in, or "" without a
+// UserHeader. Google IAP prefixes the address with "accounts.google.com:".
+func (s *Server) Viewer(r *http.Request) string {
+	if s.userHeader == "" {
+		return ""
+	}
+	v := strings.TrimSpace(r.Header.Get(s.userHeader))
+	if i := strings.LastIndex(v, ":"); i >= 0 {
+		v = v[i+1:]
+	}
+	return v
+}
+
+func (s *Server) viewer(w http.ResponseWriter, r *http.Request) {
+	writeJSON(w, map[string]string{"user": s.Viewer(r)})
 }
 
 // Sync archives and indexes; concurrent calls wait for each other.
@@ -69,8 +105,12 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if h, _, err := net.SplitHostPort(host); err == nil {
 		host = h
 	}
-	if !s.allowed[strings.Trim(host, "[]")] {
+	if !s.allowed[strings.ToLower(strings.Trim(host, "[]"))] {
 		http.Error(w, "forbidden host", http.StatusForbidden)
+		return
+	}
+	if s.userHeader != "" && s.Viewer(r) == "" {
+		http.Error(w, "no signed-in user", http.StatusUnauthorized)
 		return
 	}
 	if r.Method != http.MethodGet && r.Method != http.MethodHead {
