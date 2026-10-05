@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-03T15:42:32.054Z",
+  "updatedAt": "2026-10-05T09:11:03.608Z",
   "command": "update",
-  "gitHead": "9927914391bd4daf055529049f3035a472116836",
+  "gitHead": "bcc9dfcefd25ca5b18c48103d84769b157818a16",
   "model": "host-agent",
   "status": "complete",
   "language": "en"

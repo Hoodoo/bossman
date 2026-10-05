@@ -4,8 +4,8 @@ title: Web UI and API
 description: How bossman serve works, covering the embedded single-page UI, the JSON API routes, the request guards that keep other web pages out, and the front-end views.
 tags: [web, api, ui, security]
 verified:
-  - by: owcli/ff31f70
-    at: "2026-10-02T15:00:27.552Z"
+  - by: owcli/v0.3.0
+    at: "2026-10-05T09:10:46.991Z"
 sources:
   - id: openwiki-source-624bec8caa72beb0cfc3a9ff
     resource: repo://internal/cli/serve.go
@@ -17,7 +17,7 @@ sources:
     resource: repo://internal/web/web.go
   - id: openwiki-source-eb4688fc0fba2b62687b137d
     resource: repo://internal/web/web_test.go
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:04:05.474Z" }
+generated: { by: "owcli/v0.3.0", at: "2026-10-05T09:11:03.488Z" }
 ---
 
 # Web UI and API
@@ -28,7 +28,7 @@ generated: { by: "owcli/ff31f70", at: "2026-10-02T15:04:05.474Z" }
 
 `internal/cli/serve.go`:
 
-- It warns on stderr when `--addr` is not a loopback address, because anyone who can reach that address can read every session.
+- It warns on stderr when `--addr` is not a loopback address and no `--user-header` is set, because anyone who can reach that address can read every session.
 - It runs one sync at start-up unless `--no-sync` is given. With `--sync-every <duration>`, a goroutine syncs on that interval.
 - `--open` launches the browser (`xdg-open`, `open`, or `rundll32`).
 
@@ -57,11 +57,21 @@ Write endpoints return the updated `Detail`, so the UI re-renders from the respo
 
 The API holds private data and can change it, so `Server.ServeHTTP` applies three checks before routing:
 
-1. **Host allow-list.** The `Host` header must be `localhost`, `127.0.0.1`, `::1`, or the listen host. Anything else gets 403. This defeats DNS rebinding, where a hostile page's domain is re-pointed to 127.0.0.1.
+1. **Host allow-list.** The `Host` header must be `localhost`, `127.0.0.1`, `::1`, the listen host, or a name given with `--allow-host` (compared case-insensitively). Anything else gets 403. This defeats DNS rebinding, where a hostile page's domain is re-pointed to 127.0.0.1.
 2. **Origin check on writes.** A non-GET request that carries an `Origin` header must come from the same host.
 3. **JSON-only writes.** Non-GET requests must send `Content-Type: application/json`, otherwise 415. A cross-site HTML form cannot send that content type, and a script that tries triggers a CORS preflight, which the server never approves.
 
 It also sets `X-Content-Type-Options: nosniff` and `Referrer-Policy: no-referrer`. `internal/web/web_test.go` (`TestRequestGuards`) covers each guard.
+
+## Behind a reverse proxy
+
+`web.Options` (from `serve --allow-host` and `--user-header`) lets the UI run behind a proxy that signs people in, such as Google IAP:
+
+- `AllowHosts` adds the proxy's public names to the Host allow-list.
+- `UserHeader` names a header the proxy sets to the signed-in user (`X-Goog-Authenticated-User-Email` for IAP). `Server.Viewer` reads it and strips everything up to the last `:`, which removes IAP's `accounts.google.com:` prefix. When `UserHeader` is set, a request without it gets 401 before routing, so traffic that bypasses the proxy fails closed.
+- `GET /api/viewer` returns `{"user": ...}`, empty when no header is configured.
+
+The header is only as trustworthy as the network: anyone who can reach the listen address directly could send it, so it is meant for an address only the proxy can reach. The Origin and content-type guards apply unchanged; behind a proxy that preserves the Host header, the UI's own requests still match it. `TestBehindProxy` covers the public name, the 401, the viewer, and same-origin and foreign-origin writes.
 
 ## Front end
 

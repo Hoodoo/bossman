@@ -4,8 +4,8 @@ title: Testing and Extending
 description: How the test suite is organized, how fixtures reproduce real agent log shapes, how to check changes against real data, and how to add support for another agent.
 tags: [testing, fixtures, extending, adapters]
 verified:
-  - by: owcli/ff31f70
-    at: "2026-10-02T15:18:31.760Z"
+  - by: owcli/v0.3.0
+    at: "2026-10-05T09:11:03.303Z"
 sources:
   - id: openwiki-source-4f22ab0c79d636fe0ca2b8b9
     resource: repo://internal/catalog/catalog.go
@@ -23,7 +23,7 @@ sources:
     resource: repo://internal/web/web_test.go
   - id: openwiki-source-012f2c78e3b1446dfc35803f
     resource: repo://Makefile
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:18:40.390Z" }
+generated: { by: "owcli/v0.3.0", at: "2026-10-05T09:11:03.488Z" }
 ---
 
 # Testing and Extending
@@ -41,7 +41,7 @@ generated: { by: "owcli/ff31f70", at: "2026-10-02T15:18:40.390Z" }
 | `store` | `TestAnnotationsSurviveReindex`, `TestResolve`, `TestListAndStats` | Annotations untouched by `Put`; export/import round trip; reference resolution; filters; aggregates skip empty imports |
 | `pricing` | `TestDefaultTable`, `TestOpusCostMatchesAgent`, `TestSessionCostSources`, `TestUserTable` | Prefix lookup; the table reproduces a real Claude-recorded cost; cost sources; user override |
 | `catalog` | `TestSyncArchivesAndSurvivesDeletion`, `TestSessionGrowthIsReindexed` | End-to-end sync, incremental reindex, sessions surviving the agent's deletion, transcripts from the archive |
-| `web` | `TestAPI`, `TestRequestGuards` | Every route, plus the host, origin, and content-type guards |
+| `web` | `TestAPI`, `TestRequestGuards`, `TestBehindProxy` | Every route, the host, origin, and content-type guards, and running behind a proxy with a trusted user header |
 
 The UI JavaScript has no automated tests. See [Web UI and API](../architecture/web-ui.md#changing-the-ui).
 
