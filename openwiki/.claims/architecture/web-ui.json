@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:9590adf42e6ba8286ffb3c5eef1a493d88b9226c992b43545ee99527da8036c9",
+  "pageVersion": "sha256:4501f682f27f96daa606c6d176e58566391f30bba3c234c443b43880c74e2330",
   "claims": [
     {
       "id": "claim_d22fce3877f3f414071fe6e8e62a28f4",
@@ -101,7 +101,7 @@
       "statement": "User links render as anchors only for http, https, file, and mailto URLs.",
       "evidence": [
         {
-          "resource": "repo://internal/web/static/app.js#L526-L530",
+          "resource": "repo://internal/web/static/app.js#L533-L537",
           "version": "repo-lines-v1:sha256:185116b01ae50cd39a6b6b7197061c99655aa0cb0be307ceecce5f1085911c9c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODE1OWQ3YjkzMjk1ZjFhNjdkMTJkMjYxOTc3MzIwMmY4MTMwOTVmNWU4ZDk5MzM4YjQzYzI5MTc4NTJiN2NkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODZmNTU4MGE5YWE3Y2Q0ZDY3YTYwMDAzMzI2ZDUxYmQ4MjY3YjM5ZGUyZDE3NWE4OTQ4NDIzMzFiZTFhYjBiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTRmOTc5YWY3MTJlNjJmM2JhMzM3YzM4ODRmOGM1YTdhODVkZmQ0N2E1ZmZmNmYzOTA4ZDVlNTJhNzhmNmNlYiJ9"
         }
       ]
@@ -125,11 +125,11 @@
       "statement": "The stats page fetches per-day groups once per agent and draws them as a stacked SVG bar chart.",
       "evidence": [
         {
-          "resource": "repo://internal/web/static/app.js#L560-L563",
+          "resource": "repo://internal/web/static/app.js#L567-L570",
           "version": "repo-lines-v1:sha256:5f5e69d3d84950a59e14a45f7ea4e2bd6991c8ace928eac23afeb2518d8e7f28:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2JlNzQ5MTU5NjdhZjE3NDJlYTk2YjhkNjgxNzA2NzU5YjI0NWViOGJmYTUzN2MxNzYzZjk2MjhjNDEzMzQyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTA5M2UxMjkwNmE2MWZkNWMwODlmZWU4ZmNhZmQ5NTJlNTdhNTkwOWEyNDlkZDEyNTA5NDk4ZDI3MWE3MWM5NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWJlZWZkOTBjMTJlN2I5YWIyODEwZTUyM2ZlNzBjMTA3YWJmYmEyNWQzMWI1NjllMTkwZmM3YWYwOTQ3YTAzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg1MGZlNmMyYWQwMDdhY2Q5ZjNiNjQxZmY1NDc4Y2M5YzZhZDA1YjkzNjVkZWNiNGM4YmYyY2RiNWExNDA3ZSJ9"
         },
         {
-          "resource": "repo://internal/web/static/app.js#L613-L623",
+          "resource": "repo://internal/web/static/app.js#L620-L630",
           "version": "repo-lines-v1:sha256:dbcfe6b161ad8be93cc0c92941faf57f2e1d2f7fd1b34c7de3792a9a069c8879:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1NmJiMTQ4N2Q1YTkwNGFlZTcyYzhiNTM3YzE3M2VhODIzOGM5NWE0YzVjOTljMDhkNmU2YjA2Yjk3YWNlOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZjI1YTU5ZTVjMzg5ODhlNzU4ZWNmOWQ3ZWYyNmU2YzRlNThhYWZmYmY0MmJhN2NkNzVkZjBhZWY2Yzg5ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NGZjMGMxNzNkMWVjM2ZjNTAxZDdkZmE5Mjg1NTAxYzUyN2NmYjQ3MTI1ODNkYTNjYzM2MTgwNTY2YjRiZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4MzBjNzZiYzJjNDgyZjg4NzQ2N2RmNTM0MmQxZTIxM2QyMjZkZjc3MzNmZDBmODkwNGZjZmY1ZWY4MWIwNTgifQ"
         }
       ]
@@ -193,12 +193,12 @@
       "statement": "GET /api/sessions hides Claude copies with no prompts of their own unless copies=1.",
       "evidence": [
         {
-          "resource": "repo://internal/store/query.go#L166-L168",
+          "resource": "repo://internal/store/query.go#L179-L181",
           "version": "repo-lines-v1:sha256:63337af33f76683a4c43933c7c6aaba1a4cb2f280c7c97f5064e873ac5ed5874:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODBkODNkOWRjODk1MjVjNjM2YWU0MmU0YTAxYTUxMjJkYzIxYzNlYTU1Y2NlZDc3Y2NjMTEzYWI1MGNjZGUxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDg5NjQ1MGNmMmJiOGEzMjIyYjJkOWUwOGExNDdiOGMxY2FkNzM0YzU1ZTM4YTEwNThkODUxZTAzYmVmY2Q0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmRmYTVjNzgxNDE1NTlhODc5NGY2NjQ1YWNmNWM5ZGI0MTczYjQwYjZmOWMwMWNjYzZiNzhjZjU1OWQzY2ZkNSJ9"
         },
         {
           "resource": "repo://internal/web/web.go#L163-L168",
-          "version": "repo-lines-v1:sha256:94d46cc6af9092f3bf2b3f2d0ba81448a669ea8e28876ffd83b2e2376b678870:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQyOTY4YzhhNjc1Y2FhZTI5NzgyY2I0NDQzZjA1ZjNhNDE2ODlkZmY1OTU1MmU5ZDUxOWFhODkzOTkyMzRjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDFkZTQ4YWQ0NzRkMTgzNDk0ZGE4YzNiYzA4MWFmYTI3YmExODk2ZWUzNTdlYWYxNGM0ZDY2NTFkYjVlMGEyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjY0NjYwZTEzYzQ0NzNkMzNlNjg1NGQ5ZGVkNWZlNDhkNDA0YzkyYThkMDZiMTZlNDIwYzg4ODAxMmQ5MWI1NyJ9"
+          "version": "repo-lines-v1:sha256:9e2499b310472c9aa128a3bad242ca0a2a046bb4f525bb4b3a51e39b64029451:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQyOTY4YzhhNjc1Y2FhZTI5NzgyY2I0NDQzZjA1ZjNhNDE2ODlkZmY1OTU1MmU5ZDUxOWFhODkzOTkyMzRjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDFkZTQ4YWQ0NzRkMTgzNDk0ZGE4YzNiYzA4MWFmYTI3YmExODk2ZWUzNTdlYWYxNGM0ZDY2NTFkYjVlMGEyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjY0NjYwZTEzYzQ0NzNkMzNlNjg1NGQ5ZGVkNWZlNDhkNDA0YzkyYThkMDZiMTZlNDIwYzg4ODAxMmQ5MWI1NyJ9"
         }
       ]
     },
@@ -207,11 +207,11 @@
       "statement": "The sessions list has a 'hide Claude copies' checkbox, ticked unless the URL has copies=1, and passes copies through to the API.",
       "evidence": [
         {
-          "resource": "repo://internal/web/static/app.js#L247-L251",
+          "resource": "repo://internal/web/static/app.js#L252-L256",
           "version": "repo-lines-v1:sha256:6d34eea805a6ff0f42c7f7c89b5b2090796265db6d7e701bcb09aad4b11f9820:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGNhNWFlNDFlZTdkZmQzYzhiZWFiYzA2YWNmNGUwYmY4NjRjNjA5YWVkMjRmZWJjZWRmZTEzNjRiMDk4MTliYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmYyNjEzYzk5ODlkMGYxZGNiNjQyZmYwYWFhZDExY2EzMGIyMTk4M2VmNjk3ZGFjMDRmMGY2ZGI2ODBlZTY3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODlmYmRhNzJkNTU2ZGMyMDY1NmFkMDAwMmI2ZjJiODg5OTcxNzQ4ZDI0YTcwOGFkMDBiMjQzNDA5ZjNlZWY3NSJ9"
         },
         {
-          "resource": "repo://internal/web/static/app.js#L257-L257",
+          "resource": "repo://internal/web/static/app.js#L262-L262",
           "version": "repo-lines-v1:sha256:e51877799b97e946f073b7034b9701e6e216a71ff3be34cdb8882f48c481b0c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTUxODc3Nzk5Yjk3ZTk0NmYwNzNiNzAzNGI5NzAxZTZlMjE2YTcxZmYzYmUzNGNkYjg4ODJmNDhjNDgxYjBjNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTUxODc3Nzk5Yjk3ZTk0NmYwNzNiNzAzNGI5NzAxZTZlMjE2YTcxZmYzYmUzNGNkYjg4ODJmNDhjNDgxYjBjNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzNmMTI4Y2M4NWE0ZWRkYTk3NDUyNjkxMmRlNDZjZWNlYmRjZGUwYzk1MzY3MTVjMGQzYjZkMTk1YzQ5YTMxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzY1NmU2MDk0Y2UzMTEyY2U4N2Q4NjgwOTZjNTk1MmY4NDQ4NTdhZjVkYzc1NGYxZjU2ZDFmM2FkOWUzMDFkNiJ9"
         }
       ]
@@ -221,14 +221,44 @@
       "statement": "The session page edits the project with a text field listing known projects and shows Reset to detected when the project is overridden.",
       "evidence": [
         {
-          "resource": "repo://internal/web/static/app.js#L384-L392",
+          "resource": "repo://internal/web/static/app.js#L391-L399",
           "version": "repo-lines-v1:sha256:adc6d953d301d4437deab06091b474f1cf64768c22d730338d227ab50ff8b914:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmNmNWExOWYwYWQ1MGFhOThjNjgyYzRmZmRmYTBkOWRkZjMyOGIxNzg5MDQxN2E3NWQxM2UyZDJmZGE3NDhiMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzYxNGVmZjYzZjMzZjVlNTBjNDY3YTY4NWZhMjEzYjNmM2YyNjFmMGY0MjZhNjc4ZTNiNTk3NWQ3NmJhZWUyZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDkwYTQyYzhjZGFlYWI3NjA3NzE4MWM4ZmNiOTJhYTQyMmNkOGMwNjUxMzdjODg5NDI3Zjg1OTg4MDQyZDUwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmIxZWY3YThjNGQ0YTNkOTQ4ZDQ5OTAwODkxM2ViMGIzZmNlZDg5NGY3NDhkZDNjODFlZTkwMTcwNjI0MjlhNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf6105b501aa4bdafa0c7bff7260f86d",
+      "statement": "GET /api/sessions accepts notag to leave out sessions with a tag.",
+      "evidence": [
+        {
+          "resource": "repo://internal/web/web.go#L166-L166",
+          "version": "repo-lines-v1:sha256:87c5d952d8c45e491efb8ad7e5f59c45c73d8be658b101cc39ab33cad455a6f8:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODdjNWQ5NTJkOGM0NWU0OTFlZmI4YWQ3ZTVmNTljNDVjNzNkOGJlNjU4YjEwMWNjMzlhYjMzY2FkNDU1YTZmOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiODdjNWQ5NTJkOGM0NWU0OTFlZmI4YWQ3ZTVmNTljNDVjNzNkOGJlNjU4YjEwMWNjMzlhYjMzY2FkNDU1YTZmOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODU1Y2ZhYTliZjcyNDgwNTBiYjg4ZWFmNWU4MDAyNTVlYjY5YWIwZjlkMTk4YjgxZTY0YjI2YTJmZGJlMThlMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWU1MzAxNDgzOTM5ODcyOTM0Mjg4MTgxMzQ4OTQzN2M0MjNlNjkwODdkNmZkMGZhNjZiYjdjYzRhY2Q2MTUzOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e9b2ba71246e9047812a62f86876c1ed",
+      "statement": "The sessions list requests notag=sink:* unless sinks=1 is in the URL or the tag filter is a sink: tag.",
+      "evidence": [
+        {
+          "resource": "repo://internal/web/static/app.js#L290-L292",
+          "version": "repo-lines-v1:sha256:79a9abbb7631965db3a9efcd284a5708d65854fe75b68075cf7fa8d99f364390:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmZlZjA0MjdhNTgwZWE1OWQ5NzU0N2YwMmFlNDBlYzA1Zjg2Yzc5MzM1MGExM2E0OTM2MTRkMGY0MzhkMzJlNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTU0ODc3NWQ0MmMwNDYzYWM4M2JjZGYwZjQ4ZjQ3ZmMxNTBlZmRmOWVmMzA3N2ZmYTM0YmJlZjAyMWQxNWIzMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmFjYTg2MmZkYTVmMmE4YzMyZmU1MmQxNTJhNmIxMjE2NzA1ZTEyNDRiY2U5MTRhZWIzNTM2MWU2OGViY2UxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTA1NmY4YjJhZjhhNDcyNWI0MDZkN2M4NTQ4NzUxODcxNmRmZDI1ZDU0ZmRmODY1YzVlMzAyYjFhMDI1MjJmNSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ad1f2c64325237cc7fc44fe0fddacde",
+      "statement": "The show sinks checkbox appears only when some tag starts with sink:.",
+      "evidence": [
+        {
+          "resource": "repo://internal/web/static/app.js#L246-L251",
+          "version": "repo-lines-v1:sha256:e35431a1defc2a7702390d6b583861c558f447cdc72b8b1daa5b04392d6bbe56:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWRiZWQzOGNiYjMzNzQwODVhODAyNmYyN2FmMTBhYzJhMWZjZjhiY2Q2ZjQyMTQ4ZjNiMWE0MjkzZjJiMjY5YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTVkZDU2NTgyYzA2MDVjNmRlNzk5NmMzZDNiNjlkMjU0ZGRlZWU2NTU2ZDI0ZGQ2MDMzMmY5NmVhNzVmNmM1ZCJ9"
         }
       ]
     }
   ],
   "verification": {
     "by": "owcli/v0.4.0",
-    "at": "2026-10-09T15:47:37.952Z"
+    "at": "2026-10-09T15:57:36.156Z"
   }
 }

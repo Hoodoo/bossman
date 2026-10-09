@@ -5,7 +5,7 @@ description: How sync copies agent session files into an append-only archive, ho
 tags: [archive, index, sqlite, sync]
 verified:
   - by: owcli/v0.4.0
-    at: "2026-10-09T15:47:11.810Z"
+    at: "2026-10-09T15:57:19.417Z"
 sources:
   - id: openwiki-source-17506c01deef3bc65f2fb2fc
     resource: repo://internal/archive/archive.go
@@ -23,7 +23,7 @@ sources:
     resource: repo://internal/store/store.go
   - id: openwiki-source-6dbe79f2b1613ac94797fd56
     resource: repo://internal/web/web.go
-generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:48:40.390Z" }
+generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:57:59.118Z" }
 ---
 
 # Archive and Index
@@ -87,6 +87,12 @@ Parsing details per agent are in [Agent Log Formats and Parsing](../concepts/age
 - `AddLink` requires an absolute URL. It rejects `javascript:`, `data:`, and `vbscript:`, and re-adding an existing URL updates its label.
 - `NormalizeTag` lowercases tags and rejects ones containing commas or whitespace.
 - `ExportAnnotations` and `ImportAnnotations` back `bossman meta export|import`. Export includes the override as `project`. Import replaces names and notes, sets the override when `project` is present, and adds tags and links.
+
+## Tag filters and sinks
+
+`Filter.Tag` keeps sessions with a tag; `Filter.NotTag` drops sessions that carry one. Both compare against the lowercased tags `NormalizeTag` stores, and `NotTag` is lowercased before the query. A trailing `*` turns `NotTag` into a prefix match (`t.tag LIKE <prefix>%`), with `%`, `_`, and `\` in the prefix escaped by `escapeLike` so only the `*` acts as a wildcard.
+
+A **sink** is the tag convention `sink:<name>` for sessions that belong to no project. The store knows nothing special about it: `NotTag: "sink:*"` hides every sink, and nothing applies that filter by default except the web list (see [Web UI and API](web-ui.md#front-end)). The stats page and `bossman stats` pass no `NotTag` unless asked, so sinks' cost is still counted.
 
 ## Project override
 

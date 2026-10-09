@@ -5,7 +5,7 @@ description: How bossman serve works, covering the embedded single-page UI, the 
 tags: [web, api, ui, security]
 verified:
   - by: owcli/v0.4.0
-    at: "2026-10-09T15:47:37.952Z"
+    at: "2026-10-09T15:57:36.156Z"
 sources:
   - id: openwiki-source-624bec8caa72beb0cfc3a9ff
     resource: repo://internal/cli/serve.go
@@ -19,7 +19,7 @@ sources:
     resource: repo://internal/web/web.go
   - id: openwiki-source-eb4688fc0fba2b62687b137d
     resource: repo://internal/web/web_test.go
-generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:48:40.390Z" }
+generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:57:59.118Z" }
 ---
 
 # Web UI and API
@@ -42,7 +42,7 @@ Registered in `web.New` using Go 1.22 method-and-pattern routing:
 
 | Route | Purpose |
 | --- | --- |
-| `GET /api/sessions` | List. Query parameters: `agent`, `project`, `q`, `tag`, `since`/`until` (YYYY-MM-DD), `archived=1`, `copies=1` (include Claude copies with no prompts of their own, hidden otherwise), `sort`, `dir=asc`, `limit` |
+| `GET /api/sessions` | List. Query parameters: `agent`, `project`, `q`, `tag`, `since`/`until` (YYYY-MM-DD), `archived=1`, `copies=1` (include Claude copies with no prompts of their own, hidden otherwise), `notag` (leave out sessions with this tag; a trailing `*` matches a prefix), `sort`, `dir=asc`, `limit` |
 | `GET /api/sessions/{key}` | `store.Detail` for one session |
 | `GET /api/sessions/{key}/transcript` | Transcript events, reparsed from the archive |
 | `PUT /api/sessions/{key}/meta` | `{display_name?, notes?}` |
@@ -80,7 +80,7 @@ The header is only as trustworthy as the network: anyone who can reach the liste
 
 `app.js` is a hash-routed single-page app:
 
-- `#/` shows sessions. A filter bar offers search, agent, project, tag, a since date, "only deleted by agent", and "hide Claude copies" (ticked by default; unticking it adds `copies=1`). Clicking a column header changes the sort. Filters and sort are kept in the URL.
+- `#/` shows sessions. A filter bar offers search, agent, project, tag, a since date, "only deleted by agent", "hide Claude copies" (ticked by default; unticking it adds `copies=1`), and "show sinks". Sinks are sessions tagged `sink:<name>` that belong to no project. The list asks the API for `notag=sink:*` unless "show sinks" is ticked (`sinks=1` in the URL) or the tag filter picks a `sink:` tag, so choosing a sink always shows its sessions. The checkbox appears only once some session has a `sink:` tag, and the stats page never hides sinks. Clicking a column header changes the sort. Filters and sort are kept in the URL.
 - `#/s/<key>` shows one session: metric tiles, an editable project (a text field suggesting known projects, with "Reset to detected" when overridden), editable display name, tags, links, and notes, the agents' summaries, per-model and per-tool tables, and a transcript that loads on demand.
 - `#/stats` shows analytics: a time range, KPI tiles, a per-day bar chart stacked by agent (metric selectable: cost, tokens, active time, sessions, prompts), and breakdowns by project, model, tool, or week.
 

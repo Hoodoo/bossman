@@ -5,7 +5,7 @@ description: Every bossman command and flag, how sessions are referenced, the fi
 tags: [cli, reference, commands]
 verified:
   - by: owcli/v0.4.0
-    at: "2026-10-09T15:48:12.082Z"
+    at: "2026-10-09T15:57:58.995Z"
 sources:
   - id: openwiki-source-40f02473f25984711e4a2563
     resource: repo://internal/cli/browse.go
@@ -21,7 +21,7 @@ sources:
     resource: repo://internal/store/query.go
   - id: openwiki-source-4a81fcd95533ed8ba5a77739
     resource: repo://internal/store/store.go
-generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:48:40.390Z" }
+generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:57:59.118Z" }
 ---
 
 # CLI Reference
@@ -69,6 +69,7 @@ See [Archive and Index](../architecture/archive-and-index.md) for what these do 
 | `-p, --project <substr>` | Project path contains this (the project override when one is set) |
 | `-s, --search <substr>` | Matches title, display name, first prompt, summary, notes, or key |
 | `-t, --tag <tag>` | Has this tag |
+| `--not-tag <tag>` | Does not have this tag; a trailing `*` matches a prefix, so `--not-tag 'sink:*'` leaves out every sink |
 | `--since`, `--until <when>` | Start time bounds |
 | `--archived-only` | Only sessions the agent has deleted |
 

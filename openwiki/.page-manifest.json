@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "pages": {
     "/openwiki/architecture/archive-and-index.md": {
-      "pageVersion": "sha256:0b70c65d2e5a7637e4277e755f8baff3d26c81604b6f9ba77c1885c9e9cc5857",
+      "pageVersion": "sha256:a4f1a150d706daadad36ffdbb38a4f18ea2b8bc05b55649512f8680e23cca568",
       "completedBy": "owcli/v0.4.0",
-      "completedRunId": "c05332f9-8a07-402f-a240-c75c811f1251",
-      "gitHead": "858e5c10ac3d0b2eaffc055ff1055ed45b09627f",
-      "sourceFingerprint": "sha256:fb40437312880bfbc5aead94541bad6370272515d8b01b5d3c927e969872640a"
+      "completedRunId": "b5d3fb8f-395e-46e0-85f5-c40b6ac490fe",
+      "gitHead": "3b1cece2f4d1224d92d4de837841e051dc33059c",
+      "sourceFingerprint": "sha256:56ffdf9c8c1e66f0aff4957b88d6c7d54a7c748b5f2828065074f0de3f618370"
     },
     "/openwiki/architecture/overview.md": {
       "pageVersion": "sha256:caa5c6be2eae335e151a26cfcb81160d3d70cb0f58cd2bbf045a854dc58031d7",
@@ -16,11 +16,11 @@
       "sourceFingerprint": "sha256:baf616d9f47f63337cac04380adf098fc8ad0ca38878ff7e4a21d05493e78c10"
     },
     "/openwiki/architecture/web-ui.md": {
-      "pageVersion": "sha256:9590adf42e6ba8286ffb3c5eef1a493d88b9226c992b43545ee99527da8036c9",
+      "pageVersion": "sha256:4501f682f27f96daa606c6d176e58566391f30bba3c234c443b43880c74e2330",
       "completedBy": "owcli/v0.4.0",
-      "completedRunId": "c05332f9-8a07-402f-a240-c75c811f1251",
-      "gitHead": "858e5c10ac3d0b2eaffc055ff1055ed45b09627f",
-      "sourceFingerprint": "sha256:fb40437312880bfbc5aead94541bad6370272515d8b01b5d3c927e969872640a"
+      "completedRunId": "b5d3fb8f-395e-46e0-85f5-c40b6ac490fe",
+      "gitHead": "3b1cece2f4d1224d92d4de837841e051dc33059c",
+      "sourceFingerprint": "sha256:56ffdf9c8c1e66f0aff4957b88d6c7d54a7c748b5f2828065074f0de3f618370"
     },
     "/openwiki/concepts/agent-logs.md": {
       "pageVersion": "sha256:6b2f79b9dc01340f12d035cf0a953d037ad043c2efd1a13e2d312cefb632f5b7",
@@ -30,11 +30,11 @@
       "sourceFingerprint": "sha256:c28577ca1c29091f3d62f4493ade6cabc78920dabe85760a4a2b9ca6dc9c3342"
     },
     "/openwiki/concepts/metrics.md": {
-      "pageVersion": "sha256:d54803a3ed8c5914ae7b2ed17848204fcd0f68e1aad14f058c7d3b8cef6e3d87",
+      "pageVersion": "sha256:9a98f8d89d08e1de390df9aa9179124bd54eb8c9c1a44cc966a8642e5336d976",
       "completedBy": "owcli/v0.4.0",
-      "completedRunId": "c05332f9-8a07-402f-a240-c75c811f1251",
-      "gitHead": "858e5c10ac3d0b2eaffc055ff1055ed45b09627f",
-      "sourceFingerprint": "sha256:fb40437312880bfbc5aead94541bad6370272515d8b01b5d3c927e969872640a"
+      "completedRunId": "b5d3fb8f-395e-46e0-85f5-c40b6ac490fe",
+      "gitHead": "3b1cece2f4d1224d92d4de837841e051dc33059c",
+      "sourceFingerprint": "sha256:56ffdf9c8c1e66f0aff4957b88d6c7d54a7c748b5f2828065074f0de3f618370"
     },
     "/openwiki/operations/configuration.md": {
       "pageVersion": "sha256:18abc5f304c88f34c3a121ccd3460eca5b2255f15ee4ab16f14e82e8f31d48ca",
@@ -51,11 +51,11 @@
       "sourceFingerprint": "sha256:fb40437312880bfbc5aead94541bad6370272515d8b01b5d3c927e969872640a"
     },
     "/openwiki/reference/cli.md": {
-      "pageVersion": "sha256:b48296db76ccabd59196be64f3dd3b35d68b16729318e936ad5080b0b3579efb",
+      "pageVersion": "sha256:89820166390376c0059776d10a62271bb27202f9b42e01467dfc54db5ace3d49",
       "completedBy": "owcli/v0.4.0",
-      "completedRunId": "c05332f9-8a07-402f-a240-c75c811f1251",
-      "gitHead": "858e5c10ac3d0b2eaffc055ff1055ed45b09627f",
-      "sourceFingerprint": "sha256:fb40437312880bfbc5aead94541bad6370272515d8b01b5d3c927e969872640a"
+      "completedRunId": "b5d3fb8f-395e-46e0-85f5-c40b6ac490fe",
+      "gitHead": "3b1cece2f4d1224d92d4de837841e051dc33059c",
+      "sourceFingerprint": "sha256:56ffdf9c8c1e66f0aff4957b88d6c7d54a7c748b5f2828065074f0de3f618370"
     },
     "/openwiki/workflows/testing.md": {
       "pageVersion": "sha256:8ff504d7c5eea4c175bc61c0005f268a082339f925d69972db40f4a7a06a10e0",
