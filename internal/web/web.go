@@ -163,7 +163,7 @@ func badRequest(msg string) error { return badRequestError(msg) }
 func filterFrom(q url.Values) (store.Filter, error) {
 	f := store.Filter{
 		Agent: q.Get("agent"), Project: q.Get("project"), Query: q.Get("q"),
-		Tag: q.Get("tag"), Sort: q.Get("sort"), Asc: q.Get("dir") == "asc",
+		Tag: q.Get("tag"), NotTag: q.Get("notag"), Sort: q.Get("sort"), Asc: q.Get("dir") == "asc",
 		Archived: q.Get("archived") == "1", SkipCopies: q.Get("copies") != "1",
 	}
 	for name, dst := range map[string]*time.Time{"since": &f.Since, "until": &f.Until} {

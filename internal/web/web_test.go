@@ -184,3 +184,10 @@ func TestFilterCopies(t *testing.T) {
 		}
 	}
 }
+
+func TestFilterNotTag(t *testing.T) {
+	v, _ := url.ParseQuery("notag=sink:*")
+	if f, err := filterFrom(v); err != nil || f.NotTag != "sink:*" {
+		t.Errorf("filterFrom(notag).NotTag = %q, %v", f.NotTag, err)
+	}
+}

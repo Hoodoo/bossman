@@ -55,6 +55,13 @@ bossman meta export > bossman-meta.json               # backup; `meta import` me
 Names, tags, notes, and links live in tables that indexing never touches,
 so `bossman index --force` rebuilds everything else safely.
 
+Sessions that belong to no project (a throwaway prototype, an agent
+cleaning up a config) can go in a **sink**: tag them `sink:<name>`, e.g.
+`bossman tag 211383a8 sink:prototype`. The web list hides sinks unless
+"show sinks" is ticked or the tag filter picks one; stats still count them.
+On the CLI, `ls --not-tag 'sink:*'` leaves them out (a trailing `*` matches a
+prefix).
+
 ### Keep archiving
 
 Archiving only helps if it runs before the agents clean up. Run `sync`

@@ -244,6 +244,11 @@ function filterBar(params, base, opts = {}) {
       h("input", { type: "checkbox", checked: state.archived === "1", onchange: e => apply("archived", e.target.checked ? "1" : "") }),
       "only deleted by agent"));
   }
+  if (opts.sinks && tags.some(t => t.startsWith("sink:"))) {
+    children.push(h("label", { title: "Sessions tagged sink:… belong to no project; stats still count them" },
+      h("input", { type: "checkbox", checked: state.sinks === "1", onchange: e => apply("sinks", e.target.checked ? "1" : "") }),
+      "show sinks"));
+  }
   if (opts.copies) {
     children.push(h("label", { title: "Codex Desktop's copies of Claude sessions with no prompts of their own; stats never count them" },
       h("input", { type: "checkbox", checked: state.copies !== "1", onchange: e => apply("copies", e.target.checked ? "" : "1") }),
@@ -279,10 +284,12 @@ const columns = [
 async function renderSessions(params) {
   const sort = params.get("sort") || "started";
   const dir = params.get("dir") || "desc";
-  view.replaceChildren(filterBar(params, "/", { search: true, archived: true, copies: true }), h("div", { class: "empty" }, "Loading…"));
+  view.replaceChildren(filterBar(params, "/", { search: true, archived: true, copies: true, sinks: true }), h("div", { class: "empty" }, "Loading…"));
   let rows;
   try {
-    rows = await api("/api/sessions?" + apiFilter(params, { limit: "500" }));
+    // Sinks stay hidden unless asked for, or unless the tag filter picks one.
+    const hideSinks = params.get("sinks") !== "1" && !(params.get("tag") || "").startsWith("sink:");
+    rows = await api("/api/sessions?" + apiFilter(params, { limit: "500", notag: hideSinks ? "sink:*" : "" }));
   } catch (e) {
     view.replaceChildren(errorBox(e));
     return;
@@ -325,7 +332,7 @@ async function renderSessions(params) {
   }));
   const total = rows.reduce((a, r) => (a.cost += r.cost_usd, a.tokens += fmt.tokens(r), a), { cost: 0, tokens: 0 });
   view.replaceChildren(
-    filterBar(params, "/", { search: true, archived: true, copies: true }),
+    filterBar(params, "/", { search: true, archived: true, copies: true, sinks: true }),
     h("p", { class: "muted" }, `${rows.length}${rows.length === 500 ? "+" : ""} sessions · ${fmt.money(total.cost)} · ${fmt.count(total.tokens)} tokens`),
     rows.length
       ? h("div", { class: "table-wrap" }, h("table", {}, h("thead", {}, head), body))

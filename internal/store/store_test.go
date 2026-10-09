@@ -176,6 +176,17 @@ func TestListAndStats(t *testing.T) {
 	if rows, _ = st.List(Filter{Tag: "keep"}); len(rows) != 1 || rows[0].Tags[0] != "keep" {
 		t.Errorf("tag filter = %+v", rows)
 	}
+	_ = st.SetTags(a.Key(), []string{"sink:proto"})
+	if rows, _ = st.List(Filter{NotTag: "sink:*"}); len(rows) != 2 {
+		t.Errorf("not-tag prefix = %d rows, want 2", len(rows))
+	}
+	if rows, _ = st.List(Filter{NotTag: "KEEP"}); len(rows) != 2 {
+		t.Errorf("not-tag exact = %d rows, want 2", len(rows))
+	}
+	if rows, _ = st.List(Filter{NotTag: "si%*"}); len(rows) != 3 {
+		t.Errorf("not-tag escapes LIKE wildcards = %d rows, want 3", len(rows))
+	}
+	_ = st.SetTags(a.Key(), nil)
 	if rows, _ = st.List(Filter{Since: day.Add(time.Hour)}); len(rows) != 2 {
 		t.Errorf("since filter = %d rows", len(rows))
 	}

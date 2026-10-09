@@ -98,8 +98,11 @@ type Filter struct {
 	Project string // substring of the project path
 	Query   string // substring of name, prompt, summary, notes, or key
 	Tag     string
-	Since   time.Time
-	Until   time.Time
+	// NotTag drops sessions carrying this tag; a trailing * matches any tag
+	// with that prefix, so "sink:*" hides every sink.
+	NotTag string
+	Since  time.Time
+	Until  time.Time
 	// Archived limits to sessions the agent itself no longer has.
 	Archived bool
 	// SkipCopies drops imported sessions with no activity of their own, so
@@ -151,6 +154,16 @@ func (f Filter) where() (string, []any) {
 	if f.Tag != "" {
 		conds = append(conds, "EXISTS (SELECT 1 FROM tags t WHERE t.key = s.key AND t.tag = ?)")
 		args = append(args, f.Tag)
+	}
+	if f.NotTag != "" {
+		tag := strings.ToLower(f.NotTag)
+		if prefix, ok := strings.CutSuffix(tag, "*"); ok {
+			conds = append(conds, "NOT EXISTS (SELECT 1 FROM tags t WHERE t.key = s.key AND t.tag LIKE ? ESCAPE '\\')")
+			args = append(args, escapeLike(prefix)+"%")
+		} else {
+			conds = append(conds, "NOT EXISTS (SELECT 1 FROM tags t WHERE t.key = s.key AND t.tag = ?)")
+			args = append(args, tag)
+		}
 	}
 	if !f.Since.IsZero() {
 		conds = append(conds, "s.started_at >= ?")

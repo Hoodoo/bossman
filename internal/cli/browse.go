@@ -15,8 +15,8 @@ import (
 )
 
 type filterFlags struct {
-	agent, project, query, tag, since, until string
-	archived, copies                         bool
+	agent, project, query, tag, notTag, since, until string
+	archived, copies                                 bool
 }
 
 func (f *filterFlags) register(cmd *cobra.Command) {
@@ -24,6 +24,7 @@ func (f *filterFlags) register(cmd *cobra.Command) {
 	cmd.Flags().StringVarP(&f.project, "project", "p", "", "only projects whose path contains this")
 	cmd.Flags().StringVarP(&f.query, "search", "s", "", "match name, title, prompt, summary, notes, or id")
 	cmd.Flags().StringVarP(&f.tag, "tag", "t", "", "only sessions with this tag")
+	cmd.Flags().StringVar(&f.notTag, "not-tag", "", "leave out sessions with this tag; a trailing * matches a prefix (sink:*)")
 	cmd.Flags().StringVar(&f.since, "since", "", "started at or after (2026-09-01, 7d, 2w, 36h)")
 	cmd.Flags().StringVar(&f.until, "until", "", "started before")
 	cmd.Flags().BoolVar(&f.archived, "archived-only", false, "only sessions the agent itself has deleted")
@@ -38,7 +39,7 @@ func (f *filterFlags) filter() (store.Filter, error) {
 	if err != nil {
 		return store.Filter{}, err
 	}
-	return store.Filter{Agent: f.agent, Project: f.project, Query: f.query, Tag: f.tag,
+	return store.Filter{Agent: f.agent, Project: f.project, Query: f.query, Tag: f.tag, NotTag: f.notTag,
 		Since: since, Until: until, Archived: f.archived, SkipCopies: !f.copies}, nil
 }
 
