@@ -1,6 +1,7 @@
 package store
 
 import (
+	"database/sql"
 	"fmt"
 	"net/url"
 	"sort"
@@ -23,6 +24,19 @@ func (s *Store) SetNotes(key, notes string) error {
 	_, err := s.db.Exec(`INSERT INTO annotations (key, notes, updated_at) VALUES (?, ?, ?)
 		ON CONFLICT(key) DO UPDATE SET notes = excluded.notes, updated_at = excluded.updated_at`,
 		key, notes, now())
+	return err
+}
+
+// SetProjectOverride changes the project used to attribute a session. A nil
+// project clears the override and returns to the project detected by the agent.
+func (s *Store) SetProjectOverride(key string, project *string) error {
+	var value any
+	if project != nil {
+		value = strings.TrimSpace(*project)
+	}
+	_, err := s.db.Exec(`INSERT INTO annotations (key, project_override, updated_at) VALUES (?, ?, ?)
+		ON CONFLICT(key) DO UPDATE SET project_override = excluded.project_override, updated_at = excluded.updated_at`,
+		key, value, now())
 	return err
 }
 
@@ -156,6 +170,7 @@ type Annotation struct {
 	Key         string   `json:"key"`
 	DisplayName string   `json:"display_name,omitempty"`
 	Notes       string   `json:"notes,omitempty"`
+	Project     *string  `json:"project,omitempty"`
 	Tags        []string `json:"tags,omitempty"`
 	Links       []Link   `json:"links,omitempty"`
 }
@@ -171,19 +186,23 @@ func (s *Store) ExportAnnotations() ([]Annotation, error) {
 		byKey[k] = a
 		return a
 	}
-	rows, err := s.db.Query(`SELECT key, display_name, notes FROM annotations`)
+	rows, err := s.db.Query(`SELECT key, display_name, notes, project_override FROM annotations`)
 	if err != nil {
 		return nil, err
 	}
 	for rows.Next() {
 		var k, n, notes string
-		if err := rows.Scan(&k, &n, &notes); err != nil {
+		var project sql.NullString
+		if err := rows.Scan(&k, &n, &notes, &project); err != nil {
 			rows.Close()
 			return nil, err
 		}
-		if n != "" || notes != "" {
+		if n != "" || notes != "" || project.Valid {
 			a := get(k)
 			a.DisplayName, a.Notes = n, notes
+			if project.Valid {
+				a.Project = &project.String
+			}
 		}
 	}
 	rows.Close()
@@ -238,6 +257,11 @@ func (s *Store) ImportAnnotations(in []Annotation) error {
 		}
 		if a.Notes != "" {
 			if err := s.SetNotes(a.Key, a.Notes); err != nil {
+				return err
+			}
+		}
+		if a.Project != nil {
+			if err := s.SetProjectOverride(a.Key, a.Project); err != nil {
 				return err
 			}
 		}

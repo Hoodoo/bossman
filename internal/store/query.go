@@ -63,7 +63,7 @@ func (r *Row) Name() string {
 	return r.ID
 }
 
-const rowColumns = `s.key, s.agent, s.id, s.project, s.git_branch, s.title,
+const rowColumns = `s.key, s.agent, s.id, COALESCE(a.project_override, s.project), s.git_branch, s.title,
 	COALESCE(a.display_name, ''), s.first_prompt, s.summary, s.concluded, s.in_source,
 	s.started_at, s.ended_at, s.wall_s, s.active_s, s.agent_s,
 	s.prompts, s.interrupts, s.rejections, s.interventions,
@@ -115,7 +115,7 @@ var sortColumns = map[string]string{
 	"wall": "s.wall_s", "active": "s.active_s", "prompts": "s.prompts",
 	"interventions": "s.interventions", "tools": "s.tool_calls",
 	"errors": "s.tool_errors", "tokens": "(s.input + s.cache_write + s.cache_read + s.output)",
-	"output": "s.output", "project": "s.project",
+	"output": "s.output", "project": "COALESCE(a.project_override, s.project)",
 	"name": "lower(COALESCE(NULLIF(a.display_name, ''), NULLIF(s.title, ''), s.first_prompt))",
 }
 
@@ -136,7 +136,7 @@ func (f Filter) where() (string, []any) {
 		args = append(args, f.Agent)
 	}
 	if f.Project != "" {
-		conds = append(conds, "s.project LIKE ? ESCAPE '\\'")
+		conds = append(conds, "COALESCE(a.project_override, s.project) LIKE ? ESCAPE '\\'")
 		args = append(args, "%"+escapeLike(f.Project)+"%")
 	}
 	if f.Query != "" {
@@ -235,25 +235,29 @@ type Link struct {
 // Detail is everything known about one session.
 type Detail struct {
 	Row
-	Path       string          `json:"path"`
-	Files      []string        `json:"files"`
-	Version    string          `json:"version"`
-	Entrypoint string          `json:"entrypoint"`
-	Notes      string          `json:"notes"`
-	LinkList   []Link          `json:"link_list"`
-	ModelUsage []ModelRow      `json:"model_usage"`
-	ToolUsage  []ToolRow       `json:"tool_usage"`
-	Summaries  []model.Summary `json:"summaries"`
+	DetectedProject   string          `json:"detected_project"`
+	ProjectOverridden bool            `json:"project_overridden"`
+	Path              string          `json:"path"`
+	Files             []string        `json:"files"`
+	Version           string          `json:"version"`
+	Entrypoint        string          `json:"entrypoint"`
+	Notes             string          `json:"notes"`
+	LinkList          []Link          `json:"link_list"`
+	ModelUsage        []ModelRow      `json:"model_usage"`
+	ToolUsage         []ToolRow       `json:"tool_usage"`
+	Summaries         []model.Summary `json:"summaries"`
 }
 
 // Get loads one session by key.
 func (s *Store) Get(key string) (*Detail, error) {
-	row := s.db.QueryRow(`SELECT `+rowColumns+`, s.path, s.files, s.version, s.entrypoint, COALESCE(a.notes, '')
+	row := s.db.QueryRow(`SELECT `+rowColumns+`, s.path, s.files, s.version, s.entrypoint, COALESCE(a.notes, ''),
+		s.project, a.project_override
 		FROM sessions s LEFT JOIN annotations a ON a.key = s.key WHERE s.key = ?`, key)
 	var d Detail
 	var files string
 	var concluded, inSource int
 	var tags string
+	var projectOverride sql.NullString
 	r := &d.Row
 	err := row.Scan(&r.Key, &r.Agent, &r.ID, &r.Project, &r.GitBranch, &r.Title,
 		&r.DisplayName, &r.FirstPrompt, &r.Summary, &concluded, &inSource,
@@ -262,7 +266,7 @@ func (s *Store) Get(key string) (*Detail, error) {
 		&r.ToolCalls, &r.ToolErrors, &r.APIErrors, &r.Compactions, &r.Subagents,
 		&r.Input, &r.CacheWrite, &r.CacheRead, &r.Output, &r.Reasoning, &r.Requests,
 		&r.CostUSD, &r.CostSource, &r.TableCostUSD, &r.Models, &r.ImportedFrom, &tags, &r.Links,
-		&d.Path, &files, &d.Version, &d.Entrypoint, &d.Notes)
+		&d.Path, &files, &d.Version, &d.Entrypoint, &d.Notes, &d.DetectedProject, &projectOverride)
 	if err == sql.ErrNoRows {
 		return nil, fmt.Errorf("%w: %s", ErrNotFound, key)
 	}
@@ -270,6 +274,7 @@ func (s *Store) Get(key string) (*Detail, error) {
 		return nil, err
 	}
 	r.Concluded, r.InSource = concluded == 1, inSource == 1
+	d.ProjectOverridden = projectOverride.Valid
 	r.Tags = []string{}
 	if tags != "" {
 		r.Tags = strings.Split(tags, ",")
@@ -367,8 +372,10 @@ func (s *Store) Stats(f Filter, by string) ([]Group, Group, error) {
 		sum(s.tool_errors), sum(s.api_errors), sum(s.wall_s), sum(s.active_s), sum(s.agent_s),
 		sum(s.cost_source = 'none' OR s.cost_source = 'partial')`
 	switch by {
-	case "agent", "project":
-		q = `SELECT s.` + by + `, ` + sessionCols + from + ` GROUP BY 1 ORDER BY 2 DESC`
+	case "agent":
+		q = `SELECT s.agent, ` + sessionCols + from + ` GROUP BY 1 ORDER BY 2 DESC`
+	case "project":
+		q = `SELECT COALESCE(a.project_override, s.project), ` + sessionCols + from + ` GROUP BY 1 ORDER BY 2 DESC`
 	case "day", "week", "month":
 		expr := map[string]string{
 			"day":   `date(s.started_at, 'localtime')`,

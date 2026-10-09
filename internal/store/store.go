@@ -94,6 +94,7 @@ CREATE TABLE IF NOT EXISTS annotations (
 	key TEXT PRIMARY KEY,
 	display_name TEXT NOT NULL DEFAULT '',
 	notes TEXT NOT NULL DEFAULT '',
+	project_override TEXT,
 	updated_at TEXT NOT NULL DEFAULT ''
 );
 CREATE TABLE IF NOT EXISTS links (
@@ -130,6 +131,13 @@ func Open(path string) (*Store, error) {
 	if _, err := db.Exec(schema); err != nil {
 		db.Close()
 		return nil, fmt.Errorf("init schema: %w", err)
+	}
+	// CREATE TABLE IF NOT EXISTS does not add columns to databases created by
+	// older versions. Existing catalogues need this small in-place migration.
+	if _, err := db.Exec(`ALTER TABLE annotations ADD COLUMN project_override TEXT`); err != nil &&
+		!strings.Contains(strings.ToLower(err.Error()), "duplicate column") {
+		db.Close()
+		return nil, fmt.Errorf("migrate annotations: %w", err)
 	}
 	return &Store{db: db}, nil
 }

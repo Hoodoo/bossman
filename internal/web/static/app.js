@@ -376,10 +376,20 @@ async function renderDetail(key) {
       tile("Context", `${d.compactions} compactions`, `${d.subagents} subagents · ${d.api_errors} API errors`),
     );
 
+    const projectList = "project-options";
+    const projectInput = h("input", { type: "text", value: d.project, list: projectList,
+      "aria-label": "Project", placeholder: "Project path" });
+    const projectEditor = h("div", { class: "row" }, projectInput,
+      h("datalist", { id: projectList }, facets.projects.map(p => h("option", { value: p }))),
+      h("button", { type: "button", class: "ghost", onclick: () => save("/project", "PUT", { project: projectInput.value }) }, "Save"),
+      d.project_overridden ? h("button", { type: "button", class: "link",
+        title: `Use detected project: ${d.detected_project || "(none)"}`,
+        onclick: () => save("/project", "PUT", { reset: true }) }, "Reset to detected") : null);
+
     const facts = h("dl", { class: "kv" },
       ...[
         ["Agent title", d.title],
-        ["Project", fmt.path(d.project)],
+        ["Project", projectEditor],
         ["Branch", d.git_branch],
         ["Agent", [d.agent, d.version, d.entrypoint].filter(Boolean).join(" ")],
         ["Models", d.models.split(",").join(", ")],

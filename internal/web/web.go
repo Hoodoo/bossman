@@ -62,6 +62,7 @@ func New(c *catalog.Catalog, listenHost string, opts Options) *Server {
 	s.mux.HandleFunc("GET /api/sessions/{key}", s.getSession)
 	s.mux.HandleFunc("GET /api/sessions/{key}/transcript", s.transcript)
 	s.mux.HandleFunc("PUT /api/sessions/{key}/meta", s.putMeta)
+	s.mux.HandleFunc("PUT /api/sessions/{key}/project", s.putProject)
 	s.mux.HandleFunc("PUT /api/sessions/{key}/tags", s.putTags)
 	s.mux.HandleFunc("POST /api/sessions/{key}/links", s.addLink)
 	s.mux.HandleFunc("DELETE /api/sessions/{key}/links/{id}", s.removeLink)
@@ -255,6 +256,34 @@ func (s *Server) putMeta(w http.ResponseWriter, r *http.Request) {
 			writeErr(w, err)
 			return
 		}
+	}
+	s.getSession(w, r)
+}
+
+func (s *Server) putProject(w http.ResponseWriter, r *http.Request) {
+	key := r.PathValue("key")
+	var body struct {
+		Project *string `json:"project"`
+		Reset   bool    `json:"reset"`
+	}
+	if err := decode(r, &body); err != nil {
+		writeErr(w, err)
+		return
+	}
+	if err := s.exists(key); err != nil {
+		writeErr(w, err)
+		return
+	}
+	if body.Project == nil && !body.Reset {
+		writeErr(w, badRequest("project is required"))
+		return
+	}
+	if body.Reset {
+		body.Project = nil
+	}
+	if err := s.c.Store.SetProjectOverride(key, body.Project); err != nil {
+		writeErr(w, err)
+		return
 	}
 	s.getSession(w, r)
 }

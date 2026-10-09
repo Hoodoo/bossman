@@ -51,6 +51,10 @@ func TestAnnotationsSurviveReindex(t *testing.T) {
 	if err := st.SetNotes(key, "remember this"); err != nil {
 		t.Fatal(err)
 	}
+	project := "/work/reassigned"
+	if err := st.SetProjectOverride(key, &project); err != nil {
+		t.Fatal(err)
+	}
 	if err := st.SetTags(key, []string{"Bug", "bug", "infra"}); err != nil {
 		t.Fatal(err)
 	}
@@ -75,6 +79,9 @@ func TestAnnotationsSurviveReindex(t *testing.T) {
 	}
 	if d.DisplayName != "My name" || d.Notes != "remember this" {
 		t.Errorf("annotations lost: %q %q", d.DisplayName, d.Notes)
+	}
+	if d.Project != project || d.DetectedProject != "/work/a" || !d.ProjectOverridden {
+		t.Errorf("project override lost: project=%q detected=%q overridden=%v", d.Project, d.DetectedProject, d.ProjectOverridden)
 	}
 	if len(d.Tags) != 2 || d.Tags[0] != "bug" || d.Tags[1] != "infra" {
 		t.Errorf("tags = %v", d.Tags)
@@ -101,7 +108,7 @@ func TestAnnotationsSurviveReindex(t *testing.T) {
 		t.Fatal(err)
 	}
 	again, _ := other.ExportAnnotations()
-	if len(again) != 1 || again[0].DisplayName != "My name" || len(again[0].Links) != 1 || len(again[0].Tags) != 2 {
+	if len(again) != 1 || again[0].DisplayName != "My name" || again[0].Project == nil || *again[0].Project != project || len(again[0].Links) != 1 || len(again[0].Tags) != 2 {
 		t.Errorf("round trip = %+v", again)
 	}
 }
@@ -150,12 +157,14 @@ func TestListAndStats(t *testing.T) {
 		}
 	}
 	_ = st.SetTags(b.Key(), []string{"keep"})
+	override := "/work/gamma"
+	_ = st.SetProjectOverride(b.Key(), &override)
 
 	rows, err := st.List(Filter{Sort: "cost"})
 	if err != nil || len(rows) != 3 || rows[0].ID != "b2" {
 		t.Fatalf("List by cost = %+v, %v", rows, err)
 	}
-	if rows, _ = st.List(Filter{Project: "beta", Agent: "claude"}); len(rows) != 1 || rows[0].ID != "b2" {
+	if rows, _ = st.List(Filter{Project: "gamma", Agent: "claude"}); len(rows) != 1 || rows[0].ID != "b2" {
 		t.Errorf("project+agent filter = %+v", rows)
 	}
 	if rows, _ = st.List(Filter{Query: "prompt a1"}); len(rows) != 1 {
@@ -184,6 +193,9 @@ func TestListAndStats(t *testing.T) {
 	}
 	if len(groups) != 2 {
 		t.Errorf("groups = %+v", groups)
+	}
+	if groups[0].Key != "/work/gamma" {
+		t.Errorf("project override absent from stats: %+v", groups)
 	}
 	for _, by := range GroupBys {
 		if _, _, err := st.Stats(Filter{}, by); err != nil {
