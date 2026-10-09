@@ -134,6 +134,7 @@ type claudeParser struct {
 	usage    map[string]claudeUsage // per message id; last line wins
 	msgModel map[string]string
 	toolName map[string]string // tool_use id -> name
+	command  map[string]int    // Bash tool_use id -> s.Commands index
 	seenTool map[string]bool
 	title    string
 	custom   string
@@ -158,6 +159,7 @@ func ParseClaude(c Candidate, idle time.Duration, events bool) (*model.Session, 
 		usage:    map[string]claudeUsage{},
 		msgModel: map[string]string{},
 		toolName: map[string]string{},
+		command:  map[string]int{},
 		seenTool: map[string]bool{},
 	}
 	if err := eachLine(c.Main, func(l []byte) { p.line(l, false) }); err != nil {
@@ -271,6 +273,13 @@ func (p *claudeParser) assistant(e *claudeEntry, at time.Time, side bool) {
 			}
 			p.tool(b.Name).Calls++
 			p.s.ToolCalls++
+			if strings.EqualFold(b.Name, "bash") {
+				command := toolInput(b.Input)
+				p.command[b.ID] = len(p.s.Commands)
+				p.s.Commands = append(p.s.Commands, model.CommandCall{
+					Tool: b.Name, Command: command, Activity: ClassifyCommand(command),
+				})
+			}
 			if p.want {
 				p.events = append(p.events, model.Event{At: at, Role: "tool", Tool: b.Name, Text: toolInput(b.Input), Sidechain: side})
 			}
@@ -325,6 +334,9 @@ func (p *claudeParser) user(e *claudeEntry, at time.Time, side bool) {
 			if b.IsError && !rejected {
 				s.ToolErrors++
 				p.tool(p.toolName[b.ToolUseID]).Errors++
+				if i, ok := p.command[b.ToolUseID]; ok && i < len(s.Commands) {
+					s.Commands[i].Error = true
+				}
 			}
 			if p.want {
 				p.events = append(p.events, model.Event{At: at, Role: "result", Tool: p.toolName[b.ToolUseID], Text: out, IsError: b.IsError, Sidechain: side})

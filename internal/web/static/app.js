@@ -457,6 +457,27 @@ async function renderDetail(key) {
         h("td", {}, inlineBar(t.calls, maxCalls, t.calls)),
         h("td", { class: "num" + (t.calls && t.errors / t.calls >= 0.1 ? " status-bad" : "") }, t.errors ? `${t.errors} (${fmt.pct(t.errors, t.calls)})` : "—")))));
 
+    const activityOrder = ["planning", "documentation", "testing", "implementation", "source-control", "inspection", "environment", "other"];
+    const activityLabels = { "source-control": "Source control" };
+    const commandGroups = (d.command_usage || []).reduce((groups, command) => {
+      (groups[command.activity] ||= []).push(command);
+      return groups;
+    }, {});
+    const commandBreakdown = (d.command_usage || []).length
+      ? h("div", { class: "command-breakdown" },
+        h("h3", {}, "Shell activity"),
+        h("p", { class: "muted" }, "Rudimentary classification; expand a category to inspect the original calls."),
+        ...activityOrder.filter(a => commandGroups[a]?.length).map(activity => {
+          const commands = commandGroups[activity];
+          const errors = commands.filter(c => c.error).length;
+          const label = activityLabels[activity] || activity[0].toUpperCase() + activity.slice(1);
+          return h("details", { class: "command-group" },
+            h("summary", {}, `${label} · ${commands.length} call${commands.length === 1 ? "" : "s"}${errors ? ` · ${errors} errors` : ""}`),
+            h("ol", {}, commands.map(c => h("li", { class: c.error ? "command-error" : "" },
+              h("span", { class: "muted" }, c.tool + " "), h("code", {}, c.command)))));
+        }))
+      : null;
+
     const modelTable = h("table", {},
       h("thead", {}, h("tr", {}, ["Model", "Requests", "Input", "Cache write", "Cache read", "Output", "Cost"].map((c, i) => h("th", { class: i ? "num" : "" }, c)))),
       h("tbody", {}, d.model_usage.map(m => h("tr", {},
@@ -484,7 +505,10 @@ async function renderDetail(key) {
       h("div", { class: "card", style: "margin-top:16px" }, h("h2", {}, "Summaries written by the agent"), summaryBox),
       h("div", { class: "grid2", style: "margin-top:16px" },
         h("div", { class: "card" }, h("h2", {}, "Models"), d.model_usage.length ? modelTable : h("p", { class: "muted" }, "No usage recorded.")),
-        h("div", { class: "card" }, h("h2", {}, "Tools"), d.tool_usage.length ? toolTable : h("p", { class: "muted" }, "No tool calls."))),
+        h("div", { class: "card" }, h("h2", {}, "Tools"), d.tool_usage.length ? toolTable : h("p", { class: "muted" }, "No tool calls."),
+          commandBreakdown,
+          !commandBreakdown && d.tool_usage.some(t => ["Bash", "exec", "exec_command", "command", "shell", "local_shell"].includes(t.tool))
+            ? h("p", { class: "muted command-backfill" }, "Shell details are not indexed for this session. Run bossman index --force to backfill them.") : null)),
       h("div", { class: "card", style: "margin-top:16px" }, h("h2", {}, "Transcript"), transcript),
     );
   }

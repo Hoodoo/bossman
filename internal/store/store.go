@@ -85,6 +85,12 @@ CREATE TABLE IF NOT EXISTS session_tools (
 	calls INTEGER NOT NULL, errors INTEGER NOT NULL,
 	PRIMARY KEY (key, tool)
 );
+CREATE TABLE IF NOT EXISTS session_commands (
+	key TEXT NOT NULL, seq INTEGER NOT NULL,
+	tool TEXT NOT NULL, command TEXT NOT NULL, activity TEXT NOT NULL,
+	is_error INTEGER NOT NULL DEFAULT 0,
+	PRIMARY KEY (key, seq)
+);
 CREATE TABLE IF NOT EXISTS session_summaries (
 	key TEXT NOT NULL, seq INTEGER NOT NULL,
 	kind TEXT NOT NULL, text TEXT NOT NULL, at TEXT NOT NULL DEFAULT '',
@@ -186,7 +192,7 @@ func (s *Store) Put(sess *model.Session, p Priced, sig Indexed, now time.Time) e
 	}
 	defer tx.Rollback()
 	key := sess.Key()
-	for _, t := range []string{"session_models", "session_tools", "session_summaries"} {
+	for _, t := range []string{"session_models", "session_tools", "session_commands", "session_summaries"} {
 		if _, err := tx.Exec(`DELETE FROM `+t+` WHERE key = ?`, key); err != nil {
 			return err
 		}
@@ -232,6 +238,12 @@ func (s *Store) Put(sess *model.Session, p Priced, sig Indexed, now time.Time) e
 	}
 	for t, st := range sess.Tools {
 		if _, err := tx.Exec(`INSERT INTO session_tools VALUES (?,?,?,?)`, key, t, st.Calls, st.Errors); err != nil {
+			return err
+		}
+	}
+	for i, command := range sess.Commands {
+		if _, err := tx.Exec(`INSERT INTO session_commands VALUES (?,?,?,?,?,?)`,
+			key, i, command.Tool, command.Command, command.Activity, b2i(command.Error)); err != nil {
 			return err
 		}
 	}

@@ -237,6 +237,14 @@ type ToolRow struct {
 	Errors int    `json:"errors"`
 }
 
+// CommandRow is one classified shell invocation within a session.
+type CommandRow struct {
+	Tool     string `json:"tool"`
+	Command  string `json:"command"`
+	Activity string `json:"activity"`
+	Error    bool   `json:"error"`
+}
+
 // Link is a user-attached URL.
 type Link struct {
 	ID        int64  `json:"id"`
@@ -258,6 +266,7 @@ type Detail struct {
 	LinkList          []Link          `json:"link_list"`
 	ModelUsage        []ModelRow      `json:"model_usage"`
 	ToolUsage         []ToolRow       `json:"tool_usage"`
+	CommandUsage      []CommandRow    `json:"command_usage"`
 	Summaries         []model.Summary `json:"summaries"`
 }
 
@@ -328,6 +337,22 @@ func (s *Store) Get(key string) (*Detail, error) {
 			return nil, err
 		}
 		d.ToolUsage = append(d.ToolUsage, t)
+	}
+	rows.Close()
+	rows, err = s.db.Query(`SELECT tool, command, activity, is_error FROM session_commands WHERE key = ? ORDER BY seq`, key)
+	if err != nil {
+		return nil, err
+	}
+	d.CommandUsage = []CommandRow{}
+	for rows.Next() {
+		var command CommandRow
+		var isError int
+		if err := rows.Scan(&command.Tool, &command.Command, &command.Activity, &isError); err != nil {
+			rows.Close()
+			return nil, err
+		}
+		command.Error = isError != 0
+		d.CommandUsage = append(d.CommandUsage, command)
 	}
 	rows.Close()
 	rows, err = s.db.Query(`SELECT kind, text, at FROM session_summaries WHERE key = ? ORDER BY seq`, key)

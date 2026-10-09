@@ -28,7 +28,10 @@ func serverWith(t *testing.T, opts Options) *Server {
 	if err := os.MkdirAll(filepath.Dir(p), 0o755); err != nil {
 		t.Fatal(err)
 	}
-	if err := os.WriteFile(p, []byte(`{"type":"user","timestamp":"2026-10-01T10:00:00.000Z","message":{"role":"user","content":"hi"}}`+"\n"), 0o644); err != nil {
+	log := `{"type":"user","timestamp":"2026-10-01T10:00:00.000Z","message":{"role":"user","content":"hi"}}` + "\n" +
+		`{"type":"assistant","timestamp":"2026-10-01T10:00:01.000Z","message":{"id":"m1","model":"claude","content":[{"type":"tool_use","id":"t1","name":"Bash","input":{"command":"go test ./..."}}],"usage":{"input_tokens":1,"output_tokens":1}}}` + "\n" +
+		`{"type":"user","timestamp":"2026-10-01T10:00:02.000Z","message":{"role":"user","content":[{"type":"tool_result","tool_use_id":"t1","content":"ok"}]}}` + "\n"
+	if err := os.WriteFile(p, []byte(log), 0o644); err != nil {
 		t.Fatal(err)
 	}
 	c, err := catalog.Open(filepath.Join(dir, "home"))
@@ -64,6 +67,10 @@ func TestAPI(t *testing.T) {
 	var rows []map[string]any
 	if err := json.Unmarshal(w.Body.Bytes(), &rows); err != nil || len(rows) != 1 {
 		t.Fatalf("sessions: %d %s", w.Code, w.Body)
+	}
+	w = do(s, "GET", "/api/sessions/claude:s1", "", nil)
+	if w.Code != 200 || !strings.Contains(w.Body.String(), `"command_usage":[{"tool":"Bash","command":"go test ./...","activity":"testing","error":false}]`) {
+		t.Errorf("command detail: %d %s", w.Code, w.Body)
 	}
 	w = do(s, "PUT", "/api/sessions/claude:s1/meta", `{"display_name":"Named","notes":"n"}`, jsonHdr)
 	if w.Code != 200 || !strings.Contains(w.Body.String(), `"display_name":"Named"`) {

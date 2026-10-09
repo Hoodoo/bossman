@@ -76,6 +76,9 @@ func TestParseCodexLegacy(t *testing.T) {
 	check("tool calls", s.ToolCalls, 3)
 	check("tool errors", s.ToolErrors, 2) // exit code 2, failed patch
 	check("exec_command errors", s.Tools["exec_command"].Errors, 1)
+	if len(s.Commands) != 2 || s.Commands[0].Activity != ActivityTesting || !s.Commands[0].Error || s.Commands[1].Activity != ActivityInspection {
+		t.Errorf("commands = %+v", s.Commands)
+	}
 	check("compactions", s.Compactions, 1)
 	check("agent seconds", s.AgentSeconds, 42.0)
 
@@ -105,8 +108,8 @@ const codexCommands = `
 {"timestamp":"2026-09-28T13:47:50.000Z","type":"event_msg","payload":{"type":"item_completed","item":{"type":"UserMessage","content":[{"type":"text","text":"Run the graph"}]}}}
 {"timestamp":"2026-09-28T13:47:50.000Z","type":"event_msg","payload":{"type":"user_message","message":"Run the graph"}}
 {"timestamp":"2026-09-28T13:47:51.000Z","type":"response_item","payload":{"type":"custom_tool_call","name":"exec","input":"run()","call_id":"x1"}}
-{"timestamp":"2026-09-28T13:47:52.000Z","type":"event_msg","payload":{"type":"item_completed","item":{"type":"CommandExecution","status":"completed","exit_code":0}}}
-{"timestamp":"2026-09-28T13:47:53.000Z","type":"event_msg","payload":{"type":"item_completed","item":{"type":"CommandExecution","status":"failed","exit_code":1}}}
+{"timestamp":"2026-09-28T13:47:52.000Z","type":"event_msg","payload":{"type":"item_completed","item":{"type":"CommandExecution","command":"owcli check","status":"completed","exit_code":0}}}
+{"timestamp":"2026-09-28T13:47:53.000Z","type":"event_msg","payload":{"type":"item_completed","item":{"type":"CommandExecution","command":["go","test","./..."],"status":"failed","exit_code":1}}}
 {"timestamp":"2026-09-28T13:47:54.000Z","type":"response_item","payload":{"type":"custom_tool_call_output","call_id":"x1","output":[{"type":"input_text","text":"Script completed\nWall time 0.9 seconds"}]}}
 {"timestamp":"2026-09-28T13:47:55.000Z","type":"event_msg","payload":{"type":"item_completed","item":{"type":"McpToolCall","server":"app","tool":"create_worktree","status":"failed"}}}
 {"timestamp":"2026-09-28T13:47:56.000Z","type":"response_item","payload":{"type":"function_call","name":"update_plan","arguments":"{}","call_id":"x2"}}
@@ -131,6 +134,21 @@ func TestParseCodexCommandRecords(t *testing.T) {
 	}
 	if cmd := s.Tools["command"]; cmd == nil || cmd.Calls != 2 || cmd.Errors != 1 {
 		t.Errorf("command records = %+v, want 2 calls, 1 error", cmd)
+	}
+	if len(s.Commands) != 2 || s.Commands[0].Activity != ActivityDocumentation || s.Commands[1].Activity != ActivityTesting || !s.Commands[1].Error {
+		t.Errorf("commands = %+v", s.Commands)
+	}
+}
+
+func TestCodexCommand(t *testing.T) {
+	for raw, want := range map[string]string{
+		`"go test ./..."`:   "go test ./...",
+		`["git","status"]`:  "git status",
+		`{"cmd":"ignored"}`: "",
+	} {
+		if got := codexCommand([]byte(raw)); got != want {
+			t.Errorf("codexCommand(%s) = %q, want %q", raw, got, want)
+		}
 	}
 }
 

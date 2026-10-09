@@ -12,7 +12,8 @@ reindexing.
 ```
 ~/.claude/projects ─┐            archive/          parse        bossman.db
 ~/.codex/sessions  ─┼─ Mirror ─▶ claude/, codex/ ─────────▶ sessions, session_models,
-~/.codex/*.json(l) ─┘                                       session_tools, session_summaries
+~/.codex/*.json(l) ─┘                                       session_tools, session_commands,
+                                                            session_summaries
                                                             annotations, links, tags  ◀── user
 ```
 
@@ -95,6 +96,13 @@ is `{timestamp, type, payload}`.
   code N", "Exit code: N", `"exit_code":N`), "Script failed", or "apply_patch
   verification failed" marks an error, and "aborted by user" marks a
   rejection.
+- Shell command text is indexed separately from aggregate tool counts.
+  A small, ordered rule set classifies each call as planning, documentation,
+  testing, implementation, source control, inspection, environment, or
+  other. The session page summarizes those activities and keeps the original
+  commands available as a drill-down. When a Codex rollout has complete
+  `CommandExecution.command` data it is preferred to wrapper text; otherwise
+  the wrapper calls are retained rather than presenting a partial breakdown.
 - `turn_aborted` with reason `interrupted` is an interrupt.
   `task_complete`/`turn_aborted` `duration_ms` is agent working time.
   `compacted` lines are compactions.

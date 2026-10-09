@@ -191,6 +191,16 @@ dl.kv dd { margin: 0; overflow-wrap: anywhere; }
 .row input[type="url"] { flex: 2 1 240px; }
 .row input[type="text"] { flex: 1 1 140px; }
 
+.command-breakdown { margin-top: 18px; border-top: 1px solid var(--border); padding-top: 12px; }
+.command-breakdown h3 { margin: 0 0 4px; font-size: 14px; }
+.command-group { border-bottom: 1px solid var(--border); padding: 7px 0; }
+.command-group summary { cursor: pointer; font-weight: 550; }
+.command-group ol { margin: 8px 0 4px; padding-left: 28px; }
+.command-group li { margin: 5px 0; overflow-wrap: anywhere; }
+.command-group code { white-space: pre-wrap; }
+.command-group .command-error code { color: var(--critical); }
+.command-backfill { margin-top: 14px; }
+
 .transcript .ev { padding: 8px 0; border-bottom: 1px solid var(--border); }
 .transcript .ev.side { margin-left: 24px; }
 .transcript .who { font-size: 12px; color: var(--text-secondary); display: flex; gap: 10px; }

@@ -38,6 +38,16 @@ type ToolStat struct {
 	Errors int `json:"errors"`
 }
 
+// CommandCall is one shell-tool invocation. Activity is a deliberately
+// coarse, deterministic classification suitable for browsing, not an
+// assertion about the agent's intent.
+type CommandCall struct {
+	Tool     string `json:"tool"`
+	Command  string `json:"command"`
+	Activity string `json:"activity"`
+	Error    bool   `json:"error"`
+}
+
 // Summary is text the agent itself wrote about the session.
 type Summary struct {
 	// Kind is title, recap (Claude away summary), compaction, or
@@ -90,8 +100,9 @@ type Session struct {
 	Compactions int `json:"compactions"`
 	Subagents   int `json:"subagents"`
 
-	Models map[string]*Usage    `json:"models"`
-	Tools  map[string]*ToolStat `json:"tools"`
+	Models   map[string]*Usage    `json:"models"`
+	Tools    map[string]*ToolStat `json:"tools"`
+	Commands []CommandCall        `json:"commands"`
 	// ReportedCostUSD is the cost the agent itself recorded, if any.
 	ReportedCostUSD *float64 `json:"reported_cost_usd,omitempty"`
 }

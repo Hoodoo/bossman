@@ -96,6 +96,9 @@ func TestParseClaude(t *testing.T) {
 	check("tool calls", s.ToolCalls, 3) // Bash, Edit, subagent Read
 	check("tool errors", s.ToolErrors, 1)
 	check("Bash errors", s.Tools["Bash"].Errors, 1)
+	if len(s.Commands) != 1 || s.Commands[0].Command != "go test ./..." || s.Commands[0].Activity != ActivityTesting || !s.Commands[0].Error {
+		t.Errorf("commands = %+v", s.Commands)
+	}
 	check("api errors", s.APIErrors, 1)
 	check("compactions", s.Compactions, 1)
 	check("subagents", s.Subagents, 1)

@@ -15,8 +15,9 @@ func session(id, project string, started time.Time, cost float64) (*model.Sessio
 		Project: project, Title: "title " + id, FirstPrompt: "prompt " + id,
 		StartedAt: started, EndedAt: started.Add(time.Hour), ActiveSeconds: 600,
 		Prompts: 3, Interrupts: 1, ToolCalls: 10, ToolErrors: 2,
-		Models: map[string]*model.Usage{"claude-opus-5-5": {Input: 100, CacheRead: 1000, Output: 50, Requests: 4}},
-		Tools:  map[string]*model.ToolStat{"Bash": {Calls: 10, Errors: 2}},
+		Models:   map[string]*model.Usage{"claude-opus-5-5": {Input: 100, CacheRead: 1000, Output: 50, Requests: 4}},
+		Tools:    map[string]*model.ToolStat{"Bash": {Calls: 10, Errors: 2}},
+		Commands: []model.CommandCall{{Tool: "Bash", Command: "go test ./...", Activity: "testing", Error: true}},
 		Summaries: []model.Summary{
 			{Kind: "recap", Text: "older recap"},
 			{Kind: "recap", Text: "latest recap"},
@@ -95,8 +96,11 @@ func TestAnnotationsSurviveReindex(t *testing.T) {
 	if d.Name() != "My name" {
 		t.Errorf("name = %q", d.Name())
 	}
-	if len(d.ModelUsage) != 1 || len(d.ToolUsage) != 1 || len(d.Summaries) != 3 {
-		t.Errorf("detail rows: %d models, %d tools, %d summaries", len(d.ModelUsage), len(d.ToolUsage), len(d.Summaries))
+	if len(d.ModelUsage) != 1 || len(d.ToolUsage) != 1 || len(d.CommandUsage) != 1 || len(d.Summaries) != 3 {
+		t.Errorf("detail rows: %d models, %d tools, %d commands, %d summaries", len(d.ModelUsage), len(d.ToolUsage), len(d.CommandUsage), len(d.Summaries))
+	}
+	if command := d.CommandUsage[0]; command.Activity != "testing" || !command.Error || command.Command != "go test ./..." {
+		t.Errorf("command detail = %+v", command)
 	}
 
 	exp, err := st.ExportAnnotations()

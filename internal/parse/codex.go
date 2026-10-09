@@ -181,10 +181,11 @@ type codexTokens struct {
 }
 
 type codexItem struct {
-	Type    string `json:"type"`
-	Status  string `json:"status"`
-	Server  string `json:"server"`
-	Tool    string `json:"tool"`
+	Type    string          `json:"type"`
+	Status  string          `json:"status"`
+	Command json.RawMessage `json:"command"`
+	Server  string          `json:"server"`
+	Tool    string          `json:"tool"`
 	Content []struct {
 		Text string `json:"text"`
 	} `json:"content"`
@@ -219,6 +220,10 @@ type codexParser struct {
 	prev        codexTokens
 	concludedAt time.Time
 	toolName    map[string]string
+	commandCall map[string]int
+	wrappers    []model.CommandCall
+	records     []model.CommandCall
+	recordCalls int
 
 	// Codex has logged human prompts as event_msg/user_message and, in
 	// newer versions, as item_completed/UserMessage; use whichever exists.
@@ -237,11 +242,12 @@ func ParseCodex(c Candidate, meta CodexMeta, idle time.Duration, events bool) (*
 		}
 	}
 	p := &codexParser{
-		real:     newSession(),
-		scratch:  newSession(),
-		idle:     idle,
-		want:     events,
-		toolName: map[string]string{},
+		real:        newSession(),
+		scratch:     newSession(),
+		idle:        idle,
+		want:        events,
+		toolName:    map[string]string{},
+		commandCall: map[string]int{},
 	}
 	p.s = p.real
 	imp, imported := meta.Imports[c.ID]
@@ -335,6 +341,17 @@ func (p *codexParser) responseItem(pl *codexPayload, at time.Time) {
 		if shellWrappers[name] {
 			// Counted in finish, unless per-command records replace it.
 			p.tool(wrapperPrefix+name).Calls++
+			if p.s == p.real {
+				in := pl.Arguments
+				if in == "" {
+					in = pl.Input
+				}
+				command := codexArgs(in)
+				p.commandCall[pl.CallID] = len(p.wrappers)
+				p.wrappers = append(p.wrappers, model.CommandCall{
+					Tool: name, Command: command, Activity: ClassifyCommand(command),
+				})
+			}
 		} else {
 			p.tool(name).Calls++
 			s.ToolCalls++
@@ -355,6 +372,9 @@ func (p *codexParser) responseItem(pl *codexPayload, at time.Time) {
 			s.Rejections++
 		case failed && shellWrappers[name]:
 			p.tool(wrapperPrefix+name).Errors++
+			if i, ok := p.commandCall[pl.CallID]; ok && i < len(p.wrappers) {
+				p.wrappers[i].Error = true
+			}
 		case failed:
 			s.ToolErrors++
 			p.tool(name).Errors++
@@ -420,6 +440,14 @@ func (p *codexParser) event(pl *codexPayload, at time.Time) {
 			t.Calls++
 			if it.Status == "failed" {
 				t.Errors++
+			}
+			if p.s == p.real {
+				p.recordCalls++
+				if command := codexCommand(it.Command); command != "" {
+					p.records = append(p.records, model.CommandCall{
+						Tool: "command", Command: command, Activity: ClassifyCommand(command), Error: it.Status == "failed",
+					})
+				}
 			}
 		case "McpToolCall":
 			name := "mcp:" + it.Server + "/" + it.Tool
@@ -532,6 +560,11 @@ func (p *codexParser) finish() {
 			}
 		}
 	}
+	if p.recordCalls > 0 && len(p.records) == p.recordCalls {
+		s.Commands = p.records
+	} else {
+		s.Commands = p.wrappers
+	}
 	prompts, at := p.itemPrompts, p.itemAt
 	if len(prompts) == 0 {
 		prompts, at = p.eventPrompts, p.eventAt
@@ -557,6 +590,21 @@ func (p *codexParser) finish() {
 	}
 	s.StartedAt, s.EndedAt, s.ActiveSeconds = p.clock.span(p.idle)
 	sort.SliceStable(p.events, func(i, j int) bool { return p.events[i].At.Before(p.events[j].At) })
+}
+
+func codexCommand(raw json.RawMessage) string {
+	if len(raw) == 0 {
+		return ""
+	}
+	var command string
+	if json.Unmarshal(raw, &command) == nil {
+		return strings.TrimSpace(command)
+	}
+	var argv []string
+	if json.Unmarshal(raw, &argv) == nil {
+		return strings.Join(argv, " ")
+	}
+	return ""
 }
 
 // codexOutput flattens a tool output, which is a string or a list of
