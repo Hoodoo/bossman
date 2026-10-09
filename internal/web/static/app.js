@@ -244,12 +244,17 @@ function filterBar(params, base, opts = {}) {
       h("input", { type: "checkbox", checked: state.archived === "1", onchange: e => apply("archived", e.target.checked ? "1" : "") }),
       "only deleted by agent"));
   }
+  if (opts.copies) {
+    children.push(h("label", { title: "Codex Desktop's copies of Claude sessions with no prompts of their own; stats never count them" },
+      h("input", { type: "checkbox", checked: state.copies !== "1", onchange: e => apply("copies", e.target.checked ? "" : "1") }),
+      "hide Claude copies"));
+  }
   return h("div", { class: "filters" }, children);
 }
 
 function apiFilter(params, extra = {}) {
   const q = new URLSearchParams();
-  for (const k of ["agent", "project", "q", "tag", "since", "archived", "sort", "dir"]) {
+  for (const k of ["agent", "project", "q", "tag", "since", "archived", "copies", "sort", "dir"]) {
     if (params.get(k)) q.set(k, params.get(k));
   }
   for (const [k, v] of Object.entries(extra)) if (v) q.set(k, v);
@@ -274,7 +279,7 @@ const columns = [
 async function renderSessions(params) {
   const sort = params.get("sort") || "started";
   const dir = params.get("dir") || "desc";
-  view.replaceChildren(filterBar(params, "/", { search: true, archived: true }), h("div", { class: "empty" }, "Loading…"));
+  view.replaceChildren(filterBar(params, "/", { search: true, archived: true, copies: true }), h("div", { class: "empty" }, "Loading…"));
   let rows;
   try {
     rows = await api("/api/sessions?" + apiFilter(params, { limit: "500" }));
@@ -320,7 +325,7 @@ async function renderSessions(params) {
   }));
   const total = rows.reduce((a, r) => (a.cost += r.cost_usd, a.tokens += fmt.tokens(r), a), { cost: 0, tokens: 0 });
   view.replaceChildren(
-    filterBar(params, "/", { search: true, archived: true }),
+    filterBar(params, "/", { search: true, archived: true, copies: true }),
     h("p", { class: "muted" }, `${rows.length}${rows.length === 500 ? "+" : ""} sessions · ${fmt.money(total.cost)} · ${fmt.count(total.tokens)} tokens`),
     rows.length
       ? h("div", { class: "table-wrap" }, h("table", {}, h("thead", {}, head), body))

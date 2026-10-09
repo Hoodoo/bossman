@@ -164,6 +164,9 @@ func TestListAndStats(t *testing.T) {
 	if err != nil || len(rows) != 3 || rows[0].ID != "b2" {
 		t.Fatalf("List by cost = %+v, %v", rows, err)
 	}
+	if rows, _ = st.List(Filter{SkipCopies: true}); len(rows) != 2 {
+		t.Errorf("skip copies = %d rows, want 2", len(rows))
+	}
 	if rows, _ = st.List(Filter{Project: "gamma", Agent: "claude"}); len(rows) != 1 || rows[0].ID != "b2" {
 		t.Errorf("project+agent filter = %+v", rows)
 	}

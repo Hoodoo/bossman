@@ -99,7 +99,9 @@ address (on GCP, a firewall that admits only the load balancer).
 Codex Desktop can copy Claude Code sessions into Codex threads on its own
 (`external-agent-import-sync-enabled` under `[desktop]` in
 `~/.codex/config.toml`). bossman marks those threads as "Claude copy",
-links them to their source, and counts only work done in Codex.
+links them to their source, and counts only work done in Codex. Listings
+hide copies with no prompts of their own; `ls --copies` and the list's
+"hide Claude copies" checkbox show them.
 
 See [docs/design.md](docs/design.md) for the log formats and the reasoning
 behind each metric.

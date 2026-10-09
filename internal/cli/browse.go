@@ -16,7 +16,7 @@ import (
 
 type filterFlags struct {
 	agent, project, query, tag, since, until string
-	archived                                 bool
+	archived, copies                         bool
 }
 
 func (f *filterFlags) register(cmd *cobra.Command) {
@@ -39,7 +39,7 @@ func (f *filterFlags) filter() (store.Filter, error) {
 		return store.Filter{}, err
 	}
 	return store.Filter{Agent: f.agent, Project: f.project, Query: f.query, Tag: f.tag,
-		Since: since, Until: until, Archived: f.archived}, nil
+		Since: since, Until: until, Archived: f.archived, SkipCopies: !f.copies}, nil
 }
 
 func (a *app) lsCmd() *cobra.Command {
@@ -54,6 +54,7 @@ func (a *app) lsCmd() *cobra.Command {
 		Args:    cobra.NoArgs,
 	}
 	ff.register(cmd)
+	cmd.Flags().BoolVar(&ff.copies, "copies", false, "include Claude copies that have no prompts of their own")
 	cmd.Flags().StringVar(&sortBy, "sort", "started", "sort by: "+strings.Join(sortedKeys(), ", "))
 	cmd.Flags().BoolVar(&asc, "asc", false, "ascending order")
 	cmd.Flags().IntVarP(&limit, "limit", "n", 30, "at most this many sessions (0 for all)")

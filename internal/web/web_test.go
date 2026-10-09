@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
+	"net/url"
 	"os"
 	"path/filepath"
 	"strings"
@@ -172,5 +173,14 @@ func TestBehindProxy(t *testing.T) {
 	}
 	if v := serverWith(t, Options{}).Viewer(httptest.NewRequest("GET", "/", nil)); v != "" {
 		t.Errorf("viewer without a user header option: %q", v)
+	}
+}
+
+func TestFilterCopies(t *testing.T) {
+	for q, skip := range map[string]bool{"": true, "copies=1": false, "copies=0": true} {
+		v, _ := url.ParseQuery(q)
+		if f, err := filterFrom(v); err != nil || f.SkipCopies != skip {
+			t.Errorf("filterFrom(%q).SkipCopies = %v, %v; want %v", q, f.SkipCopies, err, skip)
+		}
 	}
 }

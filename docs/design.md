@@ -111,7 +111,9 @@ is `{timestamp, type, payload}`.
   ignores lines stamped up to two minutes before each such marker (or, with
   no marker, up to two minutes after `imported_at`), so work typed in Codex
   between syncs still counts. Aggregates also skip copies with no activity
-  of their own, so the same work is not counted twice.
+  of their own, so the same work is not counted twice. Listings (`ls`, the
+  API and the UI) hide them by default by the same rule, so a hidden session
+  is exactly one stats leaves out; `--copies` or `copies=1` shows them.
 - Codex records no cost, so its sessions are priced from the table, which
   includes OpenAI list prices for the gpt-5.4 to gpt-5.6 models Codex uses
   (short-context rates; Codex's window is about 258K tokens, under the
