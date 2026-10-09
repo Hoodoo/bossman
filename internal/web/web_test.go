@@ -68,6 +68,22 @@ func TestAPI(t *testing.T) {
 	if w.Code != 200 || !strings.Contains(w.Body.String(), `"display_name":"Named"`) {
 		t.Errorf("meta: %d %s", w.Code, w.Body)
 	}
+	w = do(s, "PUT", "/api/sessions/claude:s1/project", `{"project":"/work/other"}`, jsonHdr)
+	if w.Code != 200 || !strings.Contains(w.Body.String(), `"project":"/work/other"`) ||
+		!strings.Contains(w.Body.String(), `"project_overridden":true`) {
+		t.Errorf("project: %d %s", w.Code, w.Body)
+	}
+	if w = do(s, "GET", "/api/sessions?project=other", "", nil); w.Code != 200 || !strings.Contains(w.Body.String(), `"project":"/work/other"`) {
+		t.Errorf("project filter: %d %s", w.Code, w.Body)
+	}
+	w = do(s, "PUT", "/api/sessions/claude:s1/project", `{"reset":true}`, jsonHdr)
+	if w.Code != 200 || !strings.Contains(w.Body.String(), `"project":""`) ||
+		!strings.Contains(w.Body.String(), `"project_overridden":false`) {
+		t.Errorf("project reset: %d %s", w.Code, w.Body)
+	}
+	if w = do(s, "PUT", "/api/sessions/claude:s1/project", `{}`, jsonHdr); w.Code != 400 {
+		t.Errorf("missing project: %d %s", w.Code, w.Body)
+	}
 	w = do(s, "PUT", "/api/sessions/claude:s1/tags", `{"tags":["a","b"]}`, jsonHdr)
 	if w.Code != 200 || !strings.Contains(w.Body.String(), `"tags":["a","b"]`) {
 		t.Errorf("tags: %d %s", w.Code, w.Body)
