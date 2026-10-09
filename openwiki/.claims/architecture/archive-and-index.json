@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:a4f1a150d706daadad36ffdbb38a4f18ea2b8bc05b55649512f8680e23cca568",
+  "pageVersion": "sha256:e4926781eff15e81c81de3328659b4f936bc6a92c70123e3b0ee8f046cd7cb04",
   "claims": [
     {
       "id": "claim_d6a87da974fddd84a630962746cc7ace",
@@ -65,28 +65,28 @@
           "version": "repo-lines-v1:sha256:0f73f044fab68143fea4ad7eb4dbea69a393c34d2d5381670e4e4e3b8921dbfc:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNTM0YTZjMjM2MmFhNjViMGJlN2M3YzRhMDJlZmEyMDkwMTM0MDFhNjU3YTAwZWZmODgzMGI4YzQ2ZWRkNjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5ZTFjMjUwZjBhMDdmZGU4ZTUxNDE5OTFhYTY0Zjg2Zjk3ZmM3MGFjZjNhZjYzMGM1YjVkNjY0ZjQ2ZGE5OGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgzYjQ2MjNmZGMwOTQwZmJjMzNmODc2OTU4NWYwOTM4N2EzYjVhZjRmOTJkMzQ2NDdiZThlMWQyNjIzNTA5NjQifQ"
         },
         {
-          "resource": "repo://internal/store/store.go#L248-L276",
+          "resource": "repo://internal/store/store.go#L260-L288",
           "version": "repo-lines-v1:sha256:ed935ca7e3e6f943261e1feb0e912f238201d5042e834922f5489c109255aa48:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlmMDA3NjRjODQxMWU1ZDFlODA4MDM1YWY2ZjJiOGY4YmZhNGVmMjZmNDMxZTgyMzUzNDQwYzU4ZWE1Zjc4ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdiNWQ3NjZmNDAwZjM1ODY3NDJjZjZlYzFhYjhjODI2YjBjMjM1NzgxMGIyYTRhZjgxZDhmMzZjOGQyYjU1YTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMDFkNTM2OTM4YjQ4MmM1MTE3OTQ5ODY1YjZlNTI4OTUyMzUyNTNlNjVmZmU3NTZhNGZiYmZhYTE1ZjdiN2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNkOTY5ZDE1MzQyYWNmZjdhMzQxYjUwYzNlMWMxN2YzOTc5YjYwYjBhMjgzMDFjM2ZjMjliMDhkZmNmOTEzZTQifQ"
         }
       ]
     },
     {
       "id": "claim_8fbbfe88707b1767ae8d4b55a950e6c3",
-      "statement": "The derived tables are sessions, session_models, session_tools, and session_summaries; the user tables are annotations (display name, notes, project override), links, and tags.",
+      "statement": "The derived tables are sessions, session_models, session_tools, session_commands, and session_summaries; the user tables are annotations (display name, notes, project override), links, and tags.",
       "evidence": [
         {
-          "resource": "repo://internal/store/store.go#L29-L112",
-          "version": "repo-lines-v1:sha256:5e48814349e537010feba46e5126f5d84a8f00fc85f850759d6f9e7a38fb2722:eyJzZWxlY3RlZExpbmVDb3VudCI6ODQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzZWRkZTgyODRiOTIwZmI2MTBjOTYzMGZhMjdkYWMxNGU1NGVjMDYwOTVlMDM5Y2E2ZWZiM2ZhZjY3MjZjMjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjOGJhMGYwYzE2YjA3N2ViMjExMGZmNjdiYjNlYTdlMmMwOGQ5NDk0ZDIxZDJmN2M0NjhlYTg4MjUwZWI1YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE2NTNjNGIwN2M0MTUxZjZhNzEzMzAwMTQ2MDliZjZjYjBmOTY1MWI3MGNkODZkYTdmZDE3YmUyZDZmYzA1YTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmMjUwN2U3MDc5MzQ2OTlkNTAxMTkxZWI2OGU4ZmY0MDQwMTYyMTAzZThjNTE0M2NjZTNiYmM2MWZmNjBjNjgifQ"
+          "resource": "repo://internal/store/store.go#L28-L117",
+          "version": "repo-lines-v1:sha256:6e114d5835ef4e9cec5db62a5ea77b8a6295a8f6cfb80f89329754f19497d763:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1ZWE0Y2FlMmIxMGY0ZTZjN2ViYjhlNTMxMzFlOGIwYjlkZGE3MDk4ODMyMzk3Yjk1M2M4NzAyYjRkZTY5ZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ5OTY3ZWMxZWQzODM2ZjhlYjE3YWZmMTcyYjViZmVmN2RlNjA0ODVhNDM5YzZjYTExYzU5MWUxNzU1NzM5YWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjZGQzNDYyMThmYWYwNTc2NjliNzNlMGVhMzM0MjJlMjQzMTE3MWJlZThkZjRiYWM1MjFhZGNiZjY4ZTEzZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFiZGRhMzZjYTUxYjdmNDBkNWZjMzJkZWE5OWEwNWQyNDUxOTM0NmJmMDMzNDc0OGUxNTZhZTY2YjRlMTMyNWMifQ"
         }
       ]
     },
     {
       "id": "claim_bc86f7aea3d828740bf756072b1f08d5",
-      "statement": "Put deletes a session's model, tool, and summary rows and replaces its sessions row in one transaction, preserving the previous in_source value.",
+      "statement": "Put deletes a session's model, tool, command, and summary rows and replaces its sessions row in one transaction, preserving the previous in_source value.",
       "evidence": [
         {
-          "resource": "repo://internal/store/store.go#L182-L245",
-          "version": "repo-lines-v1:sha256:8b2bc4541040a7a4dcff728ca60c0b4d9dbf9b1bc591c299099cdc1adf2762f5:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3NGMxYzY3Yzg5NWU1NjY1YzQzMzljZmFlZTEwZThkZTc4NTNkMDYwNzkwZmU0NGZlNDMyZDg4ZmQ3ZGI1ODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyNzQ2ODdjOGZjMDE3MTVkN2EzMjVjNjUzZjViNTRmYWIwMDZiZmI5MWNjZmJkZTUzYTM1ZGQ3YmNlYWQ3YTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0NDgxN2M0ZTFiOTQwOThmZGQxZGEwYTdkYWYxMjVhZDE1ZTUxYTQ2Y2I4MjAzMzY4Mzc4NTlkZjk2ZDJhYWQifQ"
+          "resource": "repo://internal/store/store.go#L187-L255",
+          "version": "repo-lines-v1:sha256:3b088de197222e38b940188d928b4022d04463b173cec5bdc1e36eca23ef03dc:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ0MGNhYmZjMTc1YzA5MjQ4NGIxZDg3ZWUzMzY1Zjg2Yzc0YjdhZmQ2NWUzMmU4ZWVhODBmYTdlOTE0NTA4OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNiYzdhNjRiYWYyMmY5NjA5OTNjMGQyZDhkYTgwOTRkZTQ5OWZjZWI1NDcxZTdhODRkOWM4NzZiOTU5NDgwODAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0NWRkZjcwNDdmNTQyZDUyOTFjMDY5N2QxMmQxZDdiOGRkOTBhZjQzYjJjMmRkNGI4OGZkMTBlNzE1MTU3ZWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZkNmJlOGQ0MTZjYjRjZWIyNWI3MWUzNjliM2I2YzhiMTcyZTIxNTIwMzFlNGZkMjUxNGRkNGNlZmQ5Nzc1ZWEifQ"
         }
       ]
     },
@@ -95,7 +95,7 @@
       "statement": "The stored summary prefers a conclusion, then the latest recap, then a summary line, then the latest compaction summary.",
       "evidence": [
         {
-          "resource": "repo://internal/store/store.go#L330-L341",
+          "resource": "repo://internal/store/store.go#L342-L353",
           "version": "repo-lines-v1:sha256:c0224c57bdc86b148c559e3dda4297f872644c97612debd9225ff6d6c9702d47:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzZjI5Y2Y3YThjZjhhZmQ0Y2ZhYWM1MTc2NTAwYjkyOWM3MzMwNmIwYTYzMjNmMDhjNjcxMTRkMGIwZGY0MzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOTY0MDc5YzNjNWM4MTUyMGVmMzNhMmI5ZDJlMTVhMWI4NGQ3MjgwZGI4NTkwZGNkNjU3NDdlM2UwMTJhNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2Nzg3YmViYTM3ZjAwMTk0NGNlNjI3ZmVjZWQyOTA0MGFhNDkwZWJhNjY0MjJjMjk3Yzg3MjYyNjdiZDdiOWIifQ"
         }
       ]
@@ -125,7 +125,7 @@
       "statement": "The database is opened in WAL mode with a 10 second busy timeout and a single open connection.",
       "evidence": [
         {
-          "resource": "repo://internal/store/store.go#L120-L143",
+          "resource": "repo://internal/store/store.go#L126-L149",
           "version": "repo-lines-v1:sha256:f5f116cef830be6b4e6eccd5c45c0815a9d42c36ba0c2f1d304adb5db21969dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3NGMwYjc0ZTQwNTNmNDhlNTQ2ZTdjMzMwMDg2NTA4NDUxZTAyNjMxZjE4ODg2OTVkZDU4ZDlmMmQxNjcyMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJmYTFjYWE2MTljMTA3NGNhMTJhYjhiZjY2Y2IyY2IxMzU2YjVlNWY3MzRhZTczYmNjZjM2MzJhZmEzZDM4ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYyZDA1Y2M5NDc5M2Y3NDRmNGQ1NmJlZTEwZWUwZTJkNWE3ODc0ZmZlNWYwNmMzMjdiYTQyMGJlOTQ3MjlhZWYifQ"
         }
       ]
@@ -139,7 +139,7 @@
           "version": "repo-lines-v1:sha256:7212f0e0ca970c93dd443d93801e2c48a908f42fe59f4d7d5071e6e1f45be103:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWFiZTBjOTUzNGVhOTgwNTc4YzhjNWQ5MzFkYzIwZjM1YmFkZDIzMDIzYTcwNjAzZGQ2YmZjYjQwNTQ2OWQyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmRmYTVjNzgxNDE1NTlhODc5NGY2NjQ1YWNmNWM5ZGI0MTczYjQwYjZmOWMwMWNjYzZiNzhjZjU1OWQzY2ZkNSJ9"
         },
         {
-          "resource": "repo://internal/store/query.go#L378-L380",
+          "resource": "repo://internal/store/query.go#L403-L405",
           "version": "repo-lines-v1:sha256:cdbbc4a9a7f5d4c03e115f2fd465a1e4349463887a6a7bb60300d403dc022f54:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTE0YjEwZTVhMDE1MmFlYWU2ZGU4YzY5YzE0YjJmNjA4YWI0MzEwYjkzMWNjOWEzYzkzYjk5YTUwYzQxNzEzNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGJjZTJmNDRhZWQzOTJiNTYxYzBmNmVhYWEyMzllZGM4NWFiMTRjZDU5ZWE5ZDFhM2M0MmUxY2JkZWQ5MWY1ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDBhODZlMDlhODAwNTY0YTI0NmM2NTIwMGU4M2M0YzRmZTlmYzVjYTA5OTVhNDkyZTM3NzEyMjE5NTc1MmJiNyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWNmNzAyMWMxNTU5NDEyNTM3M2IwNjVhZTNiMjcyZjExOWUzZTJmMzZkMjNiOThlZmU5MDdmNDc1YmM2MWRiZCJ9"
         }
       ]
@@ -167,7 +167,7 @@
           "version": "repo-lines-v1:sha256:a3bd1493fc542bca7b02cd4a87dd1f50fd6c8d60ff61a9b53c9a321d3e6b5eac:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTUyZmIzMmE2OTAzNWM4YzJiNTRhODU5YzI3ZmFhODJlNmY1NGI4MzcyZmYzNmRjOThiMGFmNGUxMzRhZDNjNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjJiMjkxNjg5MWJlNjc5NDZjN2QxYThhNWZjMGJhNzMzYTE3MWUyYjdmMDE5YzdkZWVkNmMyZDk2YWMyMGUzZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGQyNjI2OTJlZWFlNjZiMWQzMTIyM2Y0M2JmNjljZDEzMTMyNWZmMDM1MDA5ODNlYTUwMjAxZGI2NTQyNWNiOCJ9"
         },
         {
-          "resource": "repo://internal/store/query.go#L390-L391",
+          "resource": "repo://internal/store/query.go#L415-L416",
           "version": "repo-lines-v1:sha256:765a22caf73f474de5580541cb678b4b6e1b5e8b6d25dc5791a5bfcd9bfcf0de:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIzNmYyMDJlMzNmMGVjN2I5OGE4OGMxY2EyNDdjZmNmZTc1MDJhNzUxYzIwYTVkZGUzYjFiM2Y0NjkxZjExNSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRlYzY5NzdjMTMzYzc3ZDFlMjhjMTQ5Y2E5NmRhZjE1NDkwZWMwNjZmOTc4NzM5MDllZWYzYmJlNjczZGRhMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDk5ZDE1OTFjYTE5NWIwNDJmYWM2ZGU5MGEyNTBkMjY2MjU0YzgwNzY4NTIzNzJlNDViMDZhZmZiNDMzZWNiMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmUwNmY0MzZiYzk3MmFkMjhhZTM3YmY1N2I2OGMwZTM1YTg5NzA0NTcxNGY1MzY2NzRjZDYwZjEzYTBlNmY1NSJ9"
         },
         {
@@ -181,11 +181,11 @@
       "statement": "Get returns the agent-recorded project as detected_project and sets project_overridden when an override exists.",
       "evidence": [
         {
-          "resource": "repo://internal/store/query.go#L249-L253",
+          "resource": "repo://internal/store/query.go#L257-L261",
           "version": "repo-lines-v1:sha256:72ebc4a0223f76b7a51cd388b3a7b75fa26955ce23811c9b98e425790833fc1f:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGJiZWI4YWNjNTJmZDFhMDY2ZTBkMTcyNjVlOWY1MmRjZDZjMTExYjVkYThjMmNkZWVlNGExMThmZDI5MDI5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBjZmYwZDY3NTg4MWYzMGY5Nzg5NzFlMzY4NGVhMWE3MGI4NmFhMzQyY2JkNWFkMjA4YWYwMDEyMmE1NzIzMCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjQyYTM0OGI1NmY5ZGNkNjRhZDgwNGVmYTEyZGNjMTA5Njk3YTA5M2UzYWUyYzBlZWNhYTkzZDExYmVlNjBiNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWVkYzA5ZjY3NTNjZTljYzgzY2UzNWJmYjZiNWZkMTgwYTliMGQwYTgxNDRlNDJiZTIzYTllMWVmM2UyYmUxYSJ9"
         },
         {
-          "resource": "repo://internal/store/query.go#L265-L290",
+          "resource": "repo://internal/store/query.go#L274-L299",
           "version": "repo-lines-v1:sha256:aaac95ee338ba6a71c1a921298490a85747a81aabf613fb5e67fb741990f5661:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmZGI0Zjg3NjZjYTM5MmEwZmZmZGUyOTk5NmRiNWY4YjcyNzJlMmI3MmNlYjc3ZmQ0Y2FlZDNkNzkxYTFiMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJhNzcwZWMwODVkNjcyODkyZmM5MzNhOGFjY2E2NzY3MmVjYTE1NDRiNjRmYTQzYmEzMjVhYWRjZGUwN2U0NzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3NWRiODMzNzlhMzQzZTMwYzZjNzViMTM4ZTRjY2UyMWFiZWQ0NjU0MjdlNzc4NjlhNGRlNzg4NDI0MTI5ZDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcwMzlkZmY4ODkyMjA0NzhmNGJhY2M3NTM3N2MxY2RiYzAwZWU2NDBlZTczMDMzZmQ4ZmIwYWNhYWRiZDU2MWUifQ"
         }
       ]
@@ -195,7 +195,7 @@
       "statement": "Open adds the project_override column to existing databases with ALTER TABLE, ignoring only a duplicate column error.",
       "evidence": [
         {
-          "resource": "repo://internal/store/store.go#L135-L142",
+          "resource": "repo://internal/store/store.go#L141-L148",
           "version": "repo-lines-v1:sha256:c83d55e776529fe3ac8f7ca745603c8a39cc2d6ab5726c296016ea97752f6206:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzUxZTExODdiMmZlMTliNDJmYTQ4Y2ZkNWQzYjg1MDNhNDNlODU2MWQ3ZjIwYjdiMGExMDQwOWYxZGJkMmU5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ0MmEzYjgxNTFiZDhkZjI2NzFiYjI1YzkxODFhZjFiMjY4Mjk1OGJkZTNmM2FiMTE5NGRiOGQ2OTg4NjM5MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGE5MzYzMTY2M2NhZmM0NTczMGZkZGQ2MWMwMDM1ZjIyYWRjNGUyYTFhMjhjMjRjMzRkYjFmMDRlOTA2NzZjNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTdhNjRlMGIyMzA1OWU5MDNlYjVkNDg4ZDI1YTk1ZjE3MTZjYjhlYTg4ZDAyOWQzZmJlOWM0ZWU2YjEwYjdmNSJ9"
         }
       ]
@@ -245,7 +245,7 @@
           "version": "repo-lines-v1:sha256:40959d09d3995cbb2406cc5f90dfe04d1c5af3a88cbc5b517e359514f1478061:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2MTFlNTYyYjNiYzJlY2VkNjYyNDE4Yzg1NzIxOTA4Y2JmZThlMmJjNDk3OWM5ODgyYjIwN2FjZTQzZDQzMzYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEzZWRmY2JiMWM1NGVkYjljY2VmOTlhNzFhYmFiMzExMGZiYjAzNDEwNjM5NWViZjIwYWEyNGNhYWIwMjY5Y2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkOTk1MTg2MmJmZWM1ODAwYzliMGMyZjg3MDhmZWMyMTM4YjUxZDA1ZGMzMzI1ZGE1NzQzM2QwZmI0OTJhOWQifQ"
         },
         {
-          "resource": "repo://internal/store/store.go#L357-L360",
+          "resource": "repo://internal/store/store.go#L369-L372",
           "version": "repo-lines-v1:sha256:24287ac913e4d567842d35432d69450259842c210ba78bfb308f40b056661489:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2M0YzIyNjNjYTBjMGQ2NDdlZGMxYjc4NjY2ZTYyODFkZmFkZTRjNGE1YmU4NDJlNmMxNDE5YWVkYTNlMDM5ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODcwMjg3ZjZiYjJkNjdhOGFkYzZmYTcyZTM0NjUxNTdhNDQyMGMzMTk5YTQwOTViMjMzODViYzY0ZjhkMmRkYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
         }
       ]
@@ -263,10 +263,24 @@
           "version": "repo-lines-v1:sha256:9e2499b310472c9aa128a3bad242ca0a2a046bb4f525bb4b3a51e39b64029451:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQyOTY4YzhhNjc1Y2FhZTI5NzgyY2I0NDQzZjA1ZjNhNDE2ODlkZmY1OTU1MmU5ZDUxOWFhODkzOTkyMzRjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDFkZTQ4YWQ0NzRkMTgzNDk0ZGE4YzNiYzA4MWFmYTI3YmExODk2ZWUzNTdlYWYxNGM0ZDY2NTFkYjVlMGEyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjY0NjYwZTEzYzQ0NzNkMzNlNjg1NGQ5ZGVkNWZlNDhkNDA0YzkyYThkMDZiMTZlNDIwYzg4ODAxMmQ5MWI1NyJ9"
         }
       ]
+    },
+    {
+      "id": "claim_949011967d366a17e96d690026869870",
+      "statement": "Opening an existing database creates the session_commands table, but Index skips unchanged session signatures unless force is set, so bossman index --force is required to backfill derived command rows for already indexed sessions.",
+      "evidence": [
+        {
+          "resource": "repo://internal/catalog/catalog.go#L151-L185",
+          "version": "repo-lines-v1:sha256:f1d128399d59a8292bd765cc524d1d8c8dc304eeaa1f8a2db6996377aab8061f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5MzE2ZWU1ODRmYjIxNmI0Mzk4ZmY4ZDYzNTgzZmY1YmFhNzE5ZDdmNTZmMDBkYjk5MWU1YzA3NjVjYmFmMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVjYTUzMjYzOGFkMDUwMDdjM2UyNDFlOGIzYzYyNWZmYjExNjdlZDhiOTM2MTU4ZjA3ZmFhMjAxYzljODNiZGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjliNzY5MDFiMTU1NDQ1NWRlMWQxNDMxMDA5ZTg2NjgwN2VkMWI2NzdjNzdkNGFmN2Q4OWJjYmNlNDQ4MDdhZjQifQ"
+        },
+        {
+          "resource": "repo://internal/store/store.go#L28-L148",
+          "version": "repo-lines-v1:sha256:585fb59dbce388fdfd382b77ac3c3ac3fbe748584104a6f12bcceabcf9a78cd1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzNWVhNGNhZTJiMTBmNGU2YzdlYmI4ZTUzMTMxZThiMGI5ZGRhNzA5ODgzMjM5N2I5NTNjODcwMmI0ZGU2OWQ4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIwZDQyYTNiODE1MWJkOGRmMjY3MWJiMjVjOTE4MWFmMWIyNjgyOTU4YmRlM2YzYWIxMTk0ZGI4ZDY5ODg2MzkyIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjY2RkMzQ2MjE4ZmFmMDU3NjY5YjczZTBlYTMzNDIyZTI0MzExNzFiZWU4ZGY0YmFjNTIxYWRjYmY2OGUxM2U2IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1N2E2NGUwYjIzMDU5ZTkwM2ViNWQ0ODhkMjVhOTVmMTcxNmNiOGVhODhkMDI5ZDNmYmU5YzRlZTZiMTBiN2Y1In0"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "owcli/v0.4.0",
-    "at": "2026-10-09T15:57:19.417Z"
+    "at": "2026-10-09T22:00:40.817Z"
   }
 }

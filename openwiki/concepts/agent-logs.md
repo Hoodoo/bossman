@@ -4,9 +4,11 @@ title: Agent Log Formats and Parsing
 description: What Claude Code and Codex write to disk, and the rules bossman's parsers apply to turn those logs into accurate per-session metrics.
 tags: [parsing, claude-code, codex, jsonl]
 verified:
-  - by: owcli/ff31f70
-    at: "2026-10-02T15:17:54.597Z"
+  - by: owcli/v0.4.0
+    at: "2026-10-09T22:01:17.764Z"
 sources:
+  - id: openwiki-source-1b076588309b870987582694
+    resource: repo://internal/parse/activity.go
   - id: openwiki-source-e8dc539cc499715db5d6b44f
     resource: repo://internal/parse/claude.go
   - id: openwiki-source-316c7740ea0d2064293330cb
@@ -15,7 +17,7 @@ sources:
     resource: repo://internal/parse/codex_test.go
   - id: openwiki-source-0a07e754760ec9f5cbce7d6c
     resource: repo://internal/parse/common.go
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:18:40.390Z" }
+generated: { by: "owcli/v0.4.0", at: "2026-10-09T22:01:37.013Z" }
 ---
 
 # Agent Log Formats and Parsing
@@ -47,6 +49,9 @@ Shared helpers in `common.go`:
 - **Interrupts** are user text containing `[Request interrupted by user`.
 - **Rejections** are tool results containing "The user doesn't want to proceed with this tool use". They count as interventions and are not tool errors, even though Claude marks them `is_error`.
 - **Tool errors** are `tool_result` blocks with `is_error`, attributed to a tool through the `tool_use` id. Tool calls are deduplicated by `tool_use` id.
+- **Bash details** retain the compacted `command` input as a `CommandCall`.
+  When its matching tool result is an error (and not a rejection), the command
+  row is marked as failed along with the aggregate Bash error count.
 - **System lines** (`subtype`):
   - `turn_duration` adds agent working time (`durationMs`, stamped at the turn's end) and a turn interval for active time.
   - `away_summary` is a recap, with the trailing "(disable recaps in /config)" stripped.
@@ -86,6 +91,14 @@ While parsing, wrapper calls are tallied under reserved names: a `wrapperPrefix`
 - If any `CommandExecution` records exist, they become the `command` tool, and the wrapper tallies are dropped.
 - Otherwise the wrappers are restored under their real names.
 
+Command drill-down data is reconciled separately from those aggregate counts.
+Wrapper inputs are always retained when they belong to the real Codex session.
+When every real `CommandExecution` record also supplies command text, those
+per-command rows replace the wrapper details; if even one record lacks text,
+the parser keeps the wrapper rows rather than presenting a partial breakdown.
+Failed wrapper outputs and failed command records set the corresponding command
+row's error flag.
+
 For outputs, `codexFailed` checks the first 400 characters:
 
 - "aborted by user" is a rejection.
@@ -93,6 +106,16 @@ For outputs, `codexFailed` checks the first 400 characters:
 - Otherwise the first exit code matching `exited with code N`, `Exit code: N`, or `"exit_code":N` decides, and non-zero is an error.
 
 On real sessions, the wrapper outputs showed 0 errors where Codex's command records showed 9 failures out of 97 commands.
+
+## Shell activity classification
+
+`ClassifyCommand` assigns one coarse activity to each retained shell call. The
+ordered rules recognise planning (`kata`), documentation (`owcli`), testing,
+implementation/build, source control, inspection, and environment or dependency
+work; unmatched calls become `other`. Testing precedes implementation so a
+compound build-and-test invocation is reported as testing. A quoted
+`bash`/`zsh`/`fish -c` wrapper is removed before matching. This is a browsing
+aid based on command syntax, not a claim about the agent's intent.
 
 ## Codex: copies of Claude sessions
 

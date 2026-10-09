@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:6b2f79b9dc01340f12d035cf0a953d037ad043c2efd1a13e2d312cefb632f5b7",
+  "pageVersion": "sha256:9b1adaa3f045ff2dd23652975330f75dfac8f25b5768798e3ee5b5a308641ce9",
   "claims": [
     {
       "id": "claim_6ffc2f75df11cc4e25e55441ae12990b",
@@ -27,8 +27,8 @@
       "statement": "ParseClaude parses subagents/*.jsonl files after the main log and counts each as a subagent.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/claude.go#L148-L177",
-          "version": "repo-lines-v1:sha256:0d5e0f6594132680bd57d9ffb62f6e876a2cf92995644613f61d15103209c1b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmNzkzNWM1NmI0MzU4MGNhOTM0N2ZhMTMxOWJmZTI4MDZlYjEwYjY3ZmJkMTZiYzRjYjA4MTQ5MzI2Zjk1NDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU4MWE2MjMyMDZiYTBhNTk3ZjQ0NDZkOGJjYTYxOTQ5ZTIzZjExOTI2NjhkNDFjYmY0OTIxMGYwMDkzNDE5YmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFlYWNlN2VlMDAxYjRhYmYwNzk1OTM1NzBhYTg2Zjk1N2M0M2VkMDhhMGU2YmViMTg2YTc5ZjQ0ZTJlMzc5MDQifQ"
+          "resource": "repo://internal/parse/claude.go#L147-L178",
+          "version": "repo-lines-v1:sha256:cae62dcf925194562d7edf9179a2ef07a3d9eccd25c246cf355f540650753343:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5MzE3MTg4MjEyZWNiZmU5ZjZmYzIxMDJjNDQ3NzU1NGM0NWQ1ZjRhMjg5ZDFhYTQzNWEwNWEzMDk1NzYzOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIyYzNmZTMzMmY1YzU4M2Q2YTZhOWIyNTZhNmRiZGViMWUwZWZkNDBlM2E0MmYzZGFlOTdmMGUwYWRiYzI1YTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmOWM4MDI0NjMwNzU3ZWQ5NTU3Yjg0MjUzM2FmNTIwZWY0MjgxODJiYmU4YjlmYzhlMGEyNzBjYTAzZmRlOWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdlMzU4YTU2YmYyNTY0MWZmZDhmYjIwZDEyNTZkOGQyNDVmMzMyYjQxMmI5ZGIyNjZjNTYzNGQ1ODgwYTNiZGUifQ"
         }
       ]
     },
@@ -37,7 +37,7 @@
       "statement": "Claude assistant usage is stored per message id (last line wins), and messages from the <synthetic> model are ignored.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/claude.go#L241-L245",
+          "resource": "repo://internal/parse/claude.go#L243-L247",
           "version": "repo-lines-v1:sha256:b2bebb198c6084762abd62ecd3cb19fb30d844068bff905165539f7b0507eae4:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGE5ZjQwYjVhMWYwNjE2YWJhYzc5Y2VjOTYwY2Y4MzA3MDZkOTkzMzFkOThjZjY4ZGJjZTNlZjhlNDhhYWU2ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDM0ZDQzZDQ5MmJmODY1YTJiYzZiZTRiMjc0NjVlMTkwNGI2ODIzNzRiNzlhYjljMTdmODViY2ZkYzVjY2ZiZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY2YTU2NWVjZjIxN2FkZmEwNmJjZDJmZTRlODdjZTQ0NmM2MWU3OTBlNTJkMTg0ZmVlMTcwNjkyNjdmZmZiMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTZhMjU3YjYwMWVhZWI4NWU2ZGEzYTA4NTAzZDU5YzY4ZGQwNzE0ZjY4Zjk1MjcyMDBmYjdhNGVjYzdmZDEyNSJ9"
         }
       ]
@@ -47,7 +47,7 @@
       "statement": "Claude cache writes are split into 5-minute and 1-hour buckets when the cache_creation breakdown is present, otherwise all count as 5-minute.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/claude.go#L412-L433",
+          "resource": "repo://internal/parse/claude.go#L424-L445",
           "version": "repo-lines-v1:sha256:6b68c7371b7aa99e1b179bba17a6a9424415a9f51bc06f69408f35d24afdc045:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYmQ1OTM0MGRkOTkwOGQ3MTc5MTkyM2QyOGYyZDBiMzFlNTVhZmQ0OTNjMGNjYmQ0MmNmZWQ4NDA2Mjg1ZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU3ZTFjN2VhM2M3MDYyNDk5ZTcyMzQ1N2UzZTA2MzAyMmEzM2MwOWEwMDhlZGU3OGRhMmU4NTBhMGIwOWRjMjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOTY0MDc5YzNjNWM4MTUyMGVmMzNhMmI5ZDJlMTVhMWI4NGQ3MjgwZGI4NTkwZGNkNjU3NDdlM2UwMTJhNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFmYTM1MDQ5OWM5MmZhOTRiMDU3NWIwYjY2MzA0ZjQ1NWU4YjBjYmMzZDFjODdmNWFiOWJmYjk3MmNiYmI4YzAifQ"
         }
       ]
@@ -57,7 +57,7 @@
       "statement": "A Claude user line counts as a human prompt only if it has no tool_result, is not a sidechain or meta line, and has no non-human origin.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/claude.go#L343-L345",
+          "resource": "repo://internal/parse/claude.go#L355-L357",
           "version": "repo-lines-v1:sha256:c4a7b68ef13e20990138f081517b302d9f61aa10e52ad1dcc2e919e7406c97e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmFjZmI3ZGE5MjRmYzk5OTkwZDRmMjI4ZTJjNDQxODYyNzcxODEwZmU0ZTEwZGNjOTNlODhiMjE3MGQ4ZTlkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzY2YTU2NWVjZjIxN2FkZmEwNmJjZDJmZTRlODdjZTQ0NmM2MWU3OTBlNTJkMTg0ZmVlMTcwNjkyNjdmZmZiMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDNmY2U3Zjg0Zjc2MDk1NjFkNTlkYjQ0YjQ3NjdmMjUzZjYxMTIzZjFiYTA3M2M3ZjBkOTk0MmE3NjgzZWZmMCJ9"
         }
       ]
@@ -67,7 +67,7 @@
       "statement": "humanPrompt rejects text starting with <local-command-, <task-notification>, <system-reminder>, or the local-command caveat, and renders slash commands as their name and arguments.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/claude.go#L364-L382",
+          "resource": "repo://internal/parse/claude.go#L376-L394",
           "version": "repo-lines-v1:sha256:3ec8b5b83d390188ccf5fb61a583e3f052b9afaa0d0432550c9bbbc0a0fc249e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1YmYzNzEyYzZlNzJhNzFlZjY1ODBlMDUwN2M3NWE5MDkyODhlZGRhMDI1MGZmZmEzZWJiZGE2MTE4NjJjOWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkNzdjZGUxZTQwMjgzNTAzNDVlOTRhMjZlMDcxYmU0YTNiNDAzMWZiOGExZDk4ZTRlYzdhOWQ3NzUyN2M3ZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwMmY2ZGYzNDZjM2E1MDFjNDVhNzNiNGQ3NDVjMjQ4N2Y5MGMwNWI3YzUxMTc5MTQyYjg4YjE1NjY0ZjFlNzgifQ"
         }
       ]
@@ -81,8 +81,8 @@
           "version": "repo-lines-v1:sha256:df8678c2f7e90abc91df34437d69655bfdaf8ea4a1f66964afabb0306dc50193:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDBkOTg2YjBkZjdlOWM0N2FhNzgyYjA2NjA5NDY5YmM4ZWVjYTQ3NjEyYjgzOGNmODI5ZGRhNGJjZGRkMzMyOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZmFmYmEwNTI3YzM5NTNjNGI2ZTBlNWI1NzM5YmE4MzYxMmY4MDUzYmNkYzk0NjY3MzAxOTNjZDFkNTkwYjQwOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjFmOTQyMzBmYjI0YzcwZDJlN2U1OGRlMWQ0ZDgyNjViZGZlMzgzYTkzZTRjYzMzOTE1MDliOGI5MjI4NmE3OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2JkNmFiNDQxMTg3NmYyODM3YTMwZGE5YjBhZGJlYjg0NzdiYTAzNGMxZjM2NGEzY2VkYjEwZjFjOWEzMjM5NiJ9"
         },
         {
-          "resource": "repo://internal/parse/claude.go#L318-L341",
-          "version": "repo-lines-v1:sha256:225dd297eb9eca4ec9347a48596ef6dd9c15309dd39268d73e5be7b75b65c874:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1MTIyOGU4MWYzNDdkYzc3YTBhYzY0YjkyMjVkNzgyZWVjNzNmMWYwOGNmOWI0NDMxMDJlY2UzZjQwYTBkMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2NmEzNDI0MWRmZDdkZTIyMzg2NTY3ZDE1ZWUxN2RlZWIyZmY5NGY0YjExMzQwMWVhNzY1MzJkMmEwZDk1N2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3NGFjMTE2MGZjOWZkNjExZDJkNzBhOWMwYzE3MWY5ZDlmYmNiNzJiZGY2YjA4YjBhNTJhYWJlMzI2NDIwYTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4OWJmMjllYzU3YjQ5YzUyMjg2NjZiZmU3MmU5MzFhOGM1NTU0NGYzMWJlN2Y2YzUwYzQyMzVhYzFjMjkzOTUifQ"
+          "resource": "repo://internal/parse/claude.go#L302-L353",
+          "version": "repo-lines-v1:sha256:d44411947fa9b626b12c4c279aeab67ececdde2c17cc947f22b584b65b9d590b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlNTYzZTM4MzI4Mzc2N2NlMDQxYTk1ZmM5ZWRlYjViNTQ1YjMxODhmYTBmZDNlNzBjODRiZjA1NjgwYTYxNDciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM2NmEzNDI0MWRmZDdkZTIyMzg2NTY3ZDE1ZWUxN2RlZWIyZmY5NGY0YjExMzQwMWVhNzY1MzJkMmEwZDk1N2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmYzRlZWViOWM5Y2IzYmEyZjViMTA2ZDRhMjQwMTljZjE1MzA3ODVlYTU1NTM3MGRlMTJiNGEyMWYxMmZjZDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ4OWJmMjllYzU3YjQ5YzUyMjg2NjZiZmU3MmU5MzFhOGM1NTU0NGYzMWJlN2Y2YzUwYzQyMzVhYzFjMjkzOTUifQ"
         }
       ]
     },
@@ -91,7 +91,7 @@
       "statement": "turn_duration adds agent seconds and a turn interval, away_summary becomes a recap with Claude's footer stripped, compact_boundary counts compactions, and api_error counts API errors.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/claude.go#L384-L410",
+          "resource": "repo://internal/parse/claude.go#L396-L422",
           "version": "repo-lines-v1:sha256:778f040da2a392ea6d95b14e788762f967b00df063f7d333311aa19bfde18cdc:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViMjg1Njg2MmM2NDhmZDAyYWE5YzkwM2RkMTNiN2Q3ZDIxNzgxY2JlMDZjMjY2ZjI1OGJlNDNmMWI0NmNhMjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiMTY5MmQ3ZDM4OGRjNzU4M2I4ZTEwNDMxMGYyYzNmMjg5ZjIxYzg3OTZiZTY1YTNiNDMwNDk5YTZiMWZkNTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0ZDI4MWVhMjA3YmIyNTMwMTAwNTY3MWEyMDAwMjM1MzAyNTczZjgyZTdjZjgxNTE0YjBiNjMwMDBlMTkyMDIifQ"
         }
       ]
@@ -101,11 +101,11 @@
       "statement": "A custom-title wins over the last ai-title, and the last cost-state totalCostUSD becomes the reported cost.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/claude.go#L209-L227",
+          "resource": "repo://internal/parse/claude.go#L211-L229",
           "version": "repo-lines-v1:sha256:736b18e7ff2dcd800dac718f08f0287908995b25cc6953b657eab04ed3438868:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk4YjE2NjM4MDg2MmM1MmEzZjQyNjAyOWFjZjQ4ODBlMjJjYzYzMzE5MWM4NjVmMDg2OWI3YmIwY2U0Mjc0NTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4ZDg4NTMwMmVlNzQ4ZDhhOTFlYzMxNWUxMDA2YTZmNTg0MmQzZDU1OWQ5Yjg4NjhjNzY1MWJjOThlNTA2ZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4OTJlNmY3YTNlNDMwNWMzZjk4NjMyNmJjNzM5MGRhN2UzYzI3ZDJkMjQ0ZGQ4MzA5ZTg1ZWIwZmYwODg5MzAifQ"
         },
         {
-          "resource": "repo://internal/parse/claude.go#L441-L447",
+          "resource": "repo://internal/parse/claude.go#L453-L459",
           "version": "repo-lines-v1:sha256:a0f22c090d8ee0e1e558c3aa97d124abcca5b6836fdc36963c64ffff751db0cc:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWE2M2FiYmJjMmE4ZDA4YTNkZmI5MGM4Mjc4YzVjODc3Njg4OTc3ZTJhY2U1OWNhZTk5NTNlMDgyNzE2ZjE1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTFhMTRiMDZhYzJhODU5ZjA1ZjcyNGY5NjEwZTdiNjE2NmVlZGY5M2RiODVhOTNiN2I0YTY4ZjVjMDA4NTg2ZCJ9"
         }
       ]
@@ -135,7 +135,7 @@
       "statement": "Codex token_count totals are cumulative; increases are attributed to the current model, a decrease is treated as a reset, and uncached input is input minus cached minus cache-write tokens.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex.go#L461-L489",
+          "resource": "repo://internal/parse/codex.go#L489-L517",
           "version": "repo-lines-v1:sha256:5285e88c8a435d71008c40bd4385e3e77336a460acf724776a8db50f072bd512:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxODI3NzUzOTQzZTgzOTYyNzBiMjU1MWE5MTI2NDFlNmQ4NzBhNmYxODhkY2VjYjc2YWRlMTNjNDNlYjgyYTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEwMWZkNWM0YjQ5YzRkZjM2MzRlYWRjNmE0MmIwZDRjYTEyMTEyMjllY2ZjMWM3OTQ2YzM4YmQxZmQ3NDgzODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1MDFlNTFhZjI0YTRjYzllYjA1YTk2ZDhiYzhjYTk3NTczYWM0MTliOTM3NjU1YmI3YzVkZTNlNTA0NDE4NzkifQ"
         }
       ]
@@ -145,8 +145,12 @@
       "statement": "Codex prompts come from UserMessage items when any exist, otherwise from user_message events.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex.go#L513-L547",
-          "version": "repo-lines-v1:sha256:8a6fa83ff79cc1983517cbe582049b78e2d06df273e4b17358acbc337dc22825:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3YTA1N2M1YmZhODAyZjYyZTFiOWVkMDUyMDY2ZGQxMjczNTFiYjUzMzQ3OWI0ZWVjMmRhZDA3NzhjNzc2ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY0ZWZjNDk0MThkMjZkY2YxMjliMjJhNmFhMjExMDhjZWVjMzc2NzdhMzJkMDhlOWQ1ZmVlMzVkZGE2NmJiOWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOTY0MDc5YzNjNWM4MTUyMGVmMzNhMmI5ZDJlMTVhMWI4NGQ3MjgwZGI4NTkwZGNkNjU3NDdlM2UwMTJhNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY2OWJhYWVhYzM1MzdhN2FjOGExNDQzNTU2NmVjNjM1YzE3MTY0ZmRiYzFkZTRmNWU3ZGUxOGU1MzZjYzkxOTEifQ"
+          "resource": "repo://internal/parse/codex.go#L228-L230",
+          "version": "repo-lines-v1:sha256:dd5286fa96790cc835a325f7088221ee9ee202a68150904f96697c763f1f3f13:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmJkOWU5N2FlN2M5MzkxYjE2OWM4NzVjODY1ZTFkNDEyODQ1YzMyZjVjZWEyMmNmZjY4OWZlMzZkYjlmNWUzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYWNjOTQzYzc2ODZkODA0Mzg3NDZmYjdiNWM3YzdkNTM2NmFmZjZkMDc3YTY3Y2VlZmRkYWRlMDU2YmQyYmU5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODlhYjRmMDE4YjdlMDRmOTU5NTMxMTFmN2M0NDNjNTBiOTJlMDFlNDgwYTA2YjVjZWIzNmQ4MzUyYzQ5MTk3NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWVhOWQ5YTI4ZmVhNDFiMDY4MDlhMjQ3OTc5NzRmYWNhZjE0ZmQ0Y2JhNTFjMzRjODYzODI3N2EzZTM1ZTgxYiJ9"
+        },
+        {
+          "resource": "repo://internal/parse/codex.go#L568-L587",
+          "version": "repo-lines-v1:sha256:a9cd4344aeb079ca8964df3b22bd04971da53dcb9268069a7d65c851801cb121:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ5MjMwZTRhMDRhNzg1MGNmM2Q3MzY3YjRiZTQxOTg3ODE5NWQ3ZGY5ZjU3ODhjNjc4NDZhNDVjZTEzMDYyYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFkMGQwNjM0ZDg5MmQzOTY5MTA3YWYzZWI0ZGU0YTM3MzljYmU3YjA4MzkwMjk1ZDc0YzYxZTIyOTEyODc4M2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzOWE1YWFkZTdmMzBkYzZlN2ZjNjc3MjViM2I0N2FiMjQ5NjhjZDg0NzMxOWU5ZDBhOGE1MWM1NWJkYjg3NzcifQ"
         }
       ]
     },
@@ -155,12 +159,12 @@
       "statement": "When CommandExecution records exist they replace the shell wrapper tools (exec, exec_command, shell, local_shell) in tool counts; otherwise the wrappers are counted under their names.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex.go#L190-L203",
-          "version": "repo-lines-v1:sha256:5debf41e89cd8b80047f51d1af401005be18245c16a390408ec634898d39a3a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMzM2Y1YjE4MGFhNjI5YzI5ZmNmOWMyNzQ3Mzc3M2VlNjE2OGVkMzYxMTFiMDlhNDQwZjY4MzA0N2Q4MDhmOWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdiMTMyNGM0ZjkzMGE0YmVkZWNkOWExZWNlNjljNWM5MzQ3NGZiMzE4YjUxNDYzZjZjMDRmYmJkZTViN2Y1YzkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1YzAyOGMxNTg5ZDI5MzAxZDNkNjlmZWY4MjFlZWM0N2VkNmFiY2M2MWYwNWNlZDc4NjI1NmRjMWU5MzM4YmEifQ"
+          "resource": "repo://internal/parse/codex.go#L194-L204",
+          "version": "repo-lines-v1:sha256:386590dd34c1b0d2c1cc685f4e53944eaa78a7cd3085b5e869eff66d9947fdf3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxNDI2Yjc3NjM0N2M0NzY2NmFlYWRhN2I0YzJmZDQ0ZmI5NjU3MzY3ZDVkZDYzMzFkZDczMGRiYjJiODA2M2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhZmJhMDUyN2MzOTUzYzRiNmUwZTViNTczOWJhODM2MTJmODA1M2JjZGM5NDY2NzMwMTkzY2QxZDU5MGI0MDgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjExMjY5ZDZlMTFkODU1NTFkODYzYzk4YWMyYzg1NzFmNjc3NWViOGU1MTAxYmQ5MTVmMmRlMGQyOTdmMDlkZGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM1YzAyOGMxNTg5ZDI5MzAxZDNkNjlmZWY4MjFlZWM0N2VkNmFiY2M2MWYwNWNlZDc4NjI1NmRjMWU5MzM4YmEifQ"
         },
         {
-          "resource": "repo://internal/parse/codex.go#L513-L537",
-          "version": "repo-lines-v1:sha256:89d5ee08c8698fe753a7307917245cccef09db015c968a3e91367b2b3c5b797e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3YTA1N2M1YmZhODAyZjYyZTFiOWVkMDUyMDY2ZGQxMjczNTFiYjUzMzQ3OWI0ZWVjMmRhZDA3NzhjNzc2ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4ZjA4MDViNjE0Zjc1ZWE3NmJlYzkyYjliZWVlZTc3NDUwYzgzNGU5ZTMwOTczNjhjMDkxMGM1YTEyYmU1NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOTY0MDc5YzNjNWM4MTUyMGVmMzNhMmI5ZDJlMTVhMWI4NGQ3MjgwZGI4NTkwZGNkNjU3NDdlM2UwMTJhNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU1Y2U1NGVhNDQzOThjNzE5MjdiOTAyM2Y5YWNiYjZlNGZlYzM0MTA2ODViMDNiNmIwMDdkM2ViMWJiMWM4NzcifQ"
+          "resource": "repo://internal/parse/codex.go#L541-L562",
+          "version": "repo-lines-v1:sha256:4ea715d95a9d37cf3e2322b18343a8d9e8c0fea17af415b3cd7c26d6ec8ec8ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3YTA1N2M1YmZhODAyZjYyZTFiOWVkMDUyMDY2ZGQxMjczNTFiYjUzMzQ3OWI0ZWVjMmRhZDA3NzhjNzc2ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOTY0MDc5YzNjNWM4MTUyMGVmMzNhMmI5ZDJlMTVhMWI4NGQ3MjgwZGI4NTkwZGNkNjU3NDdlM2UwMTJhNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM2ZmM3NzlkYzg0NGNlZGVjODA3ZDYxMDQzZGU3NDA0ZmM3N2FmNDJlOTQ4OWZhNTlmNDUwMDQ1M2MyOTZiMGUifQ"
         }
       ]
     },
@@ -169,11 +173,11 @@
       "statement": "codexFailed treats 'aborted by user' as a rejection, 'Script failed' or 'verification failed' as an error, and otherwise uses the first non-zero exit code found.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex.go#L205-L205",
+          "resource": "repo://internal/parse/codex.go#L206-L206",
           "version": "repo-lines-v1:sha256:7b2d62e2fc70f7abfc8f2ffeec4932d04998a1554913d0661af82e2057b6334a:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IyZDYyZTJmYzcwZjdhYmZjOGYyZmZlZWM0OTMyZDA0OTk4YTE1NTQ5MTNkMDY2MWFmODJlMjA1N2I2MzM0YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2IyZDYyZTJmYzcwZjdhYmZjOGYyZmZlZWM0OTMyZDA0OTk4YTE1NTQ5MTNkMDY2MWFmODJlMjA1N2I2MzM0YSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODFhY2IzZWM2ZDdiOGU3ZjFmNzA1M2IwZDEzZjg0NmI5ODY3OTljM2IwNjFjMjE5NmQzYzUzMWUxN2FjNGIxZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzVkMTIzMGE0ZDlkZGMyYTYyMjcxZThhOGZmMGQ4YTc0M2E3N2U5MzVhOTE0MDgyY2VjYWZlNjA4MmNlOTI5YSJ9"
         },
         {
-          "resource": "repo://internal/parse/codex.go#L601-L618",
+          "resource": "repo://internal/parse/codex.go#L649-L666",
           "version": "repo-lines-v1:sha256:3c1eef35ab4548ad998eba931c8589f7dac6e98e922f3b29554f9529230bbcc4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwMjcwOWEyNjQ5ZTZjNTE2NjdhYWIyZjljOGZmZjE5NGQ1OWE0NDI2NDg1ZGQyYTAzMTFlNTU1NTBiN2UwM2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjczNWFhNzNkYTM2MjViM2ExNWZhZGYzMmI3ODE1YjQ2MzM4MzM4NmNiMjQ4MTFjZGQ0OTBkNjAzYzg0YTM5ODUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjYTI5ZWM4M2M0NmU1NjVmNWMyODRmYTQwNmJmZDgyNDc0OTI3NzBjYzYxYmY0MTE4ZmE4ZGQ3MTJhYjA2NDEifQ"
         }
       ]
@@ -183,11 +187,11 @@
       "statement": "For Codex threads copied from Claude sessions, lines stamped within two minutes before a zero-component token_count marker (or, without markers, up to two minutes after the import time) are parsed into a discarded scratch session.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex.go#L248-L258",
+          "resource": "repo://internal/parse/codex.go#L254-L264",
           "version": "repo-lines-v1:sha256:f85dd42f030c3bf3bb1a44e4712a8f90da1e3826c41246ef9a65f96f0df89a60:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3Y2MyYTIyMjczZWJmNjJlMWY3MjM4NDAxODUyMjg4NzM3OGFmY2JkYjQzNzNhMTRlMmVjMzk2NDNlMzg0MjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3OTMwNmU2MTk2ZWRkNTBiM2IwNjJiOGE5MzBlOWM1NWFlYzU5MzJlODVmN2ZiZjc5ZmEyNmY4ODU4MTc3MWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYzZDM3MDdjYTI4YWQ4MDQ5NjgwNTZjNDMyMTExZDFmNDJjMDIzOGMwNDRjMzI0NDc2YTVhYjM2ZmJjZDVjZTcifQ"
         },
         {
-          "resource": "repo://internal/parse/codex.go#L282-L290",
+          "resource": "repo://internal/parse/codex.go#L288-L296",
           "version": "repo-lines-v1:sha256:f10570649b7c477cbaad4a62e2e1165afa05c642e4e241e175b8eefbd0e0629f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzY2YTM0MjQxZGZkN2RlMjIzODY1NjdkMTVlZTE3ZGVlYjJmZjk0ZjRiMTEzNDAxZWE3NjUzMmQyYTBkOTU3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjU1NmViM2FhOTM3Mzg2YTBiOTBmNjRiNTRjNTM3M2VlOTQ3MjgxZmY2NWJhODQwZTcxODY2MGU1Mzg1NDgzNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiN2I0OWY3YzAzZGRjODEwNGRlMzBkODM5MzUyNDk4MGU3MjJlM2FkNTU1ZmE4ZTEwNTM0ODk1N2FlNmQzYTdlMiJ9"
         },
         {
@@ -201,7 +205,7 @@
       "statement": "The conclusion marker is the HTML comment form <!-- cc-catalogue:session-concluded, and a later human prompt clears the concluded flag.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/claude.go#L435-L437",
+          "resource": "repo://internal/parse/claude.go#L447-L449",
           "version": "repo-lines-v1:sha256:67740514850ce4bb4477a79d5b27c746a18ea142633b4aea163e456763452a7b:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGQ0ODNhYjVhZTVhNmNmMGNiNGEzYmYxOWI5NDlmNDkwNDc2ZDcyMjdjM2Y4N2JkZTE3NjhmMTNiZmM4ODA0ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDg1MjNhYjUzYjI4OGY4MzUxODdkNTNhYTM3NjdkYmZhYzM5Y2I4OGY3N2E1MDBhOWJiZjAxM2MyN2Y2Mzc0ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWE2M2FiYmJjMmE4ZDA4YTNkZmI5MGM4Mjc4YzVjODc3Njg4OTc3ZTJhY2U1OWNhZTk5NTNlMDgyNzE2ZjE1NCJ9"
         },
         {
@@ -215,7 +219,7 @@
       "statement": "Work typed in Codex between two import syncs is counted, as tested by TestParseCodexImportResync.",
       "evidence": [
         {
-          "resource": "repo://internal/parse/codex_test.go#L195-L224",
+          "resource": "repo://internal/parse/codex_test.go#L213-L242",
           "version": "repo-lines-v1:sha256:758f2f8f4b2970e4abf9f042af1cc98bea0967ee3c49a8bbfb6e74285612ed48:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxZWZlZWY0Njk5YzFiMzYzMjAxYTJkZWJkZWQ0OTIwNTNkNzc0MGVkYzlkOGY2MjgzYzZjZDc2MzU3YzU2NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjNDEwMDY4N2I1YzdiOWM0MTgyOGI3YmYwZWRmYTg4YTRlNDczZmMwY2U1M2E0MmI4ZDZlNzQ3MGZjNjBjMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
@@ -229,10 +233,52 @@
           "version": "repo-lines-v1:sha256:a2224baae434520ec90bafc9dd98245351c0f4abb6a1f865d38616b386a37113:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlMzBiOTE3OWU5YmM2NjdiZDJmN2I2MGYyMmI2Zjk2ZTdkN2M5ZTZiZmM4MDU5MGVlYzc3NmMzYzc4Zjk0MjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRiYmU3OWYzMWU3MWNjMmMzY2ExYmFkMGQwODM0YmY0NTZjMTVlOGRjMzY1OTcxMmJiNmVlYzU0ZmZjNDUwMGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxYjUzNTEyM2FiNmViY2IxM2E2MTRjZWViYTJjZjdlNjQyOGViZDI1NGEwOTU3NDAwZjg3NjgxOTM1NTBmM2EifQ"
         }
       ]
+    },
+    {
+      "id": "claim_50da0d93411a91799573ebc9dacbf146",
+      "statement": "Claude Bash calls retain command text and inherit error status from their matching non-rejected tool result.",
+      "evidence": [
+        {
+          "resource": "repo://internal/parse/claude.go#L266-L284",
+          "version": "repo-lines-v1:sha256:16e1126e789ec9b3ee488d6e830a155e4a77999cc2fd4a2f12ff3ea123ada667:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzIwNWM0ZDQ4MGU2NjdmMzZkYjYzMThjNjY0NjdkZGY4MDhhMjNiZGYxMzEyNzhkYmI0YTgyNzBjMjkxNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5OGRkZjg3NThjNmU1NWJhNThlOWZjN2Q4MWJmM2JiODFmMGI0MzRjYzRhMjJhYWUxYjgyMjRiNmEzYzk0OGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhZjc4ZGIxMTJkODg5MTQ5OTVmOTFjZjQxNzg2MzA4ZmQ2MTcyN2VkODcyZDZiNTI0OWVjMWYxZGQ4Y2MxMzMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxMmFmOGU0ZDhjZTE1ZjY1MWI0YzY3MmYyNzk3NWQ5MzFjZDA1YWM3ZWE2ZGU1NjE4MTQ4N2E1ODdmZDVkNDYifQ"
+        },
+        {
+          "resource": "repo://internal/parse/claude.go#L327-L340",
+          "version": "repo-lines-v1:sha256:e614e3ce66acb9a70b3cdefc5146b7379154519c0b4262025ad7455b152e5870:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1MTIyOGU4MWYzNDdkYzc3YTBhYzY0YjkyMjVkNzgyZWVjNzNmMWYwOGNmOWI0NDMxMDJlY2UzZjQwYTBkMzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2ODA2ZjE1NWM1YWMxYWUyNzIyY2EwNmYyYWM5Y2FkY2I4ODFiOTEyM2NiNjI0YTNjMTA0NzViNDQ0OWRjMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI3NGFjMTE2MGZjOWZkNjExZDJkNzBhOWMwYzE3MWY5ZDlmYmNiNzJiZGY2YjA4YjBhNTJhYWJlMzI2NDIwYTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU4OWJiYTJkNGEzZGI0NDQ3ODBmMDEzODkxZjIwYzZiYWI0NDVkMDNlOGZiM2UxMzMyMTQ0NWU0NTdiZGIzM2YifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0455459df25671837a857a77f24738c3",
+      "statement": "Codex retains wrapper command inputs, but replaces them with CommandExecution details only when every real command record supplies command text; otherwise it keeps wrapper details to avoid a partial breakdown.",
+      "evidence": [
+        {
+          "resource": "repo://internal/parse/codex.go#L341-L377",
+          "version": "repo-lines-v1:sha256:ce2da37bbb717cec26f7f413f19fb6387ef119f1ff56fdeed3de1b2d930f109e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MjY1MjE2MmNhZWEzNDE3ZGU5OTgxOWM4ZGQ4MTY5ZjYyOGFlNGMxMTIyYjZlYmQzZTg0OWI3YmEyZjBiMzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU2ODA2ZjE1NWM1YWMxYWUyNzIyY2EwNmYyYWM5Y2FkY2I4ODFiOTEyM2NiNjI0YTNjMTA0NzViNDQ0OWRjMmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmMDY3MGU3NzNkMzZiODNhZTdiNWFjMzU0YTdiYWQ1NzliY2JjMjY2YmUzOTc1YzJiZGU3OWRjMzVkZDU0NzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM2NDc3MDI4YWUyY2YxNzkwZTEwYzY0MzkyNTU1MTMxYTdhZTk3OTNjZTYyZTg0Y2FlZTQ0MzFlY2ZjMzdjZDYifQ"
+        },
+        {
+          "resource": "repo://internal/parse/codex.go#L438-L450",
+          "version": "repo-lines-v1:sha256:0c40cb29be35777511ade44bec76beb7deba2e9bdd0c37818ab84936144d30f7:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlOTFiNDQyYjI4M2NlNGQ5ZTI0ODhhNTM3YjE5MTE1MDIwYTIyYjZjYTNkODE3ZjAwYjRiMzQ1NGZlYTgzMTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkYzc2MDIwYmFlNzA1NzdlNjRiMzMwZGNhODNmZGYyNGYzZDc1OTNhMDE1NGQ4YWJlYzZkYzYzZjU4OTdmZDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI0MjQ5MThjN2VhMmRjYTk0MjA1MjEyY2M5OTAzMDY0NjllNTk0MDU5NWI4YjVkZTI0ZDk4YzU5ZTlkZDNmYzAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4NTM3MDYyM2ExY2FhN2JhZGNhOWNhNDMyZGM5ZTlmMTAzM2JmODQyMWUxMmY0Y2EwYWVmNWI1OTk3YWNlMzMifQ"
+        },
+        {
+          "resource": "repo://internal/parse/codex.go#L563-L567",
+          "version": "repo-lines-v1:sha256:9dc4617985aaf182aede5463120071eac3857a323f91832e3b12da683ea092e2:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWJjYTFhODhiZDRjYmY4Y2FkMTI4NjczYjQ4ZjYxMGU4YWY1NDAyMWU3MTA2ODViNWU4NGViMDQzNWJjZTg3OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDEyYWY4ZTRkOGNlMTVmNjUxYjRjNjcyZjI3OTc1ZDkzMWNkMDVhYzdlYTZkZTU2MTgxNDg3YTU4N2ZkNWQ0NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTg5MGRhYTdmZTYyYWRiOTQzOTc4MzcyNmEwZjMxODcyYzg1OTVhMDFkZDYwY2QwMDQxYzk5Y2FlYTEyN2QyZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_4b73ded803656c3a6db3ebbbeafa9a8c",
+      "statement": "ClassifyCommand uses ordered deterministic rules for planning, documentation, testing, implementation, source control, inspection, and environment work, falls back to other, and unwraps quoted shell -c invocations before matching.",
+      "evidence": [
+        {
+          "resource": "repo://internal/parse/activity.go#L8-L51",
+          "version": "repo-lines-v1:sha256:5eac1193f92cd1c61410b6782b7a5d1d412e4aa277b20f0cd6be5f94dd90e2ff:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2NjQ4MmUyNDczNmE2YWNkMmFiMTRhOTkyYWNhZmFlZTAwN2MyNjIxYmFkZjZhYjU2ZjNlODg0ZGJjNGViNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2MmMyODQ3NzExMGJmNjA1NzNiZTU4NGMzYjk1NDYzZjViZTAwZDY3MjQ1MzZmMTliNzNmZTZhM2I5MGJhMmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkNWRlNjczOTBjZTMyYmZmZWYwZGU5NjRjMWM3MjAwOTk1ZDY4Y2EzZWVjYWRlYjNkZDA5Yjg3MmE1NGViNzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEifQ"
+        }
+      ]
     }
   ],
   "verification": {
-    "by": "owcli/ff31f70",
-    "at": "2026-10-02T15:17:54.597Z"
+    "by": "owcli/v0.4.0",
+    "at": "2026-10-09T22:01:17.764Z"
   }
 }

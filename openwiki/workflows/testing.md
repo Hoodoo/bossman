@@ -4,8 +4,8 @@ title: Testing and Extending
 description: How the test suite is organized, how fixtures reproduce real agent log shapes, how to check changes against real data, and how to add support for another agent.
 tags: [testing, fixtures, extending, adapters]
 verified:
-  - by: owcli/v0.3.0
-    at: "2026-10-05T09:11:03.303Z"
+  - by: owcli/v0.4.0
+    at: "2026-10-09T22:01:34.976Z"
 sources:
   - id: openwiki-source-4f22ab0c79d636fe0ca2b8b9
     resource: repo://internal/catalog/catalog.go
@@ -13,17 +13,21 @@ sources:
     resource: repo://internal/catalog/catalog_test.go
   - id: openwiki-source-c04b809e997b6644e3320acf
     resource: repo://internal/model/model.go
+  - id: openwiki-source-96d514f533806acd755ab294
+    resource: repo://internal/parse/activity_test.go
   - id: openwiki-source-d787c32a588ea9f3a15d1244
     resource: repo://internal/parse/claude_test.go
   - id: openwiki-source-398ec2ac7812c24b1f68756a
     resource: repo://internal/parse/codex_test.go
   - id: openwiki-source-44a1f87e0577b42841944fde
     resource: repo://internal/pricing/pricing_test.go
+  - id: openwiki-source-6d8c1cdec697aee752bd7c32
+    resource: repo://internal/store/store_test.go
   - id: openwiki-source-eb4688fc0fba2b62687b137d
     resource: repo://internal/web/web_test.go
   - id: openwiki-source-012f2c78e3b1446dfc35803f
     resource: repo://Makefile
-generated: { by: "owcli/v0.3.0", at: "2026-10-05T09:11:03.488Z" }
+generated: { by: "owcli/v0.4.0", at: "2026-10-09T22:01:37.013Z" }
 ---
 
 # Testing and Extending
@@ -34,14 +38,15 @@ generated: { by: "owcli/v0.3.0", at: "2026-10-05T09:11:03.488Z" }
 
 | Package | Tests | What they pin down |
 | --- | --- | --- |
-| `parse` | `TestParseClaude`, `TestDiscoverClaude`, `TestClaudeConclusion`, `TestHumanPrompt` | Usage counted once per message id; prompts vs. injected text; interrupts, rejections, and errors; recap footer stripped; subagents; reported cost; active time; conclusion marker (and its cancellation by a later prompt) |
-| `parse` | `TestParseCodexLegacy`, `TestParseCodexCommandRecords`, `TestParseCodexImport`, `TestParseCodexImportResync`, `TestCodexFailed` | Cumulative tokens split per model; prompts counted from one source; command records replacing wrappers; exit-code classification; Claude copies counting only work done in Codex, including work between two import syncs |
+| `parse` | `TestClassifyCommand` | Ordered shell activity categories, compound build-and-test precedence, quoted shell wrappers, and the `other` fallback |
+| `parse` | `TestParseClaude`, `TestDiscoverClaude`, `TestClaudeConclusion`, `TestHumanPrompt` | Usage counted once per message id; prompts vs. injected text; interrupts, rejections, and errors; Bash command detail and failure attribution; recap footer stripped; subagents; reported cost; active time; conclusion marker (and its cancellation by a later prompt) |
+| `parse` | `TestParseCodexLegacy`, `TestParseCodexCommandRecords`, `TestCodexCommand`, `TestParseCodexImport`, `TestParseCodexImportResync`, `TestCodexFailed` | Cumulative tokens split per model; prompts counted from one source; wrapper and command-record details; string and argv command shapes; command records replacing wrappers; exit-code classification; Claude copies counting only work done in Codex, including work between two import syncs |
 | `parse` | `TestClockActive`, `TestCatalogueSummary` | Active time as a union with agent turns; marker parsing |
 | `archive` | `TestMirror`, `TestMirrorSingleFile` | New, grown, rewritten (kept as a version), and deleted-at-source files |
-| `store` | `TestAnnotationsSurviveReindex`, `TestResolve`, `TestListAndStats` | Annotations untouched by `Put`; export/import round trip; reference resolution; filters; aggregates skip empty imports |
+| `store` | `TestAnnotationsSurviveReindex`, `TestResolve`, `TestListAndStats` | Annotations untouched by `Put`; command rows survive the store/detail round trip; export/import round trip; reference resolution; filters; aggregates skip empty imports |
 | `pricing` | `TestDefaultTable`, `TestOpusCostMatchesAgent`, `TestSessionCostSources`, `TestUserTable` | Prefix lookup; the table reproduces a real Claude-recorded cost; cost sources; user override |
 | `catalog` | `TestSyncArchivesAndSurvivesDeletion`, `TestSessionGrowthIsReindexed` | End-to-end sync, incremental reindex, sessions surviving the agent's deletion, transcripts from the archive |
-| `web` | `TestAPI`, `TestRequestGuards`, `TestBehindProxy` | Every route, the host, origin, and content-type guards, and running behind a proxy with a trusted user header |
+| `web` | `TestAPI`, `TestRequestGuards`, `TestBehindProxy` | Every route, command details in the session API, the host, origin, and content-type guards, and running behind a proxy with a trusted user header |
 
 The UI JavaScript has no automated tests. See [Web UI and API](../architecture/web-ui.md#changing-the-ui).
 

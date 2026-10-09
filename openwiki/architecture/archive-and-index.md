@@ -5,7 +5,7 @@ description: How sync copies agent session files into an append-only archive, ho
 tags: [archive, index, sqlite, sync]
 verified:
   - by: owcli/v0.4.0
-    at: "2026-10-09T15:57:19.417Z"
+    at: "2026-10-09T22:00:40.817Z"
 sources:
   - id: openwiki-source-17506c01deef3bc65f2fb2fc
     resource: repo://internal/archive/archive.go
@@ -23,7 +23,7 @@ sources:
     resource: repo://internal/store/store.go
   - id: openwiki-source-6dbe79f2b1613ac94797fd56
     resource: repo://internal/web/web.go
-generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:57:59.118Z" }
+generated: { by: "owcli/v0.4.0", at: "2026-10-09T22:01:37.013Z" }
 ---
 
 # Archive and Index
@@ -74,9 +74,22 @@ Parsing details per agent are in [Agent Log Formats and Parsing](../concepts/age
 - `sessions`: one row per session key (`agent:id`) with every metric, the cost and its source, `imported_from`, `in_source`, and the source signature.
 - `session_models`: token usage and cost share per model.
 - `session_tools`: calls and errors per tool.
+- `session_commands`: each indexed shell invocation in source order, including
+  its originating tool, original command text, coarse activity classification,
+  and error flag.
 - `session_summaries`: the agents' own titles, recaps, compaction summaries, and conclusions, in order.
 
-`Store.Put` replaces a session's rows in one transaction: it deletes the per-session child rows and runs `INSERT OR REPLACE` on `sessions`. It carries the existing `in_source` value forward, so a reindex does not flip it. The `summary` column holds the best single summary. `latestSummary` prefers a conclusion, then the latest recap, then an old-style summary, then the latest compaction summary.
+`Store.Put` replaces a session's rows in one transaction: it deletes the
+per-session model, tool, command, and summary rows and runs `INSERT OR REPLACE`
+on `sessions`. It carries the existing `in_source` value forward, so a reindex
+does not flip it. The `summary` column holds the best single summary.
+`latestSummary` prefers a conclusion, then the latest recap, then an old-style
+summary, then the latest compaction summary.
+
+The `session_commands` table is created automatically when an existing database
+is opened, but unchanged sessions are normally skipped by signature. After an
+upgrade that introduces or changes derived command data, run
+`bossman index --force` to reparse the archive and backfill every session.
 
 ## Schema: user tables
 

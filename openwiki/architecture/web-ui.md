@@ -5,7 +5,7 @@ description: How bossman serve works, covering the embedded single-page UI, the 
 tags: [web, api, ui, security]
 verified:
   - by: owcli/v0.4.0
-    at: "2026-10-09T15:57:36.156Z"
+    at: "2026-10-09T22:00:54.504Z"
 sources:
   - id: openwiki-source-624bec8caa72beb0cfc3a9ff
     resource: repo://internal/cli/serve.go
@@ -19,7 +19,7 @@ sources:
     resource: repo://internal/web/web.go
   - id: openwiki-source-eb4688fc0fba2b62687b137d
     resource: repo://internal/web/web_test.go
-generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:57:59.118Z" }
+generated: { by: "owcli/v0.4.0", at: "2026-10-09T22:01:37.013Z" }
 ---
 
 # Web UI and API
@@ -81,7 +81,7 @@ The header is only as trustworthy as the network: anyone who can reach the liste
 `app.js` is a hash-routed single-page app:
 
 - `#/` shows sessions. A filter bar offers search, agent, project, tag, a since date, "only deleted by agent", "hide Claude copies" (ticked by default; unticking it adds `copies=1`), and "show sinks". Sinks are sessions tagged `sink:<name>` that belong to no project. The list asks the API for `notag=sink:*` unless "show sinks" is ticked (`sinks=1` in the URL) or the tag filter picks a `sink:` tag, so choosing a sink always shows its sessions. The checkbox appears only once some session has a `sink:` tag, and the stats page never hides sinks. Clicking a column header changes the sort. Filters and sort are kept in the URL.
-- `#/s/<key>` shows one session: metric tiles, an editable project (a text field suggesting known projects, with "Reset to detected" when overridden), editable display name, tags, links, and notes, the agents' summaries, per-model and per-tool tables, and a transcript that loads on demand.
+- `#/s/<key>` shows one session: metric tiles, an editable project (a text field suggesting known projects, with "Reset to detected" when overridden), editable display name, tags, links, and notes, the agents' summaries, per-model and per-tool tables, and a transcript that loads on demand. When `command_usage` is present, the Tools card also groups shell calls into activity categories; each category expands to the original command text and marks failed calls. If aggregate shell counts exist but command rows do not, the card recommends `bossman index --force` to backfill older indexed sessions.
 - `#/stats` shows analytics: a time range, KPI tiles, a per-day bar chart stacked by agent (metric selectable: cost, tokens, active time, sessions, prompts), and breakdowns by project, model, tool, or week.
 
 All DOM is built with the `h()` helper, which creates elements and text nodes and never uses `innerHTML`. Session content, which includes arbitrary tool output, therefore cannot inject markup. User links are rendered as anchors only for `http`, `https`, `file`, and `mailto` URLs (`safeLink`), on top of the server-side scheme check in `store.AddLink`.
