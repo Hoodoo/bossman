@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:74ccf4bc83eedd58759642f9b62b570cab0b1e65caac0425d4ad706b3c48a023",
+  "pageVersion": "sha256:9590adf42e6ba8286ffb3c5eef1a493d88b9226c992b43545ee99527da8036c9",
   "claims": [
     {
       "id": "claim_d22fce3877f3f414071fe6e8e62a28f4",
@@ -17,18 +17,18 @@
       "statement": "Server.Sync serialises syncs with a mutex and records the last successful sync time.",
       "evidence": [
         {
-          "resource": "repo://internal/web/web.go#L93-L101",
+          "resource": "repo://internal/web/web.go#L94-L102",
           "version": "repo-lines-v1:sha256:6da7a7f8185a3b38ce412236ac9b6dd0350deb196aa363a2d6369960e2f62831:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWQwNDc0MjQzYTk4ZmNlN2U4MTkyNWM3Zjk2YjYyYzA2NDNmZTZmNjQ5MDhiYzhhNjI4NDA5MGI2OWRjZjkxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmIzN2EwMzllYWVjZTIzMGNmYzJhODkwN2QyYTM1MjQ0ZWI5MDFhZmY4MzFmMGY0Y2RhMjY5ODA5NjNiM2Y1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjIwYmQ2NDM5YmZjNzRkMjcxNzdmNTU1YjM3YjM3ZDI2YTJlYmIyMzUzZDExOTc0NjkyMGNkODUxZjZlMTVjYSJ9"
         }
       ]
     },
     {
       "id": "claim_1d358fb39b09bfe681338d59da38a867",
-      "statement": "The API exposes list, detail, transcript, meta, tags, links, stats, facets, and sync routes using Go method-and-pattern routing.",
+      "statement": "The API exposes list, detail, transcript, meta, project, tags, links, stats, facets, sync, and viewer routes using Go method-and-pattern routing.",
       "evidence": [
         {
-          "resource": "repo://internal/web/web.go#L60-L70",
-          "version": "repo-lines-v1:sha256:3e12be7b186835b8c1299dc1beaaa086ad36876656386da0afdb1c654db581bb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiMjVkNTk3ZjYxMzZmZTJkZGQ3MTljM2U2MmJlNmU3NjdlNTVlOGNjN2E4NDQ2MWJiMTExMzAxZDNkY2JhMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1OTEyYTMwNjk1YWE2Mzk4YjlhNjJjYjBhYTlmYTFjZTJiMzEzMTI3ZGUzZTc5NGU1ODY2NTE0MzU4ZjM2NzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1ZWEzNGY0ZTgwZDcwODAwOGRkMTg3OTAyNGU0MTJjOGM4MWYyMThjOTJjMDcxYmU4NWU2ZTk2ODk5MmQwMjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4N2MwMDUyMWIwMzg2NzkxYTcyNzViMWU1N2RmYzhlNWM4OWViZjkxMTRkOTQyOThhYWU5ZGRlNzBiZjcwYjAifQ"
+          "resource": "repo://internal/web/web.go#L60-L72",
+          "version": "repo-lines-v1:sha256:85f276e93b9d4c43afeeb61ffb5ce670eae50100cc66ec2b17f7c598b8ac6fb1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiMjVkNTk3ZjYxMzZmZTJkZGQ3MTljM2U2MmJlNmU3NjdlNTVlOGNjN2E4NDQ2MWJiMTExMzAxZDNkY2JhMmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVhMDQ2YzU2OTRlZmNhZGMzYjgyZWY3Zjk4ODdhZmM1OWFjNjIyZWQ1N2Q2NTRhODBlMjQzZmQ1Yjg4N2U1YmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiNGU1OWI1OGZkNmJmMzg0ZDJjYzdiOTYxMmYwNjdlNmRhY2IyNmUwOWI4M2QyYTBlZWM3MWJlYjFmNTg2MTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE4N2MwMDUyMWIwMzg2NzkxYTcyNzViMWU1N2RmYzhlNWM4OWViZjkxMTRkOTQyOThhYWU5ZGRlNzBiZjcwYjAifQ"
         }
       ]
     },
@@ -37,7 +37,7 @@
       "statement": "Requests whose Host is not localhost, 127.0.0.1, ::1, the listen host, or an allowed host are refused with 403.",
       "evidence": [
         {
-          "resource": "repo://internal/web/web.go#L103-L111",
+          "resource": "repo://internal/web/web.go#L104-L112",
           "version": "repo-lines-v1:sha256:15053d4cbec8e40835370746c9ce988e846f05ea1fa2a08d3d1e9a63d4e992a9:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTFhNzA2NDE0MTUwYThjYTg4N2I4N2I3MzAzOTM4OWMwNzFhOGRlMzFiNjU1MDI2NGEwYWQ4NDRmYjE3MTlmZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNjODhiYzhhZjBhZWVkY2Y1MTFjYWE2YjM0YjhjYTBjZDlkYTExOWUzMGU0N2Q0ZjU4MmM2MDk0NzJkNDI0YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjBhNmNhYTc1OTE2MzVkNGQ0NDQ1NDRlMTcwYzFlN2NkMTc0NWZlMWExMjNkYWY2YjZjMjA5MDAzNTY0MTIwOSJ9"
         },
         {
@@ -51,7 +51,7 @@
       "statement": "Non-GET requests with a foreign Origin are refused with 403, and non-GET requests without a JSON content type are refused with 415.",
       "evidence": [
         {
-          "resource": "repo://internal/web/web.go#L117-L130",
+          "resource": "repo://internal/web/web.go#L118-L131",
           "version": "repo-lines-v1:sha256:7733dbb722b8a3687fe08f94af324e773d936407d1f3349a339c0ac6fc6f7221:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczNTVkYTc5ZjMxNWZjMzg2OGEzZjQ3MmFhNTFkM2ZmYTVmYTY0Njk4N2MzNTM0MGQyOGIyMzI0MGNkNzkzYWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3Y2RhODJkYTYwNjIzOGUwNWU2MjM5OTU2OWM1ZWUwMzk5MzQxOTY0OGFlNWQ0M2EyYmY4Y2Q2MzQ3ZjgyNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAzNzY4OWU1NjQ5ODg2YmY4NjQwOTIwM2RjNDQxNmY1MjZjMDUzMmY4MDYxMDU3NjJlNzQyY2U1ODE4NThmMzciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2ZTY4NjUxMGJmNTQ2YWEzMTVhNDY3ZDY3OGM0YTI3OGYyMTYwNGYwNzYxYjgyN2Y1NDFiMDdmOWI2N2ZiYzUifQ"
         }
       ]
@@ -61,7 +61,7 @@
       "statement": "Request bodies are limited to 1 MiB.",
       "evidence": [
         {
-          "resource": "repo://internal/web/web.go#L219-L226",
+          "resource": "repo://internal/web/web.go#L220-L227",
           "version": "repo-lines-v1:sha256:3b2b60dd0dfdd891f3ef582efa642212c7ec12dcc42e3cd3f19126a9ddd8976e:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzRiYmI0NjAzOGMxMTViMmZiMjkzYzcyMWFlMWVkMDJjMGQ3ZGI3OWY5MTczNjBkYzIwODYzMmI1NDZhZGNlOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDFiYTQ3MTljODBiNmZlOTExYjA5MWE3YzA1MTI0YjY0ZWVlY2U5NjRlMDljMDU4ZWY4Zjk4MDVkYWNhNTQ2YiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTRhMTRlNWVlY2UxMGJmYjU4YjcwMDRmNmMwODFkZWQxYTU4NDA2NTgwZTZjYjM0YzIwZjhiZjFmMDI1NzI3MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmU3OTQ1YmUwMmE2NGEyNWM1ZDNmZTg5YjAyOWIwNzJkNGRkZDgzNTVmYmZiYzk1NWYzZDBiYWVlZDIyYzAwMSJ9"
         }
       ]
@@ -71,7 +71,7 @@
       "statement": "Bad input maps to 400 and unknown sessions to 404 in JSON error responses.",
       "evidence": [
         {
-          "resource": "repo://internal/web/web.go#L142-L160",
+          "resource": "repo://internal/web/web.go#L143-L161",
           "version": "repo-lines-v1:sha256:1d06a221b8f66a78b5adbadfa09da210ece65167a20e8d4bca24a06a60fb106a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2NGZkZGM3OWZiMGM5NTMwNTNkOTlhOTdmMjU2ZGZlZDJlYjE5ZTJlZmNkOWRkNmQ3YTYzNjZkZmY1ZDY1MTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhODJjNWNhZTFmZmQyY2E4MmRiMmQ2OGRlYWQ0ZTZiOTgzZDNkMWU3NTVlNWM3OTA4NDUwNGY4Mjg5NDFjNDAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjNjcxMTdjMDkxNjVhMjk5OTEwZDhhZmI3MmQ1ZTNmMDY3YzI5NmU0ZDViODE1YWY4OTU5MDQ0YzFiYmEzZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhZjc1MjZkYWUzOWI2ODE0NDdlYTcwODYzMTk0NzExYzU4ZmFlOTc4YmVlYzcxMmY2ZWNlMzRhOTRhOWViYjIifQ"
         }
       ]
@@ -101,7 +101,7 @@
       "statement": "User links render as anchors only for http, https, file, and mailto URLs.",
       "evidence": [
         {
-          "resource": "repo://internal/web/static/app.js#L511-L515",
+          "resource": "repo://internal/web/static/app.js#L526-L530",
           "version": "repo-lines-v1:sha256:185116b01ae50cd39a6b6b7197061c99655aa0cb0be307ceecce5f1085911c9c:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODE1OWQ3YjkzMjk1ZjFhNjdkMTJkMjYxOTc3MzIwMmY4MTMwOTVmNWU4ZDk5MzM4YjQzYzI5MTc4NTJiN2NkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODZmNTU4MGE5YWE3Y2Q0ZDY3YTYwMDAzMzI2ZDUxYmQ4MjY3YjM5ZGUyZDE3NWE4OTQ4NDIzMzFiZTFhYjBiMiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTRmOTc5YWY3MTJlNjJmM2JhMzM3YzM4ODRmOGM1YTdhODVkZmQ0N2E1ZmZmNmYzOTA4ZDVlNTJhNzhmNmNlYiJ9"
         }
       ]
@@ -125,11 +125,11 @@
       "statement": "The stats page fetches per-day groups once per agent and draws them as a stacked SVG bar chart.",
       "evidence": [
         {
-          "resource": "repo://internal/web/static/app.js#L545-L548",
+          "resource": "repo://internal/web/static/app.js#L560-L563",
           "version": "repo-lines-v1:sha256:5f5e69d3d84950a59e14a45f7ea4e2bd6991c8ace928eac23afeb2518d8e7f28:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2JlNzQ5MTU5NjdhZjE3NDJlYTk2YjhkNjgxNzA2NzU5YjI0NWViOGJmYTUzN2MxNzYzZjk2MjhjNDEzMzQyZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTA5M2UxMjkwNmE2MWZkNWMwODlmZWU4ZmNhZmQ5NTJlNTdhNTkwOWEyNDlkZDEyNTA5NDk4ZDI3MWE3MWM5NiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWJlZWZkOTBjMTJlN2I5YWIyODEwZTUyM2ZlNzBjMTA3YWJmYmEyNWQzMWI1NjllMTkwZmM3YWYwOTQ3YTAzOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDg1MGZlNmMyYWQwMDdhY2Q5ZjNiNjQxZmY1NDc4Y2M5YzZhZDA1YjkzNjVkZWNiNGM4YmYyY2RiNWExNDA3ZSJ9"
         },
         {
-          "resource": "repo://internal/web/static/app.js#L598-L608",
+          "resource": "repo://internal/web/static/app.js#L613-L623",
           "version": "repo-lines-v1:sha256:dbcfe6b161ad8be93cc0c92941faf57f2e1d2f7fd1b34c7de3792a9a069c8879:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1NmJiMTQ4N2Q1YTkwNGFlZTcyYzhiNTM3YzE3M2VhODIzOGM5NWE0YzVjOTljMDhkNmU2YjA2Yjk3YWNlOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZjI1YTU5ZTVjMzg5ODhlNzU4ZWNmOWQ3ZWYyNmU2YzRlNThhYWZmYmY0MmJhN2NkNzVkZjBhZWY2Yzg5ZDMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NGZjMGMxNzNkMWVjM2ZjNTAxZDdkZmE5Mjg1NTAxYzUyN2NmYjQ3MTI1ODNkYTNjYzM2MTgwNTY2YjRiZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM4MzBjNzZiYzJjNDgyZjg4NzQ2N2RmNTM0MmQxZTIxM2QyMjZkZjc3MzNmZDBmODkwNGZjZmY1ZWY4MWIwNTgifQ"
         }
       ]
@@ -139,7 +139,7 @@
       "statement": "Tests cover the host, origin, and content-type guards.",
       "evidence": [
         {
-          "resource": "repo://internal/web/web_test.go#L103-L118",
+          "resource": "repo://internal/web/web_test.go#L120-L135",
           "version": "repo-lines-v1:sha256:20064af8d84369b919c3aa7e82925a54558151f46d61f5751a416c3ce40db05c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlYWE3MzhlYjU3YWM1MjhiOTRhNjBlYzQzZGY4MjgyZjVkZjRjODNlM2VkM2E2OTg2ODc3NjRlZWYwZmI5ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOTY0MDc5YzNjNWM4MTUyMGVmMzNhMmI5ZDJlMTVhMWI4NGQ3MjgwZGI4NTkwZGNkNjU3NDdlM2UwMTJhNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
@@ -149,11 +149,11 @@
       "statement": "With a UserHeader configured, requests without it get 401 before routing, and Viewer strips everything up to the last colon of the header value.",
       "evidence": [
         {
-          "resource": "repo://internal/web/web.go#L112-L115",
+          "resource": "repo://internal/web/web.go#L113-L116",
           "version": "repo-lines-v1:sha256:be6a08fb13a222e661bd604f4cd8b005f75e168327868823ec0a9a01b949c229:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWM4MWIyZmI0OTM0ZTVlMWU2ODA2ZTNiZjk1NmU3MzI3MGY1MDFmMzhlYTAxOTYxNDVjMWQ5ZDM0YWNmZDNlMyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWVlZmI2NWQwZGQ1YmFhMTEyMjMxMjg3OGI2ODk2OGRiYjMwNWNlYTMyODRhMjAwMWExOTRjMTRhMjUwNDhmZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzUyMDViNjNmMGI3ODZjZGQ2MDFiYjJmMzVhNTA2ZDI1M2VlYzFlY2U5MGNjM2UzZTEwYWRiOTBkMDE5MWExOSJ9"
         },
         {
-          "resource": "repo://internal/web/web.go#L75-L86",
+          "resource": "repo://internal/web/web.go#L76-L87",
           "version": "repo-lines-v1:sha256:73f4513ed34a9b3e46af32d50a3455a43857129ad8720c5de24a8360f082573c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1NDVkOTZiYjU3MTQ5ZDc2ZWI2OTliMDg1OTFmMzNmZDg3YmNlZGVkMmJmNDFiZmMzNDA5ZDgwMTkwZjZjZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE4N2MwMDUyMWIwMzg2NzkxYTcyNzViMWU1N2RmYzhlNWM4OWViZjkxMTRkOTQyOThhYWU5ZGRlNzBiZjcwYjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ5MGVmNGViOTU4ZTJjMjJmODZiYmE2ZjYwYWI2NjAzNDcwMzMzYWUxZGEyNjg0ZDViYmJmNDhjMGMyNWE0YjgifQ"
         }
       ]
@@ -163,7 +163,7 @@
       "statement": "GET /api/viewer returns the signed-in user, empty without a user header option.",
       "evidence": [
         {
-          "resource": "repo://internal/web/web.go#L88-L90",
+          "resource": "repo://internal/web/web.go#L89-L91",
           "version": "repo-lines-v1:sha256:8f47f74fa8ea8e76598a0855cbd9df8ad07d20bf5b66e6aba0a3e73e7f3378e4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmUzNTQyZjkwNzgyYTcyODQ0OWQ4ZTBkMWYzYWMxNGU4NDFiODc0ZTlkNDEwZGQwYjNmNWM1MzU4YTA5ZDg1YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDhmMmJiMjMyMWJkZGQzNzI5ZTRlY2VkY2M1ZWM3ZmJhMTVhNDMyMWQ0YjUxNTY3ZmZjOWIwY2FhNjZlNDQ3ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzc5OWRiMjU1NDZkMjg2OGZkOGU4NDc5YWNmY2NiYmZmNzYxNDg3ODg2YmQzMzM5Y2FkYTM0YTNiM2U1ZWRhMCJ9"
         }
       ]
@@ -173,14 +173,62 @@
       "statement": "TestBehindProxy covers the public name, the 401, the viewer, and same-origin and foreign-origin writes through the proxy.",
       "evidence": [
         {
-          "resource": "repo://internal/web/web_test.go#L120-L160",
+          "resource": "repo://internal/web/web_test.go#L137-L177",
           "version": "repo-lines-v1:sha256:04c54c49df3582be0a854ab4a05df291cffbca148bb605be35f3e5b1e67bfbc8:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVhNWRhYmNlYTg5MDgwOGY4NWY3MGE2YTkzZGU1ZGY3ZmY1NWI2MDIxNThhOTFkNjNmZmY2NjYyZjYyMDJhZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyOTY0MDc5YzNjNWM4MTUyMGVmMzNhMmI5ZDJlMTVhMWI4NGQ3MjgwZGI4NTkwZGNkNjU3NDdlM2UwMTJhNDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d638684863d3840d29a7d41d642e6da9",
+      "statement": "PUT /api/sessions/{key}/project sets the override from project, clears it with reset, and rejects a body with neither as a bad request.",
+      "evidence": [
+        {
+          "resource": "repo://internal/web/web.go#L263-L289",
+          "version": "repo-lines-v1:sha256:2190483feafe588b4c77d4555af2e50b32d088206b5e03af60e3d3e4597aacfe:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYjU3MjM4OTVlNGEzODUwN2Y0Y2ViZTlhYTY2OTcxNDc3YjNkN2RmNWRlZWZkMTFlYzIyNDllMDZjMDUwOTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwYjVlNmY0N2U0OTU3OTc2MDJlOTJiM2VmNGNhYTZlMTNlMzUwMDNmZThkODliYzQ4N2IzMmRmZDI5ZDkzYzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmYTM0MDIzMjIwNWQ1ZjE1YzZkZDNkOWJmZDM2NWJiOWVkOTJmYTNjM2Y2NjMxYjhiZGI3NjQ2NDU1YTNiYTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3256980347291ecf25d178899fa340f",
+      "statement": "GET /api/sessions hides Claude copies with no prompts of their own unless copies=1.",
+      "evidence": [
+        {
+          "resource": "repo://internal/store/query.go#L166-L168",
+          "version": "repo-lines-v1:sha256:63337af33f76683a4c43933c7c6aaba1a4cb2f280c7c97f5064e873ac5ed5874:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODBkODNkOWRjODk1MjVjNjM2YWU0MmU0YTAxYTUxMjJkYzIxYzNlYTU1Y2NlZDc3Y2NjMTEzYWI1MGNjZGUxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDg5NjQ1MGNmMmJiOGEzMjIyYjJkOWUwOGExNDdiOGMxY2FkNzM0YzU1ZTM4YTEwNThkODUxZTAzYmVmY2Q0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmRmYTVjNzgxNDE1NTlhODc5NGY2NjQ1YWNmNWM5ZGI0MTczYjQwYjZmOWMwMWNjYzZiNzhjZjU1OWQzY2ZkNSJ9"
+        },
+        {
+          "resource": "repo://internal/web/web.go#L163-L168",
+          "version": "repo-lines-v1:sha256:94d46cc6af9092f3bf2b3f2d0ba81448a669ea8e28876ffd83b2e2376b678870:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQyOTY4YzhhNjc1Y2FhZTI5NzgyY2I0NDQzZjA1ZjNhNDE2ODlkZmY1OTU1MmU5ZDUxOWFhODkzOTkyMzRjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDFkZTQ4YWQ0NzRkMTgzNDk0ZGE4YzNiYzA4MWFmYTI3YmExODk2ZWUzNTdlYWYxNGM0ZDY2NTFkYjVlMGEyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjY0NjYwZTEzYzQ0NzNkMzNlNjg1NGQ5ZGVkNWZlNDhkNDA0YzkyYThkMDZiMTZlNDIwYzg4ODAxMmQ5MWI1NyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_7ba045f69bbcd7a2f6bd06769523e46d",
+      "statement": "The sessions list has a 'hide Claude copies' checkbox, ticked unless the URL has copies=1, and passes copies through to the API.",
+      "evidence": [
+        {
+          "resource": "repo://internal/web/static/app.js#L247-L251",
+          "version": "repo-lines-v1:sha256:6d34eea805a6ff0f42c7f7c89b5b2090796265db6d7e701bcb09aad4b11f9820:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGNhNWFlNDFlZTdkZmQzYzhiZWFiYzA2YWNmNGUwYmY4NjRjNjA5YWVkMjRmZWJjZWRmZTEzNjRiMDk4MTliYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmYyNjEzYzk5ODlkMGYxZGNiNjQyZmYwYWFhZDExY2EzMGIyMTk4M2VmNjk3ZGFjMDRmMGY2ZGI2ODBlZTY3YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODlmYmRhNzJkNTU2ZGMyMDY1NmFkMDAwMmI2ZjJiODg5OTcxNzQ4ZDI0YTcwOGFkMDBiMjQzNDA5ZjNlZWY3NSJ9"
+        },
+        {
+          "resource": "repo://internal/web/static/app.js#L257-L257",
+          "version": "repo-lines-v1:sha256:e51877799b97e946f073b7034b9701e6e216a71ff3be34cdb8882f48c481b0c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTUxODc3Nzk5Yjk3ZTk0NmYwNzNiNzAzNGI5NzAxZTZlMjE2YTcxZmYzYmUzNGNkYjg4ODJmNDhjNDgxYjBjNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTUxODc3Nzk5Yjk3ZTk0NmYwNzNiNzAzNGI5NzAxZTZlMjE2YTcxZmYzYmUzNGNkYjg4ODJmNDhjNDgxYjBjNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzNmMTI4Y2M4NWE0ZWRkYTk3NDUyNjkxMmRlNDZjZWNlYmRjZGUwYzk1MzY3MTVjMGQzYjZkMTk1YzQ5YTMxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzY1NmU2MDk0Y2UzMTEyY2U4N2Q4NjgwOTZjNTk1MmY4NDQ4NTdhZjVkYzc1NGYxZjU2ZDFmM2FkOWUzMDFkNiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_08039b5045e088774e48c896f41f99a5",
+      "statement": "The session page edits the project with a text field listing known projects and shows Reset to detected when the project is overridden.",
+      "evidence": [
+        {
+          "resource": "repo://internal/web/static/app.js#L384-L392",
+          "version": "repo-lines-v1:sha256:adc6d953d301d4437deab06091b474f1cf64768c22d730338d227ab50ff8b914:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNmNmNWExOWYwYWQ1MGFhOThjNjgyYzRmZmRmYTBkOWRkZjMyOGIxNzg5MDQxN2E3NWQxM2UyZDJmZGE3NDhiMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzYxNGVmZjYzZjMzZjVlNTBjNDY3YTY4NWZhMjEzYjNmM2YyNjFmMGY0MjZhNjc4ZTNiNTk3NWQ3NmJhZWUyZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDkwYTQyYzhjZGFlYWI3NjA3NzE4MWM4ZmNiOTJhYTQyMmNkOGMwNjUxMzdjODg5NDI3Zjg1OTg4MDQyZDUwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmIxZWY3YThjNGQ0YTNkOTQ4ZDQ5OTAwODkxM2ViMGIzZmNlZDg5NGY3NDhkZDNjODFlZTkwMTcwNjI0MjlhNCJ9"
         }
       ]
     }
   ],
   "verification": {
-    "by": "owcli/v0.3.0",
-    "at": "2026-10-05T09:10:46.991Z"
+    "by": "owcli/v0.4.0",
+    "at": "2026-10-09T15:47:37.952Z"
   }
 }

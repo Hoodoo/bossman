@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:288a2e49c7152d7d16fcece6580ebe39a4bee378918e7a532b435f7fa27502fc",
+  "pageVersion": "sha256:e6937ebabbfadd484c5b152c13ffd0ed5494f2db9887d52a7f4aa82217297725",
   "claims": [
     {
       "id": "claim_dc10939d10708d3f8d6f0f43106ceb76",
@@ -27,7 +27,7 @@
       "statement": "serve defaults to 127.0.0.1:7788.",
       "evidence": [
         {
-          "resource": "repo://internal/cli/serve.go#L34-L34",
+          "resource": "repo://internal/cli/serve.go#L44-L44",
           "version": "repo-lines-v1:sha256:51b71bed79d4813cf58447a6c126188352faca84b7c41f81c75e95c30964c98e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTFiNzFiZWQ3OWQ0ODEzY2Y1ODQ0N2E2YzEyNjE4ODM1MmZhY2E4NGI3YzQxZjgxYzc1ZTk1YzMwOTY0Yzk4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTFiNzFiZWQ3OWQ0ODEzY2Y1ODQ0N2E2YzEyNjE4ODM1MmZhY2E4NGI3YzQxZjgxYzc1ZTk1YzMwOTY0Yzk4ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmRmNjliY2U1YWU1OTM0OTA5ZjlkM2NjYjJmNzRmN2M1NTExYTliZjBhNGU5ZmM1NjU2N2ZmZjQ4MjFjZGVjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzRjNWY2ODYwNGJhMzlhMTg5OGIxNmZmMTQ4MDUyMDFjOWIwNjUxMTJhMGEyMmMwY2QyYjcwNjc5YTZlYTUzMiJ9"
         }
       ]
@@ -54,15 +54,15 @@
     },
     {
       "id": "claim_69396df4f9a073f9d4ee5fb8894d16b4",
-      "statement": "The README documents that Codex costs come from the pricing table and are API-equivalent on a ChatGPT plan, and that Codex Desktop's import sync creates Claude copies.",
+      "statement": "The README documents that Codex costs come from the pricing table and are API-equivalent on a ChatGPT plan, that Codex Desktop's import sync creates Claude copies, and that listings hide copies with no prompts of their own.",
       "evidence": [
         {
-          "resource": "repo://README.md#L73-L73",
+          "resource": "repo://README.md#L88-L88",
           "version": "repo-lines-v1:sha256:bb3f61ddf95155e0bf5a4104ea830d626bd8fa0284fb4b0f41ff3bcb3ce9e50e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYmIzZjYxZGRmOTUxNTVlMGJmNWE0MTA0ZWE4MzBkNjI2YmQ4ZmEwMjg0ZmI0YjBmNDFmZjNiY2IzY2U5ZTUwZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmIzZjYxZGRmOTUxNTVlMGJmNWE0MTA0ZWE4MzBkNjI2YmQ4ZmEwMjg0ZmI0YjBmNDFmZjNiY2IzY2U5ZTUwZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWNkNGM3MDAzNDFhM2M4YmI4ZmQ2NTdiYTUzZGNhMzc2MTkzNTQzYTI5ZGI3ZGE1OGRmZGM3YjUzZGFjYjk1OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDRmZjUyNDJiMTg2NmJmMTAxYjc1MGNhODc0ODFjOGIyYTFhNzA1YzVmN2UzZGNiZjEzYzFkZDI2ZGViMjM0YiJ9"
         },
         {
-          "resource": "repo://README.md#L84-L87",
-          "version": "repo-lines-v1:sha256:e0f4a314cf30bb5e6158d01638812768162e64b86dbc528721e038ab5e4c3b8f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTVlOWE4YzE1NWIzZjNhYTM0YmFlZjVjNjkzMDUwOTZiZjYyNjc3NGViMDg1MjJiYzM2YjhiMTVhY2ZhMTAzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmNhOWFkNzliNTk4ZmM2NDkwZWMzNWE3NDU4Zjc4MzVjN2FhMTZjMzliMmFiOGFlMzM5NTliOWFiM2IwYWNiOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjFkMGQ2Y2NiYjYyZmMyYmE2N2I0MDQ1YWEwMWEyYjVkYWMwMTk5ZDMxM2YzM2E1MDk1YTcwNTdhMzFlMzMwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmE4ZmVlODI0MWVlZGI0OThiYzdkNmU1ZGEwMTUyZTAzYTdmODYzY2IzODRiNGU2NDBiYTBjYTNhMTYyNWZhOCJ9"
+          "resource": "repo://README.md#L99-L104",
+          "version": "repo-lines-v1:sha256:0f80d074b050eedbd56a25bc3ef0b4e29bd9567055ab9602b41e3e8b01d6c62e:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTVlOWE4YzE1NWIzZjNhYTM0YmFlZjVjNjkzMDUwOTZiZjYyNjc3NGViMDg1MjJiYzM2YjhiMTVhY2ZhMTAzNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTI1ODJjNDQyNTI0NGRkYmJlMzU2OGEzYmU3NWM2OWI4ZDBmMGJmMDQxNjk2MjM5MzgwMDA3MzlkY2ZjZjhlZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjFkMGQ2Y2NiYjYyZmMyYmE2N2I0MDQ1YWEwMWEyYjVkYWMwMTk5ZDMxM2YzM2E1MDk1YTcwNTdhMzFlMzMwYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmE4ZmVlODI0MWVlZGI0OThiYzdkNmU1ZGEwMTUyZTAzYTdmODYzY2IzODRiNGU2NDBiYTBjYTNhMTYyNWZhOCJ9"
         }
       ]
     },
@@ -75,10 +75,24 @@
           "version": "repo-lines-v1:sha256:a7144e0d81ec107f9bd377b35de84afc9f0e5fbc6177675ab46ec02e449e2803:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWM2ZGU5MDgyYjc4Mjg0MDI4ZWY1MGRmNmY1OTRjOTVhOTE2NzY4N2YwNzgyZmI2OGE5ZjI1MDI1YjIwN2JlNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGI1YWQyZmM4NWQ4YjQwMWY2MTc3YmFjZmMzYjMyZjg0MjdjNDllMWM4YzJmMzQ2MjFmNjFmYjU1ZjliZTAwMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2QxOGNhYjNmZTE5NjUwNWJhOTQxNzJjOTg3OWNjZWM5ZWYzMThhZjk4MzdkNDY2NjNiODAwZmMwNzdkZDVlOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWVmYTFiYjBhOGEyMGI4Y2IyYzc2ZDJlMTY5OGM3NDRjNmY1ODUxMDAxNTI1ZWMxODI1YjE0NjgxYjE5YmVhZCJ9"
         }
       ]
+    },
+    {
+      "id": "claim_d44c473459f420c7610632c96efe9070",
+      "statement": "Users can override a session's project; the override is stored in bossman's annotations table.",
+      "evidence": [
+        {
+          "resource": "repo://internal/store/annotate.go#L30-L41",
+          "version": "repo-lines-v1:sha256:03ea76fa27cabbf0836c5868f2238aac330312623991a2321fdc293c0099c7c9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwNTJiZjE1MjRkYTlkODZiMDY5ZjhkMzgxMTk1MDA3MWJmYTIwZDdjZGMyNTNlNTJmOTk0NzhmMDIwNDYwZTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU1N2QzMTBlZTg3NWJiMGM2MDFkM2Y2YThhYjA5NDlkY2UwYTZjODZjMjI4YTMzNDhiNWE5ODhhMGEyYjcwZTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJlZjQ1OGI5NDYzYmJhNjQ0NzAwZjkxMGIwNzhhNDlhZDg0MjgwN2VhYjU1MjkyNzZjOWNmZmI1ZDFkOTg5MjIifQ"
+        },
+        {
+          "resource": "repo://internal/store/store.go#L93-L99",
+          "version": "repo-lines-v1:sha256:5e2c12f016775a37fb3f426a9a2cd9eaed1af6c6f24d17535ff5e6f01cc59880:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2NhNjVkMmFiODcxYjE3ZGI2NjkxZmM1MDI3ZDUyZjkzMmIzY2M3ZmM0ZTcyZjdlY2I3YTNmZTA2YWQ2NGJkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDk5NjdlYzFlZDM4MzZmOGViMTdhZmYxNzJiNWJmZWY3ZGU2MDQ4NWE0MzljNmNhMTFjNTkxZTE3NTU3MzlhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmFhYzAwZTNkZjBlZTEzNDk0YzZkY2U4MjRjOWZmNzFiZGFmYjRjMGRhNWJkZTZmYjc2MmIwYmJhZjBkOWUxMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODQ2MDJjNmViZDBlNjRmOGRhZjgwZTFhZWM3NDIyY2Y3ZDc4OWRiZDRiZGI3MTQ1OGVlMWMwMjc2ZjQ5NzRhYiJ9"
+        }
+      ]
     }
   ],
   "verification": {
-    "by": "owcli/2d956c2",
-    "at": "2026-10-03T15:42:31.750Z"
+    "by": "owcli/v0.4.0",
+    "at": "2026-10-09T15:48:40.271Z"
   }
 }

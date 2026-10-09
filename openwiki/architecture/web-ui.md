@@ -4,11 +4,13 @@ title: Web UI and API
 description: How bossman serve works, covering the embedded single-page UI, the JSON API routes, the request guards that keep other web pages out, and the front-end views.
 tags: [web, api, ui, security]
 verified:
-  - by: owcli/v0.3.0
-    at: "2026-10-05T09:10:46.991Z"
+  - by: owcli/v0.4.0
+    at: "2026-10-09T15:47:37.952Z"
 sources:
   - id: openwiki-source-624bec8caa72beb0cfc3a9ff
     resource: repo://internal/cli/serve.go
+  - id: openwiki-source-6f70615716e7cd05fe8db472
+    resource: repo://internal/store/query.go
   - id: openwiki-source-213e0022dfc208535b4c26a9
     resource: repo://internal/web/static/app.js
   - id: openwiki-source-688beee3d4edc09e1fc7e646
@@ -17,7 +19,7 @@ sources:
     resource: repo://internal/web/web.go
   - id: openwiki-source-eb4688fc0fba2b62687b137d
     resource: repo://internal/web/web_test.go
-generated: { by: "owcli/v0.3.0", at: "2026-10-05T09:11:03.488Z" }
+generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:48:40.390Z" }
 ---
 
 # Web UI and API
@@ -40,10 +42,11 @@ Registered in `web.New` using Go 1.22 method-and-pattern routing:
 
 | Route | Purpose |
 | --- | --- |
-| `GET /api/sessions` | List. Query parameters: `agent`, `project`, `q`, `tag`, `since`/`until` (YYYY-MM-DD), `archived=1`, `sort`, `dir=asc`, `limit` |
+| `GET /api/sessions` | List. Query parameters: `agent`, `project`, `q`, `tag`, `since`/`until` (YYYY-MM-DD), `archived=1`, `copies=1` (include Claude copies with no prompts of their own, hidden otherwise), `sort`, `dir=asc`, `limit` |
 | `GET /api/sessions/{key}` | `store.Detail` for one session |
 | `GET /api/sessions/{key}/transcript` | Transcript events, reparsed from the archive |
 | `PUT /api/sessions/{key}/meta` | `{display_name?, notes?}` |
+| `PUT /api/sessions/{key}/project` | `{project}` sets the project override; `{reset: true}` clears it; a body with neither is a 400 |
 | `PUT /api/sessions/{key}/tags` | `{tags: [...]}`, which replaces the set |
 | `POST /api/sessions/{key}/links` | `{url, label}` |
 | `DELETE /api/sessions/{key}/links/{id}` | Remove a link |
@@ -77,8 +80,8 @@ The header is only as trustworthy as the network: anyone who can reach the liste
 
 `app.js` is a hash-routed single-page app:
 
-- `#/` shows sessions. A filter bar offers search, agent, project, tag, a since date, and "only deleted by agent". Clicking a column header changes the sort, and the sort is kept in the URL.
-- `#/s/<key>` shows one session: metric tiles, editable display name, tags, links, and notes, the agents' summaries, per-model and per-tool tables, and a transcript that loads on demand.
+- `#/` shows sessions. A filter bar offers search, agent, project, tag, a since date, "only deleted by agent", and "hide Claude copies" (ticked by default; unticking it adds `copies=1`). Clicking a column header changes the sort. Filters and sort are kept in the URL.
+- `#/s/<key>` shows one session: metric tiles, an editable project (a text field suggesting known projects, with "Reset to detected" when overridden), editable display name, tags, links, and notes, the agents' summaries, per-model and per-tool tables, and a transcript that loads on demand.
 - `#/stats` shows analytics: a time range, KPI tiles, a per-day bar chart stacked by agent (metric selectable: cost, tokens, active time, sessions, prompts), and breakdowns by project, model, tool, or week.
 
 All DOM is built with the `h()` helper, which creates elements and text nodes and never uses `innerHTML`. Session content, which includes arbitrary tool output, therefore cannot inject markup. User links are rendered as anchors only for `http`, `https`, `file`, and `mailto` URLs (`safeLink`), on top of the server-side scheme check in `store.AddLink`.

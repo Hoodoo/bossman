@@ -4,8 +4,8 @@ title: Quickstart
 description: What bossman is, how to build and run it, and which wiki page answers each common question.
 tags: [quickstart, overview, navigation]
 verified:
-  - by: owcli/2d956c2
-    at: "2026-10-03T15:42:31.750Z"
+  - by: owcli/v0.4.0
+    at: "2026-10-09T15:48:40.271Z"
 sources:
   - id: openwiki-source-0542b60281e3aea77c59392e
     resource: repo://docs/design.md
@@ -15,16 +15,20 @@ sources:
     resource: repo://internal/cli/cli.go
   - id: openwiki-source-624bec8caa72beb0cfc3a9ff
     resource: repo://internal/cli/serve.go
+  - id: openwiki-source-7fabb846d2d38fede6287542
+    resource: repo://internal/store/annotate.go
+  - id: openwiki-source-4a81fcd95533ed8ba5a77739
+    resource: repo://internal/store/store.go
   - id: openwiki-source-012f2c78e3b1446dfc35803f
     resource: repo://Makefile
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
-generated: { by: "owcli/2d956c2", at: "2026-10-03T15:42:31.910Z" }
+generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:48:40.390Z" }
 ---
 
 # Quickstart
 
-bossman keeps, browses, and measures local coding-agent sessions from Claude Code and Codex. It copies the agents' JSONL logs into an append-only archive (Claude Code deletes sessions after 30 days by default) and indexes them into SQLite. From there it reports cost, tokens, prompts, interventions, tool error rates, and time, from the CLI or a local web UI. Users can give sessions display names, tags, notes, and links, all stored in bossman only. It never writes to the agents' directories.
+bossman keeps, browses, and measures local coding-agent sessions from Claude Code and Codex. It copies the agents' JSONL logs into an append-only archive (Claude Code deletes sessions after 30 days by default) and indexes them into SQLite. From there it reports cost, tokens, prompts, interventions, tool error rates, and time, from the CLI or a local web UI. Users can give sessions display names, tags, notes, and links, and move a session to another project, all stored in bossman only. It never writes to the agents' directories.
 
 ## Build and run
 
@@ -76,4 +80,4 @@ To experiment without touching your real bossman data, set `BOSSMAN_HOME` to a s
 - **The archive is the source of truth.** Parsing reads only the archive, so sessions stay available after the agents delete their originals.
 - **The index can be rebuilt; annotations cannot.** `bossman index --force` regenerates every derived table and never touches names, notes, tags, or links.
 - **Agents' own numbers first.** Claude Code's recorded cost is preferred to the pricing table. Codex records no cost, so its sessions are priced from OpenAI list prices in the default table. On a ChatGPT plan that is an API-equivalent figure.
-- **Logs are tricky.** Claude repeats usage on every line of a message, Codex token counts are cumulative, and Codex Desktop silently copies Claude sessions into Codex threads (shown as "Claude copy"). The parsers handle each case, and tests pin them down.
+- **Logs are tricky.** Claude repeats usage on every line of a message, Codex token counts are cumulative, and Codex Desktop silently copies Claude sessions into Codex threads (shown as "Claude copy", and hidden from listings unless they have prompts of their own). The parsers handle each case, and tests pin them down.

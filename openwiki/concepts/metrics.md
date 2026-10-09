@@ -4,11 +4,13 @@ title: Metrics and Cost
 description: How bossman defines and computes each reported metric, from cost and its source through tokens, interventions, error rates, time, and aggregates.
 tags: [metrics, cost, pricing, analytics]
 verified:
-  - by: owcli/ff31f70
-    at: "2026-10-02T15:18:08.889Z"
+  - by: owcli/v0.4.0
+    at: "2026-10-09T15:47:50.104Z"
 sources:
   - id: openwiki-source-4f22ab0c79d636fe0ca2b8b9
     resource: repo://internal/catalog/catalog.go
+  - id: openwiki-source-40f02473f25984711e4a2563
+    resource: repo://internal/cli/browse.go
   - id: openwiki-source-a8910515ddd14810ad43f5c1
     resource: repo://internal/config/config.go
   - id: openwiki-source-c04b809e997b6644e3320acf
@@ -25,7 +27,9 @@ sources:
     resource: repo://internal/store/query.go
   - id: openwiki-source-213e0022dfc208535b4c26a9
     resource: repo://internal/web/static/app.js
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:18:40.390Z" }
+  - id: openwiki-source-6dbe79f2b1613ac94797fd56
+    resource: repo://internal/web/web.go
+generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:48:40.390Z" }
 ---
 
 # Metrics and Cost
@@ -93,9 +97,9 @@ The error rate is tool errors divided by tool calls. Rejections are excluded, be
 
 ## Aggregates
 
-`store.Stats(filter, by)` groups by `agent`, `project`, `model`, `tool`, `day`, `week` (local weeks starting Monday), or `month`, and always returns a total row too.
+`store.Stats(filter, by)` groups by `agent`, `project`, `model`, `tool`, `day`, `week` (local weeks starting Monday), or `month`, and always returns a total row too. `project` groups by the user's project override when one is set, else the project the agent recorded (see [Archive and Index](../architecture/archive-and-index.md#project-override)).
 
 - **Session-level groups** sum the session columns. Their `unpriced` count is the number of sessions whose cost source is `none` or `partial`.
 - **Model groups** sum `session_models`, counting a session once per model it used, with cost from the per-model shares.
 - **Tool groups** sum `session_tools` calls and errors.
-- **Codex copies of Claude sessions without their own prompts** are excluded from every aggregate, so the same work is not counted twice. The UI shows the cost tile as "—" when every session in view is unpriced, rather than "$0".
+- **Codex copies of Claude sessions without their own prompts** are excluded from every aggregate, so the same work is not counted twice. Listings hide the same sessions by default, so what a listing shows is what the totals count. The UI shows the cost tile as "—" when every session in view is unpriced, rather than "$0".

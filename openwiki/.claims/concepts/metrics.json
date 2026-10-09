@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:0683c2e3d4e17a387974c61f47a51f038098bd667aad4ed0d7d07697a96f26c1",
+  "pageVersion": "sha256:d54803a3ed8c5914ae7b2ed17848204fcd0f68e1aad14f058c7d3b8cef6e3d87",
   "claims": [
     {
       "id": "claim_23a12da055ee46bb6bb0db50799016fe",
@@ -114,11 +114,11 @@
     },
     {
       "id": "claim_4c1f51e5bc626a8c5064a06ba6e0bee6",
-      "statement": "Stats groups by agent, project, day, week, or month from session columns, by model from session_models, and by tool from session_tools; weeks start on Monday in local time.",
+      "statement": "Stats groups by agent, project (the override when set, else the recorded project), day, week, or month from session columns, by model from session_models, and by tool from session_tools; weeks start on Monday in local time.",
       "evidence": [
         {
-          "resource": "repo://internal/store/query.go#L365-L395",
-          "version": "repo-lines-v1:sha256:688a5e5a120a930dd233a4631a8e124679173151705d9b6e8455d70b220a29d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwNDFiMmI4MzAzYjk2MDk1OWRiNGZmMzZkOGFiYWM0YzQyNWVmMWQ4ZGVkYTM1NjIyNDk4MDkzNmYxNDlmYjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiOThjN2I1YmQzZDU2OTlhNDE4MDZlZDNiNDZmOGNjNGU1NWZmNTdmZjQ1MjE3YTNhMjJhYTY1NDFkYzY0YmEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEzOTI3YmI1YWY1ODRjOTJjMzlmNWE5OWQ0OGRkODhhMzE5Y2RjZjNjZjUwZjZiMTYyNmMxOWIzYmU3MDEwMTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY1NjZjZTU4NmFlOTZhMTZlZTYwMGYzMjFkMDRmNDc2NzNiMjRiMTkxYWRjZDNlYjEyZWY1Yzg1ZGQ3MTM5NmUifQ"
+          "resource": "repo://internal/store/query.go#L365-L400",
+          "version": "repo-lines-v1:sha256:99ad631a4cac8e3e6e7b4af0275ed8624467ac635e8245ba0101a3bd4e32ce18:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExNGIxMGU1YTAxNTJhZWFlNmRlOGM2OWMxNGIyZjYwOGFiNDMxMGI5MzFjYzlhM2M5M2I5OWE1MGM0MTcxMzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyZmJjM2NiZTgzMTAzNzg3ODRjMDY2NzU3ZmYwZTQ2Zjc1MzRjNDBmNzMwMjJkYjhmOGIyNzgyNzQ4MjUyNjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAwYTg2ZTA5YTgwMDU2NGEyNDZjNjUyMDBlODNjNGM0ZmU5ZmM1Y2EwOTk1YTQ5MmUzNzcxMjIxOTU3NTJiYjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMxYWI2ZjFiMTJkN2U4OTk4NjJiYThiYjczOTUwZDc0MmQwNGU2M2I3ODQ1ZTI0YWI1YzNjYWUxZDcyZTkxNzkifQ"
         }
       ]
     },
@@ -137,14 +137,32 @@
       "statement": "The UI cost tile shows a dash instead of $0 when every session in view is unpriced.",
       "evidence": [
         {
-          "resource": "repo://internal/web/static/app.js#L559-L560",
+          "resource": "repo://internal/web/static/app.js#L574-L575",
           "version": "repo-lines-v1:sha256:6ecae76c0e3a78ee8e0567af86b8a587bfa29ebbfd9c29fd149ce4f2ceecf8d8:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjhmMjVhZGNlOTgzNTNlMTRjMDVmOWFjYWExMjY4NGIwNmM1ODJmOGFiNDk3MzE0ZDc2MDA4M2EyOGE0YmU3OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGZlNDc4ODYzNjgwZDA1NWQ2MzdjYWRlZmVmZmE3ZjQ5Y2ZmY2Q5Y2Q1ODhiYzk5MWZiYzk0N2UwNWY4OTJjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjYzMDk4OWQxN2FiYzZhOTJjNjczOWVlNDkzM2I2ODEyYjhiOWE3NmRjZTljNmQwMmNjZjU3MzRlMDY4MDM1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGViZDY4Yzk0MDZjMDA5NTQ4M2UzMGJlZWQ3OWUzODc4MTk4OWI4ZDYyODM4MjdhNzZlM2VkYTU5ZjMwZDA3YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_a5c565838fe3fa18ed232592461a87fc",
+      "statement": "Session listings hide Claude copies with no prompts of their own by default, the same sessions Stats excludes.",
+      "evidence": [
+        {
+          "resource": "repo://internal/cli/browse.go#L42-L42",
+          "version": "repo-lines-v1:sha256:294643ace23af8362f6bfed7f702717306492b3f27e118eca68d9aba352ac1f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjk0NjQzYWNlMjNhZjgzNjJmNmJmZWQ3ZjcwMjcxNzMwNjQ5MmIzZjI3ZTExOGVjYTY4ZDlhYmEzNTJhYzFmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjk0NjQzYWNlMjNhZjgzNjJmNmJmZWQ3ZjcwMjcxNzMwNjQ5MmIzZjI3ZTExOGVjYTY4ZDlhYmEzNTJhYzFmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWE4NzU1Nzk1NWJjZGJlZjJlZTNmYjkwMjZhZDM1NzMxMjAyNjFlY2E3ZmI2MmZiNjkxNWQxYjM5YWZlNmY3OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDFjMzMxYTJiNjE0YTMxMGJkNjlhNzRlM2UwNmUwNzg1N2VmODlkMWMxZWU3YjY4MjUxMTRkZTg2NWMzYzQ2YSJ9"
+        },
+        {
+          "resource": "repo://internal/store/query.go#L366-L366",
+          "version": "repo-lines-v1:sha256:52a82472db58898470958b2806c48109f96cae185fa539aa59635c590dcb0a5d:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTJhODI0NzJkYjU4ODk4NDcwOTU4YjI4MDZjNDgxMDlmOTZjYWUxODVmYTUzOWFhNTk2MzVjNTkwZGNiMGE1ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTJhODI0NzJkYjU4ODk4NDcwOTU4YjI4MDZjNDgxMDlmOTZjYWUxODVmYTUzOWFhNTk2MzVjNTkwZGNiMGE1ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWJjM2E1ODYxNGZjYjcyODYyNmUxZWE1ZTJkNzEzMmYzYjdhZGQ1YTBhNTU5OGI1MTc2ZjAwNzM0MmZkNGVkMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTM5MjdiYjVhZjU4NGM5MmMzOWY1YTk5ZDQ4ZGQ4OGEzMTljZGNmM2NmNTBmNmIxNjI2YzE5YjNiZTcwMTAxMCJ9"
+        },
+        {
+          "resource": "repo://internal/web/web.go#L163-L168",
+          "version": "repo-lines-v1:sha256:94d46cc6af9092f3bf2b3f2d0ba81448a669ea8e28876ffd83b2e2376b678870:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmQyOTY4YzhhNjc1Y2FhZTI5NzgyY2I0NDQzZjA1ZjNhNDE2ODlkZmY1OTU1MmU5ZDUxOWFhODkzOTkyMzRjMCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjdjZGE4MmRhNjA2MjM4ZTA1ZTYyMzk5NTY5YzVlZTAzOTkzNDE5NjQ4YWU1ZDQzYTJiZjhjZDYzNDdmODI2MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDFkZTQ4YWQ0NzRkMTgzNDk0ZGE4YzNiYzA4MWFmYTI3YmExODk2ZWUzNTdlYWYxNGM0ZDY2NTFkYjVlMGEyZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjY0NjYwZTEzYzQ0NzNkMzNlNjg1NGQ5ZGVkNWZlNDhkNDA0YzkyYThkMDZiMTZlNDIwYzg4ODAxMmQ5MWI1NyJ9"
         }
       ]
     }
   ],
   "verification": {
-    "by": "owcli/ff31f70",
-    "at": "2026-10-02T15:18:08.889Z"
+    "by": "owcli/v0.4.0",
+    "at": "2026-10-09T15:47:50.104Z"
   }
 }

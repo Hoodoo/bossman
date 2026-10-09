@@ -4,13 +4,15 @@ title: Archive and Index
 description: How sync copies agent session files into an append-only archive, how indexing decides what to reparse, and how the SQLite schema keeps derived data apart from user metadata.
 tags: [archive, index, sqlite, sync]
 verified:
-  - by: owcli/ff31f70
-    at: "2026-10-02T14:59:15.849Z"
+  - by: owcli/v0.4.0
+    at: "2026-10-09T15:47:11.810Z"
 sources:
   - id: openwiki-source-17506c01deef3bc65f2fb2fc
     resource: repo://internal/archive/archive.go
   - id: openwiki-source-4f22ab0c79d636fe0ca2b8b9
     resource: repo://internal/catalog/catalog.go
+  - id: openwiki-source-40f02473f25984711e4a2563
+    resource: repo://internal/cli/browse.go
   - id: openwiki-source-316c7740ea0d2064293330cb
     resource: repo://internal/parse/codex.go
   - id: openwiki-source-7fabb846d2d38fede6287542
@@ -19,7 +21,9 @@ sources:
     resource: repo://internal/store/query.go
   - id: openwiki-source-4a81fcd95533ed8ba5a77739
     resource: repo://internal/store/store.go
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:04:05.474Z" }
+  - id: openwiki-source-6dbe79f2b1613ac94797fd56
+    resource: repo://internal/web/web.go
+generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:48:40.390Z" }
 ---
 
 # Archive and Index
@@ -76,17 +80,24 @@ Parsing details per agent are in [Agent Log Formats and Parsing](../concepts/age
 
 ## Schema: user tables
 
-`annotations` (display name, notes), `links`, and `tags` hold what the user wrote. Nothing derives them, and `Put` never touches them, so `bossman index --force` and even deleting the archive leave them intact. The operations are in `internal/store/annotate.go`:
+`annotations` (display name, notes, project override), `links`, and `tags` hold what the user wrote. Nothing derives them, and `Put` never touches them, so `bossman index --force` and even deleting the archive leave them intact. The operations are in `internal/store/annotate.go`:
 
 - `SetDisplayName` and `SetNotes` upsert into `annotations`.
+- `SetProjectOverride` upserts `annotations.project_override`, trimming the value; a nil project stores NULL, which returns the session to the project the agent recorded.
 - `AddLink` requires an absolute URL. It rejects `javascript:`, `data:`, and `vbscript:`, and re-adding an existing URL updates its label.
 - `NormalizeTag` lowercases tags and rejects ones containing commas or whitespace.
-- `ExportAnnotations` and `ImportAnnotations` back `bossman meta export|import`. Import replaces names and notes and adds tags and links.
+- `ExportAnnotations` and `ImportAnnotations` back `bossman meta export|import`. Export includes the override as `project`. Import replaces names and notes, sets the override when `project` is present, and adds tags and links.
+
+## Project override
+
+`sessions.project` is what the agent recorded. A NULL `annotations.project_override` means "use it"; any other value replaces it. Every query reads `COALESCE(a.project_override, s.project)`: the listed project in `rowColumns`, the `project` sort key, the `Project` filter, and `Stats` grouped by project. Overriding a session therefore moves it in listings, filters, facets, and aggregates alike. `Store.Get` also returns the agent's value as `detected_project` and sets `project_overridden` when an override exists, so the UI can offer a reset.
+
+`CREATE TABLE IF NOT EXISTS` does not add columns to an existing database, so `Open` also runs `ALTER TABLE annotations ADD COLUMN project_override TEXT` and ignores only the "duplicate column" error. That is the catalogue's one in-place migration.
 
 ## Connection and concurrency
 
 The database is opened with WAL journaling and a 10 s busy timeout, and `SetMaxOpenConns(1)` serialises all access through one connection. That is enough for one user's sessions and avoids writer contention between `serve`'s background sync and API writes.
 
-## Aggregates skip empty imports
+## Empty imports are skipped
 
-`Store.Stats` always sets `Filter.SkipCopies`. This drops Codex threads imported from Claude sessions that have no prompts of their own, so the same work is not counted twice. `List` does not skip them, so they still appear in listings.
+`Filter.SkipCopies` drops Codex threads imported from Claude sessions that have no prompts of their own (`imported_from != '' AND prompts = 0`). `Store.Stats` always sets it, so the same work is not counted twice. `List` applies it only when the caller asks, and both callers ask by default: `bossman ls` unless `--copies` is given, and `GET /api/sessions` unless `copies=1`. A session hidden from a listing is therefore exactly one the aggregates leave out, while a copy the user typed into in Codex stays visible and counted.

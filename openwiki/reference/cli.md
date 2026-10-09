@@ -4,8 +4,8 @@ title: CLI Reference
 description: Every bossman command and flag, how sessions are referenced, the filter and time syntax, and how output is formatted.
 tags: [cli, reference, commands]
 verified:
-  - by: owcli/ff31f70
-    at: "2026-10-02T15:18:23.045Z"
+  - by: owcli/v0.4.0
+    at: "2026-10-09T15:48:12.082Z"
 sources:
   - id: openwiki-source-40f02473f25984711e4a2563
     resource: repo://internal/cli/browse.go
@@ -15,11 +15,13 @@ sources:
     resource: repo://internal/cli/meta.go
   - id: openwiki-source-6c06034f3c69a4e3631c4874
     resource: repo://internal/cli/sync.go
+  - id: openwiki-source-7fabb846d2d38fede6287542
+    resource: repo://internal/store/annotate.go
   - id: openwiki-source-6f70615716e7cd05fe8db472
     resource: repo://internal/store/query.go
   - id: openwiki-source-4a81fcd95533ed8ba5a77739
     resource: repo://internal/store/store.go
-generated: { by: "owcli/ff31f70", at: "2026-10-02T15:18:40.390Z" }
+generated: { by: "owcli/v0.4.0", at: "2026-10-09T15:48:40.390Z" }
 ---
 
 # CLI Reference
@@ -64,7 +66,7 @@ See [Archive and Index](../architecture/archive-and-index.md) for what these do 
 | Flag | Effect |
 | --- | --- |
 | `--agent claude\|codex` | Only one agent |
-| `-p, --project <substr>` | Project path contains this |
+| `-p, --project <substr>` | Project path contains this (the project override when one is set) |
 | `-s, --search <substr>` | Matches title, display name, first prompt, summary, notes, or key |
 | `-t, --tag <tag>` | Has this tag |
 | `--since`, `--until <when>` | Start time bounds |
@@ -74,7 +76,9 @@ See [Archive and Index](../architecture/archive-and-index.md) for what these do 
 
 ### ls
 
-`ls` lists sessions. Its own flags are `--sort` (`started` by default; also `ended`, `cost`, `wall`, `active`, `prompts`, `interventions`, `tools`, `errors`, `tokens`, `output`, `project`, `name`), `--asc`, and `-n/--limit` (30 by default; 0 means all).
+`ls` lists sessions. Its own flags are `--sort` (`started` by default; also `ended`, `cost`, `wall`, `active`, `prompts`, `interventions`, `tools`, `errors`, `tokens`, `output`, `project`, `name`), `--asc`, `-n/--limit` (30 by default; 0 means all), and `--copies`.
+
+By default `ls` hides Claude copies that have no prompts of their own, the same sessions `stats` never counts; `--copies` lists them too. A copy someone typed into in Codex is always listed. The flag exists only on `ls`, because `stats` excludes these sessions regardless. Consumers of `ls --json`, such as goatlassian, see the same default.
 
 Each row shows the start time, agent, project, cost, tokens, prompts, error rate, active time, and name. The name is the display name, else the agent's title, else the first prompt. Flags such as `[archived]`, `[concluded]`, and `[Claude copy]` (a Codex thread that Codex Desktop copied from a Claude session) and the tags follow the name. Cost is `-` when the session has no usage, `?` when its usage could not be priced, and ends in `+` when partially priced. `show` names the source of a copy on its `copy of` line.
 
@@ -96,10 +100,10 @@ Each row shows the start time, agent, project, cost, tokens, prompts, error rate
 | `link add <session> <url> [-l label]` | Attach a URL. Re-adding updates the label |
 | `link rm <session> <id\|url>` | Detach a link |
 | `link ls <session>` | List links |
-| `meta export` | Print all annotations as JSON |
+| `meta export` | Print all annotations as JSON, including any project override as `project` |
 | `meta import <file\|->` | Merge exported annotations |
 
-These write only the annotation tables, never the agents' files.
+These write only the annotation tables, never the agents' files. A session's project override has no CLI command; set it from the session page or `PUT /api/sessions/{key}/project` (see [Web UI and API](../architecture/web-ui.md)), and move it between machines with `meta export|import`.
 
 ## Other commands
 
